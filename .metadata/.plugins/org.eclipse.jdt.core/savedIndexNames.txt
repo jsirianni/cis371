@@ -1,3 +1,0 @@
-INDEX VERSION 1.130+/home/jsirianni/Documents/git/school/cis371/.metadata/.plugins/org.eclipse.jdt.core
-2983469535.index
-3920378665.index
