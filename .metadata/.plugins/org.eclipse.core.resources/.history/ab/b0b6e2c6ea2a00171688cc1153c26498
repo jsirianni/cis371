@@ -1,0 +1,19 @@
+
+public class Client {
+
+	/*
+	 * Simple client application creates a socket
+	 * Binds to localhost:7070 by default
+	 * Override by passing an ip and port as arguments
+	 */
+	public static void main(String[] args) {
+
+		// Default ip and port to be used
+		String ip = "127.0.0.1";
+		int port = 7070;
+		
+		
+		
+	}
+
+}
