@@ -43,6 +43,7 @@ public class GvsuClient {
 		int port = 80;
 		String filePath = "/~kurmasz/Humor/stupid.html";
 		String httpRequest = "";
+
 		
 		
 		
@@ -68,8 +69,8 @@ public class GvsuClient {
 
 		
 		// Perform HTTP GET request
-		httpRequest = "GET / HTTP/1.1\r\n\";
-		httpRequest+= "r\n";		
+		httpReqiest = "GET / HTTP/1.1\r\n\";
+				+ "r\n";		
 		URL url = new URL(fqdn);
 	
 		

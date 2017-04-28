@@ -12,7 +12,6 @@ import java.net.*;
 public class GvsuClient {
 	
 	
-	
 	/*
 	 * Methods taken from SampleCode/IOStreams/WrappingInputStreams.java
 	 * Modified to do Input and Output streams
@@ -42,7 +41,6 @@ public class GvsuClient {
 		String fqdn = "www.cis.gvsu.edu";
 		int port = 80;
 		String filePath = "/~kurmasz/Humor/stupid.html";
-		String httpRequest = "";
 		
 		
 		
@@ -68,10 +66,8 @@ public class GvsuClient {
 
 		
 		// Perform HTTP GET request
-		httpRequest = "GET / HTTP/1.1\r\n\";
-		httpRequest+= "r\n";		
-		URL url = new URL(fqdn);
-	
+		String request = "GET / HTTP/1.0\r\n\r\n";		// Create request String
+		
 		
 		// Send the request to the server
 		wrappedClientOut.write(request.getBytes());		// Call DataOutputStream to send the request 
