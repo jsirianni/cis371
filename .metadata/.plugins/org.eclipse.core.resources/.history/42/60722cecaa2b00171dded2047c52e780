@@ -37,7 +37,7 @@ public class Client {
 		
 		/*
 		 * Get input from user
-		 * Create a buffered reader to receive console commands
+		 * Create a buffered reader to recieve console commands
 		 * Assign user input to the String 'command' 
 		 */
 		BufferedReader inputCmd = new BufferedReader(new InputStreamReader(System.in));

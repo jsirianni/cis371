@@ -21,12 +21,12 @@ public class GvsuClient {
 	   BufferedInputStream x = new BufferedInputStream(in);
 	   DataInputStream y = new DataInputStream(x);
 	   return y;
-	}
+	}   
 	public static DataOutputStream wrapOutputStream(OutputStream in) throws IOException {
 		BufferedOutputStream x = new BufferedOutputStream(in);
 		DataOutputStream y = new DataOutputStream(x);
 		return y;
-	}
+	}	
 	
 	
 	
@@ -34,16 +34,15 @@ public class GvsuClient {
 	 * Main method - Creates a client socket, connecting to www.cis.gvsu.edu
 	 * Calls the wrapItUp method to get a DataInputStream for file downloads
 	 */
-	@SuppressWarnings({ "unused", "resource" })
+	@SuppressWarnings({ "unused", "resource", "deprecation" })
 	public static void main(String[] args) throws IOException {
 		
 		
 		// Global Variables
 		String fqdn = "www.cis.gvsu.edu";
-		int port = 80;
 		String filePath = "/~kurmasz/Humor/stupid.html";
-		String httpRequest = "";
-		
+		int port = 80;
+
 		
 		
 		// Optionally pass an argument to select a file path
@@ -55,44 +54,52 @@ public class GvsuClient {
 		
 		// Client socket to connect to www.cis.gvsu.edu
 		Socket clientSocket = new Socket(fqdn, port);
-		
+
 		
 		
 		// Create a wrapped DataOutputStream & DataInputStream 
-		DataOutputStream wrappedClientOut = 						// Request data
-				wrapOutputStream(clientSocket.getOutputStream());
+		DataOutputStream wrappedClientOut = wrapOutputStream(clientSocket.getOutputStream());
 		
-		DataInputStream wrappedClientIn =							// Response data
-				wrapInputStream(clientSocket.getInputStream());			
+		DataInputStream wrappedClientIn = wrapInputStream(clientSocket.getInputStream());			
 		
 
 		
-		// Perform HTTP GET request
-		httpRequest = "GET / HTTP/1.1\r\n\";
-		httpRequest+= "r\n";		
-		URL url = new URL(fqdn);
-	
+		// Send the request to the server, then flush
+		//wrappedClientOut.writeBytes("GET " + filePath + " HTTP/1.1" + "\r\nHost: " + fqdn + ":" + port + "\r\n");	
+		//wrappedClientOut.writeBytes("Host: " + fqdn + ":" + port + "\r\n");
+		//wrappedClientOut.writeBytes("");
+		//wrappedClientOut.flush();
 		
-		// Send the request to the server
-		wrappedClientOut.write(request.getBytes());		// Call DataOutputStream to send the request 
-		
-		
-		
-		
-		
+		PrintWriter printToServer = new PrintWriter(clientSocket.getOutputStream());
+		printToServer.println("GET " + filePath + " HTTP/1.1");
+		printToServer.println("Host: www.cis.gvsu.edu");
+		printToServer.println("");
+		printToServer.flush();
 		
 		
 		
+		// Read HTML response
+		String httpResponse = "";
+
+		do {
+			httpResponse = wrappedClientIn.readLine();
+			System.out.println(httpResponse);
+		} while (!httpResponse.isEmpty());
+			
+		do {
+			httpResponse = wrappedClientIn.readLine();
+			System.out.println(httpResponse);
+		} while (!httpResponse.isEmpty());
+
+		
+		// FLUSH HERE??
 		
 		
 		
 		
 		
 		
-		
-		
-		
-		
+			
 		
 		
 		
