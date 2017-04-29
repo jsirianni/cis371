@@ -24,12 +24,13 @@ public class GvsuClient {
 		/*
 		 * Global variables:
 		 * 
+		 * port:	 Default port 80 for HTML web servers
 		 * fqdn:     Fully qualified domain name of server to connect to
 		 * file:     File to download
 		 * path:     Directory path that holds the file
 		 */
-		String fqdn = "www.cis.gvsu.edu";
 		int port = 80;
+		String fqdn = "www.cis.gvsu.edu";
 		String file;
 		String path;
 		
