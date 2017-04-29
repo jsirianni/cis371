@@ -53,15 +53,20 @@ Column formatting
 .col_1 {
   width: 30%;
   padding: 1em;
+  display: inline-block;
 
   }
 
 .col_2 {
   width: 30%;
   padding: 1em;
-}
+  display: inline-block;
+
+ }
 
 .col_3 {
   width: 30%;
   padding: 1em;
+  display: inline-block;
+
 }
