@@ -48,30 +48,18 @@ func main() {
 Function called to handle each invidivual client
 Reads an incoming HTTP request until a blank line is read
 Prints the request to the terminal
-Closes once done
+Closes the connection once done
 */
 func handleClient(connection net.Conn) {
 
   // Close connection when done
   defer connection.Close()
 
-  // Loop forever once connected
-  for {
+  // Read the message into a buffer
+  request, _ := bufio.NewReader(connection).ReadString('\n')
 
-    // Set message equal to message from client
-    message, _ := bufio.NewReader(connection).ReadString('\n')
-
-    // Post the client message to the terminal
-    fmt.Print("Message from client: ", string(message))
-
-    // Return standard response REGAURDLESS of the request
-    fmt.Print(standardResponse)
-
-
-    // Get out of loop after printing the request
-    break
-  }
-
+  // Post the client message to the terminal
+  fmt.Print("Message from client: ", string(request))
 }
 
 
