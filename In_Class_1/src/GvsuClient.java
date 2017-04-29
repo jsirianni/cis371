@@ -34,8 +34,9 @@ public class GvsuClient {
 	 * Main method - Creates a client socket, connecting to www.cis.gvsu.edu
 	 * Calls the wrapItUp method to get a DataInputStream for file downloads
 	 */
-	@SuppressWarnings({ "unused", "resource", "deprecation" })
+	@SuppressWarnings({ "resource", "deprecation" })
 	public static void main(String[] args) throws IOException {
+	
 		
 		
 		// Global Variables
@@ -45,7 +46,11 @@ public class GvsuClient {
 
 		
 		
-		// Optionally pass an argument to select a file path
+		/*
+		 * Optionally pass an argument to select a file path
+		 * The path must start with a "/" and will be appended to 
+		 * the end of the URL "www.cis.gvsu.edu"
+		 */
 		if (args.length != 0) {
 			filePath = args[0];
 		}
@@ -58,23 +63,20 @@ public class GvsuClient {
 		
 		
 		// Create a wrapped DataOutputStream & DataInputStream 
-		DataOutputStream wrappedClientOut = wrapOutputStream(clientSocket.getOutputStream());
+		DataOutputStream wrappedClientOut = (wrapOutputStream(clientSocket.getOutputStream()));
+		DataInputStream wrappedClientIn = (wrapInputStream(clientSocket.getInputStream()));			
 		
-		DataInputStream wrappedClientIn = wrapInputStream(clientSocket.getInputStream());			
 		
+		
+		// Create GET 
+		String get = ("GET " + filePath + " HTTP/1.1\r\nHost: " + fqdn + "\r\n\r\n");
 
 		
-		// Send the request to the server, then flush
-		//wrappedClientOut.writeBytes("GET " + filePath + " HTTP/1.1" + "\r\nHost: " + fqdn + ":" + port + "\r\n");	
-		//wrappedClientOut.writeBytes("Host: " + fqdn + ":" + port + "\r\n");
-		//wrappedClientOut.writeBytes("");
-		//wrappedClientOut.flush();
 		
-		PrintWriter printToServer = new PrintWriter(clientSocket.getOutputStream());
-		printToServer.println("GET " + filePath + " HTTP/1.1");
-		printToServer.println("Host: www.cis.gvsu.edu");
-		printToServer.println("");
-		printToServer.flush();
+		// Send the request to the server, then flush
+		wrappedClientOut.writeBytes(get);
+		wrappedClientOut.flush();
+
 		
 		
 		
@@ -86,10 +88,7 @@ public class GvsuClient {
 			System.out.println(httpResponse);
 		} while (!httpResponse.isEmpty());
 			
-		do {
-			httpResponse = wrappedClientIn.readLine();
-			System.out.println(httpResponse);
-		} while (!httpResponse.isEmpty());
+		
 
 		
 		// FLUSH HERE??
