@@ -10,42 +10,27 @@ import java.net.*;
  *
  */
 public class GvsuClient {
-	
-	
-	
-	/*
-	 * Methods taken from SampleCode/IOStreams/WrappingInputStreams.java
-	 * Modified to do Input and Output streams
-	 */
-	public static DataInputStream wrapInputStream(InputStream in) throws IOException {
-	   BufferedInputStream x = new BufferedInputStream(in);
-	   DataInputStream y = new DataInputStream(x);
-	   return y;
-	}   
-	public static DataOutputStream wrapOutputStream(OutputStream in) throws IOException {
-		BufferedOutputStream x = new BufferedOutputStream(in);
-		DataOutputStream y = new DataOutputStream(x);
-		return y;
-	}	
-	
-	
-	
 	/*
 	 * Main method - Creates a client socket, connecting to www.cis.gvsu.edu
 	 * Calls the wrapItUp method to get a DataInputStream for file downloads
 	 */
 	@SuppressWarnings({ "deprecation" })
 	public static void main(String[] args) throws IOException {
-	
 		
 		
-		// Global Variables
+		/*
+		 * Global variables:
+		 * 
+		 * fqdn:     Fully qualified domain name of server to connect to
+		 * file:     File to download
+		 * path:     Directory path that holds the file
+		 * filePath: Combines path and file for use in the get request
+		 */
 		String fqdn = "www.cis.gvsu.edu";
 		String file = "stupid.html";
 		String path = "/~kurmasz/Humor/";
 		String filePath = path + file;
 		int port = 80;
-
 		
 		
 		/*
@@ -66,27 +51,24 @@ public class GvsuClient {
 		}
 		
 		
-		
 		/*
-		 * Create a socket and input/output data streams
+		 * Create a socket and connect to the fqdn
+		 * Create data input and output streams by calling the wrap classes
 		 */
-		// Client socket to connect to www.cis.gvsu.edu
 		Socket clientSocket = new Socket(fqdn, port);
 		DataOutputStream wrappedClientOut = (wrapOutputStream(clientSocket.getOutputStream()));
 		DataInputStream wrappedClientIn = (wrapInputStream(clientSocket.getInputStream()));			
 		
 		
-		
-		// Create GET 
+		/*
+		 * Craft an HTTP GET request
+		 * The requests includes everything that is required 
+		 * Send the get request over the connection to the fqdn
+		 */
 		String get = ("GET " + filePath + " HTTP/1.1\r\nHost: " + fqdn + "\r\n\r\n");
-		
-		
-		
-		// Send the request to the server, then flush
 		wrappedClientOut.writeBytes(get);
 		wrappedClientOut.flush();
 
-		
 		
 		/*
 		 * Read the HTML response using two loops
@@ -112,9 +94,34 @@ public class GvsuClient {
 			else {
 				fileOutput.write(httpResponse.getBytes());
 			}
-		} 
-				
-			
-				
-	} // end main
-} // end class
+		} 		
+	} 
+	
+	
+	/*
+	 * Create a data input stream
+	 * First wrap an input stream in a buffered input stream
+	 * Then wrap the buffered input stream in a data input stream
+	 * Return the data input stream
+	 */
+	public static DataInputStream wrapInputStream(InputStream in) throws IOException {
+	   BufferedInputStream x = new BufferedInputStream(in);
+	   DataInputStream y = new DataInputStream(x);
+	   return y;
+	}   
+	
+	
+	/*
+	 * Create a data output stream
+	 * First wrap an output stream in a buffered output stream
+	 * Then wrap the buffered output stream in a data output stream
+	 * Return the data output stream
+	 */
+	public static DataOutputStream wrapOutputStream(OutputStream in) throws IOException {
+		BufferedOutputStream x = new BufferedOutputStream(in);
+		DataOutputStream y = new DataOutputStream(x);
+		return y;
+	}	
+	
+	
+} 				// end class
