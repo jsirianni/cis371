@@ -6,10 +6,11 @@ body {
   max-width: 1280px;
  }
 
+
 /*
 Center Name
 */
-#NAME, h3 {
+h3 {
   text-align: center;
   background-color: #33cccc;
 }
@@ -39,11 +40,39 @@ Move ABOUT to the right, slightly
   max-width: 50%;
 }
 
+
+/*
+Global Table Styles
+*/
+table {
+  margin: 2px;
+}
+.classTable table {
+  margin: 1px;
+}
+table, th, td {
+  border: 1px solid black;
+}
+table p {
+  font-size: small;
+}
+
+
+ul {
+  color: blue;
+}
+
+.best p {
+  font-style: italic;
+}
+
+
 /*
 Set table size
 */
-.classes table {
-   border: 1px solid black;
+.classTable table, .classTable th, .classTable td {
+   border: 3px solid black;
+
  }
 
 
@@ -51,5 +80,22 @@ Set table size
 Shrink FEDOROV image to fit table
 */
 #FEDOROV img {
-  width: 30%;
+  width: 35%;
+  padding-right: 8em;
+}
+
+
+/*
+Hyperlink sudo classes
+*/
+a:link {
+  color: red;
+}
+a:visited {
+    color: green;
+}
+
+
+div .odd {
+  background-color: grey;
 }
