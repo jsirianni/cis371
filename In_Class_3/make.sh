@@ -5,6 +5,7 @@ cd $(dirname $0)
 go build WebServer.go
 rm build/WebServer
 mv WebServer build/
+clear
 
 # run server
 ./build/WebServer

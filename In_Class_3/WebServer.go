@@ -1,9 +1,7 @@
 package main
-
 import "net"
 import "fmt"
 import "bufio"
-
 /*
 Simple server application that listens for a connection
 on all network interfaces and port 7070
@@ -16,32 +14,18 @@ const standardResponse = "HTTP/1.1 200 OK\nContent-Type: text/plain\nContent-Len
 
 /*
 Main function creates a TCP socket on port 7070
-Handles multiple client connections at one time
+Handles multiple client connections at one time with a go routine
 Continues running after client disconnection
 */
 func main() {
-  // Start the server
   fmt.Println("Starting server...")
+  socket, _ := net.Listen("tcp", ":8080")
 
-  // Create a listener called 'socket', check for errors
-  socket, err := net.Listen("tcp", ":8080")
-  checkError(err)
-
-  // Accept multiple connections
   for {
-    // Accept a single connection
-    connection, err := socket.Accept()
-
-    // Iqnore errors, if present
-    if err != nil {
-      continue
-    }
-
-    // Call handleClient function to create a new thread
+    connection, _ := socket.Accept()
     go handleClient(connection)
   }
 }
-
 
 
 /*
@@ -51,17 +35,17 @@ Prints the request to the terminal
 Closes the connection once done
 */
 func handleClient(connection net.Conn) {
-
-  // Close connection when done
   defer connection.Close()
 
-  // Read the message into a buffer
+
+  // Read each line and print it, until blank line
   request, _ := bufio.NewReader(connection).ReadString('\n')
 
-  // Post the client message to the terminal
-  fmt.Print("Message from client: ", string(request))
-}
+  fmt.Print(string(request))
 
+  // Send reponse to client
+  fmt.Fprintf(connection, standardResponse)
+}
 
 
 // Function to handle errors
