@@ -17,3 +17,10 @@ Scale banner Image size
   padding-right: 1em;
 
 }
+
+/*
+Move ABOUT to the right, slightly
+*/
+#ABOUT {
+  padding-left: 1em;
+}
