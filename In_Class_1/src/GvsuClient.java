@@ -34,7 +34,7 @@ public class GvsuClient {
 	 * Main method - Creates a client socket, connecting to www.cis.gvsu.edu
 	 * Calls the wrapItUp method to get a DataInputStream for file downloads
 	 */
-	@SuppressWarnings({ "resource", "deprecation" })
+	@SuppressWarnings({ "deprecation" })
 	public static void main(String[] args) throws IOException {
 	
 		
@@ -56,13 +56,11 @@ public class GvsuClient {
 		}
 		
 		
-		
+		/*
+		 * Create a socket and input/output data streams
+		 */
 		// Client socket to connect to www.cis.gvsu.edu
 		Socket clientSocket = new Socket(fqdn, port);
-
-		
-		
-		// Create a wrapped DataOutputStream & DataInputStream 
 		DataOutputStream wrappedClientOut = (wrapOutputStream(clientSocket.getOutputStream()));
 		DataInputStream wrappedClientIn = (wrapInputStream(clientSocket.getInputStream()));			
 		
@@ -79,34 +77,38 @@ public class GvsuClient {
 
 		
 		
-		
-		// Print response headers to the terminal
+		// Read response headers, print to terminal
 		String httpResponse = "";
+		do {
+			httpResponse = wrappedClientIn.readLine();
+			System.out.println(httpResponse);
+		} while (!httpResponse.isEmpty());
 
-		//do {
-		//	httpResponse = wrappedClientIn.readLine();
-		//	System.out.println(httpResponse);
-		//} while (!httpResponse.isEmpty());
-			
+		
 
-			
+		// Write HTML content to a file
+		FileOutputStream fileOutput = new FileOutputStream("/tmp/stupid.html");
 		while (true) {
 			httpResponse = wrappedClientIn.readLine();
 			if (httpResponse == null) {
+				fileOutput.close();
 				break;
 			}
 			else {
-				System.out.println(httpResponse);
-
+				fileOutput.write(httpResponse.getBytes());
+				
+				
 			}
 		} 
+		
+		
 		
 		// FLUSH HERE??
 		
 		
 		
 		// Close Socket Here??
-		
+		clientSocket.close();
 		
 		
 			
@@ -135,6 +137,6 @@ public class GvsuClient {
 		
 		
 				
-	}
+	} // end main
 
-}
+} // end class
