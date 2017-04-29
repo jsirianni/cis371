@@ -60,6 +60,11 @@ public class GvsuClient {
 		file = "NoSuchFile.html";
 		path = "/~kurmasz/";
 		downloadFile(clientSocket, fqdn, path, file);
+		
+		clientSocket = new Socket(fqdn, port);
+		file = "buzz1.jpg";
+		path = "/~kurmasz/";
+		downloadFile(clientSocket, fqdn, path, file);
 	} 
 	
 	
