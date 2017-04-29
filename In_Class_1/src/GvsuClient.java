@@ -41,7 +41,9 @@ public class GvsuClient {
 		
 		// Global Variables
 		String fqdn = "www.cis.gvsu.edu";
-		String filePath = "/~kurmasz/Humor/stupid.html";
+		String file = "stupid.html";
+		String path = "/~kurmasz/Humor/";
+		String filePath = path + file;
 		int port = 80;
 
 		
@@ -50,10 +52,19 @@ public class GvsuClient {
 		 * Optionally pass an argument to select a file path
 		 * The path must start with a "/" and will be appended to 
 		 * the end of the URL "www.cis.gvsu.edu"
+		 * 
+		 * Example: /~jsirianni/index.html
+		 * 
+		 * 
+		 * Optionally pass a second argument to choose a download directory
+		 * The directory must be the full path and end with a "/"
+		 * 
+		 * Example: /tmp/
 		 */
 		if (args.length != 0) {
 			filePath = args[0];
 		}
+		
 		
 		
 		/*
@@ -68,7 +79,7 @@ public class GvsuClient {
 		
 		// Create GET 
 		String get = ("GET " + filePath + " HTTP/1.1\r\nHost: " + fqdn + "\r\n\r\n");
-
+		
 		
 		
 		// Send the request to the server, then flush
@@ -77,66 +88,33 @@ public class GvsuClient {
 
 		
 		
-		// Read response headers, print to terminal
+		/*
+		 * Read the HTML response using two loops
+		 * The first loop prints the HTTP headers to the console 
+		 * The second loop saves the HTTP content to a file
+		 * 
+		 */
 		String httpResponse = "";
+		FileOutputStream fileOutput = new FileOutputStream("/tmp/" + file);
+
 		do {
 			httpResponse = wrappedClientIn.readLine();
 			System.out.println(httpResponse);
 		} while (!httpResponse.isEmpty());
 
-		
-
-		// Write HTML content to a file
-		FileOutputStream fileOutput = new FileOutputStream("/tmp/stupid.html");
 		while (true) {
 			httpResponse = wrappedClientIn.readLine();
 			if (httpResponse == null) {
 				fileOutput.close();
-				break;
+				clientSocket.close();
+				return;
 			}
 			else {
 				fileOutput.write(httpResponse.getBytes());
-				
-				
 			}
 		} 
-		
-		
-		
-		// FLUSH HERE??
-		
-		
-		
-		// Close Socket Here??
-		clientSocket.close();
-		
-		
+				
 			
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 				
 	} // end main
-
 } // end class
