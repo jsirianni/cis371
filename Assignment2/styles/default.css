@@ -1,0 +1,19 @@
+
+/*
+Center Name
+*/
+#NAME, h3 {
+  text-align: center;
+  background-color: #33cccc;
+}
+
+
+/*
+Scale banner Image size
+*/
+#BANNER, img {
+  max-width: 60%;
+  float: right;
+  padding-right: 1em;
+
+}
