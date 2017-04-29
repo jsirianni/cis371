@@ -8,8 +8,10 @@ on all network interfaces and port 7070
 */
 
 
+
 // Standard TCP response, will likely be removed later
 const standardResponse = "HTTP/1.1 200 OK\nContent-Type: text/plain\nContent-Length: 70\nConnection: close\n"
+
 
 
 /*
@@ -26,6 +28,7 @@ func main() {
     go handleClient(connection)
   }
 }
+
 
 
 /*
@@ -46,6 +49,7 @@ func handleClient(connection net.Conn) {
   // Send reponse to client
   fmt.Fprintf(connection, standardResponse)
 }
+
 
 
 // Function to handle errors
