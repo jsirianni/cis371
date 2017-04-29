@@ -7,7 +7,7 @@ CIS 371
 /*
 Format text colors
 */
-p {
+p, td {
   color: blue;
 }
 
@@ -35,7 +35,7 @@ h3 {
 /*
 Table border
 */
-table {
+table, th, td {
   border: 3px solid black;
 }
 
@@ -47,26 +47,43 @@ li {
   font-family: fantasy;
 }
 
+
+/*
+Set max page width, prevent weird issues for 2560x1080 display
+*/
+body {
+  max-width: 1280px;
+ }
+
 /*
 Column formatting
 */
 .col_1 {
   width: 30%;
-  padding: 1em;
+  padding: 0.5em;
   display: inline-block;
-
+  float: left;
+  padding-top: 1em;
   }
 
 .col_2 {
   width: 30%;
   padding: 1em;
   display: inline-block;
-
- }
+  float: left;
+  }
 
 .col_3 {
-  width: 30%;
   padding: 1em;
+  width: 30%;
   display: inline-block;
+  float: left;
+ }
 
+
+/*
+Format column header background color
+*/
+#courses h3 {
+  background-color: green;
 }
