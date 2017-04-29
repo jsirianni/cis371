@@ -88,10 +88,10 @@ Shrink FEDOROV image to fit table
 /*
 Hyperlink sudo classes
 */
-a:link {
+.links a:link {
   color: red;
 }
-a:visited {
+.links a:visited {
     color: green;
 }
 
