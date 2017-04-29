@@ -1,0 +1,64 @@
+/*
+Joe Sirianni
+CIS 371
+ */
+
+
+/*
+Format text colors
+*/
+p {
+  color: blue;
+}
+
+.imp {
+  color: red;
+}
+
+
+/*
+Default h3 background color
+*/
+h3 {
+  background-color: grey;
+}
+
+
+/*
+Default, center all h3 tags
+*/
+h3 {
+  text-align: center;
+}
+
+
+/*
+Table border
+*/
+table {
+  border: 3px solid black;
+}
+
+
+/*
+Font for CS and IS lists
+*/
+li {
+  font-family: fantasy;
+}
+
+/*
+Column formatting
+/
+.col_1 {
+  float: left;
+}
+
+.col_2 {
+  float: none;
+}
+
+.col_3 {
+  float: right;
+}
+*/
