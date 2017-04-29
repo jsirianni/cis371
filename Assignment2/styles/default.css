@@ -1,5 +1,12 @@
 
 /*
+Set max width because I am not going to bother making this responsive
+*/
+body {
+  max-width: 1280px;
+ }
+
+/*
 Center Name
 */
 #NAME, h3 {
@@ -19,8 +26,30 @@ Scale banner Image size
 }
 
 /*
+*/
+#WRAPPER {
+  padding-bottom: 3em;
+}
+
+/*
 Move ABOUT to the right, slightly
 */
 #ABOUT {
   padding-left: 1em;
+  max-width: 50%;
+}
+
+/*
+Set table size
+*/
+.classes table {
+   border: 1px solid black;
+ }
+
+
+/*
+Shrink FEDOROV image to fit table
+*/
+#FEDOROV img {
+  width: 30%;
 }
