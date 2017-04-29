@@ -49,16 +49,19 @@ li {
 
 /*
 Column formatting
-/
+*/
 .col_1 {
-  float: left;
-}
+  width: 30%;
+  padding: 1em;
+
+  }
 
 .col_2 {
-  float: none;
+  width: 30%;
+  padding: 1em;
 }
 
 .col_3 {
-  float: right;
+  width: 30%;
+  padding: 1em;
 }
-*/
