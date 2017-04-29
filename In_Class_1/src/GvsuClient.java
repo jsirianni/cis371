@@ -10,11 +10,14 @@ import java.net.*;
  *
  */
 public class GvsuClient {
-	/*
-	 * Main method - Creates a client socket, connecting to www.cis.gvsu.edu
-	 * Calls the wrapItUp method to get a DataInputStream for file downloads
+
+	/**
+	 * Main method does the following:
+	 * Sets global variables; fqdn, port, file, path
+	 * Creates a client socket
+	 * 
+	 * Calls downloadFile() method three times, downloading three different files
 	 */
-	@SuppressWarnings({ "deprecation" })
 	public static void main(String[] args) throws IOException {
 		
 		
@@ -24,40 +27,62 @@ public class GvsuClient {
 		 * fqdn:     Fully qualified domain name of server to connect to
 		 * file:     File to download
 		 * path:     Directory path that holds the file
-		 * filePath: Combines path and file for use in the get request
 		 */
 		String fqdn = "www.cis.gvsu.edu";
-		String file = "stupid.html";
-		String path = "/~kurmasz/Humor/";
-		String filePath = path + file;
 		int port = 80;
-		
-		
-		/*
-		 * Optionally pass an argument to select a file path
-		 * The path must start with a "/" and will be appended to 
-		 * the end of the URL "www.cis.gvsu.edu"
-		 * 
-		 * Example: /~jsirianni/index.html
-		 * 
-		 * 
-		 * Optionally pass a second argument to choose a download directory
-		 * The directory must be the full path and end with a "/"
-		 * 
-		 * Example: /tmp/
-		 */
-		if (args.length != 0) {
-			filePath = args[0];
-		}
+		String file;
+		String path;
 		
 		
 		/*
 		 * Create a socket and connect to the fqdn
-		 * Create data input and output streams by calling the wrap classes
+		 *
 		 */
-		Socket clientSocket = new Socket(fqdn, port);
-		DataOutputStream wrappedClientOut = (wrapOutputStream(clientSocket.getOutputStream()));
-		DataInputStream wrappedClientIn = (wrapInputStream(clientSocket.getInputStream()));			
+		Socket clientSocket;
+		
+		
+		/*
+		 * Call the DownloadFile method to download a file
+		 * Pass a socket, file path, fqdn, file name
+		 */
+		clientSocket = new Socket(fqdn, port);
+		file = "stupid.html";
+		path = "/~kurmasz/Humor/";
+		downloadFile(clientSocket, fqdn, path, file);
+		
+		clientSocket = new Socket(fqdn, port);
+		file = "HowTo.txt";
+		path = "/~kurmasz/Distiller/";
+		downloadFile(clientSocket, fqdn, path, file);
+
+		clientSocket = new Socket(fqdn, port);
+		file = "NoSuchFile.html";
+		path = "/~kurmasz/";
+		downloadFile(clientSocket, fqdn, path, file);
+	} 
+	
+	
+	/**
+	 * 
+	 * @param s  : a client socket connection
+	 * @param fq : a fully qualified domain (IE. www.cis.gvsu.edu)
+	 * @param pa : a file path (IE. /mnt/)
+	 * @param fi : a file name (IE. stupid.html)
+	 * @throws IOException
+	 */
+	public static void downloadFile(Socket s, String fq, String pa, String fi) throws IOException {
+		
+		/*
+		 * Build a full filePath from path and file
+		 */
+		String filePath = pa + fi;
+
+		
+		/*
+		 * Create input and output data streams with the socket passed during method invocation 
+		 */
+		DataOutputStream wrappedClientOut = (wrapOutputStream(s.getOutputStream()));
+		DataInputStream wrappedClientIn = (wrapInputStream(s.getInputStream()));			
 		
 		
 		/*
@@ -65,7 +90,7 @@ public class GvsuClient {
 		 * The requests includes everything that is required 
 		 * Send the get request over the connection to the fqdn
 		 */
-		String get = ("GET " + filePath + " HTTP/1.1\r\nHost: " + fqdn + "\r\n\r\n");
+		String get = ("GET " + filePath + " HTTP/1.1\r\nHost: " + fq + "\r\n\r\n");
 		wrappedClientOut.writeBytes(get);
 		wrappedClientOut.flush();
 
@@ -77,7 +102,7 @@ public class GvsuClient {
 		 * 
 		 */
 		String httpResponse = "";
-		FileOutputStream fileOutput = new FileOutputStream("/tmp/" + file);
+		FileOutputStream fileOutput = new FileOutputStream("/tmp/" + fi);
 
 		do {
 			httpResponse = wrappedClientIn.readLine();
@@ -88,14 +113,14 @@ public class GvsuClient {
 			httpResponse = wrappedClientIn.readLine();
 			if (httpResponse == null) {
 				fileOutput.close();
-				clientSocket.close();
+				s.close();
 				return;
 			}
 			else {
 				fileOutput.write(httpResponse.getBytes());
 			}
 		} 		
-	} 
+	}
 	
 	
 	/*
