@@ -80,21 +80,32 @@ public class GvsuClient {
 		
 		
 		
-		// Read HTML response
+		// Print response headers to the terminal
 		String httpResponse = "";
 
-		do {
-			httpResponse = wrappedClientIn.readLine();
-			System.out.println(httpResponse);
-		} while (!httpResponse.isEmpty());
+		//do {
+		//	httpResponse = wrappedClientIn.readLine();
+		//	System.out.println(httpResponse);
+		//} while (!httpResponse.isEmpty());
 			
-		
 
+			
+		while (true) {
+			httpResponse = wrappedClientIn.readLine();
+			if (httpResponse == null) {
+				break;
+			}
+			else {
+				System.out.println(httpResponse);
+
+			}
+		} 
 		
 		// FLUSH HERE??
 		
 		
 		
+		// Close Socket Here??
 		
 		
 		
