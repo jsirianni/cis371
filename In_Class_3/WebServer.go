@@ -42,20 +42,21 @@ func handleClient(c net.Conn) {
   defer c.Close()
     r := bufio.NewReader(c)
     for {
-        req, err := r.ReadString('\n')
-        if err != nil && err != io.EOF {
-            fmt.Println("Panicking")
-            panic(err)
-        }
-        fmt.Print(req)
+      req, err := r.ReadString('\n')
+      if err != nil && err != io.EOF {
+        panic(err)
+      }
+      fmt.Print(req)
 
-        // break the loop if the err is eof
-        if len(req) == 0 {
-          fmt.Println("Breaking")
-          break
-        }
+      if len(req) <= 2 {
+        fmt.Println(len(req))
+        break
+      }
 
-}
+    }
+
+
+
   // Send reponse to client
   fmt.Fprintf(c, standardResponse)
 }
