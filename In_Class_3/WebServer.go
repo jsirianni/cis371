@@ -74,6 +74,6 @@ Calling this function allows us to handle the error without panicing
 */
 func checkError(err error) {
   if err != nil {
-    fmt.Printf("ERROR: " + err.Error() + "\n")
+    fmt.Printf("ERROR: " + err.Error() + "\n\n")
   }
 }
