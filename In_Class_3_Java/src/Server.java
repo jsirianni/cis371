@@ -7,7 +7,7 @@ import java.net.*;
  * 
  * @author jsirianni
  */
-public class Server {
+public class SimpleServer {
 
 	/**
 	 * Main method does the following:
@@ -25,13 +25,11 @@ public class Server {
 		
 		// Create the socket and accept any incoming connection
 		ServerSocket s = new ServerSocket(port);
-		System.out.println("Java is listening for connections");
-		
+ 		
 		
 		// Accept any incoming connection
 		Socket conn = s.accept();
-		System.out.println("Java has accepted a connection");
-		
+ 		
 		
 		// Create buffered reader and print stream to read and write to the client
 		BufferedReader fromClient = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -47,12 +45,14 @@ public class Server {
 		
 		
 		// Send generic response header to client
-		String resp = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: 70\r\nConnection: close\r\n";
+		String resp = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: 70\r\nConnection: close\r\n\";
 		toClient.println(resp);
 		
+		// Send html body
+		Stirng body = "This is not the real content because this server is not yet complete.\r\n";
 		
 		// Close the connection
-		conn.close();
+		//conn.close();
 		
 		
 	}	// End Main

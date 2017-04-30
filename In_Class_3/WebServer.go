@@ -2,6 +2,7 @@ package main
 import "net"
 import "fmt"
 import "bufio"
+import "io"
 /*
 Simple server application that listens for a connection
 on all network interfaces and port 7070
@@ -37,17 +38,26 @@ Reads an incoming HTTP request until a blank line is read
 Prints the request to the terminal
 Closes the connection once done
 */
-func handleClient(connection net.Conn) {
-  defer connection.Close()
+func handleClient(c net.Conn) {
+  defer c.Close()
+    r := bufio.NewReader(c)
+    for {
+        req, err := r.ReadString('\n')
+        if err != nil && err != io.EOF {
+            fmt.Println("Panicking")
+            panic(err)
+        }
+        fmt.Print(req)
 
+        // break the loop if the err is eof
+        if len(req) == 0 {
+          fmt.Println("Breaking")
+          break
+        }
 
-  // Read each line and print it, until blank line
-  request, _ := bufio.NewReader(connection).ReadString('\n')
-
-  fmt.Print(string(request))
-
+}
   // Send reponse to client
-  fmt.Fprintf(connection, standardResponse)
+  fmt.Fprintf(c, standardResponse)
 }
 
 
