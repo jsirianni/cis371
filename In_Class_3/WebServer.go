@@ -11,7 +11,7 @@ on all network interfaces and port 7070
 
 
 // Standard TCP response, will likely be removed later
-const standardResponse = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: 70\r\nConnection: close\r\n"
+const standardResponse = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: 70\r\nConnection: close\r\n\r\nThis is not the real content because this server is not yet complete."
 
 
 
