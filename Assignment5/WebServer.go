@@ -1,17 +1,18 @@
 package main
-import "net"
-import "fmt"
-import "bufio"
-import "io"
+
+import (
+    "net"
+    "fmt"
+    "bufio"
+    "io"
+    //"io/ioutil"
+    //"os"
+    //"runtime"
+)
 /*
 Simple server application that listens for a connection
 on all network interfaces and port 8080
 */
-
-
-
-// Standard TCP response, will likely be removed later
-const standardResponse = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: 70\r\nConnection: close\r\n\r\nThis is not the real content because this server is not yet complete."
 
 
 
@@ -63,9 +64,21 @@ func handleClient(c net.Conn) {
     }
   }
 
-  // Send reponse to client
-  fmt.Fprintf(c, standardResponse)
-}
+  // Send HTML reponse to client
+  var headers = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: 70\r\nConnection: keep-alive\r\n\r\n"
+
+  //pwd, _ := os.Getwd()
+
+  //body, err := ioutil.ReadFile(pwd + "/test.txt")
+  //if err != nil {
+  //  checkError(err)
+  //}
+
+  fmt.Println(headers + "This is a test\nThis is a test\nThis is a test\nThis is a test\nThis is a test\n")
+  fmt.Fprintf(c, headers + "This is a test\nThis is a test\nThis is a test\nThis is a test\nThis is a test\n" )
+} //Emd handleClient()
+
+
 
 
 /*

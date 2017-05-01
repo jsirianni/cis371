@@ -8,4 +8,4 @@ mv WebServer build/
 clear
 
 # run server
-./build/WebServer
+#./build/WebServer
