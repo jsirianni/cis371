@@ -6,6 +6,6 @@ go build WebServer.go
 rm build/WebServer
 mv WebServer build/
 clear
-
+ls
 # run server
 #./build/WebServer

@@ -68,13 +68,13 @@ func handleClient(c net.Conn) {
   }
 
   fmt.Println(headers + string(body))
-  fmt.Fprintf(c, headers + string(body))
+  fmt.Fprintf(c, "%s", headers + string(body))
 } //Emd handleClient()
 
 
 /*
 This function is called when an error is detected. Pass an error as a parameter.
-The error is printed to the terminal without halting the server. 
+The error is printed to the terminal without halting the server.
 */
 func checkError(err error) {
   if err != nil {
