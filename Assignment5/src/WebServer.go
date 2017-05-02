@@ -14,7 +14,7 @@ connect. Each connection is handed to a seprate thread by calling a go routine.
 This allows the main to accept many connections at once.
 */
 func main() {
-  fmt.Println("Starting server...")
+  fmt.Print("Starting server...\r\n\r\n")
   socket, _ := net.Listen("tcp", ":8080")
 
   for {
@@ -40,14 +40,11 @@ func handleClient(c net.Conn) {
 
   // Read each header line one by one, and print to terminal
   for {
-    // Read a single header line
+    // Read a single header line, check for errors
     req, err := r.ReadString('\n')
-
-    // Handle errors, keep service running!
     if err != nil && err != io.EOF {
       checkError(err)
     }
-
     // If no errors, print the header to the terminal
     fmt.Print(req)
 
@@ -58,7 +55,15 @@ func handleClient(c net.Conn) {
   }
 
   // Build headers
-  headers := []byte("HTTP/1.1 200 OK\r\nContent-Type: text/html\r\nContent-Length: 1000\r\nConnection: keep-alive\r\n\r\n")
+  var h = ""
+  h += "HTTP/1.1 200 OK\r\n"
+  h += "Content-Type: text/html\r\n"
+  h += "Content-Length: 1000\r\n"
+  h += "Connection: keep-alive\r\n\r\n"
+
+  headers := []byte(h)
+  //headers := []byte("HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n" +
+  //  "Content-Length: 1000\r\nConnection: keep-alive\r\n\r\n")
 
   // Build body
   pwd, _ := os.Getwd()
@@ -66,9 +71,6 @@ func handleClient(c net.Conn) {
   if err != nil {
     checkError(err)
   }
-
-  // Print headers + body for debuging purposes. Removign later.
-  fmt.Println(string(headers) + string(body))
 
   // Send HTML response to client (headers followed by body)
   c.Write(headers)
