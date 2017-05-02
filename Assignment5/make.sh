@@ -1,11 +1,10 @@
 #!/bin/bash
-cd $(dirname $0)
+#cd $(dirname $0)
 
 # Build the server, move to deployment dir
-go build WebServer.go
-rm build/WebServer
-mv WebServer build/
-clear
-ls
+sh ./src/build.sh
+rm ./bin/WebServer
+mv ./src/WebServer bin/
+
 # run server
 #./build/WebServer

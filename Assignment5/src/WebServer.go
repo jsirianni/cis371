@@ -57,18 +57,23 @@ func handleClient(c net.Conn) {
     }
   }
 
-  // Send HTML reponse to client
-  var headers = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: 70\r\nConnection: keep-alive\r\n\r\n"
+  // Build headers
+  headers := []byte("HTTP/1.1 200 OK\r\nContent-Type: text/html\r\nContent-Length: 1000\r\nConnection: keep-alive\r\n\r\n")
 
+  // Build body
   pwd, _ := os.Getwd()
-
-  body, err := ioutil.ReadFile(pwd + "/test.txt")
+  body, err := ioutil.ReadFile(pwd + "/example.html")
   if err != nil {
     checkError(err)
   }
 
-  fmt.Println(headers + string(body))
-  fmt.Fprintf(c, "%s", headers + string(body))
+  // Print headers + body for debuging purposes. Removign later.
+  fmt.Println(string(headers) + string(body))
+
+  // Send HTML response to client (headers followed by body)
+  c.Write(headers)
+  c.Write(body)
+
 } //Emd handleClient()
 
 
