@@ -7,6 +7,7 @@ import (
     "io"
     "io/ioutil"
     "os"
+    "strings"
 )
 /*
 Main function creates a TCP socket on port 7070 and then waits for a client to
@@ -60,8 +61,17 @@ func handleClient(c net.Conn) {
   // Print full request to terminal for debugging
   fmt.Println(req)
 
-  // Parse the req for GET request
 
+  // Parse the req for GET request
+  //var reqFile = ""
+  if strings.Contains(req, "GET /") {
+    // Asign requested file to reqFIle
+    s := strings.Fields(req)
+    fmt.Print(s[1])
+
+
+
+  }
 
   // Check for file
     // If file exist
