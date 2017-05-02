@@ -36,32 +36,53 @@ being sent to the client. The connection is then closed.
 */
 func handleClient(c net.Conn) {
   defer c.Close()
-  r := bufio.NewReader(c)
 
-  // Read each header line one by one, and print to terminal
+  // Create a new readr and create request variable
+  r := bufio.NewReader(c)
+  var req = ""
+
+  // Read each header line one by one, adding to the request if valid
   for {
     // Read a single header line, check for errors
-    req, err := r.ReadString('\n')
+    line, err := r.ReadString('\n')
     if err != nil && err != io.EOF {
       checkError(err)
     }
-    // If no errors, print the header to the terminal
-    fmt.Print(req)
 
-    // Break loop after reading all headers
-    if len(req) <= 2 {
-      break
+    // Add header line to request if it is not a newline (end of request)
+    if len(line) > 2 {
+      req += line
+    } else {
+        break
     }
   }
 
-  // Build headers
+  // Print full request to terminal for debugging
+  fmt.Println(req)
+
+  // Parse the req for GET request
+
+
+  // Check for file
+    // If file exist
+      // Send file
+    // else
+      // Send 404 statement
+
+
+
+
+
+////////////// BEGIN RESPONSE //////////////
+
+  // Build response headers
   var h = ""
   h += "HTTP/1.1 200 OK\r\n"
   h += "Content-Type: text/html\r\n"
   h += "Content-Length: 1000\r\n"
   h += "Connection: keep-alive\r\n\r\n"
 
-  headers := []byte(h)
+  response := []byte(h)
   //headers := []byte("HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n" +
   //  "Content-Length: 1000\r\nConnection: keep-alive\r\n\r\n")
 
@@ -73,7 +94,7 @@ func handleClient(c net.Conn) {
   }
 
   // Send HTML response to client (headers followed by body)
-  c.Write(headers)
+  c.Write(response)
   c.Write(body)
 
 } //Emd handleClient()
