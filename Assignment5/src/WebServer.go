@@ -39,6 +39,7 @@ selected. The response + body (file) is then pinted to the terminal as well as
 being sent to the client. The connection is then closed.
 */
 func handleClient(c net.Conn) {
+  // Close the conection when function finishes
   defer c.Close()
 
   // Get current path
@@ -46,7 +47,8 @@ func handleClient(c net.Conn) {
 
   // Create a new readr and create request variable
   r := bufio.NewReader(c)
-  var req = ""
+  var request = ""
+
 
   // Read each header line one by one, adding to the request if valid
   for {
@@ -55,70 +57,60 @@ func handleClient(c net.Conn) {
     if err != nil && err != io.EOF {
       checkError(err)
     }
-
     // Add header line to request if it is not a newline (end of request)
     if len(line) > 2 {
-      req += line
+      request += line
     } else {
         break
     }
   }
 
-  // Print full request to terminal for debugging
-  fmt.Println(req)
 
-
-  // Set requested file to index
-//  var reqFile = "/"
-
-  // Check for GET request
-  if strings.Contains(req, "GET /") {
-
-    // Create string array of each word in the request
-    s := strings.Fields(req)
-
-    // Set required file
+  // Check if GET request
+  if strings.Contains(request, "GET /") {
+    // Create string array. The requested file will be = index[1]
+    s := strings.Fields(request)
+    // Create a string to find the required file
     path += ("/" + strings.ToLower(strings.Trim((s[1]), "/")))
-
-
-    // Print file name to terminal DEBUG LINE
-    fmt.Println("Path to file: " + path)
+  } else {
+    // If not a get request, close the connection
+    return
   }
 
-  // Check for file  if _, err := os.State
-      // Send file
-    // else
-      // Send 404 statement
 
-
-
-
-
-////////////// BEGIN RESPONSE //////////////
-
-  // Build response headers
+  // If valid GET request, create response headers
   var h = ""
-  h += "HTTP/1.1 200 OK\r\n"
-  h += "Content-Type: text/html\r\n"
-  h += "Content-Length: 1000\r\n"
-  h += "Connection: keep-alive\r\n\r\n"
 
-  response := []byte(h)
-  //headers := []byte("HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n" +
-  //  "Content-Length: 1000\r\nConnection: keep-alive\r\n\r\n")
 
-  // Build body
-
-  body, err := ioutil.ReadFile(path)
-  if err != nil {
+  // Check if path is valid,
+  // If file does not exist, send 404 not exist
+  if _, err := ioutil.ReadFile(path); os.IsNotExist(err) {
+    // Print error to the console
     checkError(err)
+    // Return a 404 headers + body
+    h += "HTTP/1.1 404 Not Found\r\n"
+    h += "Content-Type: text/plain\r\n"
+    h += "Content-Length: 200\r\n"
+    h += "Connection: close\r\n\r\n"
+    h += "This page does not exist\r\n"
+    badHeaders := []byte(h)
+    c.Write(badHeaders)
+    return
+  // File exist, create 200 OK response
+  } else {
+    h += "HTTP/1.1 200 OK\r\n"
+    h += "Content-Type: text/html\r\n"
+    h += "Content-Length: 1000\r\n"
+    h += "Connection: keep-alive\r\n\r\n"
+    goodHeaders := []byte(h)
+    responseBody, _ := ioutil.ReadFile(path)
+
+
+    // Send HTML response to client (headers followed by body)
+    c.Write(goodHeaders)
+    c.Write(responseBody)
   }
-
-  // Send HTML response to client (headers followed by body)
-  c.Write(response)
-  c.Write(body)
-
-} //Emd handleClient()
+} // End handle client
 
 
 /*
