@@ -57,6 +57,7 @@ func handleClient(c net.Conn) {
     if err != nil && err != io.EOF {
       checkError(err)
     }
+
     // Add header line to request if it is not a newline (end of request)
     if len(line) > 2 {
       request += line
@@ -70,6 +71,7 @@ func handleClient(c net.Conn) {
   if strings.Contains(request, "GET /") {
     // Create string array. The requested file will be = index[1]
     s := strings.Fields(request)
+
     // Create a string to find the required file
     if s[1] == "/" {
       s[1] = "index.html"
@@ -78,6 +80,7 @@ func handleClient(c net.Conn) {
 
     // Notify the terminal of the requested file
     fmt.Println("Requested file: " + path)
+
   } else {
     // If not a get request, close the connection
     fmt.Println("Bad request, killing connection")
@@ -94,6 +97,7 @@ func handleClient(c net.Conn) {
   if _, err := ioutil.ReadFile(path); os.IsNotExist(err) {
     // Print error to the console
     checkError(err)
+
     // Return a 404 headers + body
     h += "HTTP/1.1 404 Not Found\r\n"
     h += "Content-Type: text/plain\r\n"
@@ -105,7 +109,10 @@ func handleClient(c net.Conn) {
 
   // File exist, create 200 OK response
   } else {
+
     h += "HTTP/1.1 200 OK\r\n"
+
+    // Determine content type
     if strings.Contains(request, ".html") {
       h += "Content-Type: text/html\r\n"
     } else if strings.Contains(request, ".css") {
@@ -113,11 +120,12 @@ func handleClient(c net.Conn) {
     } else {
       h += "Content-Type: text/plain\r\n"
     }
+
     h += "Content-Length: 200000\r\n"
     h += "Connection: keep-alive\r\n\r\n"
+
     goodHeaders := []byte(h)
     responseBody, _ := ioutil.ReadFile(path)
-
 
     // Send HTML response to client (headers followed by body)
     c.Write(goodHeaders)
