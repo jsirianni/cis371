@@ -8,6 +8,7 @@ import (
     "io/ioutil"
     "os"
     "strings"
+    "strconv"
 )
 /*
 Main function creates a TCP socket on port 7070 and then waits for a client to
@@ -64,7 +65,11 @@ func handleClient(c net.Conn) {
     } else {
         break
     }
-  }
+  } // End For Loop
+
+
+  // Print Client request to the terminal before validating it (Debug)
+  fmt.Println(request)
 
 
   // Check if GET request
@@ -78,12 +83,12 @@ func handleClient(c net.Conn) {
     }
     path += ("/" + strings.ToLower(strings.Trim((s[1]), "/")))
 
-    // Notify the terminal of the requested file
-    fmt.Println("Requested file: " + path)
+    // Notify the terminal of the requested file (Debug)
+    fmt.Println("Requested file: " + path + "\n")
 
   } else {
-    // If not a get request, close the connection
-    fmt.Println("Bad request, killing connection")
+    // If not a get request, close the connection and print to console (Debug)
+    fmt.Println("Bad request, killing connection" + "\n")
     return
   }
 
@@ -107,30 +112,43 @@ func handleClient(c net.Conn) {
     badHeaders := []byte(h)
     c.Write(badHeaders)
 
-  // File exist, create 200 OK response
+
+  // If the file exist, respond
   } else {
 
+    // Read the requested file, determine the length
+    responseBody, _ := ioutil.ReadFile(path)
+    respLen := strconv.Itoa(len(responseBody))
+
+    // Begin building response header
     h += "HTTP/1.1 200 OK\r\n"
 
     // Determine content type
-    if strings.Contains(request, ".html") {
-      h += "Content-Type: text/html\r\n"
-    } else if strings.Contains(request, ".css") {
+    if strings.Contains(request, ".css") {
       h += "Content-Type: text/css\r\n"
+    } else if strings.Contains(request, ".html") {
+      h += "Content-Type: text/html\r\n"
     } else {
       h += "Content-Type: text/plain\r\n"
     }
 
-    h += "Content-Length: 200000\r\n"
-    h += "Connection: keep-alive\r\n\r\n"
+    // Set content length
+    h += "Content-Length: " + respLen + "\r\n"
 
+    // Force connection close
+    h += "Connection: close\r\n\r\n"
+
+    // Assign response headers to a byte array
     goodHeaders := []byte(h)
-    responseBody, _ := ioutil.ReadFile(path)
 
+
+    // Print response headers to the console (Debug)
     // Send HTML response to client (headers followed by body)
+    fmt.Println(h)
     c.Write(goodHeaders)
     c.Write(responseBody)
   }
+
 } // End handle client
 
 
