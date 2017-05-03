@@ -1,0 +1,7 @@
+Convert int to string does not work with string(int)
+http://stackoverflow.com/questions/10105935/how-to-convert-an-int-value-to-string-in-go
+
+Help reading the request, figured it out with a little help
+http://stackoverflow.com/questions/43700838/server-socket-programming-read-http-header
+
+
