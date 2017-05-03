@@ -71,9 +71,17 @@ func handleClient(c net.Conn) {
     // Create string array. The requested file will be = index[1]
     s := strings.Fields(request)
     // Create a string to find the required file
+    if s[1] == "/" {
+      s[1] = "index.html"
+    }
+    fmt.Println("S1 before trim " + s[1] )
     path += ("/" + strings.ToLower(strings.Trim((s[1]), "/")))
+
+    // Notify the terminal of the requested file
+    fmt.Println("Requested file: " + path)
   } else {
     // If not a get request, close the connection
+    fmt.Println("Bad request, killing connection")
     return
   }
 
@@ -95,7 +103,7 @@ func handleClient(c net.Conn) {
     h += "This page does not exist\r\n"
     badHeaders := []byte(h)
     c.Write(badHeaders)
-    return
+
   // File exist, create 200 OK response
   } else {
     h += "HTTP/1.1 200 OK\r\n"
