@@ -118,17 +118,15 @@ func handleClient(c net.Conn) {
       h += "Content-Type: text/css\r\n"
     } else if strings.Contains(reqCont, "html") {
       h += "Content-Type: text/html\r\n"
-    } else if strings.Contains(reqCont, ".jpg") {
-      h += "Content-Type: text/plain\r\n"
+    } else if strings.Contains(reqCont, ".jpg") || strings.Contains(reqCont, ".png") {
+      h += "Content-Type: image/*\r\n"
     } else {
       h += "Content-Type: text/plain\r\n"
     }
 
-    // Set content length
+    // Set content length and connection type
     h += "Content-Length: " + respLen + "\r\n"
-
-    // Force connection close
-    h += "Connection: close\r\n\r\n"
+    h += "Connection: keep-alive\r\n\r\n"
 
 
     // Assign response headers to a byte array
