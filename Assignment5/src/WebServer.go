@@ -30,13 +30,13 @@ func main() {
 
 /*
 This function is called as a GO routine from main, allowing multiple connections
-to be established and handled at one time. Each connection is passed to a
-bufio reader. The client request is then read line by line (and printed to the
-terminal) until the line is less than 2 charaters.The loop then breaks.
+to be established and handled at one time. The client request is then read line
+by line until the line is less than 2 charaters.The loop then breaks.
 
-The response begins with a response header being crafted along with a file being
-selected. The response + body (file) is then pinted to the terminal as well as
-being sent to the client. The connection is then closed.
+Checks are performed to validate the header and requested page
+
+If the request is valid and the file exist, a 200 OK respons is sent along
+with the requested page.
 */
 func handleClient(c net.Conn) {
   // Close the conection when function finishes
