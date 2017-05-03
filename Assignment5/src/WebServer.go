@@ -74,7 +74,6 @@ func handleClient(c net.Conn) {
     if s[1] == "/" {
       s[1] = "index.html"
     }
-    fmt.Println("S1 before trim " + s[1] )
     path += ("/" + strings.ToLower(strings.Trim((s[1]), "/")))
 
     // Notify the terminal of the requested file
@@ -107,8 +106,14 @@ func handleClient(c net.Conn) {
   // File exist, create 200 OK response
   } else {
     h += "HTTP/1.1 200 OK\r\n"
-    h += "Content-Type: text/html\r\n"
-    h += "Content-Length: 1000\r\n"
+    if strings.Contains(request, ".html") {
+      h += "Content-Type: text/html\r\n"
+    } else if strings.Contains(request, ".css") {
+      h += "Content-Type: text/css\r\n"
+    } else {
+      h += "Content-Type: text/plain\r\n"
+    }
+    h += "Content-Length: 200000\r\n"
     h += "Connection: keep-alive\r\n\r\n"
     goodHeaders := []byte(h)
     responseBody, _ := ioutil.ReadFile(path)
