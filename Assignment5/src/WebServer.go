@@ -15,8 +15,11 @@ connect. Each connection is handed to a seprate thread by calling a go routine.
 This allows the main to accept many connections at once.
 */
 func main() {
-  fmt.Print("Starting server...\r\n\r\n")
+  // Create a socket
   socket, _ := net.Listen("tcp", ":8080")
+
+  // Notify terminal that the server is started
+  fmt.Print("Server started. Listening on port 8080\r\n\r\n")
 
   for {
     connection, _ := socket.Accept()
@@ -37,6 +40,9 @@ being sent to the client. The connection is then closed.
 */
 func handleClient(c net.Conn) {
   defer c.Close()
+
+  // Get current path
+  path, _ := os.Getwd()
 
   // Create a new readr and create request variable
   r := bufio.NewReader(c)
@@ -62,19 +68,24 @@ func handleClient(c net.Conn) {
   fmt.Println(req)
 
 
-  // Parse the req for GET request
-  //var reqFile = ""
+  // Set requested file to index
+//  var reqFile = "/"
+
+  // Check for GET request
   if strings.Contains(req, "GET /") {
-    // Asign requested file to reqFIle
+
+    // Create string array of each word in the request
     s := strings.Fields(req)
-    fmt.Print(s[1])
+
+    // Set required file
+    path += ("/" + strings.ToLower(strings.Trim((s[1]), "/")))
 
 
-
+    // Print file name to terminal DEBUG LINE
+    fmt.Println("Path to file: " + path)
   }
 
-  // Check for file
-    // If file exist
+  // Check for file  if _, err := os.State
       // Send file
     // else
       // Send 404 statement
@@ -97,8 +108,8 @@ func handleClient(c net.Conn) {
   //  "Content-Length: 1000\r\nConnection: keep-alive\r\n\r\n")
 
   // Build body
-  pwd, _ := os.Getwd()
-  body, err := ioutil.ReadFile(pwd + "/example.html")
+
+  body, err := ioutil.ReadFile(path)
   if err != nil {
     checkError(err)
   }
