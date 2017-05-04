@@ -4,4 +4,4 @@ http://stackoverflow.com/questions/10105935/how-to-convert-an-int-value-to-strin
 Help reading the request, figured it out with a little help
 http://stackoverflow.com/questions/43700838/server-socket-programming-read-http-header
 
-
+Lastly, CIS437 (distributed computing) was verify helpful, as we learned all about sockets and REST.
