@@ -1,0 +1,109 @@
+/*
+Joe Sirianni
+*/
+
+
+/*
+Set max width because I am not going to bother making this responsive
+*/
+body {
+  max-width: 1280px;
+ }
+ body p {
+   font-size: medium;
+ }
+
+/*
+Center Name
+*/
+h3 {
+  text-align: center;
+  background-color: #33cccc;
+}
+
+/*
+Scale banner Image size
+*/
+#BANNER, img {
+  max-width: 60%;
+  float: right;
+  padding-right: 1em;
+
+}
+
+/*
+*/
+#WRAPPER {
+  padding-bottom: 3em;
+}
+
+/*
+Move ABOUT to the right, slightly
+*/
+#ABOUT {
+  padding-left: 1em;
+  max-width: 50%;
+}
+
+/*
+Global Table Styles
+*/
+table {
+  margin: 2px;
+}
+.classTable table {
+  margin: 1px;
+}
+table, th, td {
+  border: 1px solid black;
+}
+table p {
+  font-size: small;
+}
+
+/*
+Set unordered list to blue
+*/
+ul {
+  color: blue;
+}
+
+/*
+Set best class p tags to italics
+*/
+.best p {
+  font-style: italic;
+}
+
+/*
+Set table size
+*/
+.classTable table, .classTable th, .classTable td {
+   border: 3px solid black;
+
+ }
+
+/*
+Shrink FEDOROV image to fit table
+*/
+#FEDOROV img {
+  width: 35%;
+  padding-right: 8em;
+}
+
+/*
+Hyperlink sudo classes
+*/
+.links a:link {
+  color: red;
+}
+.links a:visited {
+    color: green;
+}
+
+/*
+set odd class to grey background
+*/
+td .odd {
+  background-color: grey;
+}
