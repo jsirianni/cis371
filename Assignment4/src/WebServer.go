@@ -50,7 +50,7 @@ func handleClient(c net.Conn) {
   var h = ""             // String to hold the response headers
 
 
-  // Create a new readr and create request variable
+  // Create a new reader and create request variable
   r := bufio.NewReader(c)
 
 
