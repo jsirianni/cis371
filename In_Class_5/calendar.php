@@ -24,8 +24,6 @@
     } else {
       $headerDate = date('F Y');
     }
-//
-
 
   ?>
 
