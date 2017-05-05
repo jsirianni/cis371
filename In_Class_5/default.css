@@ -1,0 +1,24 @@
+/*
+Global Table Styles
+*/
+
+table {
+  margin: 2px;
+}
+.classTable table {
+  margin: 1px;
+}
+table, th, td {
+  border: 1px solid black;
+}
+td {
+  width: 7em;
+}
+
+td {
+  text-align: center;
+}
+
+#top {
+  font-weight: bold;
+}
