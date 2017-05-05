@@ -8,13 +8,25 @@
 
 
   <?php
-
     // Set the timezone to EST
-    date_default_timezone_set('EST');
+    date_default_timezone_set('America/New_York');
 
-    $day = "05";
-    $month = "May";
-    $year = "2017";
+    // If user passes params, assign them
+    if ($_GET['month'] != "" && $_GET['year'] != "") {
+      // Convert number to month name
+      $month = $_GET['month'];
+      $month = (DateTime::createFromFormat('!m', $month))->format('F');
+
+      $year = $_GET['year'];
+      $headerDate = ($month . " " . $year);
+
+    // IF no passed params, get current date
+    } else {
+      $headerDate = date('F Y');
+    }
+
+
+
   ?>
 
 
@@ -23,22 +35,22 @@
   <div>
     <h1>
       <?php
-        echo date("l, F jS Y");
+        echo $headerDate;
       ?>
     </h1>
   </div>
 
-  <div id=table>
+  <div id="table">
     <table>
       <tbody>
         <tr id="top">
-          <td>Sunday</td>
-          <td>Monday</td>
-          <td>Tuesday</td>
-          <td>Wednessday</td>
-          <td>Thursday</td>
-          <td>Friday</td>
-          <td>Saturday</td>
+          <th>Sunday</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+          <th>Saturday</th>
         </tr>
         <tr>
           <td>1</td>
