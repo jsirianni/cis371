@@ -8,4 +8,17 @@ Languages used
 - Java
 - Kotlin
 - HTML / CSS
-- PHP 
+- PHP
+
+Software used during development
+- Apache
+- NGINX
+- PHP 5
+- PHP 7
+- Mysql / MariaDB
+- Debian 8
+- Debian 9
+- OSX
+- Atom
+- Eclipse
+- Intellij 
