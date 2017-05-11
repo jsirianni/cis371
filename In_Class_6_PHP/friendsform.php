@@ -8,7 +8,6 @@ $lastName = $_GET['lname'];
 $pNumber = $_GET['pnumber'];
 $age = $_GET['age'];
 
-echo "This is stupid"
 echo $firstName;
 echo $lastName;
 echo $pNumber;
