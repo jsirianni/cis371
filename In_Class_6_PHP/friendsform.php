@@ -3,10 +3,10 @@
 // In Class 6 - Friends Form
 
 
-$firstName = $_GET['fname'];
-$lastName = $_GET['lname'];
-$pNumber = $_GET['pnumber'];
-$age = $_GET['age'];
+$firstName = $_POST['fname'];
+$lastName = $_POST['lname'];
+$pNumber = $_POST['pnumber'];
+$age = $_POST['age'];
 
 echo $firstName;
 echo $lastName;
@@ -15,4 +15,4 @@ echo $age;
 
 ?>
 
-<p>Thank you for your submission <?phpecho $fname; ?></p>
+<p>Thank you for your submission <?phpecho $_POST["fname"]; ?></p>
