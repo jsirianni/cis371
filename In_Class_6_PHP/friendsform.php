@@ -12,7 +12,7 @@ $age = $_POST['age'];
 $line = $fireName + "," + $lastName + "," + $pNumber + "," + $age;
 
 // Append the submission to a file
-$f = fopen("friends.txt", "a");
+$f = fopen("./friends.txt", "a");
 fwrite($f, $line);
 fclose($friendFile);
 ?>
