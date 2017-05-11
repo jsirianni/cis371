@@ -13,7 +13,7 @@ $age = $_POST['age'];
 
 <html>
 <body>
-  Thank you for your submission <br>
+  Thank you for your submission! <br><br>
   First name: <?php echo $firstName; ?><br>
   Last name: <?php echo $lastName; ?><br>
   Phone number: <?php echo $pNumber; ?><br>
