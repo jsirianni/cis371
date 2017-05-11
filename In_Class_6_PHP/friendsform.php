@@ -15,4 +15,4 @@ echo $age;
 
 ?>
 
-<p>Thank you for your submission <?phpecho $firstName ?></p>
+<p>Thank you for your submission <?phpecho $fname ?></p>
