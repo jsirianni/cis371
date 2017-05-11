@@ -11,9 +11,9 @@ $age = $_POST['age'];
 // Combine variables into comma delimited line
 $line = $fireName + "," + $lastName + "," + $pNumber + "," + $age;
 
-// Write line variable to a text file
-$friendFile = fopen("friends.txt", "w");
-fwrite($friendFile, $line);
+// Append the submission to a file
+$f = fopen("friends.txt", "a");
+fwrite($f, $line);
 fclose($friendFile);
 ?>
 
