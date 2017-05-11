@@ -17,6 +17,6 @@ echo $age;
 
 <html>
 <body>
-  Thank you for your submission <?phpecho $firstName; ?>
+  Thank you for your submission <?php echo $firstName; ?><br> 
 </body>
 </html>
