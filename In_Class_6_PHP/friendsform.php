@@ -9,7 +9,7 @@ $pNumber = $_POST['pnumber'];
 $age = $_POST['age'];
 
 // Combine variables into comma delimited line
-$line = $fireName . "," . $lastName . "," . $pNumber . "," . $age;
+$line = $firstName . "," . $lastName . "," . $pNumber . "," . $age;
 
 // Append the submission to a file
 $f = fopen("./friends.txt", "a");
