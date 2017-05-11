@@ -14,3 +14,5 @@ echo $pNumber;
 echo $age;
 
 ?>
+
+<p>Thank you for your submission</p>
