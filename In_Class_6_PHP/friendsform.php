@@ -8,15 +8,15 @@ $lastName = $_POST['lname'];
 $pNumber = $_POST['pnumber'];
 $age = $_POST['age'];
 
-echo $firstName;
-echo $lastName;
-echo $pNumber;
-echo $age;
 
 ?>
 
 <html>
 <body>
-  Thank you for your submission <?php echo $firstName; ?><br> 
+  Thank you for your submission <br>
+  First name: <?php echo $firstName; ?><br>
+  Last name: <?php echo $lastName; ?><br>
+  Phone number: <?php echo $pNumber; ?><br>
+  Age: <?php echo $age; ?><br>
 </body>
 </html>
