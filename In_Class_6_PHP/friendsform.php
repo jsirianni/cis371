@@ -7,13 +7,22 @@ $firstName = $_POST['fname'];
 $lastName = $_POST['lname'];
 $pNumber = $_POST['pnumber'];
 $age = $_POST['age'];
+
+// Combine variables into comma delimited line
+$line = $fireName + "," + $lastName + "," + $pNumber + "," + $age;
+
+// Write line variable to a text file
+$friendFile = fopen("friends.txt", "w");
+fwrite($friendFile, $line);
+fclose($friendFile);
 ?>
+
 
 <!--Build the html content -->
 <html>
 <body>
   Thank you for your submission! <br><br>
-  
+
   First name: <?php echo $firstName; ?><br>
   Last name: <?php echo $lastName; ?><br>
   Phone number: <?php echo $pNumber; ?><br>
