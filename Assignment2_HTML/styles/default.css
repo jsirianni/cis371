@@ -104,6 +104,6 @@ Hyperlink sudo classes
 /*
 set odd class to grey background
 */
-td .odd {
+.odd {
   background-color: grey;
 }
