@@ -142,13 +142,3 @@ func handleClient(c net.Conn) {
     c.Write(responseBody)
   }
 } // End GO routine
-
-
-/*
-Print errors to the terminal, continue running program / do not crash
-*/
-func checkError(err error) {
-  if err != nil {
-    fmt.Printf("ERROR: " + err.Error() + "\n\n")
-  }
-}
