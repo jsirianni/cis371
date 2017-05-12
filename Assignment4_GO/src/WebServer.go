@@ -114,12 +114,14 @@ func handleClient(c net.Conn) {
     h += "HTTP/1.1 200 OK\r\n"
 
     // Determine content type
-    if strings.Contains(reqCont, "css") {
+    if strings.Contains(reqCont, ".css") {
       h += "Content-Type: text/css\r\n"
-    } else if strings.Contains(reqCont, "html") {
+    } else if strings.Contains(reqCont, ".html") {
       h += "Content-Type: text/html\r\n"
     } else if strings.Contains(reqCont, ".jpg") || strings.Contains(reqCont, ".png") {
       h += "Content-Type: image/*\r\n"
+    } else if strings.Contains(reqCont, ".ico") {
+      h += "Content-Type: image/x-icon\r\n"
     } else {
       h += "Content-Type: text/plain\r\n"
     }
