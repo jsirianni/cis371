@@ -1,3 +1,6 @@
+/**
+ * Created by jsirianni on 5/13/17.
+ */
 import java.io.*
 import java.net.*
 
@@ -5,7 +8,6 @@ import java.net.*
 /**
  * A simple Java Socket client that connects to the Grand Valley
  * web server and requests documents.
-
  * @author jsirianni
  */
 object GvsuClient {
@@ -14,7 +16,6 @@ object GvsuClient {
      * Main method does the following:
      * Sets global variables; fqdn, port, file, path
      * Creates a client socket
-
      * Calls downloadFile() method three times, downloading three different files
      */
     @Throws(IOException::class)
@@ -69,7 +70,6 @@ object GvsuClient {
 
 
     /**
-
      * @param s  : a client socket connection
      * *
      * @param fq : a fully qualified domain (IE. www.cis.gvsu.edu)
