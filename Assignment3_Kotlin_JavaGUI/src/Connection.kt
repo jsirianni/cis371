@@ -25,39 +25,35 @@ class Connection constructor(fqdn: String, port: Int, path: String) {
 
 
     @Throws(IOException::class)
-    fun downloadFile(s: Socket, fq: String, pa: String, fi: String) {
-
-		// Build a full filePath from path and file
-		val filePath = pa + fi
+    fun downloadFile(c: Socket, fqdn: String, filePath: String) {
 
 		// Create input and output data streams with the socket passed during method invocation
-        val wrappedClientOut = wrapOutputStream(s.getOutputStream())
-        val wrappedClientIn = wrapInputStream(s.getInputStream())
+        val wrappedClientOut = wrapOutputStream(c.getOutputStream())
+        val wrappedClientIn = wrapInputStream(c.getInputStream())
 
 		// Craft an HTTP GET request
-        val get = "GET $filePath HTTP/1.1\r\nHost: $fq\r\n\r\n"
+        val get = "GET $filePath HTTP/1.1\r\nHost: $fqdn\r\n\r\n"
         wrappedClientOut.writeBytes(get)
         wrappedClientOut.flush()
 
 		// Read the HTML response using two loops
 		// The first loop prints the HTTP headers to the console
 		// The second loop saves the HTTP content to a file
-        var httpResponse: String? = ""
-        val fileOutput = FileOutputStream("/tmp/" + fi)
-
         do {
-            httpResponse = wrappedClientIn.readLine()
+            var httpResponse = wrappedClientIn.readLine()
             println(httpResponse)
         } while (!httpResponse!!.isEmpty())
 
         while (true) {
-            httpResponse = wrappedClientIn.readLine()
+            var httpResponse = wrappedClientIn.readLine()
             if (httpResponse == null) {
-                fileOutput.close()
-                s.close()
+                c.close()
                 return
             } else {
-                fileOutput.write(httpResponse.toByteArray())
+                // *****
+                // DISPLAY THE HTML CONTENT HERE
+                // ******
+                return // remove this
             }
         }
     }
