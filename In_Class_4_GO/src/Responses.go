@@ -17,6 +17,7 @@ func pageNotFound() string {
   response += "Content-Length: 300\r\n"
   response += "Connection: close\r\n\r\n"
   fmt.Print(response)
+
   // Build the HTML body
   response += "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n"
   response += "<title>Page Not Found</title>\r\n"
@@ -31,27 +32,31 @@ func pageNotFound() string {
 
 
 // Return 200 OK headers
-func okHeaders(x string, bodyLength string) string {
+func okHeaders(fPath string, bodyLength string) string {
   var okHeader = "HTTP/1.1 200 OK\r\n"
-
-  // Determine content type
-  if strings.Contains(x, ".css") {
-    okHeader += "Content-Type: text/css\r\n"
-  } else if strings.Contains(x, ".html") {
-    okHeader += "Content-Type: text/html\r\n"
-  } else if strings.Contains(x, ".jpg") || strings.Contains(x, ".png") {
-    okHeader += "Content-Type: image/*\r\n"
-  } else if strings.Contains(x, ".ico") {
-    okHeader += "Content-Type: image/x-icon\r\n"
-  } else {
-    okHeader += "Content-Type: text/plain\r\n"
-  }
-
-  // Set content length and connection type
+  okHeader += "Content-Type: " + contentType(fPath)
   okHeader += "Content-Length: " + bodyLength + "\r\n"
   okHeader += "Connection: keep-alive\r\n\r\n"
-
-  // Print to console and return
   fmt.Print(okHeader)
   return okHeader
+}
+
+
+
+// Helper function returns content type
+func contentType(f string) string {
+  // Determine content type
+  var cType = ""
+  if strings.Contains(f, ".css") {
+    cType = "Content-Type: text/css\r\n"
+  } else if strings.Contains(f, ".html") {
+    cType = "Content-Type: text/html\r\n"
+  } else if strings.Contains(f, ".jpg") || strings.Contains(f, ".png") {
+    cType = "Content-Type: image/*\r\n"
+  } else if strings.Contains(f, ".ico") {
+    cType = "Content-Type: image/x-icon\r\n"
+  } else {
+    cType = "Content-Type: text/plain\r\n"
+  }
+  return cType
 }
