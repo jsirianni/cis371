@@ -51,9 +51,9 @@ func handleClient(c net.Conn) {
   }
 
   // Determine how to respond to the GET requests
-  // The server can send a dynamic or static response
-  // Dynamic responses are built during runtime
-  // Static responses are files stored on disk
+  // The server can send dynamic or static responses
+  // Dynamic responses are built at runtime
+  // Static responses are stored on disk
 
   // If dynamic IP request, build and send 200 OK response
   if strings.Contains(request, "GET /ip") {
