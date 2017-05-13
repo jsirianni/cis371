@@ -9,13 +9,8 @@ import (
     "strings"
     "strconv"
 )
-// Handle each client connection:
-// Determines request type
-// Determines file type
-// Determines content length
-// Responding appropriatly
-// This function can act concurrently when called as a GO Routine
-
+// Call this function as a GO routine to handleClient
+// each client connection concurrently.
 
 
 // Go routine to handle each connection
@@ -28,14 +23,11 @@ func handleClient(c net.Conn) {
   // Create a new reader and create request variable
   r := bufio.NewReader(c)
 
-
-
-  // Read each header one by one, build request, print to console
+  // Read request header, build request, print to console
   for {
     line, err := r.ReadString('\n')
-    if err != nil && err != io.EOF {
-      checkError(err)
-    }
+    if err != nil && err != io.EOF { checkError(err) }
+
     if len(line) > 2 {
       request += line
     } else {
@@ -43,8 +35,6 @@ func handleClient(c net.Conn) {
       break
     }
   }
-
-
 
   // Check for a valid GET request
   if strings.Contains(request, "GET /") {
@@ -60,34 +50,27 @@ func handleClient(c net.Conn) {
     return
   }
 
-
-
   // Determine how to respond to the GET requests
-  // The server can send a dynamic or static response
-  // Dynamic responses are built during runtime
-  // Static responses are files stored on disk
+  // The server can send dynamic or static responses
+  // Dynamic responses are built at runtime
+  // Static responses are stored on disk
 
-  // If dynamic IP request
+  // If dynamic IP request, build and send 200 OK response
   if strings.Contains(request, "GET /ip") {
-    // Build and send 200 OK response
-    c.Write([]byte(ipAddr()))
+    c.Write(ipAddr())
 
-
-  // File not found, return dynamic 404
+  // Check if the file exists
   } else if _, err := ioutil.ReadFile(filePath); os.IsNotExist(err) {
-    // Build and send 404 to client
-    c.Write([]byte(pageNotFound()))
     checkError(err)
+    c.Write(pageNotFound())
 
-
-  // Static page found
+  // File exists, send a static web page
   } else {
     // Read the requested file & determine length
     responseBody, _ := ioutil.ReadFile(filePath)
     respLen := strconv.Itoa(len(responseBody))
 
     // Write 200 Ok headers & file
-    c.Write([]byte(okHeaders(filePath, respLen)))
-    c.Write(responseBody)
+    c.Write(append(okHeaders(filePath, respLen), responseBody...))
   }
-} // End GO routine
+}
