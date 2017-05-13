@@ -1,11 +1,21 @@
 package main
 import (
     "fmt"
+    "strings"
 )
 
-// Print errors to the terminal, continue running program / do not crash
+// Determin the error type
+// Print correct response
 func checkError(err error) {
-  if err != nil {
+
+  // IF a port scan
+  if strings.Contains(err.Error(), "connection reset by peer") {
+    fmt.Println("Error: " + err.Error())
+    fmt.Println("* * * * Most likely a port scan! * * * *")
+
+  // Print any other error
+  } else if err != nil {
     fmt.Printf("ERROR: " + err.Error() + "\n\n")
+    
   }
 }
