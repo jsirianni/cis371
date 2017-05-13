@@ -9,94 +9,74 @@ import (
     "strings"
     "strconv"
 )
+// Handle each client connection:
+// Determines request type
+// Determines file type
+// Determines content length
+// Responding appropriatly
+// This function can act concurrently when called as a GO Routine
 
-/*
-This function is called as a GO routine from main, allowing multiple connections
-to be established and handled at one time. The client request is then read line
-by line until the line is less than 2 charaters.The loop then breaks.
 
-Checks are performed to validate the header and requested page
 
-If the request is valid and the file exist, a 200 OK respons is sent along
-with the requested page.
-*/
+// Go routine to handle each connection
 func handleClient(c net.Conn) {
-  // Close the conection when function finishes
   defer c.Close()
 
-  // Variables to use later
-  path, _ := os.Getwd()  // Current path
-  var request = ""       // Client Request
-  var reqFile = ""       // Requested content type
+
+  filePath, _ := os.Getwd()     // Current path global var
+  var request = ""              // Client Request
 
 
   // Create a new reader and create request variable
   r := bufio.NewReader(c)
 
 
-  // Read each header line one by one, adding to the request if valid
+  // Read each header one by one, build request, print to console
   for {
     line, err := r.ReadString('\n')
     if err != nil && err != io.EOF {
       checkError(err)
     }
-    // Add each line to request until EOF
     if len(line) > 2 {
       request += line
     } else {
-        break
+      fmt.Println("Client Request:\n" + request)
+      break
     }
   }
-  // Print Client request to the terminal (Debug)
-  fmt.Println(request)
 
 
-
-  // Check if GET request
+  // Create array from GET header. The requested file will be = index[1]
   if strings.Contains(request, "GET /") {
-    // Create string array. The requested file will be = index[1]
-    // Assign requested content type
     s := strings.Fields(request)
     if s[1] == "/" {
       s[1] = "index.html"
     }
-    path += ("/" + strings.ToLower(strings.Trim((s[1]), "/")))
-    reqFile = path
+    // Build full path to requested file
+    filePath += ("/" + strings.ToLower(strings.Trim((s[1]), "/")))
   } else {
     // If not a GET request,
-    fmt.Println("Bad request, killing connection" + "\n")
+    fmt.Println("Not a GET request, killing connection" + "\n")
     return
   }
 
 
-
-  // 404 File Not Found
-  if _, err := ioutil.ReadFile(path); os.IsNotExist(err) {
-    // Print error to the console
+  // 404 File not found
+  if _, err := ioutil.ReadFile(filePath); os.IsNotExist(err) {
+    // Send 404 to client and console
+    notFoundResp := []byte(pageNotFound())
+    c.Write(notFoundResp)
     checkError(err)
-    // Send 404 response
-    var notFound = pageNotFound()
-    badHeaders := []byte(notFound)
-    c.Write(badHeaders)
-    fmt.Printf(notFound)
 
 
-
-  // 200 Ok file Found
+  // 200 Ok page found
   } else {
-    // Read the requested file, determine the length
-    responseBody, _ := ioutil.ReadFile(path)
-
-    // Begin building response header
+    // Read the requested file & determine length
+    responseBody, _ := ioutil.ReadFile(filePath)
     respLen := strconv.Itoa(len(responseBody))
-    var responseHeaders = okHeaders(reqFile, respLen)
-
-    // Assign response headers to a byte array
-    goodHeaders := []byte(responseHeaders)
-
-    // Print response headers to the console (Debug)
-    // Send HTML response to client (headers followed by body)
-    fmt.Println(responseHeaders)
+    // Get 200 OK headers
+    goodHeaders := []byte(okHeaders(filePath, respLen))
+    // Send HTML response to client
     c.Write(goodHeaders)
     c.Write(responseBody)
   }
