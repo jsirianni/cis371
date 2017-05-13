@@ -41,7 +41,7 @@ class Connection constructor(fqdn: String, port: Int, path: String) {
             println(httpResponse)
         } while (!httpResponse!!.isEmpty())
 
-        
+
         // Read the HTML body
         var page = ""
         while (true) {
