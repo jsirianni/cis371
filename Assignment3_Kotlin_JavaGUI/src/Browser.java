@@ -13,7 +13,6 @@ public class Browser {
 
     public Browser() {
 
-
         /**
          * When the 'Connect' button is pressed, do the following
          * Create an object of the Connection class, passing fqdn, port, path
@@ -29,16 +28,19 @@ public class Browser {
                 String path = "/";
                 int port = 8080;
 
-                // Parse the URL
 
+                // Parse the URL
 
 
                 // Create Connection Object
                 Connection c = new Connection(fqdn, port, path);
 
-                // Call Connection.connect()
+
+                // Retrieve the requested file
+                String webPage = c.connect();
 
                 // Display the returned string
+                // Assign test box to be webPage
 
             }
         });
