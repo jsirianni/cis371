@@ -9,7 +9,8 @@ public class Browser {
     private JPanel mainForm;
     private JTextField urlField;
     private JButton connectBtn;
-    private JTextArea textArea1;
+    private JTextArea outputArea;
+
 
     public Browser() {
 
@@ -38,11 +39,20 @@ public class Browser {
 
                 // Retrieve the requested file
                 String webPage = c.connect();
+                System.out.println(webPage);
 
                 // Display the returned string
                 // Assign test box to be webPage
 
             }
         });
+    }
+
+    public static void main(String[] args) {
+        JFrame jframe = new JFrame("Browser");
+        jframe.setContentPane(new Browser().mainForm);
+        jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jframe.pack();
+        jframe.setVisible(true);
     }
 }
