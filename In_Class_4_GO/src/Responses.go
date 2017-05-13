@@ -2,9 +2,33 @@ package main
 import (
     "strings"
     "fmt"
+    "os/exec"
+    "strconv"
 )
 // Functions to return dynamic content as a "response"
 // The returned response is a string that includes HTTP headers and body content
+
+
+
+// Returns a full web page containing the IP address of the server
+func ipAddr() string {
+  // Get the server IP, build page
+  ip, _ := exec.Command("dig", "+short", "myip.opendns.com", "@resolver1.opendns.com").Output()
+
+  // Build html body
+  var body = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n"
+  body += "<title>Page Not Found</title>\r\n"
+  body += "</head>\r\n<body>\r\n"
+  body += "<p>The public IP Address of this server is: " + string(ip) + "</p>\r\n"
+  body += "</body></html>\r\n"
+
+  // Get the body content length
+  length := strconv.Itoa(len(body))
+  // Get 200 OK headers
+  var headers = okHeaders("/ip.html", length)
+  // Return the page
+  return (headers + body)
+}
 
 
 

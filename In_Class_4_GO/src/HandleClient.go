@@ -22,13 +22,12 @@ import (
 func handleClient(c net.Conn) {
   defer c.Close()
 
-
   filePath, _ := os.Getwd()     // Current path global var
   var request = ""              // Client Request
 
-
   // Create a new reader and create request variable
   r := bufio.NewReader(c)
+
 
 
   // Read each header one by one, build request, print to console
@@ -46,7 +45,8 @@ func handleClient(c net.Conn) {
   }
 
 
-  // Create array from GET header. The requested file will be = index[1]
+
+  // Check for a valid GET request
   if strings.Contains(request, "GET /") {
     s := strings.Fields(request)
     if s[1] == "/" {
@@ -61,23 +61,33 @@ func handleClient(c net.Conn) {
   }
 
 
-  // 404 File not found
-  if _, err := ioutil.ReadFile(filePath); os.IsNotExist(err) {
-    // Send 404 to client and console
-    notFoundResp := []byte(pageNotFound())
-    c.Write(notFoundResp)
+
+  // Determine how to respond to the GET requests
+  // The server can send a dynamic or static response
+  // Dynamic responses are built during runtime
+  // Static responses are files stored on disk
+
+  // If dynamic IP request
+  if strings.Contains(request, "GET /ip") {
+    // Build and send 200 OK response
+    c.Write([]byte(ipAddr()))
+
+
+  // File not found, return dynamic 404
+  } else if _, err := ioutil.ReadFile(filePath); os.IsNotExist(err) {
+    // Build and send 404 to client
+    c.Write([]byte(pageNotFound()))
     checkError(err)
 
 
-  // 200 Ok page found
+  // Static page found
   } else {
     // Read the requested file & determine length
     responseBody, _ := ioutil.ReadFile(filePath)
     respLen := strconv.Itoa(len(responseBody))
-    // Get 200 OK headers
-    goodHeaders := []byte(okHeaders(filePath, respLen))
-    // Send HTML response to client
-    c.Write(goodHeaders)
+
+    // Write 200 Ok headers & file
+    c.Write([]byte(okHeaders(filePath, respLen)))
     c.Write(responseBody)
   }
 } // End GO routine
