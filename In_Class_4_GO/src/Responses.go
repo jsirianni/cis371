@@ -5,63 +5,66 @@ import (
     "os/exec"
     "strconv"
 )
-// Functions to return dynamic content as a "response"
-// The returned response is a string that includes HTTP headers and body content
 
 
 
-// Returns a full web page containing the IP address of the server
-func ipAddr() string {
-  // Get the server IP, build page
+// Returns a dynamic web page containing the public IP address
+func ipAddr() []byte {
+  // Get the server IP & build page
   ip, _ := exec.Command("dig", "+short", "myip.opendns.com", "@resolver1.opendns.com").Output()
 
   // Build html body
-  var body = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n"
-  body += "<title>Page Not Found</title>\r\n"
-  body += "</head>\r\n<body>\r\n"
-  body += "<p>The public IP Address of this server is: " + string(ip) + "</p>\r\n"
-  body += "</body></html>\r\n"
+  body := []byte(
+    "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n" +
+    "<title>Page Not Found</title>\r\n" +
+    "</head>\r\n<body>\r\n" +
+    "<p>The public IP Address of this server is: " + string(ip) + "</p>\r\n" +
+    "</body></html>\r\n")
 
-  // Get the body content length
-  length := strconv.Itoa(len(body))
-  // Get 200 OK headers
-  var headers = okHeaders("/ip.html", length)
+  // Get 200 OK headers, provide a path and content length
+  headers := okHeaders("/ip.html", strconv.Itoa(len(body)))
   // Return the page
-  return (headers + body)
+  return append(headers, body...)
 }
 
 
 
 // Return a 404 Page
-func pageNotFound() string {
+func pageNotFound() []byte {
   // Build response headers
-  var response = ""
-  response += "HTTP/1.1 404 Not Found\r\n"
-  response += "Content-Type: text/html\r\n"
-  response += "Content-Length: 300\r\n"
-  response += "Connection: close\r\n\r\n"
-  fmt.Print(response)
+  notFoundHeader := []byte(
+    "HTTP/1.1 404 Not Found\r\n" +
+    "Content-Type: text/html\r\n" +
+    "Content-Length: 300\r\n" +
+    "Connection: close\r\n\r\n")
 
   // Build the HTML body
-  response += "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n"
-  response += "<title>Page Not Found</title>\r\n"
-  response += "</head>\r\n<body>\r\n"
-  response += "<p style='color:grey;font-size:30px;'>"
-  response += "Dazed and confused: 404 page not found.</p>\r\n"
-  response += "<a href='/index.html'>It is probably best to return to home</a>"
-  response += "</body></html>\r\n"
-  return response
+  notFoundBody := []byte(
+    "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n" +
+    "<title>Page Not Found</title>\r\n" +
+    "</head>\r\n<body>\r\n" +
+    "<p style='color:grey;font-size:30px;'>" +
+    "Dazed and confused: 404 page not found.</p>\r\n" +
+    "<a href='/index.html'>It is probably best to return to home</a>" +
+    "</body></html>\r\n")
+
+  // Print headers to console
+  fmt.Print(string(notFoundHeader))
+  return append(notFoundHeader, notFoundBody...)
 }
 
 
 
-// Return 200 OK headers
-func okHeaders(fPath string, bodyLength string) string {
-  var okHeader = "HTTP/1.1 200 OK\r\n"
-  okHeader += "Content-Type: " + contentType(fPath)
-  okHeader += "Content-Length: " + bodyLength + "\r\n"
-  okHeader += "Connection: keep-alive\r\n\r\n"
-  fmt.Print(okHeader)
+// Return 200 Ok headers as byte slice
+func okHeaders(fPath string, bodyLength string) []byte {
+  okHeader := []byte(
+    "HTTP/1.1 200 OK\r\n" +
+    "Content-Type: " + contentType(fPath) +
+    "Content-Length: " + bodyLength + "\r\n" +
+    "Connection: keep-alive\r\n\r\n")
+
+  // Print headers to console
+  fmt.Print(string(okHeader))
   return okHeader
 }
 

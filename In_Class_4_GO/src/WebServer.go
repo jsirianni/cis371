@@ -8,13 +8,18 @@ import (
 
 
 func main() {
-  // Create the socket
+  // Create a TCP socket
   socket, _ := net.Listen("tcp", ":8080")
   fmt.Print("Server started. Listening on port 8080\r\n\r\n")
 
-  // Handle all connections
+
+  // Loop forever, listening for connections
   for {
+    // Pause until a client connects
     connection, _ := socket.Accept()
+
+    // Handle each incoming connection as a GO routine
+    // Server can handle an arbitrary amount of connections
     go handleClient(connection)
   }
 }
