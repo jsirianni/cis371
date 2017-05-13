@@ -10,8 +10,8 @@ import (
 
 // Return a 404 Page
 func pageNotFound() string {
+  // Build response headers
   var response = ""
-  // Build the response headers, print to console
   response += "HTTP/1.1 404 Not Found\r\n"
   response += "Content-Type: text/html\r\n"
   response += "Content-Length: 300\r\n"
