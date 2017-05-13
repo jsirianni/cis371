@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.*;
-import java.io.*;
 
 /**
  * Created by jsirianni on 5/13/17.
