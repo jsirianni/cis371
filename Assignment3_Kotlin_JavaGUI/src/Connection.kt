@@ -16,47 +16,47 @@ class Connection constructor(fqdn: String, port: Int, path: String) {
 
 
     // Function to connect to the requested server
-    fun connect() {
+    // Returns a web page / text file
+    fun connect(): String {
+
         // Create the socket
         val clientSocket: Socket
         clientSocket = Socket(fqdn, port)
-    }
 
 
+        // Create input and output data streams with the socket passed during method invocation
+        val wrappedClientOut = wrapOutputStream(clientSocket.getOutputStream())
+        val wrappedClientIn = wrapInputStream(clientSocket.getInputStream())
 
-    @Throws(IOException::class)
-    fun downloadFile(c: Socket, fqdn: String, filePath: String) {
 
-		// Create input and output data streams with the socket passed during method invocation
-        val wrappedClientOut = wrapOutputStream(c.getOutputStream())
-        val wrappedClientIn = wrapInputStream(c.getInputStream())
-
-		// Craft an HTTP GET request
-        val get = "GET $filePath HTTP/1.1\r\nHost: $fqdn\r\n\r\n"
+        // Craft an HTTP GET request
+        val get = "GET $path HTTP/1.1\r\nHost: $fqdn\r\n\r\n"
         wrappedClientOut.writeBytes(get)
         wrappedClientOut.flush()
 
-		// Read the HTML response using two loops
-		// The first loop prints the HTTP headers to the console
-		// The second loop saves the HTTP content to a file
+
+        // Read the HTML headers
         do {
             var httpResponse = wrappedClientIn.readLine()
             println(httpResponse)
         } while (!httpResponse!!.isEmpty())
 
+        
+        // Read the HTML body
+        var page = ""
         while (true) {
             var httpResponse = wrappedClientIn.readLine()
             if (httpResponse == null) {
-                c.close()
-                return
+                clientSocket.close()
+                return page
             } else {
-                // *****
-                // DISPLAY THE HTML CONTENT HERE
-                // ******
-                return // remove this
+                // Build the page
+                page += httpResponse
             }
         }
     }
+
+
 
 
     // Wrap the stream to be sent
@@ -66,6 +66,7 @@ class Connection constructor(fqdn: String, port: Int, path: String) {
         val y = DataInputStream(x)
         return y
     }
+
 
 
     // Wrap the response
