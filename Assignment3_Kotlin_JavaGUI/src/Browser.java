@@ -1,9 +1,12 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.*;
 
 /**
  * Created by jsirianni on 5/13/17.
+ * Sources:
+ * https://docs.oracle.com/javase/tutorial/networking/urls/urlInfo.html
  */
 public class Browser {
     private JPanel mainForm;
@@ -23,31 +26,34 @@ public class Browser {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
-                // Vars default values
-                String url = "localhost:8080/";
-                String fqdn = "localhost";
-                String path = "/";
-                int port = 8080;
-
-
                 // Parse the URL
+                try {
+                    URL url = new URL(urlField.getText());
+                    String fqdn = url.getHost();
+                    String path = url.getPath();
+                    int port = url.getPort();
 
 
-                // Create Connection Object
-                Connection c = new Connection(fqdn, port, path);
+                    // Create Connection Object
+                    Connection c = new Connection(fqdn, port, path);
 
 
-                // Retrieve the requested file
-                String webPage = c.connect();
-                System.out.println(webPage);
+                    // Retrieve the requested file
+                    String webPage = c.connect();
+                    System.out.println(webPage);
 
-                // Display the returned string
-                // Assign test box to be webPage
+                    // Display the returned string
+                    // Assign test box to be webPage
 
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
 
+
+    // Main method starts the GUI
     public static void main(String[] args) {
         JFrame jframe = new JFrame("Browser");
         jframe.setContentPane(new Browser().mainForm);
