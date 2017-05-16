@@ -6,7 +6,6 @@
 </head>
 <body>
 
-
   <?php
     // Set the timezone to EST
     date_default_timezone_set('America/New_York');
@@ -23,12 +22,16 @@
     // IF no passed params, get current date
     } else {
       $headerDate = date('F Y');
+
+			// Determine the first day of the month
+			// http://stackoverflow.com/questions/2094797/the-first-day-of-the-current-month-in-php-using-date-modify-as-datetime-object
+			$firstDay = new DateTime('first day of this month');
+			echo $firstDay->format('jS, F Y');
     }
 
+
+
   ?>
-
-
-
 
   <div>
     <h1>
@@ -51,49 +54,19 @@
           <th>Saturday</th>
         </tr>
         <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
-          <td>7</td>
+					PHP gen row 1
         </tr>
         <tr>
-          <td>8</td>
-          <td>9</td>
-          <td>10</td>
-          <td>11</td>
-          <td>12</td>
-          <td>13</td>
-          <td>14</td>
+					PHP gen row 2
         </tr>
         <tr>
-          <td>15</td>
-          <td>16</td>
-          <td>17</td>
-          <td>18</td>
-          <td>19</td>
-          <td>20</td>
-          <td>21</td>
+					PHP gen row 3
         </tr>
         <tr>
-          <td>22</td>
-          <td>23</td>
-          <td>24</td>
-          <td>25</td>
-          <td>26</td>
-          <td>27</td>
-          <td>28</td>
+					PHP gen row 4
         </tr>
         <tr>
-          <td>29</td>
-          <td>30</td>
-          <td>31</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          PHP gen row 5
         </tr>
       </tbody>
     </table>
