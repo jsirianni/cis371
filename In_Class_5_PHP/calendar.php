@@ -14,13 +14,15 @@
     if ($_GET['month'] != "" && $_GET['year'] != "") {
       // Convert number to month name
       $month = $_GET['month'];
-      //$month = (DateTime::createFromFormat('!m', $month))->format('F');
-
       $year = $_GET['year'];
+
+			// Build the header
       $headerDate = ((DateTime::createFromFormat('!m', $month))->format('F') . " " . $year);
 
     // IF no passed params, get current date
     } else {
+			$month = date('F');
+			$year = date('Y');
       $headerDate = date('F Y');
 
 
@@ -39,6 +41,8 @@
     <h1>
       <?php
         echo $headerDate;
+				echo $month;
+				echo $year;
       ?>
     </h1>
   </div>
