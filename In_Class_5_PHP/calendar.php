@@ -30,7 +30,7 @@
 			// Determine the first day of the month
 			// http://stackoverflow.com/questions/2094797/the-first-day-of-the-current-month-in-php-using-date-modify-as-datetime-object
 			$firstDay = new DateTime('first day of this month');
-			echo $firstDay->format('jS, F Y');
+			echo $firstDay;
     }
 
 
