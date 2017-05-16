@@ -1,3 +1,21 @@
+<?php
+	// Set the timezone to EST
+	date_default_timezone_set('America/New_York');
+
+	// Assign values to month, year, and header date
+	if ($_GET['month'] != "" && $_GET['year'] != "") {
+		// Convert number to month name
+		$month = $_GET['month'];
+		$year = $_GET['year'];
+		$headerDate = ((DateTime::createFromFormat('!m', $month))->format('F') . " " . $year);
+	// No args
+	} else {
+		$month = date('m');	//month number
+		$year = date('Y');  //year number
+		$headerDate = date('F Y');
+	}
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 	<meta http-equiv="Content-type" content="text/html; charset=windows-1252"/>
@@ -5,31 +23,6 @@
 	<title>Month Year</title>
 </head>
 <body>
-
-  <?php
-    // Set the timezone to EST
-    date_default_timezone_set('America/New_York');
-
-    // If user passes params, assign them
-    if ($_GET['month'] != "" && $_GET['year'] != "") {
-      // Convert number to month name
-      $month = $_GET['month'];
-      $year = $_GET['year'];
-
-			// Build the header
-      $headerDate = ((DateTime::createFromFormat('!m', $month))->format('F') . " " . $year);
-
-    // IF no passed params, get current date
-    } else {
-			$month = date('m');
-			$year = date('Y');
-      $headerDate = date('F Y');
-    }
-
-
-
-  ?>
-
   <div>
     <h1>
       <?php
@@ -39,7 +32,6 @@
       ?>
     </h1>
   </div>
-
   <div id="table">
     <table>
       <tbody>
