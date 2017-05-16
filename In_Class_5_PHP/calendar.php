@@ -21,7 +21,7 @@
 
     // IF no passed params, get current date
     } else {
-			$month = date('F');
+			$month = date('m');
 			$year = date('Y');
       $headerDate = date('F Y');
 
