@@ -45,7 +45,7 @@
 				// Vars for control loops
 				$day = 1;																									  // first day, can be incremented
 				$lastDay = cal_days_in_month (CAL_GREGORIAN,$month,$year);  //number of days in the selected month
-				<p>echo $lastDay;</p>
+				echo <p> $lastDay;</p>
 
 
 				// Control loop generates table rows until all days are displayed
