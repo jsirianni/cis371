@@ -73,6 +73,5 @@
       </tbody>
     </table>
   </div>
-	<p><?php echo $lastDay;?></p>
 </body>
 </html>
