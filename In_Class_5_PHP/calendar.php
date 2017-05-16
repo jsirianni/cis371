@@ -46,30 +46,29 @@
 				$day = 1;																									  // first day, can be incremented
 				$lastDay = cal_days_in_month (CAL_GREGORIAN,$month,$year);  //number of days in the selected month
 
+				// Create week rows until all days are printed
+				do {
+					$x = 1;						// Control var
+					echo "<tr>";  		// Start of week
+					do {
+						echo "<th>";		// Open a cell
+						echo $day;
+						echo "</th>";  // Close a cell
+						$day++;				// Increment day
+						$x++;					// Increment control var
 
+						// Continue filling the week until 7 days or last day of month is used
+					} while $x < 7 || $day < $lastDay;
+
+					echo "</tr>" ;	// Close the week row
+
+					// Only continuing creating weeks until last day is printed
+				} while ($day < $lastDay);
 
 				// Control loop generates table rows until all days are displayed
 
 
 				?>
-
-
-
-				<tr>
-					PHP gen row 1
-        </tr>
-        <tr>
-					PHP gen row 2
-        </tr>
-        <tr>
-					PHP gen row 3
-        </tr>
-        <tr>
-					PHP gen row 4
-        </tr>
-        <tr>
-          PHP gen row 5
-        </tr>
       </tbody>
     </table>
   </div>
