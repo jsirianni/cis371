@@ -14,14 +14,16 @@
     if ($_GET['month'] != "" && $_GET['year'] != "") {
       // Convert number to month name
       $month = $_GET['month'];
-      $month = (DateTime::createFromFormat('!m', $month))->format('F');
+      //$month = (DateTime::createFromFormat('!m', $month))->format('F');
 
       $year = $_GET['year'];
-      $headerDate = ($month . " " . $year);
+      $headerDate = ((DateTime::createFromFormat('!m', $month))->format('F') . " " . $year);
 
     // IF no passed params, get current date
     } else {
       $headerDate = date('F Y');
+
+
 
 			// Determine the first day of the month
 			// http://stackoverflow.com/questions/2094797/the-first-day-of-the-current-month-in-php-using-date-modify-as-datetime-object
@@ -55,6 +57,13 @@
         </tr>
 
 				<?php
+				// Vars for control loops
+				$day = 1;																									 // first day, can be incremented
+				$lastDay = cal_days_in_month (CAL_GREGORIAN,$_GET['month'],$year); //number of days in the selected month
+
+
+
+				// Control loop generates table rows until all days are displayed
 
 
 				?>
