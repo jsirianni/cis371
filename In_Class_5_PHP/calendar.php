@@ -52,21 +52,21 @@
 
 
 				// For first week print empty days depending on first day of month
-				if ($lastDay == "Sunday") {
+				if ($lastDay === "Sunday") {
 					continue;
-				} elseif ($lastDay == "Monday") {
+				} elseif ($lastDay === "Monday") {
 					echo "<tr>";
 					echo "<th></th>";
-				} elseif ($lastDay == "Tuesday") {
+				} elseif ($lastDay === "Tuesday") {
 					echo "<tr>";
 					echo "<th></th><th></th>";
-				} elseif ($lastDay == "Wednessday") {
+				} elseif ($lastDay === "Wednessday") {
 					echo "<tr>";
 					echo "<th></th><th></th><th></th>";
-				} elseif ($lastDay == "Thursday") {
+				} elseif ($lastDay === "Thursday") {
 					echo "<tr>";
 					echo "<th></th><th></th><th></th><th></th>";
-				} elseif ($lastDay == "Friday") {
+				} elseif ($lastDay === "Friday") {
 					echo "<tr>";
 					echo "<th></th><th></th><th></th><th></th><th></th>";
 				} else { 						//Saturday
