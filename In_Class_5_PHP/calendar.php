@@ -77,11 +77,11 @@
 					echo $firstDay;
 					echo "<tr><th></th><th></th><th></th><th></th><th></th><th></th>";
 					$x = 6;
-				} else { // Monday
-					$x = 1;
+				} else { // Sunday
+					$x = 0;
 				}
-				$x++;													// Increment to account for next day
-				
+				$x++;
+
 				do {													// Create additional weeks
 					do { 												// Fill weeks with days
 						if ($day <= $lastDay) {   // If all days not generated, print next day
