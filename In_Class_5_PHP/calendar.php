@@ -58,33 +58,33 @@
 				} elseif ($firstDay === "Monday") {
 					echo "First day is $firstDay";
 					echo "<tr><th></th>";
+					$x++;
 
 				} elseif ($firstDay === "Tuesday") {
 					echo "First day is $firstDay";
 					echo "<tr><th></th><th></th>";
-
+					$x = $x + 2;
 				} elseif ($firstDay === "Wednessday") {
 					echo "First day is $firstDay";
 					echo "<tr><th></th><th></th><th></th>";
-
+					$x = $x + 3;
 				} elseif ($firstDay === "Thursday") {
 					echo "First day is $firstDay";
 					echo "<tr><th></th><th></th><th></th><th></th>";
-
+					$x = $x + 4;
 				} elseif ($firstDay === "Friday") {
 					echo "First day is $firstDay";
 					echo "<tr><th></th><th></th><th></th><th></th><th></th>";
-
+					$x = $x + 5;
 				} else { 						//Saturday
 					echo "First day is $firstDay";
 					echo "<tr><th></th><th></th><th></th><th></th><th></th><th></th>";
+					$x = $x + 6;
 				}
 
 
 				// Create additional weeks
 				do {
-					// Control var controls week end
-					$x = 1;
 					do {
 						// If all days not generated, print next day
 						if ($day <= $lastDay) {
@@ -100,7 +100,7 @@
 
 					// Begin week
 					echo "<tr>";
-					
+					$x = 1;
 					// Continue generating weeks until all days are printed
 				} while ($day <= $lastDay);
 				?>
