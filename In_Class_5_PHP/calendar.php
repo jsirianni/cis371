@@ -58,7 +58,7 @@
 						$x++;					// Increment control var
 
 						// Continue filling the week until 7 days or last day of month is used
-					} while (($x < 7) || ($day < $lastDay));
+					} while ($x < 7 || $day < $lastDay);
 
 					echo "</tr>" ;	// Close the week row
 
