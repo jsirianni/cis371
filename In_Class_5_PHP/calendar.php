@@ -58,28 +58,28 @@
 				} elseif ($firstDay === "Monday") {
 					echo "First day is $firstDay";
 					echo "<tr><th></th>";
-					$x++;
+					$x = $x + 3;
 
 				} elseif ($firstDay === "Tuesday") {
 					echo "First day is $firstDay";
 					echo "<tr><th></th><th></th>";
-					$x = $x + 2;
+					$x = $x + 4;
 				} elseif ($firstDay === "Wednessday") {
 					echo "First day is $firstDay";
 					echo "<tr><th></th><th></th><th></th>";
-					$x = $x + 3;
+					$x = $x + 5;
 				} elseif ($firstDay === "Thursday") {
 					echo "First day is $firstDay";
 					echo "<tr><th></th><th></th><th></th><th></th>";
-					$x = $x + 4;
+					$x = $x + 6;
 				} elseif ($firstDay === "Friday") {
 					echo "First day is $firstDay";
 					echo "<tr><th></th><th></th><th></th><th></th><th></th>";
-					$x = $x + 5;
+					$x = $x + 7;
 				} else { 						//Saturday
 					echo "First day is $firstDay";
 					echo "<tr><th></th><th></th><th></th><th></th><th></th><th></th>";
-					$x = $x + 6;
+					$x = $x + 8;
 				}
 
 
