@@ -55,25 +55,23 @@
 				if (strcmp($getdate, "Sunday") == 0) {
 					continue;
 				} elseif (strcmp($getdate, "Monday") == 0) {
-					echo "<tr><th></th>";
+					echo "<tr><th></th></tr>";
 
 				} elseif (strcmp($getdate, "Tuesday") == 0) {
-					echo "<tr><th></th><th></th>";
+					echo "<tr><th></th><th></th></tr>";
 
 				} elseif (strcmp($getdate, "Wednessday") == 0) {
-					echo "<tr><th></th><th></th><th></th>";
+					echo "<tr><th></th><th></th><th></th></tr>";
 
 				} elseif (strcmp($getdate, "Thursday") == 0) {
-					echo "<tr><th></th><th></th><th></th><th></th>";
+					echo "<tr><th></th><th></th><th></th><th></th></tr>";
 
 				} elseif (strcmp($getdate, "Friday") == 0) {
-					echo "<tr><th></th><th></th><th></th><th></th><th></th>";
+					echo "<tr><th></th><th></th><th></th><th></th><th></th></tr>";
 
 				} else { 						//Saturday
-					echo "<tr><th></th><th></th><th></th><th></th><th></th><th></th>";
+					echo "<tr><th></th><th></th><th></th><th></th><th></th><th></th></tr>";
 				}
-				// Close first week
-				echo "</tr>";
 
 
 				// Create additional weeks
