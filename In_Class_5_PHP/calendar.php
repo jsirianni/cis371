@@ -38,72 +38,58 @@
           <th>Saturday</th>
         </tr>
 
-				<?php
+
+				<?php  // Begin calendar generation
+
 				// Determine which day of week if first of the month | SOURCE --> http://stackoverflow.com/questions/16951411/returning-the-first-day-of-a-given-month-in-weekday-format-with-php
 				$inputMonth = '2013-05-01';
 				$month2 = date("m" , strtotime($inputMonth));
 				$year2 = date("Y" , strtotime($inputMonth));
 				$getdate = getdate(mktime(null, null, null, $month, 1, $year));
 				$firstDay = $getdate["weekday"];  // String
-
 				// Vars for control loops
+
 				$day = 1;																									  // first day, can be incremented
 				$lastDay = cal_days_in_month (CAL_GREGORIAN,$month,$year);  //number of days in the selected month
 
-
-				// For first week print empty days depending on first day of month
-				if ($firstDay === "Sunday") {
-					echo "First day is $firstDay";
-
-				} elseif ($firstDay === "Monday") {
-					echo "First day is $firstDay";
+				// Offset first week of the month with empty cells, ignore Sunday
+				if ($firstDay === "Monday") {
 					echo "<tr><th></th>";
 					$x = $x + 3;
-
 				} elseif ($firstDay === "Tuesday") {
-					echo "First day is $firstDay";
 					echo "<tr><th></th><th></th>";
 					$x = $x + 4;
 				} elseif ($firstDay === "Wednessday") {
-					echo "First day is $firstDay";
 					echo "<tr><th></th><th></th><th></th>";
 					$x = $x + 5;
 				} elseif ($firstDay === "Thursday") {
-					echo "First day is $firstDay";
 					echo "<tr><th></th><th></th><th></th><th></th>";
 					$x = $x + 6;
 				} elseif ($firstDay === "Friday") {
-					echo "First day is $firstDay";
 					echo "<tr><th></th><th></th><th></th><th></th><th></th>";
 					$x = $x + 7;
 				} else { 						//Saturday
-					echo "First day is $firstDay";
 					echo "<tr><th></th><th></th><th></th><th></th><th></th><th></th>";
 					$x = $x + 8;
 				}
 
+				do {													// Create additional weeks
 
-				// Create additional weeks
-				do {
-					do {
-						// If all days not generated, print next day
-						if ($day <= $lastDay) {
+					do { 												// Fill weeks with days
+						if ($day <= $lastDay) {   // If all days not generated, print next day
 							echo "<th>$day</th>";
 						}
-						// Increment control vars
-						$day++;
+						$day++; 									// Increment control vars
 						$x++;
-						// Continue filling the week until 7 days
-					} while ($x <= 7);
-					// End the week
-					echo "</tr>";
+					} while ($x <= 7);					// Continue filling the week until 7 days
 
-					// Begin week
-					echo "<tr>";
-					$x = 1;
-					// Continue generating weeks until all days are printed
-				} while ($day <= $lastDay);
-				?>
+					echo "</tr>"; 					    // End the week
+					if ($day <= $lastDay) { 	  // Begin week if not all days generated
+						echo "<tr>";
+						$x = 1;
+					}
+				} while ($day <= $lastDay); 	// Continue generating weeks if all days not generated
+																			// End calendar generation ?>
 
       </tbody>
     </table>
