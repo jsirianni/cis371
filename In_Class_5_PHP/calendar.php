@@ -55,9 +55,10 @@
 							echo "<th>";		// Open a cell
 							echo $day;
 							echo "</th>";  // Close a cell
-							$day++;				// Increment day
-							$x++;					// Increment control var
 						}
+						
+						$day++;				// Increment day
+						$x++;					// Increment control var
 						// Continue filling the week until 7 days or last day of month is used
 					} while ($x <= 7);
 
