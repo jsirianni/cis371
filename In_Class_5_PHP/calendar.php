@@ -40,6 +40,17 @@
         </tr>
 
 				<?php
+				// Determine which day of week if first of the month
+				// http://stackoverflow.com/questions/16951411/returning-the-first-day-of-a-given-month-in-weekday-format-with-php
+				$inputMonth = '2013-05-01';
+				$month2 = date("m" , strtotime($inputMonth));
+				$year2 = date("Y" , strtotime($inputMonth));
+				$getdate = getdate(mktime(null, null, null, $month, 1, $year));
+				echo $getdate["weekday"];
+
+
+
+
 				// Vars for control loops
 				$day = 1;																									  // first day, can be incremented
 				$lastDay = cal_days_in_month (CAL_GREGORIAN,$month,$year);  //number of days in the selected month
