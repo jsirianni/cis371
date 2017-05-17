@@ -80,7 +80,8 @@
 				} else { // Monday
 					$x = 1;
 				}
-
+				$x++;													// Increment to account for next day
+				
 				do {													// Create additional weeks
 					do { 												// Fill weeks with days
 						if ($day <= $lastDay) {   // If all days not generated, print next day
