@@ -44,7 +44,8 @@
 				$month2 = date("m" , strtotime($inputMonth));
 				$year2 = date("Y" , strtotime($inputMonth));
 				$getdate = getdate(mktime(null, null, null, $month, 1, $year));
-				$firstDay = $getdate["weekday"]
+				$firstDay = $getdate["weekday"];
+
 				// Vars for control loops
 				$day = 1;																									  // first day, can be incremented
 				$lastDay = cal_days_in_month (CAL_GREGORIAN,$month,$year);  //number of days in the selected month
