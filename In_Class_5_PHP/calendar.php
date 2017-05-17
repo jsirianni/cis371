@@ -1,10 +1,4 @@
 <?php
-	// Allow error msg
-	ini_set('display_errors', 1);
-	error_reporting(E_ALL);
-	ini_set('display_startup_errors', 1);
-
-
 	// Set the timezone to EST
 	date_default_timezone_set('America/New_York');
 
