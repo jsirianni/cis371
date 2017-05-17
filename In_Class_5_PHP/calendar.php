@@ -51,21 +51,21 @@
 
 
 				// For first week print empty days depending on first day of month
-				if (strcmp($getdate["weekday"];, "Sunday") == 0) {
+				if (strcmp($getdate["weekday"], "Sunday") == 0) {
 					continue;
-				} elseif (strcmp($getdate["weekday"];, "Monday") == 0) {
+				} elseif (strcmp($getdate["weekday"], "Monday") == 0) {
 					echo "<tr><th></th></tr>";
 
-				} elseif (strcmp($getdate["weekday"];, "Tuesday") == 0) {
+				} elseif (strcmp($getdate["weekday"], "Tuesday") == 0) {
 					echo "<tr><th></th><th></th></tr>";
 
-				} elseif (strcmp($getdate["weekday"];, "Wednessday") == 0) {
+				} elseif (strcmp($getdate["weekday"], "Wednessday") == 0) {
 					echo "<tr><th></th><th></th><th></th></tr>";
 
-				} elseif (strcmp($getdate["weekday"];, "Thursday") == 0) {
+				} elseif (strcmp($getdate["weekday"], "Thursday") == 0) {
 					echo "<tr><th></th><th></th><th></th><th></th></tr>";
 
-				} elseif (strcmp($getdate["weekday"];, "Friday") == 0) {
+				} elseif (strcmp($getdate["weekday"], "Friday") == 0) {
 					echo "<tr><th></th><th></th><th></th><th></th><th></th></tr>";
 
 				} else { 						//Saturday
