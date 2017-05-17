@@ -45,6 +45,7 @@
 				$year2 = date("Y" , strtotime($inputMonth));
 				$getdate = getdate(mktime(null, null, null, $month, 1, $year));
 				$firstDay = $getdate["weekday"];
+				echo gettype($firstDay);
 
 				// Vars for control loops
 				$day = 1;																									  // first day, can be incremented
@@ -52,10 +53,10 @@
 
 
 				// For first week print empty days depending on first day of month
-				if ($firstDay === "Sunday") {
-					continue;
+				//if ($firstDay === "Sunday") {
+				//	continue;
 
-				}/// elseif ($firstDay === "Monday") {
+				//}/// elseif ($firstDay === "Monday") {
 				//	echo "<tr><th></th></tr>";
 
 				//} elseif ($firstDay === "Tuesday") {
