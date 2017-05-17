@@ -54,33 +54,34 @@
 
 				// Offset first week of the month with empty cells, ignore Sunday
 				if ($firstDay === "Monday") {
-					echo $firstDay;
 					echo "<tr><th></th>";
 					$x = 1;
+
 				} elseif ($firstDay === "Tuesday") {
-					echo $firstDay;
-					$x = 2;
 					echo "<tr><th></th><th></th>";
+					$x = 2;
+
 				} elseif ($firstDay === "Wednesday") {
-					echo $firstDay;
 					echo "<tr><th></th><th></th><th></th>";
 					$x = 3;
+
 				} elseif ($firstDay === "Thursday") {
-					echo $firstDay;
 					echo "<tr><th></th><th></th><th></th><th></th>";
 					$x = 4;
+
 				} elseif ($firstDay === "Friday") {
-					echo $firstDay;
 					echo "<tr><th></th><th></th><th></th><th></th><th></th>";
 					$x = 5;
+
 				} elseif ($firstDay === "Saturday") {
-					echo $firstDay;
 					echo "<tr><th></th><th></th><th></th><th></th><th></th><th></th>";
 					$x = 6;
-				} else { // Sunday
+
+				} else { 											// Sunday, no offset
 					$x = 0;
 				}
-				$x++;
+				$x++;													// Increment to account for first day
+
 
 				do {													// Create additional weeks
 					do { 												// Fill weeks with days
