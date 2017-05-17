@@ -2,20 +2,18 @@
 	// Set the timezone to EST
 	date_default_timezone_set('America/New_York');
 
-	// Assign values to month, year, and header date
+	// If args exist
 	if ($_GET['month'] != "" && $_GET['year'] != "") {
-		// Convert number to month name
 		$month = $_GET['month'];
 		$year = $_GET['year'];
 		$headerDate = ((DateTime::createFromFormat('!m', $month))->format('F') . " " . $year);
 	// No args
 	} else {
-		$month = date('m');	//month number
-		$year = date('Y');  //year number
-		$headerDate = date('F Y');
+		$month = date('m');	//month as a number
+		$year = date('Y');
+		$headerDate = date('F Y'); // Header = Month work + year
 	}
 ?>
-
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
