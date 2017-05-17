@@ -55,22 +55,22 @@
 				// Offset first week of the month with empty cells, ignore Sunday
 				if ($firstDay === "Monday") {
 					echo "<tr><th></th>";
-					$x = $x + 2;
+					$x = $x + 0;
 				} elseif ($firstDay === "Tuesday") {
 					echo "<tr><th></th><th></th>";
-					$x = $x + 3;
+					$x = $x + 1;
 				} elseif ($firstDay === "Wednessday") {
 					echo "<tr><th></th><th></th><th></th>";
-					$x = $x + 4;
+					$x = $x + 2;
 				} elseif ($firstDay === "Thursday") {
 					echo "<tr><th></th><th></th><th></th><th></th>";
-					$x = $x + 5;
+					$x = $x + 3;
 				} elseif ($firstDay === "Friday") {
 					echo "<tr><th></th><th></th><th></th><th></th><th></th>";
-					$x = $x + 6;
+					$x = $x + 4;
 				} else { 						//Saturday
 					echo "<tr><th></th><th></th><th></th><th></th><th></th><th></th>";
-					$x = $x + 7;
+					$x = $x + 5;
 				}
 
 				do {													// Create additional weeks
