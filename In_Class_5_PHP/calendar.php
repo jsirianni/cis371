@@ -45,32 +45,28 @@
 				// Vars for control loops
 				$day = 1;																									  // first day, can be incremented
 				$lastDay = cal_days_in_month (CAL_GREGORIAN,$month,$year);  //number of days in the selected month
-
 				// Create week rows until all days are printed
 				do {
-					$x = 1;						// Control var
-					echo "<tr>";  		// Start of week
+					// Control var controls week end
+					$x = 1;
+					// Table row opening tag - Begins week
+					echo "<tr>";
 					do {
+						// If all days not generated, print next day
 						if ($day < $lastDay) {
-							echo "<th>";		// Open a cell
-							echo $day;
-							echo "</th>";  // Close a cell
+							echo "<th>$day</th>";
 						}
-						
-						$day++;				// Increment day
-						$x++;					// Increment control var
-						// Continue filling the week until 7 days or last day of month is used
+						// Increment control vars
+						$day++;
+						$x++;
+						// Continue filling the week until 7 days
 					} while ($x <= 7);
-
-					echo "</tr>" ;	// Close the week row
-
-					// Only continuing creating weeks until last day is printed
+					// End the week
+					echo "</tr>";
+					// Continue generating weeks until all days are printed
 				} while ($day <= $lastDay);
-
-				// Control loop generates table rows until all days are displayed
-
-
 				?>
+				
       </tbody>
     </table>
   </div>
