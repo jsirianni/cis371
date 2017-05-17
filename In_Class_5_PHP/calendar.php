@@ -43,6 +43,7 @@
 				// Vars for control loops
 				$day = 1;																									  // first day, can be incremented
 				$lastDay = cal_days_in_month (CAL_GREGORIAN,$month,$year);  //number of days in the selected month
+
 				// Create week rows until all days are printed
 				do {
 					// Control var controls week end
@@ -67,6 +68,9 @@
 
       </tbody>
     </table>
-  </div>
+		<?php
+		echo date("$year-$month-01"); // first day of a month chosen by you
+		?>
+	</div>
 </body>
 </html>
