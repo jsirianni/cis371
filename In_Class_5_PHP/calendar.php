@@ -56,31 +56,32 @@
 				if ($firstDay === "Monday") {
 					echo $firstDay;
 					echo "<tr><th></th>";
-					$x = $x + 1;
+					$x = 1;
 				} elseif ($firstDay === "Tuesday") {
 					echo $firstDay;
+					$x = 2;
 					echo "<tr><th></th><th></th>";
-					$x = $x + 2;
-				} elseif ($firstDay === "Wednessday") {
+				} elseif ($firstDay === "Wednesday") {
 					echo $firstDay;
 					echo "<tr><th></th><th></th><th></th>";
-					$x = $x + 3;
+					$x = 3;
 				} elseif ($firstDay === "Thursday") {
 					echo $firstDay;
 					echo "<tr><th></th><th></th><th></th><th></th>";
-					$x = $x + 4;
+					$x = 4;
 				} elseif ($firstDay === "Friday") {
 					echo $firstDay;
 					echo "<tr><th></th><th></th><th></th><th></th><th></th>";
-					$x = $x + 5;
-				} else { 						//Saturday
+					$x = 5;
+				} elseif ($firstDay === "Saturday") {
 					echo $firstDay;
 					echo "<tr><th></th><th></th><th></th><th></th><th></th><th></th>";
-					$x = $x + 6;
+					$x = 6;
+				} else { // Monday
+					$x = 1;
 				}
 
 				do {													// Create additional weeks
-
 					do { 												// Fill weeks with days
 						if ($day <= $lastDay) {   // If all days not generated, print next day
 							echo "<th>$day</th>";
@@ -92,8 +93,8 @@
 					echo "</tr>"; 					    // End the week
 					if ($day <= $lastDay) { 	  // Begin week if not all days generated
 						echo "<tr>";
-						$x = 1;
 					}
+					$x = 1;											// reset days printed
 				} while ($day <= $lastDay); 	// Continue generating weeks if all days not generated
 																			// End calendar generation ?>
 
