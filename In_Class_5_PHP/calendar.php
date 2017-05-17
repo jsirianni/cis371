@@ -51,30 +51,7 @@
 				$lastDay = cal_days_in_month (CAL_GREGORIAN,$month,$year);  //number of days in the selected month
 
 
-				// For first week print empty days depending on first day of month
-				if ($getdate === "Sunday") {
-					continue;
-				} elseif ($getdate === "Monday") {
-					echo "<tr>";
-					echo "<th></th>";
-				} elseif ($getdate === "Tuesday") {
-					echo "<tr>";
-					echo "<th></th><th></th>";
-				} elseif ($getdate === "Wednessday") {
-					echo "<tr>";
-					echo "<th></th><th></th><th></th>";
-				} elseif ($getdate === "Thursday") {
-					echo "<tr>";
-					echo "<th></th><th></th><th></th><th></th>";
-				} elseif ($getdate === "Friday") {
-					echo "<tr>";
-					echo "<th></th><th></th><th></th><th></th><th></th>";
-				} else { 						//Saturday
-					echo "<tr>";
-					echo "<th></th><th></th><th></th><th></th><th></th><th></th>";
-				}
-				// Close first week
-				echo "</tr>";
+
 
 
 				// Create additional weeks
@@ -84,10 +61,6 @@
 
 					// Begin week
 					echo "<tr>";
-
-
-
-
 					do {
 						// If all days not generated, print next day
 						if ($day <= $lastDay) {
