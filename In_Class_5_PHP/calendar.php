@@ -51,7 +51,7 @@
 					$x = 1;						// Control var
 					echo "<tr>";  		// Start of week
 					do {
-						if ($day < $ $lastDay) {
+						if ($day < $lastDay) {
 							echo "<th>";		// Open a cell
 							echo $day;
 							echo "</th>";  // Close a cell
