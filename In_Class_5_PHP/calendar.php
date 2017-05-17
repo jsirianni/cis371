@@ -63,7 +63,7 @@
 					echo "</tr>" ;	// Close the week row
 
 					// Only continuing creating weeks until last day is printed
-				} while ($day < $lastDay);
+				} while ($day <= $lastDay);
 
 				// Control loop generates table rows until all days are displayed
 
