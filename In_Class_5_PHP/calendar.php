@@ -44,13 +44,33 @@
 				$month2 = date("m" , strtotime($inputMonth));
 				$year2 = date("Y" , strtotime($inputMonth));
 				$getdate = getdate(mktime(null, null, null, $month, 1, $year));
-				echo $getdate
+
 				// Vars for control loops
 				$day = 1;																									  // first day, can be incremented
 				$lastDay = cal_days_in_month (CAL_GREGORIAN,$month,$year);  //number of days in the selected month
 
 
+				// For first week print empty days depending on first day of month
+				if (strcmp($getdate["weekday"];, "Sunday") == 0) {
+					continue;
+				} elseif (strcmp($getdate["weekday"];, "Monday") == 0) {
+					echo "<tr><th></th></tr>";
 
+				} elseif (strcmp($getdate["weekday"];, "Tuesday") == 0) {
+					echo "<tr><th></th><th></th></tr>";
+
+				} elseif (strcmp($getdate["weekday"];, "Wednessday") == 0) {
+					echo "<tr><th></th><th></th><th></th></tr>";
+
+				} elseif (strcmp($getdate["weekday"];, "Thursday") == 0) {
+					echo "<tr><th></th><th></th><th></th><th></th></tr>";
+
+				} elseif (strcmp($getdate["weekday"];, "Friday") == 0) {
+					echo "<tr><th></th><th></th><th></th><th></th><th></th></tr>";
+
+				} else { 						//Saturday
+					echo "<tr><th></th><th></th><th></th><th></th><th></th><th></th></tr>";
+				}
 
 
 				// Create additional weeks
