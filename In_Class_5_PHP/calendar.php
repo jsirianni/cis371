@@ -53,26 +53,32 @@
 
 				// For first week print empty days depending on first day of month
 				if ($firstDay === "Sunday") {
-					echo "Woking";
+					echo "First day is $firstDay";
 
-				}/// elseif ($firstDay === "Monday") {
-				//	echo "<tr><th></th></tr>";
+				} elseif ($firstDay === "Monday") {
+					echo "First day is $firstDay";
+					echo "<tr><th></th></tr>";
 
-				//} elseif ($firstDay === "Tuesday") {
-			//		echo "<tr><th></th><th></th></tr>";
+				} elseif ($firstDay === "Tuesday") {
+					echo "First day is $firstDay";
+					echo "<tr><th></th><th></th></tr>";
 
-				//} elseif ($firstDay === "Wednessday") {
-				//	echo "<tr><th></th><th></th><th></th></tr>";
+				} elseif ($firstDay === "Wednessday") {
+					echo "First day is $firstDay";
+					echo "<tr><th></th><th></th><th></th></tr>";
 
-//				} elseif ($firstDay === "Thursday") {
-	//				echo "<tr><th></th><th></th><th></th><th></th></tr>";
+				} elseif ($firstDay === "Thursday") {
+					echo "First day is $firstDay";
+					echo "<tr><th></th><th></th><th></th><th></th></tr>";
 
-		//		} elseif ($firstDay === "Friday") {
-			//		echo "<tr><th></th><th></th><th></th><th></th><th></th></tr>";
+				} elseif ($firstDay === "Friday") {
+					echo "First day is $firstDay";
+					echo "<tr><th></th><th></th><th></th><th></th><th></th></tr>";
 
-//				} else { 						//Saturday
-	//				echo "<tr><th></th><th></th><th></th><th></th><th></th><th></th></tr>";
-		//		}
+				} else { 						//Saturday
+					echo "First day is $firstDay";
+					echo "<tr><th></th><th></th><th></th><th></th><th></th><th></th></tr>";
+				}
 
 
 				// Create additional weeks
