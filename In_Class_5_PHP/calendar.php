@@ -53,7 +53,7 @@
 					echo "<tr>";
 					do {
 						// If all days not generated, print next day
-						if ($day < $lastDay) {
+						if ($day <= $lastDay) {
 							echo "<th>$day</th>";
 						}
 						// Increment control vars
@@ -66,7 +66,7 @@
 					// Continue generating weeks until all days are printed
 				} while ($day <= $lastDay);
 				?>
-				
+
       </tbody>
     </table>
   </div>
