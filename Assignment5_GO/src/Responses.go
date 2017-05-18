@@ -7,6 +7,7 @@ import (
 	"strings"
 )
 
+
 // Returns a dynamic web page containing the public IP address
 func ipAddr() []byte {
 	// Get the server IP & build page
@@ -25,6 +26,7 @@ func ipAddr() []byte {
 	// Return the page
 	return append(headers, body...)
 }
+
 
 // Return a 404 Page
 func pageNotFound() []byte {
@@ -50,6 +52,7 @@ func pageNotFound() []byte {
 	return append(notFoundHeader, notFoundBody...)
 }
 
+
 // Return 200 Ok headers as byte slice
 func okHeaders(fPath string, bodyLength string) []byte {
 	okHeader := []byte(
@@ -62,6 +65,7 @@ func okHeaders(fPath string, bodyLength string) []byte {
 	fmt.Print(string(okHeader))
 	return okHeader
 }
+
 
 // Helper function returns content type
 func contentType(f string) string {
