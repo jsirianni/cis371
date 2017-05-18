@@ -106,9 +106,9 @@ public class SimpleBrowser {
 
   protected void loadPage(String textInBar) {
     // TODO:  Replace this method with a method that loads text from a URL instead of a file.
-    // This code here is just so that the simple browser will do something until you get the 
+    // This code here is just so that the simple browser will do something until you get the
     // networking part working.
-    
+
     File file = new File(textInBar);
     List<String> contents = null;
     try {
