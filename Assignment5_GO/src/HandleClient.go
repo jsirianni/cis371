@@ -63,7 +63,6 @@ func handleClient(c net.Conn) {
   // Check if GET Contains one of following: .py, .sh, .rb, .go
   // Call functions from HandleScripts.go
   // Write function response c.Write()
-
   // Check if the file exists
   } else if _, err := ioutil.ReadFile(filePath); os.IsNotExist(err) {
     checkError(err)

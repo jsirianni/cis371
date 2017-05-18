@@ -27,7 +27,6 @@ func ipAddr() []byte {
 	return append(headers, body...)
 }
 
-
 // Return a 404 Page
 func pageNotFound() []byte {
 	// Build response headers
