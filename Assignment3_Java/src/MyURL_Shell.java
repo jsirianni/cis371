@@ -2,26 +2,81 @@
  * Represents a URL
  */
 public class MyURL_Shell {
-
   private String scheme = "http";
   private String domainName = null;
   private int port = 80;
   private String path = "/";
 
-  /**
-   * Split {@code url} into the various components of a URL
-   *
-   * @param url the {@code String} to parse
-   */
+
+  // Pass a URL that contains a domain at minimum
   public MyURL_Shell(String url) {
 
-    // TODO:  Split the url into scheme, domainName, port, and path.
-    // Only the domainName is required.  Default values given above.
-    // See the test file for examples of correct and incorrect behavior.
-    // Hints:  (1) My implementation is mostly calls to String.indexOf and String.substring.
-    // (2) indexOf can take a String as a parameter (it need not be a single character).
-  }
+    // Set URL to lowercase to prevent problems
+    url = url.toLowerCase();
 
+    //
+    // Parse URL for the protocol
+    //
+    if (url.contains("://")) {
+      String[] x = url.split(":");
+      scheme = x[0];
+    }
+
+    //
+    // Parse URL for domain --> http://stackoverflow.com/questions/16673628/remove-url-prefix-from-string-http-www-etc
+    //
+    // Remove url prifix if present
+    domainName = url.replaceFirst("^(http://www\\.|http://|www\\.)","");
+
+    // If port specified, remove port and anything after
+    if (domainName.contains(":") {
+      String[] x = domainName.split(":");
+      domainName = x[0];
+
+    // If no port, but path is specified, remove it
+    } else if (domainName.contains("/")) {
+      String[] x = domainName.split("/") ;
+      domainName = x[0];
+    }
+
+    //
+    // Parse URL for port and path
+    //
+    // Remove prefix from url
+    String tmpUrl = url;
+    tmpUrl = url.replaceFirst("^(http://www\\.|http://|www\\.)","");
+
+    // IF path specified, assign and remove from tmpUrl
+    if (tmpUrl.contains("/")) {
+      String[] x = tmpUrl.split("/");
+      tmpUrl = x[0];
+      path = x[1];
+
+      // If a port is specified, parse for it
+      if (tmpUrl.contains(":")) {
+        String[] y = tmpUrl.split(":");
+        port = Integer.parseInt(y[1]);
+
+      // If no port specified, default to 80
+      } else {
+        port = 80;
+      }
+
+    // IF no path specified, but port specified
+    } else if (tmpUrl.contains(":")) {
+      String[] x = tmpUrl.split(":");
+      port = x[1];
+      path = "/";
+
+    // No path or port specified
+    } else {
+      port = 80;
+      path = "/";
+    }
+  } // End constructor
+
+
+  
   /**
    * If {@code newURL} has a scheme (e.g., begins with "http://", "ftp://", etc), then parse {@code newURL} 
    * and ignore {@code currentURL}.  If {@code newURL} does not have a scheme, then assume it is intended 
