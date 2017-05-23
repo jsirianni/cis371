@@ -55,6 +55,9 @@ function popTable() {
 }
 
 
+
+
+
 //
 // Function returns an array containing all DB entries
 //
@@ -63,15 +66,25 @@ function readTable() {
   $sqlconn =  mysqli_connect("localhost", "root", "password");
 
   // For query to read all data, create array to read into
-  $sql = mysqli_query($sqlconn,"SELECT * FROM myfriends");
+  $result = mysqli_query($sqlconn,"SELECT * FROM myfriends");
   $array = array();
 
   // Read each row row into array
-  while($row = mysqli_fetch_assoc($sql)){
-    $array[] = $row;
-  }
+  while($array[] = mysqli_fetch_assoc($result));
   print_r($array);
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Call functions
