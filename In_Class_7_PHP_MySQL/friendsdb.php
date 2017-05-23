@@ -45,7 +45,8 @@ function popTable() {
 
     // Execute the query, if error, print to console
     if ($sqlconn->query($sql) === TRUE) {
-        echo "New record created successfully";
+        //echo "New record created successfully";
+        continue;
     } else {
         echo "Error: " . $sql . "<br>" . $sqlconn->error;
     }
