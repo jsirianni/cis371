@@ -34,5 +34,7 @@ popTable();
   Phone number: <?php echo $pNumber; ?><br>
   Age: <?php echo $age; ?><br>
   <br>
+
+  <?php readTable(); ?>
 </body>
 </html>
