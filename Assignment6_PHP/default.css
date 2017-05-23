@@ -23,8 +23,12 @@ td {
   font-weight: bold;
 }
 
+#nav {
+  width: 50%
+}
+
 #nav img {
   display: inline;
-  margin: 0 auto;
+  margin: auto;
   padding: 20px;
 }
