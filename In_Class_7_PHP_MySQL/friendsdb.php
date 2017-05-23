@@ -20,6 +20,10 @@ function initTable() {
   // Run the table creation query
   mysqli_query($sqlconn, $sql);
 
+  // Add constraint to table
+  $sql = "ALTER TABLE myfriends ADD UNIQUE INDEX (firstname,lastname)";
+  mysqli_query($sqlconnm, $sql);
+
   // Close when finished
   $sqlconn->close();
 }
@@ -48,7 +52,8 @@ function popTable() {
         //echo "New record created successfully";
         continue;
     } else {
-        echo "Error: " . $sql . "<br>" . $sqlconn->error;
+        //echo "Error: " . $sql . "<br>" . $sqlconn->error;
+        continue;
     }
   }
   // Done writing to database
