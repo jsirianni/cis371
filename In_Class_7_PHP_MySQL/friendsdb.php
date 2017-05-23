@@ -12,15 +12,13 @@ $tableName = "myfriends";
 //
 function initTable() {
   // Connect to local DB, hardcoded creds not recomended
-  $sqlconn =  mysqli_connect("localhost", "root", "password");
+  $sqlconn =  mysqli_connect("localhost", "root", "password", "cid371");
 
   // Build the query
-  $sql = "CREATE TABLE cis371 myfriends"
-        . "(id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,"
-        . "fName VARCHAR(15) NOT NULL,"
-        . "lName VARCHAR(30) NOT NULL,"
-        . "pNum VARCHAR(15) NOT NULL,"
-        . "age VARCHAR(3) NOT NULL)";
+  $sql = "CREATE TABLE myfriends (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, firstname CHAR(15), lastname CHAR(30), num CHAR(15), age CHAR(3))";
+
+//CREATE TABLE myfriends (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, firstname CHAR(15), lastname CHAR(30), num CHAR(15), age CHAR(3));
+
 
   // Evals to true if table creation works
   //if
