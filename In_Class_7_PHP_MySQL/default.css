@@ -14,3 +14,7 @@ table, tr {
 th {
     text-align: left;
 }
+
+table {
+    width: 50%;
+}
