@@ -37,22 +37,22 @@ function popTable() {
   // open file for reading
   $inputFile = fopen("friends.txt", "r");
 
-    // Read each line and insert into table
-    while (($line = fgets($inputFile)) !== false) {
-      // Place comma delimited values into array
-      $lineArray = explode(',', $line);
-      $line = settype($line, "string");
-      print($line);
+  // Read each line and insert into table
+  while (($line = fgets($inputFile)) !== false) {
+    // Place comma delimited values into array
+    $lineArray = explode(',', $line);
+    $line = settype($line, "string");
+    print($line);
 
-      // Insert each value into table
-      $sql = "INSERT INTO myfriends VALUES (firstname, lastname, num, age) ('$lineArray[0]','$lineArray[1]','$lineArray[2]','$lineArray[3]')";
+    // Insert each value into table
+    $sql = "INSERT INTO myfriends VALUES (firstname, lastname, num, age) ('$lineArray[0]','$lineArray[1]','$lineArray[2]','$lineArray[3]')";
 
 
-        if ($sqlconn->query($sql) === TRUE) {
-            echo "New record created successfully";
-        } else {
-            echo "Error: " . $sql . "<br>" . $sqlconn->error;
-        }
+    if ($sqlconn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $sqlconn->error;
+    }
 
 
 
