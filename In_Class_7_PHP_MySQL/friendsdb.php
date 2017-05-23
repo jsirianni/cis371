@@ -73,11 +73,11 @@ function readTable() {
   echo "<tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Age</th></tr>";
   echo "<tr>";
   while ($row = mysqli_fetch_assoc($result)) {
-    echo "<th>$row["id"]</th>";
-    echo "<th>$row["firstname"]</th>";
-    echo "<th>$row["lastname"]</th>";
-    echo "<th>$row["num"]</th>";
-    echo "<th>$row["age"]</th>";
+    echo "<th>$row['id']</th>";
+    echo "<th>$row['irstname']</th>";
+    echo "<th>$row['lastname']</th>";
+    echo "<th>$row['num']</th>";
+    echo "<th>$row['age']</th>";
   }
   echo "</tr"
   echo "</tbody></table>";
