@@ -23,6 +23,10 @@ td {
   font-weight: bold;
 }
 
+#nav {
+  float: left;
+}
+
 #nav img {
   display: block;
   margin: auto;
