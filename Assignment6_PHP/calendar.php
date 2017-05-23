@@ -109,9 +109,22 @@
 		// Determine previous and next month
 		$prevMonth = $month -1;
 		$nextMonth = $month + 1;
+
+		// Logic to determine year
+		if ($prevMonth == 0) {
+			$prevMonth = 12;
+			$prevYear = $year - 1;
+		}
+		else {
+			$prevYear = $year
+		}
+
+
+
+
 		?>
 
-		<a href="calendar.php?month=<?php echo $prevMonth; ?>&year=2011">
+		<a href="calendar.php?month=<?php echo $prevMonth; ?>&year=<?php echo $prevYear; ?>">
  			<img src="prev.png" alt="previous button" style="width:42px;height:42px;">
 		</a>
 
