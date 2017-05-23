@@ -35,6 +35,9 @@ popTable();
   Age: <?php echo $age; ?><br>
   <br>
 
-  <?php readTable(); ?>
+  <?php
+  // Print the table contents to the web page
+  readTable();
+  ?>
 </body>
 </html>
