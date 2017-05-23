@@ -75,12 +75,8 @@ function readTable() {
 
     // add each row returned into an array
     $array[] = $row;
-
-    // OR just echo the data:
-    echo $row['username']; // etc
-
   }
-
+  print_r($array);
 
 
 
