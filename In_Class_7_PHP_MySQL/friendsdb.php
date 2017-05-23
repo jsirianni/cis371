@@ -44,7 +44,7 @@ function popTable() {
       print($line);
 
       // Insert each value into table
-      $sql = "INSERT INTO cis371 myfriends myfriends (firstname, lastname, num, age)
+      $sql = "INSERT INTO myfriends (firstname, lastname, num, age)
         VALUES ($lineArray[0],$lineArray[1],$lineArray[2],$lineArray[3])";
 
 
