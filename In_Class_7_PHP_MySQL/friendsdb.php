@@ -32,10 +32,10 @@ function initTable() {
 //
 function popTable() {
   // Connect to local DB, hardcoded creds not recomended
-  $sqlconn =  mysqli_connect("localhost", "root", "password");
+  $sqlconn =  mysqli_connect("localhost", "root", "password", "cis371");
 
   // $x will be false if table is empty
-  $x = mysqli_query($sqlconn, "select 1 from " . $dbname . $tableName . " limit 1");
+  $x = mysqli_query($sqlconn, "select 1 from myfriends limit 1");
 
   // Build table if empty
   if ($x === false) {
@@ -47,7 +47,7 @@ function popTable() {
       $lineArray = explode(',', $line);
 
       // Insert each value into table
-      $sql = "insert into " . $dbname . $tableName
+      $sql = "insert into cis371 myfriends myfriends"
            . " ("               // ID is auto inserted
            . "$lineArray[0],"   // fName
            . "$lineArray[1],"   // lName
