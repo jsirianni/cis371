@@ -55,9 +55,6 @@ function popTable() {
 }
 
 
-
-
-
 //
 // Function returns an array containing all DB entries
 //
@@ -75,22 +72,11 @@ function readTable() {
     $array[] = $row;
   }
   print_r($array);
+  return $array;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// Call functions
+// Call functions if file run directly
 initTable();
 popTable();
 readTable();
