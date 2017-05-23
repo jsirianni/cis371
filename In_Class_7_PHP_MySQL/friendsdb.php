@@ -73,6 +73,18 @@ function readTable() {
     $array[] = $row;
   }
   print_r($array);
-  return $array[];
+
+
+  // Begin list
+  echo "<ul>";
+  // Read each record, display on webpage
+  foreach ($array as $record) {
+    echo "<li> $record </li>";
+  }
+  // End list
+  echo "</ul>";
+
+
+
 }
 ?>
