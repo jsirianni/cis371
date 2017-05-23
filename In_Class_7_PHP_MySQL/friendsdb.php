@@ -41,6 +41,7 @@ function popTable() {
     while (($line = fgets($inputFile)) !== false) {
       // Place comma delimited values into array
       $lineArray = explode(',', $line);
+      puts($line);
 
       // Insert each value into table
       $sql = "insert into cis371 myfriends myfriends"
