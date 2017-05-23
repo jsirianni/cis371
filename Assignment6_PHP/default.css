@@ -29,7 +29,7 @@ td {
 }
 
 #nav img {
-  display: block;
+  display: inline;
   margin: auto;
   padding: 10px;
 }
