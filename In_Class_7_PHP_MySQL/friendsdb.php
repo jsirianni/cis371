@@ -69,7 +69,7 @@ function readTable() {
 
   // Display all DB content
   echo "<h3> Current Database Entries </h3>";
-  echo "<tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Age</th></tr>"
+  //echo "<tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Age</th></tr>";
   echo "<ul>";
   while ($row = mysqli_fetch_assoc($result)) {
     //$array[] = $row;
