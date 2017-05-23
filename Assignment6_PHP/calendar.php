@@ -116,12 +116,8 @@
 			$prevYear = $year - 1;
 		}
 		else {
-			$prevYear = $year
+			$prevYear = $year;
 		}
-
-
-
-
 		?>
 
 		<a href="calendar.php?month=<?php echo $prevMonth; ?>&year=2011">
