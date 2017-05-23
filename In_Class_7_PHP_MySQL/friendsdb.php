@@ -8,29 +8,28 @@ $tableName = "myfriends";
 
 
 //
-// Create table, return false if already exists
+// Function creates the table
 //
 function initTable() {
   // Connect to local DB, hardcoded creds not recomended
   $sqlconn =  mysqli_connect("localhost", "root", "password", "cis371");
 
-  // Build the query
+  // Build the creation query
   $sql = "CREATE TABLE myfriends (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     firstname CHAR(15), lastname CHAR(30), num CHAR(15), age CHAR(3))";
 
-//CREATE TABLE myfriends (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, firstname CHAR(15), lastname CHAR(30), num CHAR(15), age CHAR(3));
-
-
-  // Evals to true if table creation works
-  //if
+  // Run the table creation query
   mysqli_query($sqlconn, $sql);
+
+  // Close when finished
   $sqlconn->close();
 }
 
 
-
+//
 // Populate table from text file, false if table already has data
+//
 function popTable() {
   // Connect to local DB, hardcoded creds not recomended
   $sqlconn =  mysqli_connect("localhost", "root", "password");
@@ -79,6 +78,6 @@ function readTable() {
 
 // Call db create function
 initTable();
-
+popTable();
 
 ?>
