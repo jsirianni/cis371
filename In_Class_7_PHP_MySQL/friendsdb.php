@@ -62,24 +62,15 @@ function readTable() {
   // Connect to local DB, hardcoded creds not recomended
   $sqlconn =  mysqli_connect("localhost", "root", "password");
 
-
-
-  // Read database into array (warning, entire database is read into RAM)
-  $query = mysqli_query($sqlconn,"SELECT * FROM myfriends");
-
-  // set array
+  // For query to read all data, create array to read into
+  $sql = mysqli_query($sqlconn,"SELECT * FROM myfriends");
   $array = array();
 
-  // look through query
-  while($row = mysqli_fetch_assoc($query)){
-
-    // add each row returned into an array
+  // Read each row row into array
+  while($row = mysqli_fetch_assoc($sql)){
     $array[] = $row;
   }
   print_r($array);
-
-
-
 }
 
 
