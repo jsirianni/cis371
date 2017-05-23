@@ -105,12 +105,12 @@
 	</div>
 	<div id="nav">
 
-		<a href="calendar.php">
+		<a href="calendar.php?month=1&year=2011">
  			<img src="prev.png" alt="previous button" style="width:42px;height:42px;">
 		</a>
 
 
-		<a href="calendar.php">
+		<a href="calendar.php?month=2&year=2012">
  			<img src="next.png" alt="next button" style="width:42px;height:42px;">
 		</a>
 
