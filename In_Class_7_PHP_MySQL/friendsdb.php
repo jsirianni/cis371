@@ -66,25 +66,13 @@ function readTable() {
   // For query to read all data, create array to read into
   $sql = "SELECT * FROM myfriends";
   $result = mysqli_query($sqlconn,$sql);
-
+  echo $result;
   // Read each row row into array
   $array = array();
   while ($row = mysqli_fetch_assoc($result)) {
     $array[] = $row;
     echo "<p> $row </p>";
   }
-
-
-  // Begin list
-  echo "<ul>";
-  // Read each record, display on webpage
-  foreach ($array as $record) {
-    echo "<li> $record </li>";
-  }
-  // End list
-  echo "</ul>";
-
-
 
 }
 ?>
