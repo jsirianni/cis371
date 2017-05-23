@@ -63,7 +63,7 @@ function popTable() {
 //
 function readTable() {
   // Connect to local DB, hardcoded creds not recomended
-  $sqlconn =  mysqli_connect("localhost", "root", "password");
+  $sqlconn =  mysqli_connect("localhost", "root", "password", "cis371");
 
   // For query to read all data, create array to read into
   $sql = "SELECT * FROM myfriends";
