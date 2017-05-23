@@ -104,19 +104,23 @@
     </table>
 	</div>
 	<div id="nav">
-
 		<?php
-		// Determine previous and next month
+		// Determine previous month / year
 		$prevMonth = $month -1;
-		$nextMonth = $month + 1;
-
-		// Logic to determine year
 		if ($prevMonth == 0) {
 			$prevMonth = 12;
 			$prevYear = $year - 1;
 		}
 		else {
 			$prevYear = $year;
+		}
+		// Determine next month / year
+		$nextMonth = $month + 1;
+		if ($nextMonth == 13) {
+			$nextMonth = 1;
+			$nextYear = $year + 1;
+		} else {
+			$nextYear = $year;
 		}
 		?>
 
@@ -125,7 +129,7 @@
 		</a>
 
 
-		<a href="calendar.php?month=<?php echo $nextMonth; ?>&year=2011">
+		<a href="calendar.php?month=<?php echo $nextMonth; ?>&year=<?php echo $nextYear; ?>">
  			<img src="next.png" alt="next button" style="width:42px;height:42px;">
 		</a>
 
