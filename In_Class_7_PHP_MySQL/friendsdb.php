@@ -47,8 +47,15 @@ function popTable() {
       $sql = "INSERT INTO cis371 myfriends myfriends (firstname, lastname, num, age)
         VALUES ($lineArray[0],$lineArray[1],$lineArray[2],$lineArray[3])";
 
-      // Run the table creation query
-      mysqli_query($sqlconn, $sql);
+
+        if ($sqlconn->query($sql) === TRUE) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $sqlconn->error;
+        }
+
+
+
   }
   // Done writing to database
   $sqlconn->close();
