@@ -7,6 +7,6 @@
         clear: both;
     }
 
-table, th {
+table, tr {
    border: 1px solid black;
 }
