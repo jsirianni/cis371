@@ -2,9 +2,6 @@
 // Joseph Sirianni
 // In Class 6 - Friends Form
 
-// Import other files
-include 'friendsdb.php';
-
 
 // Assign posted variables
 $firstName = $_POST['fname'];
@@ -20,8 +17,7 @@ $f = fopen("./friends.txt", "a");
 fwrite($f, $line);
 fclose($friendFile);
 
-// Call db create function
-initTable();
+
 
 ?>
 <!--Build the html content -->

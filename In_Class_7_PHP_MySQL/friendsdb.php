@@ -100,4 +100,8 @@ function readTable() {
   }
 }
 
+// Call db create function
+test = initTable();
+
+
 ?>
