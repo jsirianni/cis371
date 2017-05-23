@@ -116,7 +116,7 @@
 		</a>
 
 
-		<a href="calendar.php?month=2&year=2012">
+		<a href="calendar.php?month=<?php echo $nextMonth; ?>&year=2012">
  			<img src="next.png" alt="next button" style="width:42px;height:42px;">
 		</a>
 
