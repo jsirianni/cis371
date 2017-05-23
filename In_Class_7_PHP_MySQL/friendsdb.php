@@ -67,6 +67,7 @@ function readTable() {
   $sql = "SELECT * FROM myfriends";
   $result = mysqli_query($sqlconn,$sql);
   echo "<p>$result</p>";
+
   // Read each row row into array
   $array = array();
   while ($row = mysqli_fetch_assoc($result)) {
@@ -75,4 +76,5 @@ function readTable() {
   }
 
 }
+readTable();
 ?>
