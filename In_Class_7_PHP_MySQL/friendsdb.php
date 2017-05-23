@@ -44,9 +44,8 @@ function popTable() {
       print($line);
 
       // Insert each value into table
-      $sql = "INSERT INTO myfriends (firstname, lastname, num, age)
-        VALUES ($lineArray[0],$lineArray[1],$lineArray[2],$lineArray[3])";
-
+      $sql = "INSERT INTO myfriends ($lineArray[0],$lineArray[1],$lineArray[2],$lineArray[3])";
+        
 
         if ($sqlconn->query($sql) === TRUE) {
             echo "New record created successfully";
