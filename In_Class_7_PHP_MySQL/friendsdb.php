@@ -44,13 +44,7 @@ function popTable() {
       print($line);
 
       // Insert each value into table
-      $sql = "insert into cis371 myfriends myfriends"
-           . " ("               // ID is auto inserted
-           . "$lineArray[0],"   // fName
-           . "$lineArray[1],"   // lName
-           . "$lineArray[2],"   // pNumber
-           . "$lineArray[3]"    // age
-           . ")";
+      $sql = "insert into cis371 myfriends myfriends ($lineArray[0],$lineArray[1],$lineArray[2],$lineArray[3])";
 
   }
   // Done writing to database
