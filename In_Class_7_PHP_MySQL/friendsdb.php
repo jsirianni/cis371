@@ -71,6 +71,7 @@ function readTable() {
   $array = array();
   while ($row = mysqli_fetch_assoc($result)) {
     $array[] = $row;
+    echo "<p> $row </p>";
   }
 
 
