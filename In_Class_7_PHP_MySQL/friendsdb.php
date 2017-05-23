@@ -72,7 +72,7 @@ function readTable() {
   while ($row = mysqli_fetch_assoc($result)) {
     //$array[] = $row;
     echo $row["firstname"], $row["lastname"], $row["num"], $row["age"];
-    $row = null;
+    echo <br>;
   }
 
   // Display DB content
