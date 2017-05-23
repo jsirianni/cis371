@@ -124,10 +124,10 @@
 		?>
 
 		<a href="calendar.php?month=<?php echo $prevMonth; ?>&year=<?php echo $prevYear; ?>">
- 			<img src="prev.png" alt="previous button" style="width:10em;height:10em;">
+ 			<img src="prev.png" alt="previous button" style="width:7em;height:7em;">
 		</a>
 		<a href="calendar.php?month=<?php echo $nextMonth; ?>&year=<?php echo $nextYear; ?>">
- 			<img src="next.png" alt="next button" style="width:42px;height:42px;">
+ 			<img src="next.png" alt="next button" style="width:7em;height:7em;">
 		</a>
 	</div>
 </body>
