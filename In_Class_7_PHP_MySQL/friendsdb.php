@@ -38,7 +38,7 @@ function popTable() {
   $x = false//mysqli_query($sqlconn, "select 1 from myfriends limit 1");
 
   // Build table if empty
-  if ($x === false) {
+  if ($x == false) {
     $inputFile = fopen("friends.txt", "r");
 
     // Read each line and insert into table
