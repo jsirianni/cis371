@@ -26,6 +26,7 @@ popTable();
 ?>
 <!--Build the html content -->
 <html>
+<link rel="stylesheet" href="default.css" type="text/css"/>
 <body>
   Thank you for your submission, it has been recorded in a database! <br><br>
 

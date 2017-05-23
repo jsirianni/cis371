@@ -68,15 +68,19 @@ function readTable() {
   $result = mysqli_query($sqlconn,$sql);
 
   // Display all DB content
-  echo "<h3> Current Database Entries </h3>";
-  echo "<ul>";
+  echo "<h3>Current Database Entries</h3>";
+  echo "<table><tbody>";
+  echo "<tr><th>Id </th><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Age</th></tr>";
   while ($row = mysqli_fetch_assoc($result)) {
-    //$array[] = $row;
-    echo "<li>";
-    echo $row["id"], " ", $row["firstname"], " ", $row["lastname"], " ", $row["num"], " ", $row["age"];
-    echo "</li>";
+    echo "<tr>";
+    echo "<td>", $row['id'], "</td>";
+    echo "<td>", $row['firstname'], "</td>";
+    echo "<td>", $row['lastname'], "</td>";
+    echo "<td>", $row['num'], "</td>";
+    echo "<td>", $row['age'], "</td>";
+    echo "</tr>";
   }
-  echo "</ul>";
+  echo "</tbody></table>";
 
   // Close the connection
   $sqlconn->close();
