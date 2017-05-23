@@ -72,7 +72,6 @@ function readTable() {
   while ($row = mysqli_fetch_assoc($result)) {
     $array[] = $row;
   }
-  print_r($array);
 
 
   // Begin list
