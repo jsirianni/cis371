@@ -66,11 +66,17 @@ function readTable() {
   $sqlconn =  mysqli_connect("localhost", "root", "password");
 
   // For query to read all data, create array to read into
-  $result = mysqli_query($sqlconn,"SELECT * FROM myfriends");
-  $array = array();
+  $sql = "SELECT * FROM myfriends";
+  $result = mysqli_query($sqlconn,$sql);
 
   // Read each row row into array
-  while($array[] = mysqli_fetch_assoc($result));
+  $array = array();
+  $num = mysql_num_rows($result);
+  if ($num > 0) {
+    while ($row = mysql_fetch_assoc($result)) {
+      $array[] = $rwo;
+    }
+  }
   print_r($array);
 }
 
