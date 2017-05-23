@@ -17,10 +17,8 @@ function initTable() {
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     firstname CHAR(15), lastname CHAR(30), num CHAR(15), age CHAR(3))";
 
-  // Run the table creation query
+  // Run the table creation query and then close connection
   mysqli_query($sqlconn, $sql);
-
-  // Close when finished
   $sqlconn->close();
 }
 
@@ -39,19 +37,20 @@ function popTable() {
     $lineArray = explode(',', $line);
     $line = settype($line, "string");
 
-    // Insert values into table. ID is auto incremented. Skip duplicate firstname,lastname
-    $sql = "INSERT IGNORE INTO myfriends (firstname, lastname, num, age)
-      VALUES ('$lineArray[0]','$lineArray[1]','$lineArray[2]','$lineArray[3]')";
+    // Insert values into table. ID is auto incremented. Skip if identical row
+    $sql = "INSERT INTO myfriends (firstname, lastname, num, age)
+      SELECT * FROM (SELECT '$lineArray[0]', '$lineArray[1]', '$lineArray[2]', '$lineArray[3]') AS tmp
+      WHERE NOT EXISTS (SELECT firstname, lastname, num, age FROM myfriends
+        WHERE firstname='$lineArray[0]' AND lastname='$lineArray[1]' AND num='$lineArray[2]' AND age='$lineArray[3]'
+      LIMIT 1)";
 
-    // Execute the query, if error, print to console
+    // Execute the query. Error handling can be added here later
     if ($sqlconn->query($sql) === TRUE) {
-        //echo "New record created successfully";
         continue;
     } else {
-        echo "Error: " . $sql . "<br>" . $sqlconn->error;
+        continue;
     }
   }
-  // Done writing to database
   $sqlconn->close();
 }
 
@@ -74,10 +73,6 @@ function readTable() {
     echo $row["firstname"], $row["lastname"], $row["num"], $row["age"];
     echo "<br>";
   }
-
-  // Display DB content
-
-
-
+  $sqlconn->close();
 }
 ?>
