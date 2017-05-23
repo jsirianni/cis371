@@ -46,6 +46,8 @@ function popTable() {
       // Insert each value into table
       $sql = "insert into cis371 myfriends myfriends ($lineArray[0],$lineArray[1],$lineArray[2],$lineArray[3])";
 
+      // Run the table creation query
+      mysqli_query($sqlconn, $sql);
   }
   // Done writing to database
   $sqlconn->close();
