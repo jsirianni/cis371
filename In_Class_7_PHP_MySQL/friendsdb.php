@@ -70,9 +70,10 @@ function readTable() {
   $result = mysqli_query($sqlconn,$sql);
 
   // Read each row row into array
-  $array = array();
   $row = mysqli_fetch_assoc($result);
-  $array[] = $row;
+
+  $array = array();
+  $array[] = settype($row, "string");
 
   print_r($array);
 }
