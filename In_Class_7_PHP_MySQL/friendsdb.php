@@ -47,7 +47,7 @@ function popTable() {
     $sql = "INSERT INTO myfriends (firstname, lastname, num, age)
       SELECT firstname, lastname FROM myfriends
       WHERE NOT EXISTS (SELECT * FROM myfriends
-        WHERE firstname='$lineArray[0]' AND lastname='$lineArray[1]'
+        WHERE firstname='$lineArray[0]' AND lastname='$lineArray[1]' AND num='$lineArray[2]' AND age='$lineArray[3]'
       LIMIT 1)";
 
 
