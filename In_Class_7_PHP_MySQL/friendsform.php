@@ -34,6 +34,18 @@ popTable();
   Phone number: <?php echo $pNumber; ?><br>
   Age: <?php echo $age; ?><br>
   <br>
-  <?php $currentAray = readTable(); ?>
+  <?php
+  // Call read table function, returns an array
+  $currentAray = readTable();
+
+  // Begin list
+  echo "<ul>";
+  // Read each record, display on webpage
+  foreach ($currentAray as $record) {
+    echo <"li> $record </li>"
+  }
+  // End list
+  echo "</ul>";
+  ?>
 </body>
 </html>
