@@ -45,8 +45,8 @@ function popTable() {
 
     // Insert values into table. ID is auto incremented. Skip duplicate firstname,lastname
     $sql = "INSERT INTO myfriends (firstname, lastname, num, age)
-      SELECT '$lineArray[0]', '$lineArray[1]' FROM myfriends
-      WHERE NOT EXISTS (SELECT * FROM myfriends
+      SELECT '$lineArray[0]', '$lineArray[1]', '$lineArray[2]', '$lineArray[3]' AS tmp
+      WHERE NOT EXISTS (SELECT firstname, lastname, num, age FROM myfriends
         WHERE firstname='$lineArray[0]' AND lastname='$lineArray[1]' AND num='$lineArray[2]' AND age='$lineArray[3]'
       LIMIT 1)";
 
