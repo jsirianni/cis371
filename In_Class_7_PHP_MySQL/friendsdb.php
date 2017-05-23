@@ -51,6 +51,7 @@ function popTable() {
         continue;
     }
   }
+  // Close the connection
   $sqlconn->close();
 }
 
@@ -67,12 +68,17 @@ function readTable() {
   $result = mysqli_query($sqlconn,$sql);
 
   // Display all DB content
-  //$array = array();
+  echo "<h3> Current Database Entries </h3>";
+  echo "<ul>";
   while ($row = mysqli_fetch_assoc($result)) {
     //$array[] = $row;
-    echo $row["firstname"], $row["lastname"], $row["num"], $row["age"];
-    echo "<br>";
+    echo "<li>";
+    echo $row["id"], " ", $row["firstname"], " ", $row["lastname"], " ", $row["num"], " ", $row["age"];
+    echo "</li>";
   }
+  echo "</ul>";
+
+  // Close the connection
   $sqlconn->close();
 }
 ?>
