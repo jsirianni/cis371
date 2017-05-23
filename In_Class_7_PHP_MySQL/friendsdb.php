@@ -45,7 +45,8 @@ function popTable() {
 
     // Execute the query, if error, print to console
     if ($sqlconn->query($sql) === TRUE) {
-        echo "New record created successfully";
+        //echo "New record created successfully";
+        continue;
     } else {
         echo "Error: " . $sql . "<br>" . $sqlconn->error;
     }
@@ -66,18 +67,17 @@ function readTable() {
   $sql = "SELECT * FROM myfriends";
   $result = mysqli_query($sqlconn,$sql);
 
-  // Read each row row into array
-  $array = array();
+  // Display all DB content
+  //$array = array();
   while ($row = mysqli_fetch_assoc($result)) {
-    $array[] = $row;
+    //$array[] = $row;
+    echo $row["firstname"], $row["lastname"], $row["num"], $row["age"];
+    echo "<br>";
   }
-  print_r($array);
-  return $array;
+
+  // Display DB content
+
+
+
 }
-
-
-// Call functions if file run directly
-initTable();
-popTable();
-readTable();
 ?>

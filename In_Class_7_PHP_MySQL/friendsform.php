@@ -2,6 +2,8 @@
 // Joseph Sirianni
 // In Class 6 - Friends Form
 
+// Import php functions
+include 'friendsdb.php';
 
 // Assign posted variables
 $firstName = $_POST['fname'];
@@ -17,7 +19,9 @@ $f = fopen("./friends.txt", "a");
 fwrite($f, $line);
 fclose($friendFile);
 
-
+// Call table creation function and populate the table
+initTable();
+popTable();
 
 ?>
 <!--Build the html content -->
@@ -29,5 +33,8 @@ fclose($friendFile);
   Last name: <?php echo $lastName; ?><br>
   Phone number: <?php echo $pNumber; ?><br>
   Age: <?php echo $age; ?><br>
+  <br>
+
+  <?php readTable(); ?>
 </body>
 </html>
