@@ -51,6 +51,7 @@ function popTable() {
         continue;
     }
   }
+  // Close the connection
   $sqlconn->close();
 }
 
@@ -67,11 +68,16 @@ function readTable() {
   $result = mysqli_query($sqlconn,$sql);
 
   // Display all DB content
+  echo "<ul>";
   while ($row = mysqli_fetch_assoc($result)) {
     //$array[] = $row;
+    echo "<li>";
     echo $row["id"], $row["firstname"], $row["lastname"], $row["num"], $row["age"];
-    echo "<br>";
+    echo "</li>";
   }
+  echo "</ul>";
+
+  // Close the connection
   $sqlconn->close();
 }
 ?>
