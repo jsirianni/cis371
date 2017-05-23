@@ -41,6 +41,7 @@ function popTable() {
     while (($line = fgets($inputFile)) !== false) {
       // Place comma delimited values into array
       $lineArray = explode(',', $line);
+      $line = settype($line, "string");
       print($line);
 
       // Insert each value into table
