@@ -43,7 +43,6 @@ function popTable() {
     $sql = "INSERT IGNORE INTO myfriends (firstname, lastname, num, age)
       VALUES ('$lineArray[0]','$lineArray[1]','$lineArray[2]','$lineArray[3]')";
 
-
     // Execute the query, if error, print to console
     if ($sqlconn->query($sql) === TRUE) {
         echo "New record created successfully";
@@ -61,14 +60,23 @@ function popTable() {
 //
 function readTable() {
   // Connect to local DB, hardcoded creds not recomended
-  $sqlconn =  mysqli_connect("localhost", "root", "password");
+  $sqlconn =  mysqli_connect("localhost", "root", "password", "cis371");
 
-  // For each record, create html
+  // For query to read all data, create array to read into
+  $sql = "SELECT * FROM myfriends";
+  $result = mysqli_query($sqlconn,$sql);
 
+  // Read each row row into array
+  $array = array();
+  while ($row = mysqli_fetch_assoc($result)) {
+    $array[] = $row;
+  }
+  print_r($array);
+  return $array;
 }
 
 
-// Call functions
+// Call functions if file run directly
 initTable();
 popTable();
 readTable();
