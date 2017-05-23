@@ -34,12 +34,8 @@ function popTable() {
   // Connect to local DB, hardcoded creds not recomended
   $sqlconn =  mysqli_connect("localhost", "root", "password", "cis371");
 
-  // $x will be false if table is empty
-  $x = false//mysqli_query($sqlconn, "select 1 from myfriends limit 1");
-
-  // Build table if empty
-  if ($x == false) {
-    $inputFile = fopen("friends.txt", "r");
+  // open file for reading
+  $inputFile = fopen("friends.txt", "r");
 
     // Read each line and insert into table
     while (($line = fgets($inputFile)) !== false) {
@@ -54,19 +50,11 @@ function popTable() {
            . "$lineArray[2],"   // pNumber
            . "$lineArray[3]"    // age
            . ")";
-    }
 
-    // Done inserting into the table
-    $sqlconn->close();
-    return true;
-
-  // Table is already populated
-  } else {
-    $sqlconn->close();
-    return false;
   }
+  // Done writing to database
+  $sqlconn->close();
 }
-
 
 
 // Function returns an array containing all DB entries
