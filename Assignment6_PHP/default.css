@@ -22,3 +22,8 @@ td {
 #top {
   font-weight: bold;
 }
+
+#nav img {
+  margin: auto;
+  padding: 10px;
+}
