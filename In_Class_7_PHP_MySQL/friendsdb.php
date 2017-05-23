@@ -45,7 +45,8 @@ function popTable() {
     $line = settype($line, "string");
 
     // Insert values into table. ID is auto incremented
-    $sql = "INSERT INTO myfriends (firstname, lastname, num, age) VALUES ('$lineArray[0]','$lineArray[1]','$lineArray[2]','$lineArray[3]')";
+    $sql = "INSERT INTO myfriends (firstname, lastname, num, age)
+      VALUES ('$lineArray[0]','$lineArray[1]','$lineArray[2]','$lineArray[3]')";
 
     // Execute the query, if error, print to console
     if ($sqlconn->query($sql) === TRUE) {
