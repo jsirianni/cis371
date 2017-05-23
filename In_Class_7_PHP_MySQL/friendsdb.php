@@ -78,7 +78,7 @@ function readTable() {
     echo "<th>", $row['lastname'], "</th>";
     echo "<th>", $row['num'], "</th>";
     echo "<th>", $row['age'], "</th>";
-    echo "</tr";
+    echo "</tr>";
   }
   echo "</tbody></table>";
 
