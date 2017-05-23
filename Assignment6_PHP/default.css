@@ -2,7 +2,8 @@
 Global Table Styles
 */
 
-table {
+
+table, h1 {
   margin: 2px;
   width: 100%;
   text-align: center;
