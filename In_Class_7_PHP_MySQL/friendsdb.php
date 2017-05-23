@@ -7,12 +7,6 @@ $tableName = "myfriends";
 
 
 
-// Check connection
-if($link === false){
-  die("ERROR: Could not connect. " . mysqli_connect_error());
-}
-
-
 //
 // Create table, return false if already exists
 //
