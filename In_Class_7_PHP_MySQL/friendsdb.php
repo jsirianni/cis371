@@ -12,7 +12,7 @@ $tableName = "myfriends";
 //
 function initTable() {
   // Connect to local DB, hardcoded creds not recomended
-  $sqlconn =  mysqli_connect("localhost", "root", "password", "cid371");
+  $sqlconn =  mysqli_connect("localhost", "root", "password", "cis371");
 
   // Build the query
   $sql = "CREATE TABLE myfriends (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, firstname CHAR(15), lastname CHAR(30), num CHAR(15), age CHAR(3))";
