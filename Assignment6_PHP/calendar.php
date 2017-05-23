@@ -103,5 +103,26 @@
       </tbody>
     </table>
 	</div>
+	<div id="nav">
+
+		<a href="calendar.php">
+ 			<img src="prev.png" alt="previous button" style="width:42px;height:42px;border:0;">
+		</a>
+
+
+		<a href="calendar.php">
+ 			<img src="next.png" alt="next button" style="width:42px;height:42px;border:0;">
+		</a>
+
+
+
+
+
+
+
+
+
+
+	</div>
 </body>
 </html>
