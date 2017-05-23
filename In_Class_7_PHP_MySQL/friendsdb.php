@@ -67,10 +67,9 @@ function readTable() {
   $result = mysqli_query($sqlconn,$sql);
 
   // Display all DB content
-  //$array = array();
   while ($row = mysqli_fetch_assoc($result)) {
     //$array[] = $row;
-    echo $row["firstname"], $row["lastname"], $row["num"], $row["age"];
+    echo $row["id"], $row["firstname"], $row["lastname"], $row["num"], $row["age"];
     echo "<br>";
   }
   $sqlconn->close();
