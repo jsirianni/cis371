@@ -11,6 +11,7 @@ table, h1 {
 
 #classTable table {
   margin: 1px;
+  height: 20em;
 }
 
 table, th, td {
