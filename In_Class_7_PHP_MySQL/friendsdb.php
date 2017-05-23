@@ -26,18 +26,12 @@ function initTable() {
         . "fName VARCHAR(15) NOT NULL,"
         . "lName VARCHAR(30) NOT NULL,"
         . "pNum VARCHAR(15) NOT NULL,"
-        . "age VARCHAR(3) NOT NULL);"
+        . "age VARCHAR(3) NOT NULL)";
 
   // Evals to true if table creation works
-  if (mysqli_query($sqlconn, $sql)) {
-    $sqlconn->close();
-    return true;
-
-  // Table already exists
-  } else {
-    $sqlconn->close();
-    return false;
-  }
+  //if
+  mysqli_query($sqlconn, $sql);
+  $sqlconn->close();
 }
 
 
@@ -66,7 +60,7 @@ function popTable() {
            . "$lineArray[1],"   // lName
            . "$lineArray[2],"   // pNumber
            . "$lineArray[3]"    // age
-           . ");"
+           . ")";
     }
 
     // Done inserting into the table
@@ -87,21 +81,10 @@ function readTable() {
   // Connect to local DB, hardcoded creds not recomended
   $sqlconn =  mysqli_connect("localhost", "root", "password");
 
-  // Check if table exist
-  if initTable() == false {
-    // Table exists, create
-
-    return;
-    $sqlconn->close();
-
-  } else {
-    $sqlconn->close();
-    return false;  // table !exist
-  }
 }
 
 // Call db create function
-test = initTable();
+initTable();
 
 
 ?>
