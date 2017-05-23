@@ -35,7 +35,7 @@ function popTable() {
   $sqlconn =  mysqli_connect("localhost", "root", "password", "cis371");
 
   // $x will be false if table is empty
-  $x = mysqli_query($sqlconn, "select 1 from myfriends limit 1");
+  $x = false//mysqli_query($sqlconn, "select 1 from myfriends limit 1");
 
   // Build table if empty
   if ($x === false) {
