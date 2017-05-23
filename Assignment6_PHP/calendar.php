@@ -117,8 +117,7 @@
 		// Determine next month / year
 		$nextMonth = $month + 1;
 		if ($nextMonth == 13) {
-			$nextMonth = 1;
-			$nextYear = $year + 1;
+			$nextMonth = 1; $nextYear = $year + 1;
 		} else {
 			$nextYear = $year;
 		}
