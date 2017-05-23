@@ -15,7 +15,7 @@ function initTable() {
   $sqlconn =  mysqli_connect("localhost", "root", "password");
 
   // Build the query
-  $sql = "CREATE TABLE " . $dbname . $tableName . " "
+  $sql = "CREATE TABLE cis371.myfriends"
         . "(id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,"
         . "fName VARCHAR(15) NOT NULL,"
         . "lName VARCHAR(30) NOT NULL,"
