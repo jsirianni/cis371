@@ -66,7 +66,7 @@ function readTable() {
   // For query to read all data, create array to read into
   $sql = "SELECT * FROM myfriends";
   $result = mysqli_query($sqlconn,$sql);
-  echo $result;
+  echo "<p>$result</p>";
   // Read each row row into array
   $array = array();
   while ($row = mysqli_fetch_assoc($result)) {
