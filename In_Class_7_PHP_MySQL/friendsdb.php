@@ -73,6 +73,6 @@ function readTable() {
     $array[] = $row;
   }
   print_r($array);
-  return $array;
+  return $array[];
 }
 ?>
