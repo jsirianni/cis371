@@ -19,11 +19,9 @@ $f = fopen("./friends.txt", "a");
 fwrite($f, $line);
 fclose($friendFile);
 
-// Call database creation functions
+// Call table creation function and populate the table
 initTable();
 popTable();
-$currentAray = readTable();
-
 
 ?>
 <!--Build the html content -->
@@ -35,5 +33,7 @@ $currentAray = readTable();
   Last name: <?php echo $lastName; ?><br>
   Phone number: <?php echo $pNumber; ?><br>
   Age: <?php echo $age; ?><br>
+  <br>
+  <?php $currentAray = readTable(); ?>
 </body>
 </html>
