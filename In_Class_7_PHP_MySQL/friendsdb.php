@@ -37,32 +37,32 @@ function popTable() {
   // open file for reading
   $inputFile = fopen("friends.txt", "r");
 
-  // Read each line and insert into table
+  // Read each line individually
   while (($line = fgets($inputFile)) !== false) {
+
     // Place comma delimited values into array
     $lineArray = explode(',', $line);
-    $line = settype($line, "string");
-    print($line);
 
-    // Insert each value into table
+    // Convert line to a string, just to be safe
+    $line = settype($line, "string");
+
+    // Insert values into table. ID is auto incremented
     $sql = "INSERT INTO myfriends (firstname, lastname, num, age) VALUES ('$lineArray[0]','$lineArray[1]','$lineArray[2]','$lineArray[3]')";
 
-
+    // Execute the query, if error, print to console
     if ($sqlconn->query($sql) === TRUE) {
         echo "New record created successfully";
     } else {
         echo "Error: " . $sql . "<br>" . $sqlconn->error;
     }
-
-
-
   }
   // Done writing to database
   $sqlconn->close();
 }
 
-
+//
 // Function returns an array containing all DB entries
+//
 function readTable() {
   // Connect to local DB, hardcoded creds not recomended
   $sqlconn =  mysqli_connect("localhost", "root", "password");
@@ -72,5 +72,5 @@ function readTable() {
 // Call db create function
 initTable();
 popTable();
-
+readTable();
 ?>
