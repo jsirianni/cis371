@@ -105,6 +105,12 @@
 	</div>
 	<div id="nav">
 
+		<?php
+		// Determine the next and previous month
+		$nextMonth = $month + 1;
+		$prevMonth = $month -1;
+		?>
+
 		<a href="calendar.php?month=1&year=2011">
  			<img src="prev.png" alt="previous button" style="width:42px;height:42px;">
 		</a>
