@@ -47,10 +47,10 @@ function popTable() {
     $sql = "INSERT INTO myfriends (firstname, lastname, num, age)
       VALUES ('$lineArray[0]','$lineArray[1]','$lineArray[2]','$lineArray[3]')
       WHERE NOT EXISTS (SELECT * FROM myfriends
-        WHERE firstname = $lineArray[0]
-        AND lastname = $lineArray[1]
-        AND num = $lineArray[2]
-        AND age = $lineArray[3])";
+        WHERE firstname = '$lineArray[0]'
+        AND lastname = '$lineArray[1]'
+        AND num = '$lineArray[2]'
+        AND age = '$lineArray[3]')";
 
     // Execute the query, if error, print to console
     if ($sqlconn->query($sql) === TRUE) {
