@@ -73,7 +73,7 @@ function readTable() {
   $row = mysqli_fetch_assoc($result);
 
   $array = array();
-  $array[] = settype($row, "string");
+  $array[] = $row;
 
   print_r($array);
 }
