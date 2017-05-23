@@ -74,10 +74,4 @@ function readTable() {
   print_r($array);
   return $array;
 }
-
-
-// Call functions if file run directly
-initTable();
-popTable();
-readTable();
 ?>
