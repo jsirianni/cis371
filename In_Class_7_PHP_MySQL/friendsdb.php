@@ -5,8 +5,6 @@ $dbname = "cis371";
 $tableName = "myfriends";
 
 
-
-
 //
 // Function creates the table
 //
