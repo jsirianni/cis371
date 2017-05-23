@@ -73,7 +73,7 @@ function readTable() {
   while ($row = mysqli_fetch_assoc($result)) {
     //$array[] = $row;
     echo "<li>";
-    echo $row["id"], " ", $row["firstname"], $row["lastname"], $row["num"], $row["age"];
+    echo $row["id"], " ", $row["firstname"], " ", $row["lastname"], " ", $row["num"], " ", $row["age"];
     echo "</li>";
   }
   echo "</ul>";
