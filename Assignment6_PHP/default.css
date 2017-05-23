@@ -9,10 +9,6 @@ table, h1 {
   text-align: center;
 }
 
-table {
-  height: 10em;
-}
-
 table, th, td {
   border: 1px solid black;
 }
