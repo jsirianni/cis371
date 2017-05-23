@@ -65,13 +65,13 @@ function readTable() {
 
 
   // Read database into array (warning, entire database is read into RAM)
-  $query = mysql_query($sqlconn,"SELECT * FROM table");
+  $query = mysqli_query($sqlconn,"SELECT * FROM myfriends");
 
   // set array
   $array = array();
 
   // look through query
-  while($row = mysql_fetch_assoc($query)){
+  while($row = mysqli_fetch_assoc($query)){
 
     // add each row returned into an array
     $array[] = $row;
@@ -90,6 +90,5 @@ function readTable() {
 // Call functions
 initTable();
 popTable();
-readTable();
 readTable();
 ?>
