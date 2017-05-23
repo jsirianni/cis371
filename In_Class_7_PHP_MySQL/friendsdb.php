@@ -13,7 +13,9 @@ if($link === false){
 }
 
 
+//
 // Create table, return false if already exists
+//
 function initTable() {
   // Connect to local DB, hardcoded creds not recomended
   $sqlconn =  mysqli_connect("localhost", "root", "password");
