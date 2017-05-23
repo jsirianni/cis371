@@ -67,13 +67,16 @@ function readTable() {
   $sql = "SELECT * FROM myfriends";
   $result = mysqli_query($sqlconn,$sql);
 
-  // Read each row row into array
-  $array = array();
+  // Display all DB content
+  //$array = array();
   while ($row = mysqli_fetch_assoc($result)) {
-    $array[] = $row;
+    //$array[] = $row;
     echo $row["firstname"], $row["lastname"], $row["num"], $row["age"];
-    echo "</br>";
   }
+
+  // Display DB content
+
+
 
 }
 ?>
