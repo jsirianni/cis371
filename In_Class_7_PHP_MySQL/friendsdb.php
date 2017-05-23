@@ -60,6 +60,7 @@ function popTable() {
   $sqlconn->close();
 }
 
+
 //
 // Function returns an array containing all DB entries
 //
@@ -67,9 +68,12 @@ function readTable() {
   // Connect to local DB, hardcoded creds not recomended
   $sqlconn =  mysqli_connect("localhost", "root", "password");
 
+  // For each record, create html
+
 }
 
-// Call db create function
+
+// Call functions
 initTable();
 popTable();
 readTable();
