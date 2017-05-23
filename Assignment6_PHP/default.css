@@ -4,6 +4,8 @@ Global Table Styles
 
 table {
   margin: 2px;
+  width: 100%;
+  text-align: center;
 }
 .classTable table {
   margin: 1px;
