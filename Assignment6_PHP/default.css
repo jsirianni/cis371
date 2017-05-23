@@ -24,6 +24,7 @@ td {
 }
 
 #nav {
+  clear: both;
   float: left;
 }
 
