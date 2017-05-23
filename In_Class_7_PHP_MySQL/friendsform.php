@@ -42,7 +42,7 @@ popTable();
   echo "<ul>";
   // Read each record, display on webpage
   foreach ($currentAray as $record) {
-    echo "<li> $record </li>"
+    echo "<li> $record </li>";
   }
   // End list
   echo "</ul>";
