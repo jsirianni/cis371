@@ -120,7 +120,7 @@
 		}
 		?>
 
-		<a href="calendar.php?month=<?php echo $prevMonth; ?>&year=2011">
+		<a href="calendar.php?month=<?php echo $prevMonth; ?>&year=<?php echo $prevYear; ?>">
  			<img src="prev.png" alt="previous button" style="width:42px;height:42px;">
 		</a>
 
