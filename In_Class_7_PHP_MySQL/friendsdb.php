@@ -22,7 +22,7 @@ function initTable() {
 
   // Add constraint to table
   $sql = "ALTER TABLE myfriends ADD UNIQUE INDEX (firstname,lastname)";
-  mysqli_query($sqlconnm, $sql);
+  mysqli_query($sqlconn, $sql);
 
   // Close when finished
   $sqlconn->close();
