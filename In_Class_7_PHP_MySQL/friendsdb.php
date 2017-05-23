@@ -76,5 +76,4 @@ function readTable() {
   }
 
 }
-readTable();
 ?>
