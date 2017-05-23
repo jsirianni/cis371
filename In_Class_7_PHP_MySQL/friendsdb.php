@@ -68,12 +68,12 @@ function readTable() {
   $result = mysqli_query($sqlconn,$sql);
 
   // Display all DB content
-  echo "<h3> Current Entries </h3>";
+  echo "<h3> Current Database Entries </h3>";
   echo "<ul>";
   while ($row = mysqli_fetch_assoc($result)) {
     //$array[] = $row;
     echo "<li>";
-    echo $row["id"], $row["firstname"], $row["lastname"], $row["num"], $row["age"];
+    echo $row["id"], " ", $row["firstname"], $row["lastname"], $row["num"], $row["age"];
     echo "</li>";
   }
   echo "</ul>";
