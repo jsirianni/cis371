@@ -8,13 +8,15 @@ table, h1 {
   width: 100%;
   text-align: center;
 }
-.classTable table {
+
+#classTable table {
   margin: 1px;
-  height: 20em;
 }
+
 table, th, td {
   border: 1px solid black;
 }
+
 td {
   width: 7em;
 }
