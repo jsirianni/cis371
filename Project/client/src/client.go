@@ -23,7 +23,7 @@ func main() {
 // Go routine builds the report
 func buildReport() string {
   // Declare report variable
-  var r = ""
+  var r = "report,"
 
   // Get hostname
   hostname, err :=os.Hostname()
@@ -32,11 +32,8 @@ func buildReport() string {
   }
 
   // Add hostname to report
-  r = "hostname=" + hostname
-
-  // Add status to report
-  var status = "ok"
-  r = r + ",status=" + status
+  r = r + hostname
+  r = r + ",ok"
 
   // Return the report
   return r
