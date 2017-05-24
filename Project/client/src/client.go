@@ -1,42 +1,46 @@
 package main
 import (
+    "io"
+    "os"
     "net"
     "fmt"
-    "strings"
 )
 
 
 // Connect to server and send report
 func main() {
-  go sendReport(buildReport())
+  var report = buildReport()
+
+  connection, err := net.Dial("tcp", "teamalerts.duckdns.org:8090")
+  if err != nil && err != io.EOF {
+     checkError(err)
+  }
+  connection.Write([]byte(report + "\n"))
+  connection.Close()
 }
 
 
 // Go routine builds the report
 func buildReport() string {
-  text := "A report from test1"
-  return text
-}
+  // Declare report variable
+  var r = "report,"
 
-
-// Go routine sends the report to server
-func sendReport(t string) {
-  connection, err := net.Dial("tcp", "localhost:8090")
-  if err != nil && err != io.EOF { checkError(err) }
-
-  connection.Write([]byte(strings.TrimSuffix(t, "\n") + "\n"))
-  connection.Close()
-}
-
-
-func checkError(err error) {
-  // IF a port scan
-  if strings.Contains(err.Error(), "connection reset by peer") {
-    fmt.Println("Error: " + err.Error())
-    fmt.Println("* * * * Most likely a port scan! * * * *")
-
-  // Print any other error
-  } else if err != nil {
-    fmt.Printf("ERROR: " + err.Error() + "\n\n")
+  // Get hostname
+  hostname, err :=os.Hostname()
+  if err != nil && err != io.EOF {
+     checkError(err)
   }
+
+  // Add hostname to report
+  r = r + hostname
+  r = r + ",ok"
+
+  // Return the report
+  return r
+}
+
+
+// Print error to console
+func checkError(err error) {
+    fmt.Printf("ERROR: " + err.Error() + "\n\n")
 }
