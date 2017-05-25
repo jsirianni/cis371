@@ -41,7 +41,7 @@ if ($color_value == null) {
 </head>
 <?php
 //echo "<body style='background-color:$color_value;>"
-//echo "<body>"
+echo "<body>"
 ?>
   <div>
     <h1><?php echo $headerDate;?></h1>
