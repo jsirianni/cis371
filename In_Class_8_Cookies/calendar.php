@@ -139,12 +139,13 @@ echo "<body style='background-color:$cookie_value;>"
 		<a href="calendar.php?month=<?php echo $nextMonth; ?>&year=<?php echo $nextYear; ?>">
  			<img src="next.png" alt="next button" style="width:5em;height:5em;"></a>
 	</div>
+
 	<div id="colorselection">
 		<form action="calendar.php" method="get">
  			Background Color: <input type="text" name="backgroundColor" id="backgroundColor"><br>
-			Font Color:       <input type="text" name="fontColor" id="fontColor"><br>
  		<input type="submit" value="Submit">
 </form>
+
 	</div>
 </body>
 </html>
