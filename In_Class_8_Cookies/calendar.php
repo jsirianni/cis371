@@ -29,7 +29,9 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 	<link rel="stylesheet" href="default.css" type="text/css"/>
 	<title>Month Year</title>
 </head>
-<?php echo '<body  style="background-color:$cookie_value;">' ?>
+<?php
+echo '<body style="background-color:green;">'
+?>
   <div>
     <h1><?php echo $headerDate;?></h1>
   </div>
