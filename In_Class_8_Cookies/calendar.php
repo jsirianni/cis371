@@ -30,7 +30,7 @@ if ($color_value == null) {
 //$fontcolor_value = "black";
 
 // Set background color, remember for 30 days
-//setcookie($cookie_color, $color_value, time() + (86400 * 30), "/");
+setcookie($cookie_color, $color_value, time() + (86400 * 30), "/");
 //setCookie($cookie_fontcolor, $fontcolor_value, time() + (86400 * 30), "/")
 ?>
 
