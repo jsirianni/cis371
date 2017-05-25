@@ -30,7 +30,7 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 	<title>Month Year</title>
 </head>
 <?php
-echo '<body style="background-color:green;">'
+echo '<body style="background-color:$cookie_value;">'
 ?>
   <div>
     <h1><?php echo $headerDate;?></h1>
