@@ -30,7 +30,7 @@ if ($color_value == null) {
 //$fontcolor_value = "black";
 
 // Set background color, remember for 30 days
-setcookie($cookie_color, $color_value, time() + (86400 * 30), "/");
+//setcookie($cookie_color, $color_value, time() + (86400 * 30), "/");
 //setCookie($cookie_fontcolor, $fontcolor_value, time() + (86400 * 30), "/")
 ?>
 
@@ -40,7 +40,7 @@ setcookie($cookie_color, $color_value, time() + (86400 * 30), "/");
 	<title>Month Year</title>
 </head>
 <?php
-echo "<body style='background-color:$color_value;>"
+//echo "<body style='background-color:$color_value;>"
 //echo "<body>"
 ?>
   <div>
