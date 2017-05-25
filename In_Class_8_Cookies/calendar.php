@@ -21,14 +21,14 @@
 $cookie_color = "color";
 $cookie_fontcolor = "font-color";
 $color_value = $_GET['backgroundColor'];
-if ($_GET['fontColor'] != null) {
-		$fontcolor_value = $_GET['fontColor'];
-}
-$fontcolor_value = "black";
+//if ($_GET['fontColor'] != null) {
+//		$fontcolor_value = $_GET['fontColor'];
+//}
+//$fontcolor_value = "black";
 
 // Set background color, remember for 30 days
 setcookie($cookie_color, $color_value, time() + (86400 * 30), "/");
-setCookie($cookie_fontcolor, $fontcolor_value, time() + (86400 * 30), "/")
+//setCookie($cookie_fontcolor, $fontcolor_value, time() + (86400 * 30), "/")
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
@@ -142,7 +142,7 @@ echo "<body style='background-color:$cookie_value;>"
 	<div id="colorselection">
 		<form action="calendar.php" method="get">
  			Background Color: <input type="text" name="backgroundColor" id="backgroundColor"><br>
-			Font Color: <input type="text" name="fontColor" id="fontColor"><br>
+			Font Color:       <input type="text" name="fontColor" id="fontColor"><br>
  		<input type="submit" value="Submit">
 </form>
 	</div>
