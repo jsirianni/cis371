@@ -25,7 +25,7 @@ $fontcolor_value = $_GET['fontColor'];
 
 // Set background color, remember for 30 days
 setcookie($cookie_color, $color_value, time() + (86400 * 30), "/");
-setCookie($)
+setCookie($cookie_fontcolor, $fontcolor_value, time() + (86400 * 30), "/")
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
