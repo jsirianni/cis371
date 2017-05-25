@@ -21,7 +21,10 @@
 $cookie_color = "color";
 $cookie_fontcolor = "font-color";
 $color_value = $_GET['backgroundColor'];
-$fontcolor_value = $_GET['fontColor'];
+if strlen($_GET['fontColor']) > 1 {
+		$fontcolor_value = $_GET['fontColor'];
+}
+$fontcolor_value = "black";
 
 // Set background color, remember for 30 days
 setcookie($cookie_color, $color_value, time() + (86400 * 30), "/");
