@@ -18,16 +18,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <?php 	// Add cookies
-$cookie_color = "color";
+//$cookie_color = "color";
 //$cookie_fontcolor = "font-color";
-$color_value = $_GET['backgroundColor'];
+//$color_value = $_GET['backgroundColor'];
 //if ($_GET['fontColor'] != null) {
 //		$fontcolor_value = $_GET['fontColor'];
 //}
 //$fontcolor_value = "black";
 
 // Set background color, remember for 30 days
-setcookie($cookie_color, $color_value, time() + (86400 * 30), "/");
+//setcookie($cookie_color, $color_value, time() + (86400 * 30), "/");
 //setCookie($cookie_fontcolor, $fontcolor_value, time() + (86400 * 30), "/")
 ?>
 
@@ -37,7 +37,8 @@ setcookie($cookie_color, $color_value, time() + (86400 * 30), "/");
 	<title>Month Year</title>
 </head>
 <?php
-echo "<body style='background-color:$color_value;>"
+//echo "<body style='background-color:$color_value;>"
+echo "<body>"
 ?>
   <div>
     <h1><?php echo $headerDate;?></h1>
