@@ -18,7 +18,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <?php 	// Add cookies
-$cookie_name = "colorPref";
+$cookie_name = "color";
 $cookie_value = $_GET['backgroundColor'];
 // Set background color to white, remember for 30 days
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
