@@ -21,7 +21,7 @@
 $cookie_color = "color";
 $cookie_fontcolor = "font-color";
 $color_value = $_GET['backgroundColor'];
-if count($_GET['fontColor']) > 1 {
+if ($_GET['fontColor'] != null) {
 		$fontcolor_value = $_GET['fontColor'];
 }
 $fontcolor_value = "black";
