@@ -19,7 +19,7 @@
 
 <?php 	// Add cookies
 $cookie_color = "color";
-$cookie_fontcolor = "font-color";
+//$cookie_fontcolor = "font-color";
 $color_value = $_GET['backgroundColor'];
 //if ($_GET['fontColor'] != null) {
 //		$fontcolor_value = $_GET['fontColor'];
@@ -37,7 +37,7 @@ setcookie($cookie_color, $color_value, time() + (86400 * 30), "/");
 	<title>Month Year</title>
 </head>
 <?php
-echo "<body style='background-color:$cookie_value;>"
+echo "<body style='background-color:$color_value;>"
 ?>
   <div>
     <h1><?php echo $headerDate;?></h1>
