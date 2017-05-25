@@ -130,5 +130,11 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 		<a href="calendar.php?month=<?php echo $nextMonth; ?>&year=<?php echo $nextYear; ?>">
  			<img src="next.png" alt="next button" style="width:5em;height:5em;"></a>
 	</div>
+	<div id="colorselection">
+		<form action="setColor.php">
+ 			Background Color: <input type="text" name="backgroundColor"><br>
+ 		<input type="submit" value="Submit">
+</form>
+	</div>
 </body>
 </html>
