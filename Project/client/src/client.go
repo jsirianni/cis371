@@ -4,40 +4,37 @@ import (
     "os"
     "net"
     "fmt"
+    "time"
+    "strconv"
 )
 
 
 // Connect to server and send report
 func main() {
-  var report = buildReport()
-
   connection, err := net.Dial("tcp", "teamalerts.duckdns.org:8090")
   if err != nil && err != io.EOF {
      checkError(err)
   }
-  connection.Write([]byte(report + "\n"))
+  connection.Write(buildReport())
   connection.Close()
 }
 
 
+
 // Go routine builds the report
-func buildReport() string {
-  // Declare report variable
-  var r = "report,"
+func buildReport() []byte {
 
-  // Get hostname
-  hostname, err :=os.Hostname()
-  if err != nil && err != io.EOF {
-     checkError(err)
-  }
+  // Get hostname, status, timestamp
+  hostname, _ := os.Hostname()
+  status := "ok"
+  timestamp := strconv.Itoa(int(time.Now().Unix()))
 
-  // Add hostname to report
-  r = r + hostname
-  r = r + ",ok"
+  // Build comma delim report as string
+  var report = "report," + hostname + "," + status + "," + timestamp
 
-  // Return the report
-  return r
+  return []byte(report)
 }
+
 
 
 // Print error to console

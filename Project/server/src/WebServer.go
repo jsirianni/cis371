@@ -38,11 +38,12 @@ func handleClient(c net.Conn) {
   // IF valid report, assign variables
   if strings.Contains(clientReport, "report,") {
     s := strings.Split(clientReport, ",")
-    hostname, status := s[1], s[2]
+    hostname, status, timestamp := s[1], s[2], s[3]
 
     // Print parsed values
     fmt.Print(string(hostname) + "\n")
     fmt.Print(string(status) + "\n")
+    fmt.Print(string(timestamp) + "\n")
 
   // IF not valid report
   } else {
