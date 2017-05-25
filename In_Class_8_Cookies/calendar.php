@@ -18,8 +18,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <?php 	// Add cookies
-$cookie_name = "color";
-$cookie_value = "white";
+$cookie_name = "colorPref";
+$cookie_value = $_GET['backgroundColor'];
 // Set background color to white, remember for 30 days
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 ?>
@@ -131,8 +131,8 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
  			<img src="next.png" alt="next button" style="width:5em;height:5em;"></a>
 	</div>
 	<div id="colorselection">
-		<form action="calendar.php">
- 			Background Color: <input type="text" name="backgroundColor"><br>
+		<form action="calendar.php" method="get">
+ 			Background Color: <input type="text" name="backgroundColor" id="backgroundColor"><br>
  		<input type="submit" value="Submit">
 </form>
 	</div>
