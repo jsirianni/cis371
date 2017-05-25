@@ -20,7 +20,7 @@
 <?php 	// Add cookies
 $cookie_name = "color";
 $cookie_value = $_GET['backgroundColor'];
-// Set background color to white, remember for 30 days
+// Set background color, remember for 30 days
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 ?>
 
@@ -29,7 +29,7 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 	<link rel="stylesheet" href="default.css" type="text/css"/>
 	<title>Month Year</title>
 </head>
-<body>
+<?php echo '<body  style="background-color:$cookie_value;">' ?>
   <div>
     <h1><?php echo $headerDate;?></h1>
   </div>
