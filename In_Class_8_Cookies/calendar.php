@@ -16,6 +16,14 @@
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<?php 	// Add cookies
+$cookie_name = "color";
+$cookie_value = "white";
+// Set background color to white, remember for 30 days
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+?>
+
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 	<meta http-equiv="Content-type" content="text/html; charset=windows-1252"/>
 	<link rel="stylesheet" href="default.css" type="text/css"/>
@@ -29,15 +37,8 @@
     <table>
       <tbody>
         <tr id="top">
-          <th>Sunday</th>
-          <th>Monday</th>
-          <th>Tuesday</th>
-          <th>Wednesday</th>
-          <th>Thursday</th>
-          <th>Friday</th>
-          <th>Saturday</th>
+          <th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th>
         </tr>
-
 
 				<?php  // Begin calendar generation
 
@@ -47,8 +48,8 @@
 				$year2 = date("Y" , strtotime($inputMonth));
 				$getdate = getdate(mktime(null, null, null, $month, 1, $year));
 				$firstDay = $getdate["weekday"];  // String
-				// Vars for control loops
 
+				// Vars for control loops
 				$day = 1;																									  // first day, can be incremented
 				$lastDay = cal_days_in_month (CAL_GREGORIAN,$month,$year);  //number of days in the selected month
 
@@ -98,13 +99,13 @@
 					}
 					$x = 1;											// reset days printed
 				} while ($day <= $lastDay); 	// Continue generating weeks if all days not generated
-																			// End calendar generation ?>
+																			// End calendar generation
+			  ?>
 
       </tbody>
     </table>
 	</div>
 	<div id="nav">
-
 		<?php
 		// Determine previous month / year
 		$prevMonth = $month -1;
@@ -124,11 +125,10 @@
 		?>
 
 		<a href="calendar.php?month=<?php echo $prevMonth; ?>&year=<?php echo $prevYear; ?>">
- 			<img src="prev.png" alt="previous button" style="width:5em;height:5em;">
-		</a>
+ 			<img src="prev.png" alt="previous button" style="width:5em;height:5em;"></a>
+
 		<a href="calendar.php?month=<?php echo $nextMonth; ?>&year=<?php echo $nextYear; ?>">
- 			<img src="next.png" alt="next button" style="width:5em;height:5em;">
-		</a>
+ 			<img src="next.png" alt="next button" style="width:5em;height:5em;"></a>
 	</div>
 </body>
 </html>
