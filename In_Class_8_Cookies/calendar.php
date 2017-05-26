@@ -30,7 +30,7 @@ if ($_GET['backgroundColor_form'] == "blue" || $_GET['backgroundColor_form'] == 
 } else {
 	$cookie_value = "white";
 }
-echo "<p>browser cookie = $_GET['backgroundColor_form']</p>";
+echo "<p>browser cookie = $cookie_value</p>";
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 
 
