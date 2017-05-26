@@ -8,7 +8,8 @@
 		$headerDate = ((DateTime::createFromFormat('!m', $month))->format('F') . " " . $year);
 	// If vars already set from previous page
 } elseif ($month != "" && $year != "") {
-		continue;
+		$month = $month;
+		$year = $year;
 	// No args
 	} else {
 		$month = date('m');	//month as a number
