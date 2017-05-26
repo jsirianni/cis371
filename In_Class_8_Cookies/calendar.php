@@ -32,7 +32,7 @@ if ($_GET['backgroundColor_form'] == "blue" || $_GET['backgroundColor_form'] == 
 	//$cookie_value = "white";
 }
 echo "<p>browser cookie = $cookie_value</p>";
-setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/calendar.php");
 ?>
 
 
