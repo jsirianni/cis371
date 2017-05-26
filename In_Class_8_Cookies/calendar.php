@@ -132,8 +132,8 @@ echo "<body style='background-color:$cookie_value'>";
 	<div id="colorselection">
 		<form action="/gallery.php" method="get">
 		    <select name="backgroundColor_form">
-		        <option value=1>red</option>
-		        <option value=2>blue</option>
+		        <option value="red">red</option>
+		        <option value="blue">blue</option>
 		    </select>
 		    <input type="submit" value="Select" />
 		</form>
