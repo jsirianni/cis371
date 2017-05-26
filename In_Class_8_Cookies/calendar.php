@@ -137,7 +137,7 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 	</a>
 </div>
 <div id="colorselection">
-	<form action="calendar.php?month=3&year=2009" method='get'>
+	<form action="calendar.php" method='get'>
 	    <select name="backgroundColor_form">
 	        <option value="red">red</option>
 	        <option value="blue">blue</option>
