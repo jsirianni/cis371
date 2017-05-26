@@ -10,6 +10,7 @@
 } elseif ($month != "" && $year != "") {
 		$month = $month;
 		$year = $year;
+		$headerDate = ((DateTime::createFromFormat('!m', $month))->format('F') . " " . $year);
 	// No args
 	} else {
 		$month = date('m');	//month as a number
