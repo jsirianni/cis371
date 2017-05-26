@@ -21,9 +21,7 @@
 // Background color Cookie
 $cookie_name = "color";
 $cookie_value = $_GET['backgroundColor'];
-if ($cookie_value === "") {
-	$cookie_value = "white";
-}
+
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 
 // Header color cookie
