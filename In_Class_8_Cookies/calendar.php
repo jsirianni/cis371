@@ -21,8 +21,8 @@
 // Background color Cookie
 $cookie_name = "color";
 $cookie_value = $_GET['backgroundColor'];
-
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+
 
 // Header color cookie
 
@@ -35,7 +35,7 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 	<title>Month Year</title>
 </head>
 <?php
-echo "<body style='background-color:$cookie_value;'>"
+echo "<body style='background-color:$cookie_value'>";
 ?>
   <div>
     <h1><?php echo $headerDate;?></h1>
