@@ -133,6 +133,12 @@ echo "<body style='background-color:$cookie_value'>";
 		<form action="calendar.php" method="get">
  			Background Color: <input type="text" name="backgroundColor_form" id="backgroundColor_form"><br>
  		<input type="submit" value="Submit">
+
+		<select name="Background Color">
+	   <option value="volvo">Blue</option>
+	   <option value="saab">Red</option>
+	 </select>
+
 </form>
 	</div>
 </body>
