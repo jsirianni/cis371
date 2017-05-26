@@ -31,6 +31,7 @@ if ($_GET['backgroundColor_form'] == "blue" || $_GET['backgroundColor_form'] == 
 	$cookie_value = "white";
 }
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+session_start();
 
 
 // Header color cookie
