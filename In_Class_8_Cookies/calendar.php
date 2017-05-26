@@ -135,7 +135,7 @@ echo "<body style='background-color:$cookie_value'>";
 		        <option value=1>red</option>
 		        <option value=2>blue</option>
 		    </select>
-		    <input type="submit" value="Filter" />
+		    <input type="submit" value="Select" />
 		</form>
 	</div>
 </body>
