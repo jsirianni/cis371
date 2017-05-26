@@ -1,16 +1,19 @@
 <?php
 	// Set the timezone to EST
 	date_default_timezone_set('America/New_York');
+
 	// If args exist
 	if ($_GET['month'] != "" && $_GET['year'] != "") {
 		$month = $_GET['month'];
 		$year = $_GET['year'];
 		$headerDate = ((DateTime::createFromFormat('!m', $month))->format('F') . " " . $year);
-	// If vars already set from previous page
-} elseif ($month != "" && $year != "") {
+
+ // If vars already set from previous page
+ } elseif ($month != "" && $year != "") {
 		$month = $month;
 		$year = $year;
 		$headerDate = ((DateTime::createFromFormat('!m', $month))->format('F') . " " . $year);
+
 	// No args
 	} else {
 		$month = date('m');	//month as a number
@@ -20,7 +23,6 @@
 ?>
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <?php 	// Add cookies
 // Background color Cookie
@@ -38,7 +40,7 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 
 
 ?>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 	<meta http-equiv="Content-type" content="text/html; charset=windows-1252"/>
 	<link rel="stylesheet" href="default.css" type="text/css"/>
