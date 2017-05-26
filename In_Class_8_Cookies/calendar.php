@@ -20,7 +20,11 @@
 <?php 	// Add cookies
 // Background color Cookie
 $cookie_name = "color";
-$cookie_value = $_GET['backgroundColor_form'];
+if ($_GET['backgroundColor_form'] == "blue" || $_GET['backgroundColor_form'] == "red" ) {
+	$cookie_value = $_GET['backgroundColor_form'];
+} else {
+	$cookie_value = "white";
+}
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 
 
