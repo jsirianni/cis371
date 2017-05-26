@@ -130,7 +130,7 @@ echo "<body style='background-color:$cookie_value'>";
  			<img src="next.png" alt="next button" style="width:5em;height:5em;"></a>
 	</div>
 	<div id="colorselection">
-		<?php echo "<form action='calendar.php?month=$month&year=$year' method='get'>";?>;
+		<?php echo "<form action='calendar.php?month=$month&year=$year' method='get'>";?>
 		    <select name="backgroundColor_form">
 		        <option value="red">red</option>
 		        <option value="blue">blue</option>
