@@ -29,7 +29,7 @@ $cookie_name = "color";
 if ($_GET['backgroundColor_form'] == "blue" || $_GET['backgroundColor_form'] == "red" ) {
 	$cookie_value = $_GET['backgroundColor_form'];
 } else {
-	$cookie_value = "white";
+	//$cookie_value = "white";
 }
 echo "<p>browser cookie = $cookie_value</p>";
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
@@ -90,8 +90,10 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 
 			} else { $x = 0; }						// Sunday, no offset
 
+
 			$x++;													// Increment to account for first day
 			do {													// Create additional weeks
+
 				do { 												// Fill weeks with days
 					if ($day <= $lastDay) {   // If all days not generated, print next day
 						echo "<th>$day</th>";
@@ -99,11 +101,13 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 					$day++; 									// Increment control vars
 					$x++;
 				} while ($x <= 7);					// Continue filling the week until 7 days
+
 				echo "</tr>"; 					    // End the week
 				if ($day <= $lastDay) { 	  // Begin week if not all days generated
 					echo "<tr>";
 				}
 				$x = 1;											// reset days printed
+
 			} while ($day <= $lastDay); 	// Continue generating weeks if all days not generated																		// End calendar generation
 		  ?>
 
