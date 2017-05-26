@@ -20,7 +20,7 @@
 <?php 	// Add cookies
 // Background color Cookie
 $cookie_name = "color";
-$cookie_value = $_GET['backgroundColor'];
+$cookie_value = $_POST['backgroundColor'];
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 
 
@@ -126,7 +126,7 @@ echo "<body style='background-color:$cookie_value'>";
  			<img src="next.png" alt="next button" style="width:5em;height:5em;"></a>
 	</div>
 	<div id="colorselection">
-		<form action="calendar.php" method="get">
+		<form action="calendar.php" method="post">
  			Background Color: <input type="text" name="backgroundColor" id="backgroundColor"><br>
  		<input type="submit" value="Submit">
 </form>
