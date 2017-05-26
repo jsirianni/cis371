@@ -28,7 +28,7 @@
 $cookie_name = "color";
 if ($_GET['backgroundColor_form'] == "blue" || $_GET['backgroundColor_form'] == "red" ) {
 	$cookie_value = $_GET['backgroundColor_form'];
-	setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "jsirianni.duckdns.org/*");
+	setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/", ".jsirianni.duckdns.org");
 }
 echo "<p>browser cookie = $cookie_value</p>";
 ?>
