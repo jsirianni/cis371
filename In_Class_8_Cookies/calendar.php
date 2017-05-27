@@ -17,8 +17,7 @@
 		$year = date('Y');
 		$headerDate = date('F Y');
 	}
-
-
+	
 // Background color Cookie
 $cookie_name = "color";
 if ($_GET['backgroundColor_form'] != "") {
@@ -27,9 +26,16 @@ if ($_GET['backgroundColor_form'] != "") {
 	$cookie_value = $_COOKIE[$cookie_name];
 }
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/", ".jsirianni.duckdns.org");
+
+// Font color cookie
+$cookie_font = "font";
+if ($_GET['fontColor_form'] != "") {
+	$cookie_font_val = $_GET['fontColor_form'];
+} else {
+	$cookie_font_val = $_COOKIE[$cookie_font];
+}
+setcookie($cookie_font, $cookie_font_val, time() + (86400 * 30), "/". ".jsirianni.duckdns.org");
 ?>
-
-
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
@@ -79,7 +85,6 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/", ".jsirianni.d
 
 			} else { $x = 0; }						// Sunday, no offset
 
-
 			$x++;													// Increment to account for first day
 			do {													// Create additional weeks
 
@@ -100,13 +105,10 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/", ".jsirianni.d
 			} while ($day <= $lastDay); 	// Continue generating weeks if all days not generated																		// End calendar generation
 		  ?>
 
-
     </tbody>
   </table>
 </div>
 <div id="nav">
-
-
 
 	<?php
 	// Determine previous month / year
