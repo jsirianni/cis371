@@ -2,12 +2,16 @@
 //
 // Global vars for MySQL interaction
 //
+$dbhost = "localhost";
 $dbname = "report";
 $tableName = "reports";
+$dbuser = "reportuser";
+$dbuserpass = "password";
+
 
 
 //
-// Function displays all reports in the database
+// Function displays all reports
 //
 function readTable() {
   $sqlconn =  mysqli_connect("localhost", "reportuser", "password", "report");
@@ -15,19 +19,15 @@ function readTable() {
   $result = mysqli_query($sqlconn,$sql);
 
   // Display result
-  echo "<table><tbody>";
   echo "<tr><th>Report ID</th><th>Hostname</th><th>Status</th><th>Timestamp</th></tr>";
   while ($row = mysqli_fetch_assoc($result)) {
     echo "<tr>";
-    echo "<td>", $row['id'], "</td>";
-    echo "<td>", $row['hostname'], "</td>";
-    echo "<td>", $row['status'], "</td>";
-    echo "<td>", $row['timestamp'], "</td>";
+    echo "<td>", $row['id'],"         </td>";
+    echo "<td>", $row['hostname'],"   </td>";
+    echo "<td>", $row['status'],"     </td>";
+    echo "<td>", $row['timestamp'],"  </td>";
     echo "</tr>";
   }
-  echo "</tbody></table>";
-
-  // Close the connection
   $sqlconn->close();
 }
 
@@ -50,8 +50,6 @@ function readLast20() {
     echo "<td>", $row['timestamp'], "</td>";
     echo "</tr>";
   }
-
-
   $sqlconn->close();
 }
 ?>
