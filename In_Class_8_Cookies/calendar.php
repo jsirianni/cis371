@@ -138,7 +138,10 @@ setcookie($cookie_font, $cookie_font_val, time() + (86400 * 30), "/", ".jsiriann
 					<option value="grey">grey</option>
 					<option value="green">green</option>
 	    </select>
+			<input type="submit" value="Select" />
+	</form>
 			<br><br>
+	<form action="calendar.php" method='get'>
 			<a>Font Color</p>
 			<select name="fontColor_form">
 					<option value="black">black</option>
@@ -147,9 +150,10 @@ setcookie($cookie_font, $cookie_font_val, time() + (86400 * 30), "/", ".jsiriann
 					<option value="grey">grey</option>
 					<option value="green">green</option>
 			</select>
-			<br>
-	    <input type="submit" value="Select" />
+			<input type="submit" value="Select" />
 	</form>
+
+
 
 </div>
 </body></html>
