@@ -35,7 +35,7 @@ func handleClient(c net.Conn) {
     hostname, status, timestamp := s[1], s[2], s[3]
 
     // Write to database
-    writeToDatabase(hostname, status, timestamp)
+    go writeToDatabase(hostname, status, timestamp)
 
   // IF not valid report
   } else {
