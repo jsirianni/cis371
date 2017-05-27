@@ -35,6 +35,7 @@ if ($_COOKIE[$cookie_name] != "") {
 }
 //echo $_GET['backgroundColor_form'];
 echo $_COOKIE[$cookie_name];
+echo $cookie_value;
 ?>
 
 
