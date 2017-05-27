@@ -28,16 +28,10 @@
 $cookie_name = "color";
 if ($_GET['backgroundColor_form'] == "blue" || $_GET['backgroundColor_form'] == "red" ) {
 	$cookie_value = $_GET['backgroundColor_form'];
-	echo $cookie_value;
-	echo $_COOKIE[$cookie_name];
-
 } else {
 	$cookie_value = $_COOKIE[$cookie_name];
-	echo $cookie_value;
-	echo $_COOKIE[$cookie_name];
 }
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/", ".jsirianni.duckdns.org");
-
 ?>
 
 
