@@ -1,6 +1,6 @@
 package main
 import (
-    "github.com/go-sql-driver/mysql.a"
+    _ "github.com/go-sql-driver/mysql"
     "database/sql"
 )
 
