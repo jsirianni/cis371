@@ -35,9 +35,15 @@ function readTable() {
 //
 // Function displays last 20 reports
 //
-function readLast20() {
+function readLast20($numOfReports) {
   $sqlconn =  mysqli_connect("localhost", "reportuser", "password", "report");
-  $sql = "SELECT * FROM reports ORDER BY id DESC LIMIT 20";
+
+  if ($numOfReports != "") {
+    $sql = "SELECT * FROM reports ORDER BY id DESC LIMIT 20";
+  } else {
+    $sql = "SELECT * FROM reports";
+  }
+
   $result = mysqli_query($sqlconn,$sql);
 
   // Display result
