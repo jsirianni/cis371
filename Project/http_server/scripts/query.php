@@ -11,40 +11,19 @@ $dbuserpass = "password";
 
 
 //
-// Function displays all reports
-//
-function readTable() {
-  $sqlconn =  mysqli_connect($dbhost, "reportuser", "password", "report");
-  $sql = "SELECT * FROM reports";
-  $result = mysqli_query($sqlconn,$sql);
-
-  // Display result
-  echo "<tr><th>Report ID</th><th>Hostname</th><th>Status</th><th>Timestamp</th></tr>";
-  while ($row = mysqli_fetch_assoc($result)) {
-    echo "<tr>";
-    echo "<td>", $row['id'],"         </td>";
-    echo "<td>", $row['hostname'],"   </td>";
-    echo "<td>", $row['status'],"     </td>";
-    echo "<td>", $row['timestamp'],"  </td>";
-    echo "</tr>";
-  }
-  $sqlconn->close();
-}
-
-
-//
 // Function displays X amount of records
 //
 function readLast20($numOfReports) {
-  $sqlconn =  mysqli_connect($dbhost, "reportuser", "password", "report");
+  $sqlconn =  mysqli_connect($dbhost, $dbuser, $dbuserpass, $dbname);
 
   if ($numOfReports != "") {
-    $sql = "SELECT * FROM reports ORDER BY id DESC LIMIT $numOfReports";
+    $sql = "SELECT * FROM $tableName ORDER BY id DESC LIMIT $numOfReports";
   } else {
-    $sql = "SELECT * FROM reports ORDER BY id DESC LIMIT 20";
+    $sql = "SELECT * FROM $tableName ORDER BY id DESC LIMIT 20";
   }
 
   $result = mysqli_query($sqlconn,$sql);
+  $sqlconn->close();
 
   // Display result
   echo "<tr><th>Report ID</th><th>Hostname</th><th>Status</th><th>Timestamp</th></tr>";
@@ -56,6 +35,6 @@ function readLast20($numOfReports) {
     echo "<td>", $row['timestamp'],"  </td>";
     echo "</tr>";
   }
-  $sqlconn->close();
+
 }
 ?>
