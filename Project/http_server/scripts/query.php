@@ -4,7 +4,7 @@
 //
 function setEnv() {
   $dbhost = "localhost";
-  $dbname = "report";
+  $dbname = "no";//"report";
   $tableName = "reports";
   $dbuser = "reportuser";
   $dbuserpass = "password";
