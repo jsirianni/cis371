@@ -35,9 +35,9 @@ if ($_GET['fontColor_form'] != "") {
 	$cookie_font_val = $_COOKIE[$cookie_font];
 }
 setcookie($cookie_font, $cookie_font_val, time() + (86400 * 30), "/". ".jsirianni.duckdns.org");
-echo $_COOKIE[$cookie_font];
-echo $_GET['fontColor_form'];
-echo $cookie_font_val;
+echo "1" . $_COOKIE[$cookie_font];
+echo "2" . $_GET['fontColor_form'];
+echo "3" . $cookie_font_val;
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
