@@ -19,7 +19,7 @@
     </div>
     <div>
         <h4>Quick Stats</h4>
-        <p>Displaying last 20 reports</p>
+        <p>Displaying Most recent reports</p>
         <?php
           include 'scripts/query.php';
           readLast20();
