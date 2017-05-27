@@ -6,19 +6,19 @@
 		$month = $_GET['month'];
 		$year = $_GET['year'];
 		$headerDate = ((DateTime::createFromFormat('!m', $month))->format('F') . " " . $year);
-
- } elseif ($month != "" && $year != "") {
+  }
+  elseif ($month != "" && $year != "") {
 		$month = $month;
 		$year = $year;
 		$headerDate = ((DateTime::createFromFormat('!m', $month))->format('F') . " " . $year);
-
-	} else {
+	}
+	else {
 		$month = date('m');
 		$year = date('Y');
 		$headerDate = date('F Y');
 	}
 
-// Background color Cookie
+// Background color cookie
 $cookie_name = "color";
 if ($_GET['backgroundColor_form'] != "") {
 	$cookie_value = $_GET['backgroundColor_form'];
