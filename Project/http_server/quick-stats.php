@@ -2,7 +2,6 @@
 // Set global vars
 $GLOBALS['dbhost'] = 'localhost';
 $GLOBALS['dbname'] = 'report';
-$GLOBALS['tableName'] = 'reports';
 $GLOBALS['ddbuser'] = 'reportuser';
 $GLOBALS['dbuserpass'] = 'password';
 ?>
