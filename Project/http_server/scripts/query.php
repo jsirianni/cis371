@@ -1,19 +1,21 @@
 <?php
 //
-// Global vars for MySQL interaction
+// Function sets env
 //
-$dbhost = "localhost";
-$dbname = "report";
-$tableName = "reports";
-$dbuser = "reportuser";
-$dbuserpass = "password";
-
+function setEnv() {
+  $dbhost = "localhost";
+  $dbname = "report";
+  $tableName = "reports";
+  $dbuser = "reportuser";
+  $dbuserpass = "password";
+}
 
 
 //
 // Function displays X amount of records
 //
 function readLast20($numOfReports) {
+  setEnv();
   $sqlconn =  mysqli_connect("localhost", "reportuser", "password", "report");
 
   if ($numOfReports != "") {
