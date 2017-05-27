@@ -14,10 +14,7 @@ func writeToDatabase(h string, s string, t string) {
   defer dbconn.Close()
 
 
-  // Disable warnings, create table if not exist, enable warnings
-  //_, err = dbconn.Exec("SQL sql_notes = 0")
-  //checkError(err)
-
+  // Create table if not exist
   _, err = dbconn.Exec("CREATE TABLE IF NOT EXISTS reports " +
                        " (id int AUTO_INCREMENT PRIMARY KEY, " +
                        "hostname varchar(50), " +
@@ -25,8 +22,6 @@ func writeToDatabase(h string, s string, t string) {
                        "timestamp varchar(50))")
   checkError(err)
 
-  //_, err = dbconn.Exec("SQL sql_notes = 1")
-  //checkError(err)
 
   // Format the values by adding single quotes
   var vals = "'" + h + "'" + "," + "'" + s + "'" + "," + "'" + t + "'"
