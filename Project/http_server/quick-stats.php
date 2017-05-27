@@ -18,18 +18,20 @@
         </nav>
     </div>
     <div>
-        <h4>Quick Stats</h4>
-        <p>Displaying Most recent reports, feel free to override</p>
-        <form action="quick-stats.php">
-          Records to dislay: <input type="text" name="numrecords"><br>
-          <input type="submit" value="Submit">
-        </form>
-        <table><tbody>
+      <h4>Quick Stats</h4>
+      <p>Displaying Most recent reports, feel free to override</p>
+      <form action="quick-stats.php">
+        Records to dislay: <input type="text" name="numrecords"><br>
+        <input type="submit" value="Submit">
+      </form>
+      <table>
+        <tbody>
           <?php
             include 'scripts/query.php';
             readLast20($_GET["numrecords"]);
           ?>
-        </tbody></table>
+        </tbody>
+      </table>
     </div>
 </body>
 </html>
