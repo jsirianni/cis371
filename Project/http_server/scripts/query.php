@@ -8,7 +8,7 @@
 //
 function readLast20($numOfReports) {
 
-  $sqlconn =  mysqli_connect($GLOBALS['dbhost'], "reportuser", "password", "report");
+  $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
 
   if ($numOfReports != "") {
     $sql = "SELECT * FROM reports ORDER BY id DESC LIMIT $numOfReports";
