@@ -14,9 +14,11 @@ function setGlobal() {
 // Function displays X amount of records
 //
 function readLast20($numOfReports) {
+  // Set vars & connect to the db
   setGlobal();
   $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
 
+  // Build & execute query
   if ($numOfReports != "") {
     $sql = "SELECT * FROM reports ORDER BY id DESC LIMIT $numOfReports";
   } else {
