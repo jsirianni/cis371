@@ -44,10 +44,10 @@ function readLast20() {
   echo "<tr><th>Report ID</th><th>Hostname</th><th>Status</th><th>Timestamp</th></tr>";
   while ($row = mysqli_fetch_assoc($result)) {
     echo "<tr>";
-    echo "<td>", $row['id'], "</td>";
-    echo "<td>", $row['hostname'], "</td>";
-    echo "<td>", $row['status'], "</td>";
-    echo "<td>", $row['timestamp'], "</td>";
+    echo "<td>", $row['id'],"         </td>";
+    echo "<td>", $row['hostname'],"   </td>";
+    echo "<td>", $row['status'],"     </td>";
+    echo "<td>", $row['timestamp'],"  </td>";
     echo "</tr>";
   }
   $sqlconn->close();
