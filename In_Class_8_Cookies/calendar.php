@@ -109,17 +109,15 @@ setcookie($cookie_font, $cookie_font_val, time() + (86400 * 30), "/", ".jsiriann
   </table>
 </div>
 <div id="nav">
+	<?php  	// Determine previous month / year
+		$prevMonth = $month -1;
+		if ($prevMonth == 0) { $prevMonth = 12; $prevYear = $year - 1;}
+		else { $prevYear = $year; }
 
-	<?php
-	// Determine previous month / year
-	$prevMonth = $month -1;
-	if ($prevMonth == 0) { $prevMonth = 12; $prevYear = $year - 1;}
-	else { $prevYear = $year; }
-
-	// Determine next month / year
-	$nextMonth = $month + 1;
-	if ($nextMonth == 13) {	$nextMonth = 1; $nextYear = $year + 1;}
-	else { $nextYear = $year; }
+		// Determine next month / year
+		$nextMonth = $month + 1;
+		if ($nextMonth == 13) {	$nextMonth = 1; $nextYear = $year + 1;}
+		else { $nextYear = $year; }
 	?>
 	<a href="calendar.php?month=<?php echo $prevMonth; ?>&year=<?php echo $prevYear; ?>">
 		<img src="prev.png" alt="previous button" style="width:5em;height:5em;">
@@ -140,7 +138,7 @@ setcookie($cookie_font, $cookie_font_val, time() + (86400 * 30), "/", ".jsiriann
 	    </select>
 			<input type="submit" value="Select" />
 	</form>
-			<br><br>
+	<br><br>
 	<form action="calendar.php" method='get'>
 			<a>Font Color</p>
 			<select name="fontColor_form">
@@ -152,8 +150,5 @@ setcookie($cookie_font, $cookie_font_val, time() + (86400 * 30), "/", ".jsiriann
 			</select>
 			<input type="submit" value="Select" />
 	</form>
-
-
-
 </div>
 </body></html>
