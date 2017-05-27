@@ -23,7 +23,7 @@
         <table><tbody>
         <?php
           include 'scripts/query.php';
-          readLast20();
+          readLast20(30);
         ?>
         </tbody></table>
     </div>
