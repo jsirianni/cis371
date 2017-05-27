@@ -136,7 +136,7 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/", ".jsirianni.d
 					<option value="grey">grey</option>
 					<option value="green">green</option>
 	    </select>
-			<br>
+			<br><br>
 			<a>Font Color</p>
 			<select name="fontColor_form">
 					<option value="red">red</option>
