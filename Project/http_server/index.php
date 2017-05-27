@@ -19,8 +19,8 @@
     <div>
         <h4>Quick Stats</h4>
         <?php
-            include 'query.php';
-            readTable();
+          include 'friendsdb.php';
+          readTable();
         ?>
     </div>
 </body>
