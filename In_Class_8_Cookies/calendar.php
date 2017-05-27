@@ -26,7 +26,7 @@
 //
 // Background color Cookie
 $cookie_name = "color";
-if ($_GET['backgroundColor_form'] == "blue" || $_GET['backgroundColor_form'] == "red" ) {
+if ($_GET['backgroundColor_form'] != "") {
 	$cookie_value = $_GET['backgroundColor_form'];
 } else {
 	$cookie_value = $_COOKIE[$cookie_name];
