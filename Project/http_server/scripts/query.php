@@ -1,10 +1,5 @@
 <?php
 
-$dbhost = "localhost";
-$dbname = "report";
-$tableName = "reports";
-$dbuser = "reportuser";
-$dbuserpass = "password";
 
 
 
@@ -12,6 +7,14 @@ $dbuserpass = "password";
 // Function displays X amount of records
 //
 function readLast20($numOfReports) {
+
+  $dbhost = "localhost";
+  $dbname = "report";
+  $tableName = "reports";
+  $dbuser = "reportuser";
+  $dbuserpass = "password";
+
+
   $sqlconn =  mysqli_connect($dbhost, "reportuser", "password", "report");
 
   if ($numOfReports != "") {
