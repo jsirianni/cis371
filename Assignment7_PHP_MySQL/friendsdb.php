@@ -58,7 +58,7 @@ function popTable() {
 //
 // Link to page that displays the database content
 //
- <link rel="myfriends" type="text/php" href="myfriends.php"> 
+ echo "<link rel='myfriends' type='text/php' href='myfriends.php'>;" 
 
 
 //
