@@ -1,29 +1,24 @@
 <?php
-	// Set the timezone to EST
 	date_default_timezone_set('America/New_York');
 
-	// If args exist
+	// Set the month and year
 	if ($_GET['month'] != "" && $_GET['year'] != "") {
 		$month = $_GET['month'];
 		$year = $_GET['year'];
 		$headerDate = ((DateTime::createFromFormat('!m', $month))->format('F') . " " . $year);
 
- // If vars already set from previous page
  } elseif ($month != "" && $year != "") {
 		$month = $month;
 		$year = $year;
 		$headerDate = ((DateTime::createFromFormat('!m', $month))->format('F') . " " . $year);
 
-	// No args
 	} else {
-		$month = date('m');	//month as a number
+		$month = date('m');
 		$year = date('Y');
-		$headerDate = date('F Y'); // Header = Month work + year
+		$headerDate = date('F Y');
 	}
 
-//
-// Add cookies
-//
+
 // Background color Cookie
 $cookie_name = "color";
 if ($_GET['backgroundColor_form'] != "") {
@@ -53,18 +48,13 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/", ".jsirianni.d
         <th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th>
       </tr>
 
-
-
 			<?php
 			// Begin calendar generation
-			// Determine which day of week if first of the month | SOURCE --> http://stackoverflow.com/questions/16951411/returning-the-first-day-of-a-given-month-in-weekday-format-with-php
 			$inputMonth = '2013-05-01';
 			$month2 = date("m" , strtotime($inputMonth));
 			$year2 = date("Y" , strtotime($inputMonth));
 			$getdate = getdate(mktime(null, null, null, $month, 1, $year));
-			$firstDay = $getdate["weekday"];  // String
-
-			// Vars for control loops
+			$firstDay = $getdate["weekday"];
 			$day = 1;																									  // first day, can be incremented
 			$lastDay = cal_days_in_month (CAL_GREGORIAN,$month,$year);  //number of days in the selected month
 
@@ -129,9 +119,6 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/", ".jsirianni.d
 	if ($nextMonth == 13) {	$nextMonth = 1; $nextYear = $year + 1;}
 	else { $nextYear = $year; }
 	?>
-
-
-
 	<a href="calendar.php?month=<?php echo $prevMonth; ?>&year=<?php echo $prevYear; ?>">
 		<img src="prev.png" alt="previous button" style="width:5em;height:5em;">
 	</a>
@@ -151,5 +138,6 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/", ".jsirianni.d
 	    </select>
 	    <input type="submit" value="Select" />
 	</form>
+
 </div>
 </body></html>
