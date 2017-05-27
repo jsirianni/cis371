@@ -17,7 +17,7 @@
 		$year = date('Y');
 		$headerDate = date('F Y');
 	}
-	
+
 // Background color Cookie
 $cookie_name = "color";
 if ($_GET['backgroundColor_form'] != "") {
@@ -35,6 +35,9 @@ if ($_GET['fontColor_form'] != "") {
 	$cookie_font_val = $_COOKIE[$cookie_font];
 }
 setcookie($cookie_font, $cookie_font_val, time() + (86400 * 30), "/". ".jsirianni.duckdns.org");
+echo $_COOKIE[$cookie_font];
+echo $_GET['fontColor_form'];
+echo $cookie_font_val;
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
