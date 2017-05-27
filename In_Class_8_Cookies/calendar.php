@@ -47,7 +47,7 @@ setcookie($cookie_font, $cookie_font_val, time() + (86400 * 30), "/", ".jsiriann
   <h1><?php echo $headerDate;?></h1>
 </div>
 <div id="table">
-  <?php echo "<table>" ?>
+  <?php echo "<table style='color:$cookie_font_val'>"; ?>
     <tbody>
       <tr id="top">
         <th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th>
