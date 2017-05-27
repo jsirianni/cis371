@@ -14,7 +14,7 @@ $dbuserpass = "password";
 // Function displays all reports
 //
 function readTable() {
-  $sqlconn =  mysqli_connect("localhost", "reportuser", "password", "report");
+  $sqlconn =  mysqli_connect($dbhost, "reportuser", "password", "report");
   $sql = "SELECT * FROM reports";
   $result = mysqli_query($sqlconn,$sql);
 
@@ -33,10 +33,10 @@ function readTable() {
 
 
 //
-// Function displays last 20 reports
+// Function displays X amount of records
 //
 function readLast20($numOfReports) {
-  $sqlconn =  mysqli_connect("localhost", "reportuser", "password", "report");
+  $sqlconn =  mysqli_connect($dbhost, "reportuser", "password", "report");
 
   if ($numOfReports != "") {
     $sql = "SELECT * FROM reports ORDER BY id DESC LIMIT $numOfReports";
