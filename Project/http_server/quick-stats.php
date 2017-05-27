@@ -20,10 +20,12 @@
     <div>
         <h4>Quick Stats</h4>
         <p>Displaying Most recent reports</p>
+        <table><tbody>
         <?php
           include 'scripts/query.php';
           readLast20();
         ?>
+        </tbody></table>
     </div>
 </body>
 </html>
