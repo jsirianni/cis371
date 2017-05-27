@@ -22,24 +22,19 @@ fclose($friendFile);
 // Call table creation function and populate the table
 initTable();
 popTable();
-
 ?>
+
 <!--Build the html content -->
 <html>
-<link rel="stylesheet" href="default.css" type="text/css"/>
-<body>
-  Thank you for your submission, it has been recorded in a database! <br><br>
+  <link rel="stylesheet" href="default.css" type="text/css"/>
+  <body>
+    Thank you for your submission, it has been recorded in a database! <br><br>
 
-  First name: <?php echo $firstName; ?><br>
-  Last name: <?php echo $lastName; ?><br>
-  Phone number: <?php echo $pNumber; ?><br>
-  Age: <?php echo $age; ?><br>
-  <br>
-  View a list of my friends <a href="myfriends.php">here</a>
-
-  <?php
-  // Print the table contents to the web page
-  readTable();
-  ?>
-</body>
+    First name: <?php echo $firstName; ?><br>
+    Last name: <?php echo $lastName; ?><br>
+    Phone number: <?php echo $pNumber; ?><br>
+    Age: <?php echo $age; ?><br>
+    <br>
+    View a list of my friends <a href="myfriends.php">here</a>
+  </body>
 </html>
