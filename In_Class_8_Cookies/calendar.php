@@ -127,8 +127,8 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/", ".jsirianni.d
 	</a>
 </div>
 <div id="colorselection">
-	<a>Background Color</p>
 	<form action="calendar.php" method='get'>
+			<a>Background Color</p>
 	    <select name="backgroundColor_form">
 	        <option value="red">red</option>
 	        <option value="blue">blue</option>
