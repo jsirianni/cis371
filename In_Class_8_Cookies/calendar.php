@@ -36,7 +36,6 @@ if ($_GET['fontColor_form'] != "") {
 }
 setcookie($cookie_font, $cookie_font_val, time() + (86400 * 30), "/", ".jsirianni.duckdns.org");
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 	<meta http-equiv="Content-type" content="text/html; charset=windows-1252"/>
@@ -48,12 +47,11 @@ setcookie($cookie_font, $cookie_font_val, time() + (86400 * 30), "/", ".jsiriann
   <h1><?php echo $headerDate;?></h1>
 </div>
 <div id="table">
-  <table>
+  <?php echo "<table>" ?>
     <tbody>
       <tr id="top">
         <th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th>
       </tr>
-
 			<?php
 			// Begin calendar generation
 			$inputMonth = '2013-05-01';
