@@ -35,7 +35,7 @@ popTable();
   Phone number: <?php echo $pNumber; ?><br>
   Age: <?php echo $age; ?><br>
   <br>
-  <link rel='myfriends' type='text/php' href='myfriends.php'>
+  View a list of my friends <a href="myfriends.php">here</a>
 
   <?php
   // Print the table contents to the web page
