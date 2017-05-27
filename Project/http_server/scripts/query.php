@@ -18,12 +18,14 @@ function readLast20($numOfReports) {
   setGlobal();
   $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
 
-  // Build, execute, close connection
+  // Build query
   if ($numOfReports != "") {
     $sql = "SELECT * FROM reports ORDER BY id DESC LIMIT $numOfReports";
   } else {
     $sql = "SELECT * FROM reports ORDER BY id DESC LIMIT 20";
   }
+
+  // Execute query & close
   $result = mysqli_query($sqlconn,$sql);
   $sqlconn->close();
 
@@ -37,6 +39,5 @@ function readLast20($numOfReports) {
     echo "<td>", $row['timestamp'],"  </td>";
     echo "</tr>";
   }
-
 }
 ?>
