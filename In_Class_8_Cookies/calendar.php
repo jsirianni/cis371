@@ -145,9 +145,9 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/", ".jsirianni.d
 	    <select name="backgroundColor_form">
 	        <option value="red">red</option>
 	        <option value="blue">blue</option>
-					<option value="blue">cyan</option>
-					<option value="blue">grey</option>
-					<option value="blue">green</option>
+					<option value="cyan">cyan</option>
+					<option value="grey">grey</option>
+					<option value="green">green</option>
 	    </select>
 	    <input type="submit" value="Select" />
 	</form>
