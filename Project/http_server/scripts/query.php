@@ -1,13 +1,8 @@
 <?php
-
-
-
-
 //
 // Function displays X amount of records
 //
 function readLast20($numOfReports) {
-
   $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
 
   if ($numOfReports != "") {
@@ -15,9 +10,7 @@ function readLast20($numOfReports) {
   } else {
     $sql = "SELECT * FROM reports ORDER BY id DESC LIMIT 20";
   }
-
   $result = mysqli_query($sqlconn,$sql);
-
 
   // Display result
   echo "<tr><th>Report ID</th><th>Hostname</th><th>Status</th><th>Timestamp</th></tr>";

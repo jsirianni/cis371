@@ -33,10 +33,10 @@ $GLOBALS['dbuserpass'] = 'password';
           <input type="submit" value="Submit">
         </form>
         <table><tbody>
-        <?php
-          include 'scripts/query.php';
-          readLast20($_GET["numrecords"]);
-        ?>
+          <?php
+            include 'scripts/query.php';
+            readLast20($_GET["numrecords"]);
+          ?>
         </tbody></table>
     </div>
 </body>
