@@ -16,12 +16,12 @@ function setEnv() {
 //
 function readLast20($numOfReports) {
   setEnv();
-  $sqlconn =  mysqli_connect($dbhost, "reportuser", "password", $dbname);
+  $sqlconn =  mysqli_connect($dbhost, "reportuser", "password", "report");
 
   if ($numOfReports != "") {
-    $sql = "SELECT * FROM reports ORDER BY id DESC LIMIT $numOfReports";
+    $sql = "SELECT * FROM $tableName ORDER BY id DESC LIMIT $numOfReports";
   } else {
-    $sql = "SELECT * FROM reports ORDER BY id DESC LIMIT 20";
+    $sql = "SELECT * FROM $tableName ORDER BY id DESC LIMIT 20";
   }
 
   $result = mysqli_query($sqlconn,$sql);
