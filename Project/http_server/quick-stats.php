@@ -21,7 +21,7 @@
         <h4>Quick Stats</h4>
         <?php
           include 'scripts/query.php';
-          readTable();
+          readLast20();
         ?>
     </div>
 </body>
