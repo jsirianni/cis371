@@ -14,7 +14,7 @@ $dbuserpass = "password";
 // Function displays X amount of records
 //
 function readLast20($numOfReports) {
-  $sqlconn =  mysqli_connect($dbhost, $dbuser, $dbuserpass, $dbname);
+  $sqlconn =  mysqli_connect("localhost", "reportuser", "password", "report");
 
   if ($numOfReports != "") {
     $sql = "SELECT * FROM $tableName ORDER BY id DESC LIMIT $numOfReports";
