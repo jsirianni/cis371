@@ -6,20 +6,19 @@
 		$month = $_GET['month'];
 		$year = $_GET['year'];
 		$headerDate = ((DateTime::createFromFormat('!m', $month))->format('F') . " " . $year);
-
- } elseif ($month != "" && $year != "") {
+  }
+  elseif ($month != "" && $year != "") {
 		$month = $month;
 		$year = $year;
 		$headerDate = ((DateTime::createFromFormat('!m', $month))->format('F') . " " . $year);
-
-	} else {
+	}
+	else {
 		$month = date('m');
 		$year = date('Y');
 		$headerDate = date('F Y');
 	}
 
-
-// Background color Cookie
+// Background color cookie
 $cookie_name = "color";
 if ($_GET['backgroundColor_form'] != "") {
 	$cookie_value = $_GET['backgroundColor_form'];
@@ -27,10 +26,16 @@ if ($_GET['backgroundColor_form'] != "") {
 	$cookie_value = $_COOKIE[$cookie_name];
 }
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/", ".jsirianni.duckdns.org");
+
+// Font color cookie
+$cookie_font = "font";
+if ($_GET['fontColor_form'] != "") {
+	$cookie_font_val = $_GET['fontColor_form'];
+} else {
+	$cookie_font_val = $_COOKIE[$cookie_font];
+}
+setcookie($cookie_font, $cookie_font_val, time() + (86400 * 30), "/", ".jsirianni.duckdns.org");
 ?>
-
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 	<meta http-equiv="Content-type" content="text/html; charset=windows-1252"/>
@@ -42,14 +47,12 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/", ".jsirianni.d
   <h1><?php echo $headerDate;?></h1>
 </div>
 <div id="table">
-  <table>
+  <?php echo "<table style='color:$cookie_font_val'>"; ?>
     <tbody>
       <tr id="top">
         <th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th>
       </tr>
-
-			<?php
-			// Begin calendar generation
+			<?php // Begin calendar generation
 			$inputMonth = '2013-05-01';
 			$month2 = date("m" , strtotime($inputMonth));
 			$year2 = date("Y" , strtotime($inputMonth));
@@ -79,7 +82,6 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/", ".jsirianni.d
 
 			} else { $x = 0; }						// Sunday, no offset
 
-
 			$x++;													// Increment to account for first day
 			do {													// Create additional weeks
 
@@ -99,25 +101,19 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/", ".jsirianni.d
 
 			} while ($day <= $lastDay); 	// Continue generating weeks if all days not generated																		// End calendar generation
 		  ?>
-
-
     </tbody>
   </table>
 </div>
 <div id="nav">
+	<?php  	// Determine previous month / year
+		$prevMonth = $month -1;
+		if ($prevMonth == 0) { $prevMonth = 12; $prevYear = $year - 1;}
+		else { $prevYear = $year; }
 
-
-
-	<?php
-	// Determine previous month / year
-	$prevMonth = $month -1;
-	if ($prevMonth == 0) { $prevMonth = 12; $prevYear = $year - 1;}
-	else { $prevYear = $year; }
-
-	// Determine next month / year
-	$nextMonth = $month + 1;
-	if ($nextMonth == 13) {	$nextMonth = 1; $nextYear = $year + 1;}
-	else { $nextYear = $year; }
+		// Determine next month / year
+		$nextMonth = $month + 1;
+		if ($nextMonth == 13) {	$nextMonth = 1; $nextYear = $year + 1;}
+		else { $nextYear = $year; }
 	?>
 	<a href="calendar.php?month=<?php echo $prevMonth; ?>&year=<?php echo $prevYear; ?>">
 		<img src="prev.png" alt="previous button" style="width:5em;height:5em;">
@@ -136,7 +132,10 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/", ".jsirianni.d
 					<option value="grey">grey</option>
 					<option value="green">green</option>
 	    </select>
-			<br><br>
+			<input type="submit" value="Select" />
+	</form>
+	<br><br>
+	<form action="calendar.php" method='get'>
 			<a>Font Color</p>
 			<select name="fontColor_form">
 					<option value="black">black</option>
@@ -145,9 +144,7 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/", ".jsirianni.d
 					<option value="grey">grey</option>
 					<option value="green">green</option>
 			</select>
-			<br>
-	    <input type="submit" value="Select" />
+			<input type="submit" value="Select" />
 	</form>
-
 </div>
 </body></html>
