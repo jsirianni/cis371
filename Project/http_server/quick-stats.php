@@ -13,8 +13,8 @@
         <nav>
             <a href="/">Home</a>
             <a href="quick-stats.php">Quick Stats</a>
-            <a href="custom-query.html">Custom Query</a>
-            <a href="add-server.html">Add Server</a>
+            <a href="custom-query.php">Custom Query</a>
+            <a href="add-server.php">Add Server</a>
         </nav>
     </div>
     <div>
