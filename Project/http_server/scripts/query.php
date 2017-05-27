@@ -39,7 +39,7 @@ function readLast20($numOfReports) {
   $sqlconn =  mysqli_connect("localhost", "reportuser", "password", "report");
 
   if ($numOfReports != "") {
-    $sql = "SELECT * FROM reports ORDER BY id DESC LIMIT 20";
+    $sql = "SELECT * FROM reports ORDER BY id DESC LIMIT $numOfReports";
   } else {
     $sql = "SELECT * FROM reports ORDER BY id DESC LIMIT 20";
   }
