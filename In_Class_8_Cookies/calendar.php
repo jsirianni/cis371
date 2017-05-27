@@ -52,8 +52,7 @@ setcookie($cookie_font, $cookie_font_val, time() + (86400 * 30), "/", ".jsiriann
       <tr id="top">
         <th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th>
       </tr>
-			<?php
-			// Begin calendar generation
+			<?php // Begin calendar generation
 			$inputMonth = '2013-05-01';
 			$month2 = date("m" , strtotime($inputMonth));
 			$year2 = date("Y" , strtotime($inputMonth));
@@ -102,7 +101,6 @@ setcookie($cookie_font, $cookie_font_val, time() + (86400 * 30), "/", ".jsiriann
 
 			} while ($day <= $lastDay); 	// Continue generating weeks if all days not generated																		// End calendar generation
 		  ?>
-
     </tbody>
   </table>
 </div>
