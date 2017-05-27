@@ -55,6 +55,11 @@ function popTable() {
   $sqlconn->close();
 }
 
+//
+// Link to page that displays the database content
+//
+ <link rel="myfriends" type="text/php" href="myfriends.php"> 
+
 
 //
 // Function returns an array containing all DB entries
