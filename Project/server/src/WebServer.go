@@ -43,7 +43,7 @@ func handleClient(c net.Conn) {
     fmt.Print(string(timestamp) + "\n")
 
     // Write to database
-    go writeToDatabase(hostname, status, timestamp)
+    writeToDatabase(hostname, status, timestamp)
 
   // IF not valid report
   } else {
