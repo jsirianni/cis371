@@ -23,7 +23,7 @@ function readLast20($numOfReports) {
   }
 
   $result = mysqli_query($sqlconn,$sql);
-  $sqlconn->close();
+
 
   // Display result
   echo "<tr><th>Report ID</th><th>Hostname</th><th>Status</th><th>Timestamp</th></tr>";
@@ -35,6 +35,6 @@ function readLast20($numOfReports) {
     echo "<td>", $row['timestamp'],"  </td>";
     echo "</tr>";
   }
-
+  $sqlconn->close();
 }
 ?>
