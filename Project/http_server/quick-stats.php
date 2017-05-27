@@ -17,5 +17,12 @@
             <a href="add-server.html">Add Server</a>
         </nav>
     </div>
+    <div>
+        <h4>Quick Stats</h4>
+        <?php
+          include 'scripts/query.php';
+          readTable();
+        ?>
+    </div>
 </body>
 </html>
