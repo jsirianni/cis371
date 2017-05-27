@@ -8,16 +8,14 @@ import (
 )
 
 
-// Main routing handles connections on all interfaces
+// Main routing accepts each connection as a GO routine
 func main() {
   socket, err := net.Listen("tcp", ":8090")
- checkError(err)
+  checkError(err)
 
-  // Loop forever, handle clients with go routine
   for {
     connection, err := socket.Accept()
     checkError(err)
-
     go handleClient(connection)
   }
 }
@@ -31,21 +29,14 @@ func handleClient(c net.Conn) {
   clientReport, err := bufio.NewReader(c).ReadString('\n')
   checkError(err)
 
-
-  // IF valid report, assign variables
+  // IF valid report, assign vars and write to db
   if strings.Contains(clientReport, "report,") {
     s := strings.Split(clientReport, ",")
     hostname, status, timestamp := s[1], s[2], s[3]
 
-    // Print parsed values
-    fmt.Print(string(hostname) + "\n")
-    fmt.Print(string(status) + "\n")
-    fmt.Print(string(timestamp) + "\n")
+    go writeToDatabase(hostname, status, timestamp)
 
-    // Write to database
-    writeToDatabase(hostname, status, timestamp)
-
-  // IF not valid report
+  // Not valid report, ignore
   } else {
     return
   }
