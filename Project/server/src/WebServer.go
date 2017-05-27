@@ -29,15 +29,14 @@ func handleClient(c net.Conn) {
   clientReport, err := bufio.NewReader(c).ReadString('\n')
   checkError(err)
 
-  // IF valid report, assign variables
+  // IF valid report, assign vars and write to db
   if strings.Contains(clientReport, "report,") {
     s := strings.Split(clientReport, ",")
     hostname, status, timestamp := s[1], s[2], s[3]
 
-    // Write to database
     go writeToDatabase(hostname, status, timestamp)
 
-  // IF not valid report
+  // Not valid report, ignore
   } else {
     return
   }
