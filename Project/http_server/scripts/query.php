@@ -74,7 +74,6 @@ function readLast20() {
   $result = mysqli_query($sqlconn,$sql);
 
   // Display all DB content
-  echo "<p>Displaying last 20 records</p>";
   echo "<table><tbody>";
   echo "<tr><th>Report ID</th><th>Hostname</th><th>Status</th><th>Timestamp</th></tr>";
   while ($row = mysqli_fetch_assoc($result)) {
