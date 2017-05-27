@@ -1,8 +1,20 @@
 <?php
 //
+// Set global values
+//
+function setGlobal() {
+  $GLOBALS['dbhost'] = 'localhost';
+  $GLOBALS['dbname'] = 'report';
+  $GLOBALS['ddbuser'] = 'reportuser';
+  $GLOBALS['dbuserpass'] = 'password';
+}
+
+
+//
 // Function displays X amount of records
 //
 function readLast20($numOfReports) {
+  setGlobal();
   $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
 
   if ($numOfReports != "") {
