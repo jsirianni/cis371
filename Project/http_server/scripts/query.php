@@ -1,14 +1,11 @@
 <?php
-//
-// Function sets env
-//
-function setEnv() {
-  $dbhost = "localhost";
-  $dbname = "no";//"report";
-  $tableName = "reports";
-  $dbuser = "reportuser";
-  $dbuserpass = "password";
-}
+
+$dbhost = "localhost";
+$dbname = "no";//"report";
+$tableName = "reports";
+$dbuser = "reportuser";
+$dbuserpass = "password";
+
 
 
 //
