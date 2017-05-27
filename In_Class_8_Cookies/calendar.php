@@ -31,12 +31,14 @@ if ($_GET['backgroundColor_form'] == "blue" || $_GET['backgroundColor_form'] == 
 	setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/", ".jsirianni.duckdns.org");
 	echo $cookie_value;
 	echo $_COOKIE[$cookie_name];
+
 } else {
 	$cookie_value = $_COOKIE[$cookie_name];
 	setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/", ".jsirianni.duckdns.org");
 	echo $cookie_value;
 	echo $_COOKIE[$cookie_name];
 }
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/", ".jsirianni.duckdns.org");
 ?>
 
 
