@@ -20,6 +20,8 @@
     <div>
       <h4>Quick Stats</h4>
       <p>Enter a SQL query</p>
+      <p>Do not include a ";" at the end of the query</p>
+      <p>Example: "SELECT * FROM report.reports"</p>
       <form action="custom-query.php">
         Custom Query: <input type="text" name="custom-query"><br>
         <input type="submit" value="Submit">
