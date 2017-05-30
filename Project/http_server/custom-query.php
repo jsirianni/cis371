@@ -14,13 +14,11 @@
             <a href="/">Home</a>
             <a href="quick-stats.php">Quick Stats</a>
             <a href="custom-query.php">Custom Query</a>
-            <a href="add-server.php">Add Server</a>
+            <a href="manual-report.php">Manual Report</a>
         </nav>
     </div>
     <div>
-      <h4>Quick Stats</h4>
-      <p>Enter a SQL query</p>
-      <p>Do not include a ";" at the end of the query</p>
+      <h4>Custom Query</h4>
       <p> Example queries</p>
       <ul>
         <li>SELECT * FROM report.reports</li>
@@ -29,7 +27,7 @@
         <li>SELECT * FROM report.reports WHERE (status='bad') ORDER BY id DESC</li>
       </ul>
       <form action="custom-query.php">
-        Custom Query: <input type="text" name="custom-query"><br>
+        Custom Query: <input type="text" name="custom-query"> ';' automatically appended<br>
         <input type="submit" value="Submit">
       </form>
       <table>

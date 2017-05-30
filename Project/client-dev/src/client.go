@@ -11,7 +11,7 @@ import (
 
 // Connect to server and send report
 func main() {
-  connection, err := net.Dial("tcp", "localhost:8090")
+  connection, err := net.Dial("tcp", "teamalerts.duckdns.org:8090")
   if err != nil && err != io.EOF {
      checkError(err)
   }

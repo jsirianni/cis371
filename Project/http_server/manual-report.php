@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="styles/default.css" type="text/css"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>Quick Stats</title>
+    <title>Manual Report</title>
 </head>
 <body>
     <div id=header>
@@ -18,17 +18,30 @@
         </nav>
     </div>
     <div>
-      <h4>Quick Stats</h4>
-      <p>Displaying Most recent reports, feel free to override</p>
-      <form action="quick-stats.php">
-        Records to dislay: <input type="text" name="numrecords"><br>
+      <h4>Manual Report Submission</h4>
+      <form action="manual-report.php">
+        Hostname: <input type="text" name="hostname"><br>
+        Status: <input type="text" name="status"><br>
         <input type="submit" value="Submit">
       </form>
       <table>
         <tbody>
           <?php
             include 'scripts/query.php';
-            readLast20($_GET["numrecords"]);
+
+            // Validate hostname
+            if ($_GET["hostname"] != null && $_GET["status"] != null) {
+              // Assign SQL friendly varchars
+              $currentHostname = "'" . $_GET["hostname"] . "'";
+              $currentStatus = "'" . $_GET["status"] . "'";
+
+              // Get unix time
+              $currentTime = time();
+
+              // Call manual-report()
+              manualReport($currentHostname,$currentStatus,$currentTime);
+            }
+
           ?>
         </tbody>
       </table>
