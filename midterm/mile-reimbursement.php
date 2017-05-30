@@ -45,23 +45,26 @@ function getSpeedRate($averageSpeed) {
   if ($averageSpeed >= 75) {
     $y = "$0.15";
   }
-  if ($averageSpeed >= 70 && $averageSpeed < 75) {
+  elseif ($averageSpeed >= 70 && $averageSpeed < 75) {
     $y = "$0.45";
   }
-  if ($averageSpeed >= 65 && $averageSpeed < 70) {
+  elseif ($averageSpeed >= 65 && $averageSpeed < 70) {
     $y = "$0.55";
   }
-  if ($averageSpeed >= 60 && $averageSpeed < 65) {
+  elseif ($averageSpeed >= 60 && $averageSpeed < 65) {
     $y = "$0.50";
   }
-  if ($averageSpeed >= 50 && $averageSpeed < 60) {
+  elseif ($averageSpeed >= 50 && $averageSpeed < 60) {
     $y = "$0.40";
   }
-  if ($averageSpeed >= 40 && $averageSpeed < 50) {
+  elseif ($averageSpeed >= 40 && $averageSpeed < 50) {
     $y = "$0.30";
   }
-  if ($averageSpeed < 40) {
+  elseif ($averageSpeed < 40) {
     $y = "$0.15";
+  }
+  else {
+    $y = "error";
   }
 
   return $y;
