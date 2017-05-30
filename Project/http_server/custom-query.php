@@ -23,8 +23,8 @@
       <p>Do not include a ";" at the end of the query</p>
       <p> Example queries</p>
       <ul>
-        <li>"SELECT * FROM report.reports"</li>
-        <li>"SELECT * FROM report.reports WHERE (hostname=ws1)"</li>
+        <li>SELECT * FROM report.reports</li>
+        <li>SELECT * FROM report.reports WHERE (hostname=ws1)</li>
       </ul>
       <form action="custom-query.php">
         Custom Query: <input type="text" name="custom-query"><br>
