@@ -35,8 +35,8 @@ function readFiles() {
 
     // Calulate average speed
     $avgSpeed = getAvgSpeed($lineArray[2], $lineArray[3]);
-    $totalSpeedAve += $averageSpeed;
-    echo "<td>$avgSpeed $totalSpeedAve</td>";
+    $totalSpeedAve += $avgSpeed;
+    echo "<td>$avgSpeed</td>";
 
     $rate = getSpeedRate($avgSpeed);
     echo "<td>$$rate</td>";
