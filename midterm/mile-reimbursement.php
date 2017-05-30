@@ -11,16 +11,13 @@ function readFiles() {
   while (! feof($iData)) {
     $line = fgets($iData);
     $lineArray = explode(',', $line);
-    $origin = $lineArray[0];
-    $dest = $lineArray[1];
-    $miles = $lineArray[2];
-    $minutes = $lineArray[3];
+
 
     echo "<tr>";
-    echo "<td>$origin</td>";
-    echo "<td>$dest</td>";
-    echo "<td>$miles</td>";
-    echo "<td>$minutes</td>";
+    echo "<td>$lineArray[0]</td>";
+    echo "<td>$lineArray[1]</td>";
+    echo "<td>$lineArray[2]</td>";
+    echo "<td>$lineArray[3]</td>";
     echo "</tr>";
   }
 }
