@@ -6,6 +6,7 @@ include 'functions.php';
 <!--Build the html content -->
 <html>
 <head>
+  <link rel="stylesheet" href="default.css">
   <h1>Invoice for Miles Driver</h1>
 </head>
 <body>
