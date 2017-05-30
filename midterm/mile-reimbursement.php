@@ -6,6 +6,15 @@
 $rRates = fopen("./reimbursement_rates.txt", "r");
 $iData = fopen("./invoice_data1.txt", "r");
 
+// Function to read invoice data line by line
+function readInvoice() {
+  while(!feof($rRates)) {
+    $line = fgets($file);
+    echo "$line";
+
+  }
+}
+
 ?>
 
 
@@ -26,5 +35,6 @@ $iData = fopen("./invoice_data1.txt", "r");
       <th>Total</th>
     </tr>
   </tbody></table>
+  <?php readInvoice(); ?>
 </body>
 </html>
