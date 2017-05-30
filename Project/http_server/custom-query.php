@@ -26,6 +26,7 @@
         <li>SELECT * FROM report.reports</li>
         <li>SELECT * FROM report.reports WHERE (hostname='ws1')</li>
         <li>SELECT * FROM report.reports WHERE (hostname='ws1') ORDER BY id DESC LIMIT 10</li>
+        <li>SELECT * FROM report.reports WHERE (status='bad') ORDER BY id DESC</li>
       </ul>
       <form action="custom-query.php">
         Custom Query: <input type="text" name="custom-query"><br>
