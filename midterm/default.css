@@ -9,6 +9,6 @@ th {
   border-bottom: solid;
 }
 
-.last {
+tr .last {
   border-top: solid;
 }
