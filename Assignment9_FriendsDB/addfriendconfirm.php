@@ -44,10 +44,10 @@ popTable();
   </div>
   <div>
     <p>Thank you for your submission, it has been recorded in a database!</p>
-    <a>First name: <?php echo $firstName; ?></a><br>
-    <a>Last name: <?php echo $lastName; ?></a><br>
-    <a>Phone number: <?php echo $pNumber; ?></a><br>
-    <a>Age: <?php echo $age; ?></a><br>
+    <a>First name:   <?php echo $firstName;?>  </a><br>
+    <a>Last name:    <?php echo $lastName;?>   </a><br>
+    <a>Phone number: <?php echo $pNumber;?>    </a><br>
+    <a>Age:          <?php echo $age;?>        </a><br>
   </div>
 </body>
 </html>
