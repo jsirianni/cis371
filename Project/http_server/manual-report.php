@@ -17,5 +17,23 @@
           <a href="manual-report.php">Manual Report</a>
         </nav>
     </div>
+    <div>
+      <h4>Manual Report Submission</h4>
+      <form action="manual-report.php">
+        Manual Report: <input type="text" name="manual-report"> ';' automatically appended<br>
+        <input type="submit" value="Submit">
+      </form>
+      <table>
+        <tbody>
+          <?php
+            include 'scripts/query.php';
+            // Do not execute unless sql submitted
+            if ($_GET["manual-report"] != null) {
+              customQuery($_GET["manual-report"]);
+            }
+          ?>
+        </tbody>
+      </table>
+    </div>
 </body>
 </html>
