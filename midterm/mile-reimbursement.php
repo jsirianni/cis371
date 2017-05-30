@@ -42,8 +42,9 @@ function getAvgSpeed($miles, $minutes) {
 
 // Function returns speed rate
 function getSpeedRate($averageSpeed) {
+  $y = "$0.20";
   if ($averageSpeed >= 75) {
-    $y = "$0.15"
+    $y = "$0.15";
   }
 
   return $y;
