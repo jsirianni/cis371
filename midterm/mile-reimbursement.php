@@ -11,6 +11,9 @@ $iData = fopen("./invoice_data1.txt", "r");
 
 <!--Build the html content -->
 <html>
+<head>
+  <h1>Invoice for Miles Driver</h1>
+</head>
 <body>
   <table><tbody>
     <tr>
