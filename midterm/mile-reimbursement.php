@@ -44,7 +44,8 @@ function readInvoice() {
       <th>Rate</th>
       <th>Total</th>
     </tr>
+    <?php readInvoice(); ?>
   </tbody></table>
-  <?php readInvoice(); ?>
+
 </body>
 </html>
