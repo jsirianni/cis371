@@ -18,7 +18,7 @@
         popTable();
 
         // Display text
-        echo "<p>The database has been populated!</p>"
+        echo "<p>The database has been populated!</p>";
       ?>
     </div>
   </body>
