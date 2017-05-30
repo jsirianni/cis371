@@ -59,7 +59,7 @@ function readFiles() {
   echo "<td></td><td></td>"; // blank cells
   echo "<td>$mTotal</td>";
   echo "<td>$minTotal</td>";
-  echo "<td>$totalSpeedAve</td>";
+  echo "<td>$totalSpeedAve $numEntries</td>";
   echo "<td>$rateAverage</td>";
   echo "<td>$costTotal</td>";
   echo "</tr>";
