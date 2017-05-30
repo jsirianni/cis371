@@ -13,7 +13,7 @@ function readFiles() {
   while (! feof($iData)) {
 
     $line = fgets($iData);
-    $lineArray = explode(',', fgets($iData);
+    $lineArray = explode(',', $line);
 
     echo "<tr>";
     echo "<td>$lineArray[0]</td>";
