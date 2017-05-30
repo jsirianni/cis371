@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="styles/default.css" type="text/css"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>Add Server</title>
+    <title>Manual Report</title>
 </head>
 <body>
     <div id=header>
@@ -11,10 +11,10 @@
     </div>
     <div>
         <nav>
-            <a href="/">Home</a>
-            <a href="quick-stats.php">Quick Stats</a>
-            <a href="custom-query.php">Custom Query</a>
-            <a href="add-server.php">Add Server</a>
+          <a href="/">Home</a>
+          <a href="quick-stats.php">Quick Stats</a>
+          <a href="custom-query.php">Custom Query</a>
+          <a href="manual-report.php">Manual Report</a>
         </nav>
     </div>
 </body>
