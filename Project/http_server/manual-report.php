@@ -20,7 +20,9 @@
     <div>
       <h4>Manual Report Submission</h4>
       <form action="manual-report.php">
-        Manual Report: <input type="text" name="manual-report"> ';' automatically appended<br>
+        Hostname: <input type="text" name="hostname"><br>
+        Status: <input type="text" name="status"><br>
+        Unix timestamp: <input type="text" name="timestamp"><br>
         <input type="submit" value="Submit">
       </form>
       <table>
@@ -28,9 +30,9 @@
           <?php
             include 'scripts/query.php';
             // Do not execute unless sql submitted
-            if ($_GET["manual-report"] != null) {
-              customQuery($_GET["manual-report"]);
-            }
+            //if ($_GET["manual-report"] != null) {
+            //  customQuery($_GET["manual-report"]);
+            //}
           ?>
         </tbody>
       </table>
