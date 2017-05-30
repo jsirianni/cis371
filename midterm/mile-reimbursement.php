@@ -11,7 +11,7 @@ function readFiles() {
     $lineArray = explode(',', $line);
     $avgSpeed = $lineArray[0];
     $rate = $lineArray[1];
-    
+
   }
 
   // Open invoice file for reading
@@ -27,6 +27,8 @@ function readFiles() {
     echo "<td>$lineArray[1]</td>";
     echo "<td>$lineArray[2]</td>";
     echo "<td>$lineArray[3]</td>";
+    echo "<td>$avgSpeed</td>";
+    echo "<td>$rate</td>";
     echo "</tr>";
   }
 }
