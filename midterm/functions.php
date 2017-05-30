@@ -24,7 +24,7 @@ function readFiles() {
     echo "<td>$lineArray[1]</td>";
 
     // add to miles total
-    $mTotal += (int)$lineArray[2];
+    $mTotal += (float)$lineArray[2];
     echo "<td>$lineArray[2]</td>";
 
     // add to minute total
