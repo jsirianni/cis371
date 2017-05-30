@@ -4,10 +4,10 @@
 
 // Open files for reading
 $rRates = fopen("./reimbursement_rates.txt", "r");
-$iData = fopen("./invoice_data1.txt", "r");
 
 // Function to read invoice data line by line
 function readInvoice() {
+  $iData = fopen("./invoice_data1.txt", "r");
   while (! feof($iData)) {
     echo fgets($iData). "<br />";
   }
