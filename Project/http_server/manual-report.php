@@ -22,7 +22,6 @@
       <form action="manual-report.php">
         Hostname: <input type="text" name="hostname"><br>
         Status: <input type="text" name="status"><br>
-        Unix timestamp: <input type="text" name="timestamp"><br>
         <input type="submit" value="Submit">
       </form>
       <table>
@@ -33,6 +32,14 @@
             //if ($_GET["manual-report"] != null) {
             //  customQuery($_GET["manual-report"]);
             //}
+
+            // Validate hostname
+
+            // Validate status
+
+            // Determine timestamp
+
+            // Call manual-report()
           ?>
         </tbody>
       </table>
