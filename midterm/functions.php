@@ -39,6 +39,7 @@ function readFiles() {
     echo "<td>$avgSpeed</td>";
 
     $rate = getSpeedRate($avgSpeed);
+    $rateAverage += $rate;
     echo "<td>$$rate</td>";
 
     $total = getTotal($lineArray[2], $rate);
@@ -51,8 +52,9 @@ function readFiles() {
     $numEntries += 1;
   }
 
-  // Calulate $totalSpeedAve
+  // Get averages
   $totalSpeedAve = $totalSpeedAve / $numEntries;
+  $rateAverage = $rateAverage / $numEntries;
 
   // Print totals
   echo "<tr>";
