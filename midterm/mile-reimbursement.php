@@ -21,7 +21,7 @@ function readFiles() {
     echo "<td>$avgSpeed</td>";
 
     $rate = getSpeedRate($avgSpeed);
-    echo "<td>$rate</td>";
+    echo "<td>$$rate</td>";
 
     $total = getTotal($lineArray[2], $rate);
     echo "<td>$total</td>";
