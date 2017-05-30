@@ -27,6 +27,12 @@ popTable();
 <!--Build the html content -->
 <html>
 <link rel="stylesheet" href="default.css" type="text/css"/>
+<head>
+  <head>
+    <title>Friends Home</title>
+    <h3>Friends Database</h3>
+  </head>
+</head>
 <body>
   <div>
       <nav>
@@ -38,13 +44,9 @@ popTable();
   </div>
   <div>
     <p>Thank you for your submission, it has been recorded in a database!</p>
-    <br><br>
     <a>First name: <?php echo $firstName; ?></a>
-    <br>
     <a>Last name: <?php echo $lastName; ?></a>
-    <br>
     <a>Phone number: <?php echo $pNumber; ?></a>
-    <br>
     <a>Age: <?php echo $age; ?></a>
   </div>
 </body>
