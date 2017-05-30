@@ -3,6 +3,7 @@
   <link rel="stylesheet" href="default.css" type="text/css"/>
   <head>
     <title>Friends Home</title>
+    <h3>Friends Database</h3>
   </head>
   <body>
     <div>
@@ -16,10 +17,7 @@
     <div>
       <?php
         include 'functions.php';
-        // Populate the table
         popTable();
-
-        // Display text
         echo "<p>The database has been populated!</p>";
       ?>
     </div>

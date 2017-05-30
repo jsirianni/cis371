@@ -6,7 +6,7 @@
   </head>
   <body>
     <div class="container">
-      <form action="friendsform.php" method="post">
+      <form action="addfriendconfirm.php" method="post">
         First Name: <input type="text" name="fname"><br>
         Last Name: <input type="text" name="lname"><br>
         Phone Number: <input type="text" name="pnumber"><br>
