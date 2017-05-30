@@ -56,7 +56,6 @@ function readFiles() {
   // Get averages
   $totalSpeedAve = $totalSpeedAve / $numEntries;
   $rateAverage = $rateAverage / $numEntries;
-  $costTotal = $costTotal / $numEntries;
 
   // Print totals
   echo "<tr>";
