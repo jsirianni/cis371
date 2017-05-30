@@ -17,7 +17,7 @@ function readFiles() {
     echo "<td>$lineArray[3]</td>";
 
     // Determine ave speed
-    $avgSpeed = $lineArray[2] * ($lineArray[3] / 60);
+    $avgSpeed = $lineArray[2] / ($lineArray[3] / 60);
     echo "<td>$avgSpeed</td>";
     echo "<td>$rate</td>";
     echo "<td>$total</td>";
