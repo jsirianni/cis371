@@ -15,6 +15,7 @@
         <nav>
     </div>
     <div class="container">
+      <br>
       <form action="addfriendconfirm.php" method="post">
         First Name: <input type="text" name="fname"><br>
         Last Name: <input type="text" name="lname"><br>
