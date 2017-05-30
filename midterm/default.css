@@ -4,3 +4,7 @@ table {
 th, td {
   text-align: left;
 }
+
+th {
+  border-bottom: solid;
+}
