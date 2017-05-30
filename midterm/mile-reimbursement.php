@@ -33,6 +33,7 @@ function getAvgSpeed($miles, $minutes) {
   $hours = $minutes / 60;
   $x = $miles / $hours;
   $x = number_format((float)$x, 2, '.', '');
+  return $x;
 }
 
 ?>
