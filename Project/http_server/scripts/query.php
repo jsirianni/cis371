@@ -37,9 +37,7 @@ function readLast20($numOfReports) {
     echo "<td>", $row['id'],"         </td>";
     echo "<td>", $row['hostname'],"   </td>";
     echo "<td>", $row['status'],"     </td>";
-    $t = data('d.m.Y H:i:s', $row['timestamp']);
-    echo "<td>", $t,"  </td>";
-
+    echo "<td>", $row['timestamp'],"  </td>";
     echo "</tr>";
   }
 }
