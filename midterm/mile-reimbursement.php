@@ -1,6 +1,7 @@
 <?php
-
+//
 // Function to read invoice data line by line
+//
 function readFiles() {
   // Open invoice file for reading
   $iData = fopen("./invoice_data1.txt", "r");
@@ -16,7 +17,6 @@ function readFiles() {
     echo "<td>$lineArray[2]</td>";
     echo "<td>$lineArray[3]</td>";
 
-    // Determine ave speed
     $avgSpeed = getAvgSpeed($lineArray[2], $lineArray[3]);
     echo "<td>$avgSpeed</td>";
 
@@ -24,15 +24,16 @@ function readFiles() {
     echo "<td>$$rate</td>";
 
     $total = getTotal($lineArray[2], $rate);
-    echo "<td>$total</td>";
+    echo "<td>$$total</td>";
 
     echo "</tr>";
   }
   fclose($iData);
 }
 
-
+//
 //function returns average speed
+//
 function getAvgSpeed($miles, $minutes) {
   $hours = $minutes / 60;
   $x = $miles / $hours;
@@ -40,8 +41,9 @@ function getAvgSpeed($miles, $minutes) {
   return $x;
 }
 
-
+//
 // Function returns speed rate
+//
 function getSpeedRate($averageSpeed) {
   if ($averageSpeed >= 75) {
     $y = "0.15";
@@ -71,8 +73,9 @@ function getSpeedRate($averageSpeed) {
   return $y;
 }
 
-
+//
 // Function returns the total
+//
 function getTotal($r, $m) {
   $t = $r * $m;
   return $t;
