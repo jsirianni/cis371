@@ -29,7 +29,7 @@
           <?php
             include 'scripts/query.php';
             // Do not execute unless sql submitted
-            if ($_GET["custom-query"]) == null) {
+            if ($_GET["custom-query"]) != null) {
               customQuery($_GET["custom-query"]);
             }
           ?>
