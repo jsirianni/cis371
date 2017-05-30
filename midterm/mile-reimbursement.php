@@ -17,7 +17,7 @@ function readFiles() {
     echo "<td>$lineArray[3]</td>";
 
     // Determine ave speed
-    $avgSpeed = $lineArray[2] / ($lineArray[3] / 60);
+    $avgSpeed = getAvgSpeed($lineArray[2], $lineArray[3]);
     echo "<td>$avgSpeed</td>";
     echo "<td>$rate</td>";
     echo "<td>$total</td>";
@@ -25,6 +25,14 @@ function readFiles() {
     echo "</tr>";
   }
   fclose($iData);
+}
+
+
+//function returns average speed
+function getAvgSpeed($miles, $minutes) {
+  $hours = $minutes / 60;
+  $x = $miles / $hours;
+  $x = number_format((float)$x, 2, '.', '');
 }
 
 ?>
