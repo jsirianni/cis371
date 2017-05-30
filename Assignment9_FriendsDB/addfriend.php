@@ -2,11 +2,21 @@
 <html>
   <link rel="stylesheet" href="default.css" type="text/css"/>
   <head>
-    <title>Friend's Form</title>
+    <title>Add Friend</title>
+    <h3>Friends Database</h3>
   </head>
   <body>
+    <div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="populate.php">Populate Database</a>
+            <a href="addfriend.php">Add a friend</a>
+            <a href="showfriends.php">Show all friends</a>
+        <nav>
+    </div>
     <div class="container">
-      <form action="friendsform.php" method="post">
+      <br>
+      <form action="addfriendconfirm.php" method="post">
         First Name: <input type="text" name="fname"><br>
         Last Name: <input type="text" name="lname"><br>
         Phone Number: <input type="text" name="pnumber"><br>
