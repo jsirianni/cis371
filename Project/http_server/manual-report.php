@@ -19,6 +19,7 @@
     </div>
     <div>
       <h4>Manual Report Submission</h4>
+      <p>Submit a manual report</p>
       <form action="manual-report.php">
         Hostname: <input type="text" name="hostname"><br>
         Status: <input type="text" name="status"><br>
@@ -39,7 +40,6 @@
               // Call manual-report()
               manualReport($currentHostname,$currentStatus,$currentTime);
             }
-
           ?>
         </tbody>
       </table>

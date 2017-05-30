@@ -19,7 +19,7 @@
     </div>
     <div>
       <h4>Quick Stats</h4>
-      <p>Displaying Most recent reports, feel free to override</p>
+      <p>Displaying most recent reports, feel free to override</p>
       <form action="quick-stats.php">
         Records to dislay: <input type="text" name="numrecords"><br>
         <input type="submit" value="Submit">
