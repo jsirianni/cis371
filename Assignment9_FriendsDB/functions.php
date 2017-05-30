@@ -1,10 +1,4 @@
 <?php
-
-// Global vars for MySQL interaction
-$dbname = "cis371";
-$tableName = "myfriends";
-
-
 //
 // Function creates the table
 //
@@ -51,7 +45,6 @@ function popTable() {
         continue;
     }
   }
-  // Close the connection
   $sqlconn->close();
 }
 
@@ -82,7 +75,6 @@ function readTable() {
   }
   echo "</tbody></table>";
 
-  // Close the connection
   $sqlconn->close();
 }
 ?>
