@@ -18,6 +18,9 @@ function readInvoice() {
 
     echo "<tr>";
     echo "<td>$origin</td>";
+    echo "<td>$dest</td>";
+    echo "<td>$miles</td>";
+    echo "<td>$minutes</td>";
     echo "</tr>";
   }
 }
