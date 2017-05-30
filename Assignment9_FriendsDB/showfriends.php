@@ -17,8 +17,8 @@
     <div>
       <?php
         include 'functions.php';
-        popTable();
-        echo "<p>The database has been populated!</p>";
+        readTable();
+
       ?>
     </div>
   </body>
