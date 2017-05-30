@@ -32,12 +32,12 @@
             // Validate hostname
             if ($_GET["hostname"] != null && $_GET["status"] != null) {
               // Assign strings
-              $currentHostname = $_GET["hostname"];
-              $currentStatus = $_GET["status"];
+              $currentHostname = "$_GET["hostname"]";
+              $currentStatus = "$_GET["status"]";
 
               // Get unix time
               $currentTime = time();
-              
+
               // Call manual-report()
               manualReport();
             }
