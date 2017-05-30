@@ -24,13 +24,14 @@ function readFiles() {
     echo "<td>$lineArray[1]</td>";
 
     // add to miles total
-    $mTotal += $lineArray[2];
+    $mTotal += (int)$lineArray[2];
     echo "<td>$lineArray[2]</td>";
 
     // add to minute total
     $minTotal += $lineArray[3];
     echo "<td>$lineArray[3]</td>";
 
+    // Calulate average speed
     $avgSpeed = getAvgSpeed($lineArray[2], $lineArray[3]);
     $totalSpeedAve += $averageSpeed;
     echo "<td>$avgSpeed</td>";
