@@ -60,7 +60,7 @@ function readFiles() {
 
 
   // Print totals
-  echo "<tr>";
+  echo "<tr class='last'>";
   echo "<td></td><td></td>"; // blank cells
   echo "<td>$mTotal</td>";
   echo "<td>$minTotal</td>";
