@@ -43,7 +43,7 @@ function readFiles() {
     echo "<td>$$rate</td>";
 
     $total = getTotal($lineArray[2], $rate);
-    $costTotal += $total
+    $costTotal += $total;
     echo "<td>$$total</td>";
 
 
