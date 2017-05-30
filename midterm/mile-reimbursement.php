@@ -19,6 +19,7 @@ function readFiles() {
     echo "<td>$rate</td>";
     echo "</tr>";
   }
+  fclose($iData);
 }
 
 ?>
