@@ -16,10 +16,12 @@ function readFiles() {
     echo "<td>$lineArray[2]</td>";
     echo "<td>$lineArray[3]</td>";
 
+    // Determine ave speed
+    $avgSpeed = $lineArray[2] * ($lineArray[3] / 60);
     echo "<td>$avgSpeed</td>";
     echo "<td>$rate</td>";
     echo "<td>$total</td>";
-    
+
     echo "</tr>";
   }
   fclose($iData);
