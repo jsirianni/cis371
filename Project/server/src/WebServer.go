@@ -10,13 +10,18 @@ import (
 
 // Main routing accepts each connection as a GO routine
 func main() {
+  // Ensure table is created in database
+  createDB()
+
+  // Start listener
   socket, err := net.Listen("tcp", ":8090")
   checkError(err)
 
+  // Handle each connection
   for {
     connection, err := socket.Accept()
     checkError(err)
-    go handleClient(connection)
+    handleClient(connection)
   }
 }
 
@@ -36,7 +41,7 @@ func handleClient(c net.Conn) {
 
     // Check status & write to database
     go statusCheck(hostname, status, timestamp)
-    go writeToDatabase(hostname, status, timestamp)
+    writeToDatabase(hostname, status, timestamp)
 
   } else {
     return
