@@ -15,7 +15,7 @@
     <div>
       <?php
         // Populate the table
-        popTable()
+        popTable();
 
         // Display text
         echo "<p>The database has been populated!</p>"
