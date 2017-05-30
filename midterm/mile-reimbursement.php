@@ -1,20 +1,27 @@
 <?php
 
-
-
-// Open files for reading
-$rRates = fopen("./reimbursement_rates.txt", "r");
-
 // Function to read invoice data line by line
 function readFiles() {
+  // Open files for reading
+  $rRates = fopen("./reimbursement_rates.txt", "r");
+  // Read each line
+  while (! feof($rRates)) {
+    // Assign line to variable, split line into an array
+    $line = fgets($rRates);
+    $lineArray = explode(',', $line);
+    $avgSpeed = $lineArray[0];
+    $rate = $lineArray[1];
+    
+  }
+
   // Open invoice file for reading
   $iData = fopen("./invoice_data1.txt", "r");
-  // Read each line individually
+  // Read each line
   while (! feof($iData)) {
-
+    // Assign line to variable, split line into an array
     $line = fgets($iData);
     $lineArray = explode(',', $line);
-
+    // Print the array values to a table row
     echo "<tr>";
     echo "<td>$lineArray[0]</td>";
     echo "<td>$lineArray[1]</td>";
