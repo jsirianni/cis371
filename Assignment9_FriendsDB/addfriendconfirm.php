@@ -37,7 +37,7 @@ popTable();
       <nav>
   </div>
   <div>
-    <a>Thank you for your submission, it has been recorded in a database!</a>
+    <p>Thank you for your submission, it has been recorded in a database!</p>
     <br><br>
     <a>First name: <?php echo $firstName; ?></a>
     <br>
