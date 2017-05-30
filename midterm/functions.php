@@ -11,6 +11,7 @@ function readFiles() {
   $totalSpeedAve = 0;
   $rateAverage = 0;
   $costTotal = 0;
+  $numEntries = 0;
 
   // Read each line
   while (! feof($iData)) {
@@ -31,6 +32,7 @@ function readFiles() {
     echo "<td>$lineArray[3]</td>";
 
     $avgSpeed = getAvgSpeed($lineArray[2], $lineArray[3]);
+    $totalSpeedAve += $averageSpeed;
     echo "<td>$avgSpeed</td>";
 
     $rate = getSpeedRate($avgSpeed);
@@ -41,7 +43,13 @@ function readFiles() {
 
 
     echo "</tr>";
+
+    // Increment entry number
+    $numEntries += 1;
   }
+
+  // Calulate $totalSpeedAve
+  $totalSpeedAve = $totalSpeedAve / $numEntries;
 
   // Print totals
   echo "<tr>";
