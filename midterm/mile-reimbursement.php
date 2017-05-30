@@ -15,8 +15,11 @@ function readFiles() {
     echo "<td>$lineArray[1]</td>";
     echo "<td>$lineArray[2]</td>";
     echo "<td>$lineArray[3]</td>";
+
     echo "<td>$avgSpeed</td>";
     echo "<td>$rate</td>";
+    echo "<td>$total</td>";
+    
     echo "</tr>";
   }
   fclose($iData);
