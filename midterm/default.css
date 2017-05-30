@@ -1,0 +1,10 @@
+table {
+  width: 85%;
+}
+th, td {
+  text-align: left;
+}
+
+th {
+  border-bottom: solid;
+}
