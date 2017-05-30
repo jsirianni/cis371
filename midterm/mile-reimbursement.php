@@ -41,10 +41,10 @@ function getAvgSpeed($miles, $minutes) {
 
 
 // Function returns speed rate
-function getAvgRate($averageSpeed);
+function getAvgRate($averageSpeed); {
   $y = "$0.15";
   return y;
-
+}
 ?>
 
 
