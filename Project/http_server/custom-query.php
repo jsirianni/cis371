@@ -19,7 +19,7 @@
     </div>
     <div>
       <h4>Quick Stats</h4>
-      <p>Displaying Most recent reports, feel free to override</p>
+      <p>Enter a SQL query</p>
       <form action="custom-query.php">
         Custom Query: <input type="text" name="custom-query"><br>
         <input type="submit" value="Submit">
