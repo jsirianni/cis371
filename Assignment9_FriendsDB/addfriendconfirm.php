@@ -29,7 +29,7 @@ popTable();
 <link rel="stylesheet" href="default.css" type="text/css"/>
 <head>
   <head>
-    <title>Friends Home</title>
+    <title>submission Confirmation</title>
     <h3>Friends Database</h3>
   </head>
 </head>

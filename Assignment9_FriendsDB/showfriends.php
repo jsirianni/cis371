@@ -2,7 +2,7 @@
 <html>
   <link rel="stylesheet" href="default.css" type="text/css"/>
   <head>
-    <title>Add Friend</title>
+    <title>Show Friends</title>
     <h3>Friends Database</h3>
   </head>
   <body>
@@ -14,15 +14,12 @@
             <a href="showfriends.php">Show all friends</a>
         <nav>
     </div>
-    <div class="container">
-      <br>
-      <form action="addfriendconfirm.php" method="post">
-        First Name: <input type="text" name="fname"><br>
-        Last Name: <input type="text" name="lname"><br>
-        Phone Number: <input type="text" name="pnumber"><br>
-        Age: <input type="text" name="age"><br>
-        <input type="submit">
-      </form>
+    <div>
+      <?php
+        include 'functions.php';
+        popTable();
+        echo "<p>The database has been populated!</p>";
+      ?>
     </div>
   </body>
 </html>

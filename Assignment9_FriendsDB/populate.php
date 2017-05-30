@@ -2,7 +2,7 @@
 <html>
   <link rel="stylesheet" href="default.css" type="text/css"/>
   <head>
-    <title>Friends Home</title>
+    <title>Populate Database</title>
     <h3>Friends Database</h3>
   </head>
   <body>
