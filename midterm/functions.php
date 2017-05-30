@@ -5,6 +5,13 @@
 function readFiles() {
   // Open invoice file for reading
   $iData = fopen("./invoice_data1.txt", "r");
+
+  $mTotal = 0;
+  $minTotal = 0;
+  $totalSpeedAve = 0;
+  $rateAverage = 0;
+  $costTotal = 0;
+
   // Read each line
   while (! feof($iData)) {
     // Assign line to variable, split line into an array
@@ -14,7 +21,13 @@ function readFiles() {
     echo "<tr>";
     echo "<td>$lineArray[0]</td>";
     echo "<td>$lineArray[1]</td>";
+
+    // add to miles total
+    $mTotal += $lineArray[2];
     echo "<td>$lineArray[2]</td>";
+
+    // add to minute total
+    $minTotal += $lineArray[3];
     echo "<td>$lineArray[3]</td>";
 
     $avgSpeed = getAvgSpeed($lineArray[2], $lineArray[3]);
@@ -26,8 +39,20 @@ function readFiles() {
     $total = getTotal($lineArray[2], $rate);
     echo "<td>$$total</td>";
 
+
     echo "</tr>";
   }
+
+  // Print totals
+  echo "<tr>";
+  echo "<td></td><td></td>"; // blank cells
+  echo "<td>$mtotal</td>";
+  echo "<td>$minTotal</td>";
+  echo "<td>$totalSpeedAve</td>";
+  echo "<td>$rateAverage</td>";
+  echo "<td>$costTotal</td>";
+  echo "</tr>";
+
   fclose($iData);
 }
 
