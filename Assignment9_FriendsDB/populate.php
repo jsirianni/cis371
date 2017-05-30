@@ -15,6 +15,7 @@
     </div>
     <div>
       <?php
+        include 'functions.php';
         // Populate the table
         popTable();
 
