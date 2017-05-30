@@ -34,8 +34,6 @@
               // Assign SQL friendly varchars
               $currentHostname = "'" . $_GET["hostname"] . "'";
               $currentStatus = "'" . $_GET["status"] . "'";
-
-              // Get unix time
               $currentTime = time();
 
               // Call manual-report()

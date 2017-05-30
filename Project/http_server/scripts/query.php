@@ -18,7 +18,6 @@ function readLast20($numOfReports) {
   setGlobal();
   $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
 
-
   // Build query
   if ($numOfReports != "") {
     $sql = "SELECT * FROM reports ORDER BY id DESC LIMIT $numOfReports";
@@ -60,7 +59,7 @@ function customQuery($customSQL) {
     echo "<td>", $row['id'],"         </td>";
     echo "<td>", $row['hostname'],"   </td>";
     echo "<td>", $row['status'],"     </td>";
-    echo "<td>", $row['timestamp'],"  </td>";
+    echo "<td>", date('m.d.Y H:i', $row['timestamp'])," </td>";
     echo "</tr>";
   }
 }
