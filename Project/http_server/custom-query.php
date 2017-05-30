@@ -20,8 +20,8 @@
     <div>
       <h4>Quick Stats</h4>
       <p>Displaying Most recent reports, feel free to override</p>
-      <form action="quick-stats.php">
-        Records to dislay: <input type="text" name="numrecords"><br>
+      <form action="custom-query.php">
+        Custom Query: <input type="text" name="custom-query"><br>
         <input type="submit" value="Submit">
       </form>
       <table>
