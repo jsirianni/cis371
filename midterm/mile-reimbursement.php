@@ -60,7 +60,7 @@ function getSpeedRate($averageSpeed) {
   if ($averageSpeed >= 40 && $averageSpeed < 50) {
     $y = "$0.30";
   }
-  if ($averageSpeed > 40) {
+  if ($averageSpeed < 40) {
     $y = "$0.15";
   }
 
