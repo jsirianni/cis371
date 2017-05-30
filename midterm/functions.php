@@ -6,7 +6,7 @@ function readFiles() {
   // Open invoice file for reading
   $iData = fopen("./invoice_data1.txt", "r");
 
-  $mTotal = 0;
+  $mTotal;
   $minTotal = 0;
   $totalSpeedAve = 0;
   $rateAverage = 0;
