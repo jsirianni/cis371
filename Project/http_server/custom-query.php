@@ -19,7 +19,6 @@
     </div>
     <div>
       <h4>Custom Query</h4>
-      <p>Enter a SQL query</p>
       <p> Example queries</p>
       <ul>
         <li>SELECT * FROM report.reports</li>
