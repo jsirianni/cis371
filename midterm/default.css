@@ -8,3 +8,7 @@ th, td {
 th {
   border-bottom: solid;
 }
+
+.last {
+  border-top: solid;
+}
