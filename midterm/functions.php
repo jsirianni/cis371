@@ -27,7 +27,7 @@ function readFiles() {
     // add to miles total
     $currentMiles = $lineArray[2];
     $mTotal += $currentMiles;
-    echo "<td>$currentMiles</td>";
+    echo "<td>$currentMiles $mTotal</td>";
 
     // add to minute total
     $minTotal += $lineArray[3];
