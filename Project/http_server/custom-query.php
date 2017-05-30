@@ -28,7 +28,10 @@
         <tbody>
           <?php
             include 'scripts/query.php';
-            //customQuery($_GET["custom-query"]);
+            // Do not execute unless sql submitted
+            if ($_GET("custom-query")) {
+              customQuery($_GET["custom-query"]);
+            }
           ?>
         </tbody>
       </table>
