@@ -3,7 +3,7 @@
 // In Class 6 - Friends Form
 
 // Import php functions
-include 'friendsdb.php';
+include 'functions.php';
 
 // Assign posted variables
 $firstName = $_POST['fname'];
@@ -29,16 +29,9 @@ popTable();
 <link rel="stylesheet" href="default.css" type="text/css"/>
 <body>
   Thank you for your submission, it has been recorded in a database! <br><br>
-
   First name: <?php echo $firstName; ?><br>
   Last name: <?php echo $lastName; ?><br>
   Phone number: <?php echo $pNumber; ?><br>
   Age: <?php echo $age; ?><br>
-  <br>
-
-  <?php
-  // Print the table contents to the web page
-  readTable();
-  ?>
 </body>
 </html>
