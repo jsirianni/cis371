@@ -18,9 +18,8 @@
         </nav>
     </div>
     <div>
-      <h4>Quick Stats</h4>
+      <h4>Custom Query</h4>
       <p>Enter a SQL query</p>
-      <p>Do not include a ";" at the end of the query</p>
       <p> Example queries</p>
       <ul>
         <li>SELECT * FROM report.reports</li>
