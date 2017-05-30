@@ -8,6 +8,7 @@ function setGlobal() {
   $GLOBALS['ddbuser'] = 'reportuser';
   $GLOBALS['dbuserpass'] = 'password';
   $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
+  return $sqlconn;
 }
 
 
@@ -16,7 +17,7 @@ function setGlobal() {
 //
 function readLast20($numOfReports) {
   // Set vars & connect to the db
-  setGlobal();
+  $c = setGlobal();
 
 
   // Build query
@@ -27,7 +28,7 @@ function readLast20($numOfReports) {
   }
 
   // Execute query & close
-  $result = mysqli_query($sqlconn,$sql);
+  $result = mysqli_query($c,$sql);
   $sqlconn->close();
 
   // Display result
