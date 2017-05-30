@@ -50,5 +50,7 @@ function customQuery($customSQL) {
   //Set vars & connect to the db
   setGlobal();
   $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
+
+  $result = mysqli_query($sqlconn, $customSQL);
 }
 ?>
