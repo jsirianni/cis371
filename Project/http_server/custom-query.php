@@ -28,7 +28,7 @@
         <tbody>
           <?php
             include 'scripts/query.php';
-            //readLast20($_GET["numrecords"]);
+            customQuery($_GET["custom-query"]);
           ?>
         </tbody>
       </table>

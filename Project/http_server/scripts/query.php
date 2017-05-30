@@ -7,6 +7,7 @@ function setGlobal() {
   $GLOBALS['dbname'] = 'report';
   $GLOBALS['ddbuser'] = 'reportuser';
   $GLOBALS['dbuserpass'] = 'password';
+  $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
 }
 
 
@@ -16,7 +17,7 @@ function setGlobal() {
 function readLast20($numOfReports) {
   // Set vars & connect to the db
   setGlobal();
-  $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
+
 
   // Build query
   if ($numOfReports != "") {
@@ -39,5 +40,15 @@ function readLast20($numOfReports) {
     echo "<td>", $row['timestamp'],"  </td>";
     echo "</tr>";
   }
+}
+
+
+//
+// Function allows the user to perform any query
+//
+function customQuery($customSQL) {
+  // Set vars & connect to the db
+  setGlobal();
+  $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
 }
 ?>
