@@ -17,5 +17,25 @@
             <a href="manual-report.php">Manual Report</a>
         </nav>
     </div>
+    <div>
+        <p>
+            Welcome to the Report Server. Reports are being gathered in real time
+            by a service listening on TCP port 8090. The service is written in GO
+            Language and is capable of handling over 500 thousand requests a minute
+            when running on fast hardware.
+        </p>
+        </p> Each report contains the following </p>
+        <ul>
+            <li>Hostname: The server hostname of the reports origin</li>
+            <li>Status: The status of the sending server</li>
+            <li>Timestamp: Unix timestamp converted to a human readable format</li>
+        </ul>
+        <p>
+            Use the Quick Stats page to view recent reports. Use the Custom Query
+            page to perform SQL queries against the backing MySQL instance. Use
+            the Manual Report page to submit a report manually through the web
+            interface. 
+        </p>
+    </div>
 </body>
 </html>
