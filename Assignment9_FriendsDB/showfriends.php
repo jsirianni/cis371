@@ -18,7 +18,6 @@
       <?php
         include 'functions.php';
         readTable();
-
       ?>
     </div>
   </body>

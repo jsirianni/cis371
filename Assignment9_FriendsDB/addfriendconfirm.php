@@ -1,8 +1,4 @@
 <?php
-// Joseph Sirianni
-// In Class 6 - Friends Form
-
-// Import php functions
 include 'functions.php';
 
 // Assign posted variables
@@ -19,12 +15,12 @@ $f = fopen("./friends.txt", "a");
 fwrite($f, $line);
 fclose($friendFile);
 
-// Call table creation function and populate the table
+// Call table creation function and populate the table from the text file
 initTable();
 popTable();
-
 ?>
-<!--Build the html content -->
+
+
 <html>
 <link rel="stylesheet" href="default.css" type="text/css"/>
 <head>
