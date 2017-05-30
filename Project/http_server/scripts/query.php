@@ -46,9 +46,9 @@ function readLast20($numOfReports) {
 //
 // Function allows the user to perform any query
 //
-//function customQuery($customSQL) {
-  // Set vars & connect to the db
-//  setGlobal();
-//  $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
-//}
+function customQuery($customSQL) {
+  //Set vars & connect to the db
+  setGlobal();
+  $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
+}
 ?>
