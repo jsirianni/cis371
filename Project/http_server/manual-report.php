@@ -39,7 +39,6 @@
               // Call manual-report()
               manualReport($currentHostname,$currentStatus,$currentTime);
             }
-
           ?>
         </tbody>
       </table>
