@@ -9,7 +9,16 @@ $rRates = fopen("./reimbursement_rates.txt", "r");
 function readInvoice() {
   $iData = fopen("./invoice_data1.txt", "r");
   while (! feof($iData)) {
-    echo fgets($iData). "<br />";
+    $line = fgets($iData);
+    $lineArray = explode(',', $line);
+    $origin = $lineArray[0];
+    $dest = $lineArray[1];
+    $miles = $lineArray[2];
+    $minutes = $lineArray[3];
+
+    echo "<tr>"
+    echo "<td>$origin</td>"
+    echo "</tr>"
   }
 }
 
