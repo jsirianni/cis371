@@ -28,7 +28,7 @@
         <tbody>
           <?php
             include 'scripts/query.php';
-            customQuery($_GET["custom-query"]);
+            //customQuery($_GET["custom-query"]);
           ?>
         </tbody>
       </table>
