@@ -16,9 +16,9 @@ function readInvoice() {
     $miles = $lineArray[2];
     $minutes = $lineArray[3];
 
-    echo "<tr>"
-    echo "<td>$origin</td>"
-    echo "</tr>"
+    echo "<tr>";
+    echo "<td>$origin</td>";
+    echo "</tr>";
   }
 }
 
