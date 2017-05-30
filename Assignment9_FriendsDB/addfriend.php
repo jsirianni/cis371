@@ -5,6 +5,14 @@
     <title>Friend's Form</title>
   </head>
   <body>
+    <div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="populate.php">Populate Database</a>
+            <a href="addfriend.php">Add a friend</a>
+            <a href="showfriends.php">Show all friends</a>
+        <nav>
+    </div>
     <div class="container">
       <form action="addfriendconfirm.php" method="post">
         First Name: <input type="text" name="fname"><br>

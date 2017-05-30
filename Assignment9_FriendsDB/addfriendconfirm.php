@@ -28,10 +28,24 @@ popTable();
 <html>
 <link rel="stylesheet" href="default.css" type="text/css"/>
 <body>
-  Thank you for your submission, it has been recorded in a database! <br><br>
-  First name: <?php echo $firstName; ?><br>
-  Last name: <?php echo $lastName; ?><br>
-  Phone number: <?php echo $pNumber; ?><br>
-  Age: <?php echo $age; ?><br>
+  <div>
+      <nav>
+          <a href="index.html">Home</a>
+          <a href="populate.php">Populate Database</a>
+          <a href="addfriend.php">Add a friend</a>
+          <a href="showfriends.php">Show all friends</a>
+      <nav>
+  </div>
+  <div>
+    <a>Thank you for your submission, it has been recorded in a database!</a>
+    <br><br>
+    <a>First name: <?php echo $firstName; ?></a>
+    <br>
+    <a>Last name: <?php echo $lastName; ?></a>
+    <br>
+    <a>Phone number: <?php echo $pNumber; ?></a>
+    <br>
+    <a>Age: <?php echo $age; ?></a>
+  </div>
 </body>
 </html>
