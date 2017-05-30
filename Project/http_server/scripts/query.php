@@ -47,7 +47,7 @@ function readLast20($numOfReports) {
 // Function allows the user to perform any query
 //
 function customQuery($customSQL) {
-  //Set vars & connect to the db
+  // Set vars & connect to the db
   setGlobal();
   $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
   $result = mysqli_query($sqlconn, $customSQL);
@@ -63,5 +63,22 @@ function customQuery($customSQL) {
     echo "<td>", $row['timestamp'],"  </td>";
     echo "</tr>";
   }
+}
+
+
+//
+// Function allows user to perform an INSERT
+//
+function manualReport($hostname, $status, $timestamp) {
+  // Set vars & connect to the db
+  setGlobal();
+  $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
+
+  // Build INSERT statement
+  $sql = "INSERT INTO report.reports (hostname,status,timestamp) VALUES ($hostname,$status,$timestamp)";
+
+  // Execute INSERT & close
+  $result = mysqli_query($sqlconn,$sql);
+  $sqlconn->close();
 }
 ?>

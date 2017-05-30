@@ -28,18 +28,20 @@
         <tbody>
           <?php
             include 'scripts/query.php';
-            // Do not execute unless sql submitted
-            //if ($_GET["manual-report"] != null) {
-            //  customQuery($_GET["manual-report"]);
-            //}
 
             // Validate hostname
+            if ($_GET["hostname"] != null && $_GET["status"] != null) {
+              // Assign strings
+              $currentHostname = $_GET["hostname"];
+              $currentStatus = $_GET["status"];
 
-            // Validate status
+              // Get unix time
+              $currentTime = time();
+              
+              // Call manual-report()
+              manualReport();
+            }
 
-            // Determine timestamp
-
-            // Call manual-report()
           ?>
         </tbody>
       </table>
