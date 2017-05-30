@@ -36,18 +36,18 @@ popTable();
 <body>
   <div>
       <nav>
-          <a href="index.html">Home</a><br>
-          <a href="populate.php">Populate Database</a><br>
-          <a href="addfriend.php">Add a friend</a><br>
+          <a href="index.html">Home</a>
+          <a href="populate.php">Populate Database</a>
+          <a href="addfriend.php">Add a friend</a>
           <a href="showfriends.php">Show all friends</a>
       <nav>
   </div>
   <div>
     <p>Thank you for your submission, it has been recorded in a database!</p>
-    <a>First name: <?php echo $firstName; ?></a>
-    <a>Last name: <?php echo $lastName; ?></a>
-    <a>Phone number: <?php echo $pNumber; ?></a>
-    <a>Age: <?php echo $age; ?></a>
+    <a>First name: <?php echo $firstName; ?></a><br>
+    <a>Last name: <?php echo $lastName; ?></a><br>
+    <a>Phone number: <?php echo $pNumber; ?></a><br>
+    <a>Age: <?php echo $age; ?></a><br>
   </div>
 </body>
 </html>
