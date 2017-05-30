@@ -8,10 +8,8 @@ $iData = fopen("./invoice_data1.txt", "r");
 
 // Function to read invoice data line by line
 function readInvoice() {
-  while(!feof($rRates)) {
-    $line = fgets($file);
-    echo "$line";
-
+  while (! feof($iData)) {
+    echo fgets($iData). "<br />";
   }
 }
 
