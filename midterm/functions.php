@@ -18,13 +18,15 @@ function readFiles() {
     // Assign line to variable, split line into an array
     $line = fgets($iData);
     $lineArray = explode(',', $line);
+
     // Print the array values to a table row
     echo "<tr>";
     echo "<td>$lineArray[0]</td>";
     echo "<td>$lineArray[1]</td>";
 
     // add to miles total
-    $mTotal += (float)$lineArray[2];
+    $currentMiles = $lineArray[2];
+    $mTotal += $currentMiles;
     echo "<td>$lineArray[2]</td>";
 
     // add to minute total
