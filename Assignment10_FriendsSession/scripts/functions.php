@@ -23,7 +23,7 @@ function popTable() {
   $sqlconn =  mysqli_connect("localhost", "root", "password", "cis371");
 
   // Open the file
-  $inputFile = fopen("friends.txt", "r");
+  $inputFile = fopen("../friends.txt", "r");
   while (($line = fgets($inputFile)) !== false) {
     // Raad line from file into array, then convert to a astring
     $lineArray = explode(',', $line);
