@@ -1,5 +1,5 @@
 <?php
-include 'functions.php';
+include 'scripts/functions.php';
 
 // Assign posted variables
 $firstName = $_POST['fname'];

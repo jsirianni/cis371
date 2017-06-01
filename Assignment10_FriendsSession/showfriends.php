@@ -16,7 +16,7 @@
     </div>
     <div>
       <?php
-        include 'functions.php';
+        include 'scripts/functions.php';
         readTable();
       ?>
     </div>
