@@ -1,8 +1,8 @@
 <?php
 include 'scripts/functions.php';
 
-$user = $_POST['uName'];
-$pass = $_POST['pWord'];
+//$user = $_POST['uName'];
+//$pass = $_POST['pWord'];
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -16,7 +16,7 @@ $pass = $_POST['pWord'];
     <div>
       <?php
       // Check if user and password is valid
-      if (accountLookup($user, $pass) == True) {
+      if (accountLookup($_POST['uName'], $_POST['pWord']) == True) {
         echo '<p>You are authenticated</p>';
         echo '<nav>';
             echo '<a href="home.html">Home </a>';
