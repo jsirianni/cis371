@@ -24,6 +24,7 @@ $pass = $_POST['pWord'];
             echo '<a href="populate.php">Populate Database</a>';
             echo '<a href="addfriend.php">Add a friend</a>';
             echo '<a href="showfriends.php">Show all friends</a>';
+            echo '<a href="accounts.php">Accounts</a>';
         echo '<nav>';
       } else {
         echo '<form action="index.php" method="post">';
