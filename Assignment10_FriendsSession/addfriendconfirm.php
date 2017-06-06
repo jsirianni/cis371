@@ -16,8 +16,7 @@ fwrite($f, $line);
 fclose($friendFile);
 
 // Call table creation function and populate the table from the text file
-initTable();
-popTable();
+addRow($firstName, $lastName, $pNumber, $age);
 ?>
 
 
