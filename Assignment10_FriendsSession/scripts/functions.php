@@ -84,6 +84,9 @@ function addRow($fName, $lName, $pNum, $age) {
     WHERE NOT EXISTS (SELECT firstname, lastname, num, age FROM myfriends
       WHERE firstname='$lineArray[0]' AND lastname='$lineArray[1]' AND num='$lineArray[2]' AND age='$lineArray[3]'
     LIMIT 1)";
+
+  $result = mysqli_query($sqlconn,$sql);
+  $sqlconn->close();
 }
 
 
