@@ -14,6 +14,8 @@ function accountLookup($user, $pass) {
   $sqlconn->close();
 
   echo "$result";
+
+  return true;
 }
 
 //
