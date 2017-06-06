@@ -15,19 +15,6 @@ $pass = $_POST['pWord'];
   <body>
     <div>
       <?php
-      decho $user
-      echo $pass
-      // Check if user and password is valid
-      if (accountLookup($user, $pass) === true) {
-        echo '<p>You are authenticated</p>';
-        echo '<nav>';
-            echo '<a href="home.html">Home </a>';
-            echo '<a href="populate.php">Populate Database </a>';
-            echo '<a href="addfriend.php">Add a friend </a>';
-            echo '<a href="showfriends.php">Show all friends </a>';
-            echo '<a href="logout.php">Logout </a>';
-        echo '<nav>';
-      } else {
         echo '<form action="index.php" method="post">';
           echo 'Username: <input type="text" name="uName"><br>';
           echo 'Password: <input type="text" name="pWord"><br>';
