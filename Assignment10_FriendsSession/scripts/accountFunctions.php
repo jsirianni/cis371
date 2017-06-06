@@ -5,23 +5,21 @@
 
 
 //
-// Function creates the table
+// Function returns true if account exists
 //
-function initTable() {
+function accountLookup($user, $pass) {
   $sqlconn =  mysqli_connect("localhost", "root", "password", "cis371");
-  $sql = "CREATE TABLE accounts (
-    userName CHAR(20) PRIMARY KEY,
-    password CHAR(50), sudo BOOLEAN";
-
-  mysqli_query($sqlconn, $sql);
+  $sql = "SELECT * FROM accounts WHERE userName='".$user."'");
+  $result = mysqli_query($sqlconn,$sql);
   $sqlconn->close();
-}
 
+  echo "$result";
+}
 
 //
 // Function returns an array containing all DB entries
 //
-function readTable() {
+function readAccounts() {
   $sqlconn =  mysqli_connect("localhost", "root", "password", "cis371");
   $sql = "SELECT * FROM myfriends";
   $result = mysqli_query($sqlconn,$sql);
