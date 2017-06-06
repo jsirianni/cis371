@@ -8,12 +8,18 @@
   <body>
     <div>
         <nav>
-            <a href="home.html">Home</a>
-            <a href="populate.php">Populate Database</a>
-            <a href="addfriend.php">Add a friend</a>
-            <a href="showfriends.php">Show all friends</a>
-            <a href="accounts.php">Accounts</a>
+          <a href="home.html">Home</a>
+          <a href="populate.php">Populate Database</a>
+          <a href="addfriend.php">Add a friend</a>
+          <a href="showfriends.php">Show all friends</a>
+          <a href="accounts.php">Accounts</a>
         <nav>
+    </div>
+    <div>
+      <?php
+        include 'scripts/functions.php';
+        readTable();
+      ?>
     </div>
   </body>
 </html>
