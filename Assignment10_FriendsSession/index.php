@@ -17,7 +17,7 @@ $pass = $_POST['pWord'];
     <div>
       <?php
       // Check if user and password is valid
-      if (accountLookup() == true) {
+      if (accountLookup($user, $pass) == true) {
         echo '<p>You are authenticated</p>';
         echo '<nav>';
             echo '<a href="home.html">Home</a>';
