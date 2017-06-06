@@ -51,7 +51,6 @@ function addRow($fName, $lName, $pNum, $age) {
   $username = strtolower($username);
 
   $sqlconn = mysqli_connect("localhost", "root", "password", "cis371");
-
   $sql = "INSERT INTO myfriends (firstname, lastname, num, age, username)
     SELECT * FROM (SELECT '$fName', '$lName', '$pNum', '$age', '$username') AS tmp
     WHERE NOT EXISTS (SELECT firstname, lastname, num, age, username FROM myfriends
