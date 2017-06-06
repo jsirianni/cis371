@@ -47,18 +47,17 @@ function readTable() {
 // function adds a row to the database
 //
 function addRow($fName, $lName, $pNum, $age) {
+  $username = substr($fName, 0, 1) . $lName;
+
   $sqlconn = mysqli_connect("localhost", "root", "password", "cis371");
 
-  $sql = "INSERT INTO myfriends (firstname, lastname, num, age)
-    SELECT * FROM (SELECT '$fName', '$lName', '$pNum', '$age') AS tmp
-    WHERE NOT EXISTS (SELECT firstname, lastname, num, age FROM myfriends
-      WHERE firstname='$lineArray[0]' AND lastname='$lineArray[1]' AND num='$lineArray[2]' AND age='$lineArray[3]'
+  $sql = "INSERT INTO myfriends (firstname, lastname, num, age, username)
+    SELECT * FROM (SELECT '$fName', '$lName', '$pNum', '$age', '$username') AS tmp
+    WHERE NOT EXISTS (SELECT firstname, lastname, num, age, username FROM myfriends
+      WHERE firstname='$lineArray[0]' AND lastname='$lineArray[1]' AND num='$lineArray[2]' AND age='$lineArray[3]' AND username='$username[4]'
     LIMIT 1)";
 
   $result = mysqli_query($sqlconn,$sql);
   $sqlconn->close();
 }
-
-
-
 ?>
