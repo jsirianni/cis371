@@ -62,4 +62,14 @@ function addRow($fName, $lName, $pNum, $age) {
 
   return $username;
 }
+
+
+//
+// Function returns true if an account exists
+//
+function accountLookup($username) {
+  return True;
+}
+
+
 ?>

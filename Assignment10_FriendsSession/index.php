@@ -1,6 +1,5 @@
 <?php
 include 'scripts/functions.php';
-include 'scripts/accountFunctions.php';
 
 $user = $_POST['uName'];
 $pass = $_POST['pWord'];
@@ -17,7 +16,7 @@ $pass = $_POST['pWord'];
     <div>
       <?php
       // Check if user and password is valid
-      if (accountLookup($user, $pass) == true) {
+      if (accountLookup($user, $pass) == True) {
         echo '<p>You are authenticated</p>';
         echo '<nav>';
             echo '<a href="home.html">Home</a>';
