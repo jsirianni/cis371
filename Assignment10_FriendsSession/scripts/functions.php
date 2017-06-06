@@ -60,5 +60,7 @@ function addRow($fName, $lName, $pNum, $age) {
 
   $result = mysqli_query($sqlconn,$sql);
   $sqlconn->close();
+
+  return $username;
 }
 ?>
