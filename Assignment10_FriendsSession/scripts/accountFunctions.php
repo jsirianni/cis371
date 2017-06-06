@@ -9,7 +9,7 @@
 //
 function accountLookup($user, $pass) {
   $sqlconn =  mysqli_connect("localhost", "root", "password", "cis371");
-  $sql = "SELECT * FROM accounts WHERE userName='".$user."'");
+  $sql = "SELECT * FROM accounts WHERE userName='$user'";
   $result = mysqli_query($sqlconn,$sql);
   $sqlconn->close();
 
