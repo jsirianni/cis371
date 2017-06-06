@@ -28,7 +28,7 @@ function readTable() {
   // Display query response
   echo "<p>Current Database Entries</p>";
   echo "<table><tbody>";
-  echo "<tr><th>Id</th>th>Username</th><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Age</th></tr>";
+  echo "<tr><th>Id</th><th>Username</th><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Age</th></tr>";
   while ($row = mysqli_fetch_assoc($result)) {
     echo "<tr>";
     echo "<td>", $row['id'], "</td>";
