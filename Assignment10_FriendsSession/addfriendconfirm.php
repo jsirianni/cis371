@@ -23,11 +23,11 @@ $x = addRow($_POST['fname'], $_POST['lname'], $_POST['pnumber'], $_POST['age']);
   </div>
   <div>
     <p>Thank you for your submission, it has been recorded in a database!</p>
-    <p>Your username is <?php echo $x;?>
-    <a>First name:   <?php echo $_POST['fname'];?>  </a><br>
-    <a>Last name:    <?php echo $_POST['lname'];?>   </a><br>
-    <a>Phone number: <?php echo $_POST['pnumber'];?>    </a><br>
-    <a>Age:          <?php echo $_POST['age'];?>        </a><br>
+    <a>Username:     <?php echo $x;?>                 </a><br>
+    <a>First name:   <?php echo $_POST['fname'];?>    </a><br>
+    <a>Last name:    <?php echo $_POST['lname'];?>    </a><br>
+    <a>Phone number: <?php echo $_POST['pnumber'];?>  </a><br>
+    <a>Age:          <?php echo $_POST['age'];?>      </a><br>
   </div>
 </body>
 </html>
