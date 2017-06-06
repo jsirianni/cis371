@@ -72,7 +72,7 @@ function accountLookup($username, $password) {
   $sqlconn = mysqli_connect("localhost", "root", "password", "cis371");
   $sql = "SELECT * FROM cis371.accounts WHERE username='$username' AND password='$password' LIMIT 1";
 
-  return mysqli_query($sqlconn,$sql) ? false : true;
+  return false;
   }
 }
 
