@@ -16,38 +16,6 @@ function initTable() {
 
 
 //
-// Populate table from text file, false if table already has data
-//
-function popTable() {
-  // Connect to local DB, hardcoded creds not recomended
-  $sqlconn =  mysqli_connect("localhost", "root", "password", "cis371");
-
-  // Open the file
-  $inputFile = fopen("friends.txt", "r");
-  while (($line = fgets($inputFile)) !== false) {
-    // Raad line from file into array, then convert to a astring
-    $lineArray = explode(',', $line);
-    $line = settype($line, "string");
-
-    // Insert values into table. ID is auto incremented. Skip if identical row
-    $sql = "INSERT INTO myfriends (firstname, lastname, num, age)
-      SELECT * FROM (SELECT '$lineArray[0]', '$lineArray[1]', '$lineArray[2]', '$lineArray[3]') AS tmp
-      WHERE NOT EXISTS (SELECT firstname, lastname, num, age FROM myfriends
-        WHERE firstname='$lineArray[0]' AND lastname='$lineArray[1]' AND num='$lineArray[2]' AND age='$lineArray[3]'
-      LIMIT 1)";
-
-    // Execute the query. Error handling can be added here later
-    if ($sqlconn->query($sql) === TRUE) {
-        continue;
-    } else {
-        continue;
-    }
-  }
-  $sqlconn->close();
-}
-
-
-//
 // Function returns an array containing all DB entries
 //
 function readTable() {

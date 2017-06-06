@@ -1,15 +1,7 @@
 <?php
 include 'scripts/functions.php';
-
-// Assign posted variables
-$firstName = $_POST['fname'];
-$lastName = $_POST['lname'];
-$pNumber = $_POST['pnumber'];
-$age = $_POST['age'];
-
 addRow($_POST['fname'], $_POST['lname'], $_POST['pnumber'], $_POST['age']);
 ?>
-
 
 <html>
 <link rel="stylesheet" href="styles/default.css" type="text/css"/>
