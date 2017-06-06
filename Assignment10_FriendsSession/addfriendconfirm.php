@@ -7,16 +7,7 @@ $lastName = $_POST['lname'];
 $pNumber = $_POST['pnumber'];
 $age = $_POST['age'];
 
-// Combine variables into comma delimited line
-$line = $firstName . "," . $lastName . "," . $pNumber . "," . $age . "\n";
-
-// Append the submission to a file
-$f = fopen("./friends.txt", "a");
-fwrite($f, $line);
-fclose($friendFile);
-
-// Call table creation function and populate the table from the text file
-addRow($firstName, $lastName, $pNumber, $age);
+addRow($_POST['fname'], $_POST['lname'], $_POST['pnumber'], $_POST['age']);
 ?>
 
 
