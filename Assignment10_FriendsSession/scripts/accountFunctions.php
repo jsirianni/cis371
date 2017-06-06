@@ -15,7 +15,7 @@ function accountLookup($user, $pass) {
 
   echo "$result";
 
-  return true;
+  return false;
 }
 
 //
