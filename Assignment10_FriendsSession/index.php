@@ -19,10 +19,10 @@ $pass = $_POST['pWord'];
       if (accountLookup($user, $pass) == True) {
         echo '<p>You are authenticated</p>';
         echo '<nav>';
-            echo '<a href="home.html">Home</a>';
-            echo '<a href="populate.php">Populate Database</a>';
-            echo '<a href="addfriend.php">Add a friend</a>';
-            echo '<a href="showfriends.php">Show all friends</a>';
+            echo '<a href="home.html">Home </a>';
+            echo '<a href="populate.php">Populate Database </a>';
+            echo '<a href="addfriend.php">Add a friend </a>';
+            echo '<a href="showfriends.php">Show all friends </a>';
         echo '<nav>';
       } else {
         echo '<form action="index.php" method="post">';
