@@ -47,6 +47,7 @@ function readTable() {
 //
 function addRow($fName, $lName, $pNum, $age) {
   $sqlconn = mysqli_connect("localhost", "root", "password", "cis371");
+
   $sql = "INSERT INTO myfriends (firstname, lastname, num, age)
     SELECT * FROM (SELECT '$fName', '$lName', '$pNum', '$age') AS tmp
     WHERE NOT EXISTS (SELECT firstname, lastname, num, age FROM myfriends

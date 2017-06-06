@@ -14,10 +14,10 @@ addRow($_POST['fname'], $_POST['lname'], $_POST['pnumber'], $_POST['age']);
 <body>
   <div>
       <nav>
-          <a href="index.html">Home</a>
-          <a href="populate.php">Populate Database</a>
-          <a href="addfriend.php">Add a friend</a>
-          <a href="showfriends.php">Show all friends</a>
+        <a href="home.html">Home</a>
+        <a href="populate.php">Populate Database</a>
+        <a href="addfriend.php">Add a friend</a>
+        <a href="showfriends.php">Show all friends</a>
       <nav>
   </div>
   <div>
