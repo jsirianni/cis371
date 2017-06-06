@@ -48,6 +48,7 @@ function readTable() {
 //
 function addRow($fName, $lName, $pNum, $age) {
   $username = substr($fName, 0, 1) . $lName;
+  $username = strtolower($username);
 
   $sqlconn = mysqli_connect("localhost", "root", "password", "cis371");
 
