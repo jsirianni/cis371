@@ -76,7 +76,7 @@ function accountLookup($username, $password) {
   $sqlconn->close();
 
   $row = mysqli_fetch_assoc($result);
-  $actualPassword = $row['password']
+  $actualPassword = $row['password'];
   if ($password === $actualPassword) {
     return true;
   } else {
