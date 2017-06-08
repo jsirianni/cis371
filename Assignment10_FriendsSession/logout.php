@@ -14,7 +14,7 @@ include 'scripts/functions.php';
       <p>You have been logged out</p>
       <?php
       $_POST = array();
-      $validLogin = 'no';
+      $validLogin = 0;
       ?>
       <a href="login.php">Login </a>
     </div>
