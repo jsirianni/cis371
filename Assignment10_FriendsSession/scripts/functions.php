@@ -67,36 +67,11 @@ function addRow($fName, $lName, $pNum, $age) {
 //
 // Function returns true if an account exists
 //
-function accountLookup($username, $password): boolean {
+function accountLookup($username, $password) {
 
   $sqlconn = mysqli_connect("localhost", "root", "password", "cis371");
   $sql = "SELECT * FROM cis371.accounts WHERE username='$username' AND password='$password' LIMIT 1";
 
   return false;
-  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
