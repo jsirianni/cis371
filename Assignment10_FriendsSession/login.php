@@ -14,14 +14,7 @@ include 'scripts/functions.php';
   </head>
   <body>
     <div>
-      <?php
-        echo '<form action="index.php" method="post">';
-          echo 'Username: <input type="text" name="uName"><br>';
-          echo 'Password: <input type="text" name="pWord"><br>';
-          echo '<input type="submit">';
-        echo '</form>';
-      ?>
-
+      
     </div>
   </body>
 </html>
