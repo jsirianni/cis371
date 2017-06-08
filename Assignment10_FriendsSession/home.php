@@ -20,6 +20,7 @@
     </div>
         <p>You are authenticated</p>
         <?php
+        $admin = isAdmin($user);
         echo "user is $user";
         echo "priv is $admin";
         if (isAdmin($user) == 1) {
