@@ -15,8 +15,8 @@ $pass = $_POST['pWord'];
   <body>
     <div>
       <?php
-        echo $user
-        echo $pass
+        echo $user;
+        echo $pass;
         echo '<form action="login.php" method="post">';
           echo 'Username: <input type="text" name="uName"><br>';
           echo 'Password: <input type="text" name="pWord"><br>';
