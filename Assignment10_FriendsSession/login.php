@@ -1,9 +1,4 @@
-<?php
-include 'scripts/functions.php';
 
-//$user = $_POST['uName'];
-//$pass = $_POST['pWord'];
-?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
@@ -14,7 +9,13 @@ include 'scripts/functions.php';
   </head>
   <body>
     <div>
-      
+      <?php
+        echo '<form action="index.php" method="post">';
+          echo 'Username: <input type="text" name="uName"><br>';
+          echo 'Password: <input type="text" name="pWord"><br>';
+          echo '<input type="submit">';
+        echo '</form>';
+      ?>
     </div>
   </body>
 </html>
