@@ -2,7 +2,7 @@
 include 'scripts/functions.php';
 
 // Assign user and password if posted
-if ($_POST['uName'] != Null) {
+if( isset($_POST['uName']) ) {
   $user = $_POST['uName'];
   $pass = $_POST['pWord'];
 }
