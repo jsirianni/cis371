@@ -79,7 +79,10 @@ function accountLookup($username, $password) {
   $actualPassword = $row['password'];
 
   // Check if passed password is the actual password
-  if (strcmp($password, $actualPassword) !== 0) {
+  if (strlen($password) < 1) {
+    return false;
+
+  }elseif (strcmp($password, $actualPassword) !== 0) {
     // Bad password
     return false;
   } else {
