@@ -129,10 +129,10 @@ function isAdmin($username) {
   $priv = $row['sudo'];
 
   if ($priv == 1) {
-    return true;
+    return 1;
   }
   else {
-    return false;
+    return 0;
   }
 }
 

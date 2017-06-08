@@ -23,8 +23,7 @@ $pass = $_POST['pWord'];
           echo '<input type="submit">';
           echo '</form>';
         } else {
-          // Else authenticated, redirect to home
-          if (isAdmin($user) == true) {
+          if (isAdmin($user) == 1) {
             $admin = 1;
           }
           else {
