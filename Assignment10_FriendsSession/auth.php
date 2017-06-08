@@ -1,6 +1,4 @@
-<?php
-include 'scripts/functions.php';
-?>
+
 
 <html>
 <link rel="stylesheet" href="styles/default.css" type="text/css"/>
