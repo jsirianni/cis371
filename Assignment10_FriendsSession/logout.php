@@ -12,8 +12,13 @@ include 'scripts/functions.php';
   <body>
     <div>
       <p>You have been logged out</p>
-      <a href="login.php">Login</a>
-
+      <?php
+      echo '<form action="login.php" method="get">';
+      echo 'Username: <input type="text" name="uName"><br>';
+      echo 'Password: <input type="text" name="pWord"><br>';
+      echo '<input type="submit">';
+      echo '</form>';
+      ?>
     </div>
   </body>
 </html>
