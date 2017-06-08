@@ -1,6 +1,7 @@
 <?php
 include 'scripts/functions.php';
-addRow($_POST['fname'], $_POST['lname'], $_POST['pnumber'], $_POST['age']);
+// Calls add row function. Returns a username
+$x = addRow($_POST['fname'], $_POST['lname'], $_POST['pnumber'], $_POST['age']);
 ?>
 
 <html>
@@ -14,18 +15,20 @@ addRow($_POST['fname'], $_POST['lname'], $_POST['pnumber'], $_POST['age']);
 <body>
   <div>
       <nav>
-          <a href="index.html">Home</a>
-          <a href="populate.php">Populate Database</a>
-          <a href="addfriend.php">Add a friend</a>
-          <a href="showfriends.php">Show all friends</a>
+        <a href="home.php">Home</a>
+        <a href="populate.php">Populate Database</a>
+        <a href="addfriend.php">Add a friend</a>
+        <a href="showfriends.php">Show all friends</a>
+        <a href="logout.php">Logout </a>
       <nav>
   </div>
   <div>
     <p>Thank you for your submission, it has been recorded in a database!</p>
-    <a>First name:   <?php echo $firstName;?>  </a><br>
-    <a>Last name:    <?php echo $lastName;?>   </a><br>
-    <a>Phone number: <?php echo $pNumber;?>    </a><br>
-    <a>Age:          <?php echo $age;?>        </a><br>
+    <a>Username:     <?php echo $x;?>                 </a><br>
+    <a>First name:   <?php echo $_POST['fname'];?>    </a><br>
+    <a>Last name:    <?php echo $_POST['lname'];?>    </a><br>
+    <a>Phone number: <?php echo $_POST['pnumber'];?>  </a><br>
+    <a>Age:          <?php echo $_POST['age'];?>      </a><br>
   </div>
 </body>
 </html>

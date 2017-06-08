@@ -8,10 +8,11 @@
   <body>
     <div>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="populate.php">Populate Database</a>
-            <a href="addfriend.php">Add a friend</a>
-            <a href="showfriends.php">Show all friends</a>
+          <a href="home.php">Home</a>
+          <a href="populate.php">Populate Database</a>
+          <a href="addfriend.php">Add a friend</a>
+          <a href="showfriends.php">Show all friends</a>
+          <a href="logout.php">Logout </a>
         <nav>
     </div>
     <div class="container">
