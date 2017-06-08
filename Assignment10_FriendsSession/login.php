@@ -19,13 +19,13 @@ if( isset($_POST['uName']) ) {
   <body>
     <div>
       <?php
-        echo $user;
-        echo $pass;
-        echo '<form action="login.php" method="post">';
+        if (accountLookup() == false) {
+          echo '<form action="login.php" method="post">';
           echo 'Username: <input type="text" name="uName"><br>';
           echo 'Password: <input type="text" name="pWord"><br>';
           echo '<input type="submit">';
-        echo '</form>';
+          echo '</form>';
+        }
       ?>
     </div>
   </body>
