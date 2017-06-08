@@ -93,10 +93,8 @@ function addRow($fName, $lName, $pNum, $age) {
 // Function returns true if an account exists
 //
 function accountLookup($username, $password) {
-
   $sqlconn = mysqli_connect("localhost", "root", "password", "cis371");
   $sql = "SELECT password FROM accounts WHERE username='$username' LIMIT 1";
-
   $result = mysqli_query($sqlconn,$sql);
   $sqlconn->close();
 
@@ -114,6 +112,27 @@ function accountLookup($username, $password) {
   else {
     // Correct password
     return true;
+  }
+}
+
+
+//
+// Function returns true if user is admin
+//
+function isAdmin($username) {
+  $sqlconn = mysqli_connect("localhost", "root", "password", "cis371");
+  $sql = "SELECT sudo FROM accounts WHERE username='$username' LIMIT 1";
+  $result = mysqli_query($sqlconn,$sql);
+  $sqlconn->close();
+
+  $row = mysqli_fetch_assoc($result);
+  $priv = $row['sudo'];
+
+  if ($priv == 1) {
+    return true;
+  }
+  else {
+    return false;
   }
 }
 

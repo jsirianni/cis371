@@ -24,6 +24,12 @@ $pass = $_POST['pWord'];
           echo '</form>';
         } else {
           // Else authenticated, redirect to home
+          if (isAdmin($user) {
+            $admin = 1;
+          }
+          else {
+            $admin = 0;
+          }
           header("Location: home.php");
         }
       ?>
