@@ -25,6 +25,8 @@ if( isset($_POST['uName']) ) {
           echo 'Password: <input type="text" name="pWord"><br>';
           echo '<input type="submit">';
           echo '</form>';
+        } else {
+          echo '<p>You are authenticated</p>';
         }
       ?>
     </div>
