@@ -22,11 +22,11 @@
         <?php
         if (isAdmin($user) == 1) {
           $admin = 1;
-          echo $admin;
+          echo "$admin";
         }
         else {
           $admin = 0;
-          echo $admin;
+          echo "$admin";
         }
         ?>
     <div>
