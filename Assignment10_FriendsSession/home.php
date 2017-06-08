@@ -21,7 +21,7 @@
         <p>You are authenticated</p>
         <?php
           if ($admin == 1) {
-            echo "<p>You are root</p>"
+            echo "<p>You are root</p>";
           }
         ?>
     <div>
