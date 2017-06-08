@@ -26,7 +26,8 @@ if( isset($_POST['uName']) ) {
           echo '<input type="submit">';
           echo '</form>';
         } else {
-          echo '<p>You are authenticated</p>';
+          // Else authenticated, redirect to home
+          header("Location: home.php");
         }
       ?>
     </div>
