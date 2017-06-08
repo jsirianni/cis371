@@ -2,7 +2,7 @@
 <html>
   <link rel="stylesheet" href="styles/default.css" type="text/css"/>
   <head>
-    <title>Populate Database</title>
+    <title>Show Friends</title>
     <h3>Friends Database</h3>
   </head>
   <body>
@@ -18,8 +18,7 @@
     <div>
       <?php
         include 'scripts/functions.php';
-        initTable();
-        echo "<p>The database has been populated!</p>";
+        readAccounts();
       ?>
     </div>
   </body>
