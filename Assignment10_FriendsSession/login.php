@@ -8,7 +8,7 @@
   <body>
     <div>
       <?php
-        echo '<form action="auth.php" method="post">';
+        echo '<form action="auth.php" method="get">';
           echo 'Username: <input type="text" name="uName"><br>';
           echo 'Password: <input type="text" name="pWord"><br>';
           echo '<input type="submit">';
