@@ -20,7 +20,6 @@ $pass = $_POST['pWord'];
           echo 'Password: <input type="text" name="pWord"><br>';
           echo '<input type="submit">';
         echo '</form>';
-      }
       ?>
 
     </div>
