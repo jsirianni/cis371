@@ -8,7 +8,7 @@
   <body>
     <div>
         <nav>
-          <a href="home.html">Home</a>
+          <a href="home.php">Home</a>
           <a href="populate.php">Populate Database</a>
           <a href="addfriend.php">Add a friend</a>
           <a href="showfriends.php">Show all friends</a>

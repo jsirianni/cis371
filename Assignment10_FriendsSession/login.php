@@ -25,7 +25,7 @@ $pass = $_POST['pWord'];
         } else {
           // Else authenticated, redirect to home
           $validLogin = true;
-          header("Location: home.html");
+          header("Location: home.php");
         }
       ?>
     </div>
