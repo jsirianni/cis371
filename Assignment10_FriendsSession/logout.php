@@ -13,8 +13,11 @@ include 'scripts/functions.php';
     <div>
       <p>You have been logged out</p>
       <?php
+      // Clear session values and cookie
       $_POST = array();
-      $admin = 0;
+      $auth_cookie = "auth";
+      $$auth_status = "no";
+      setcookie($auth_cookie, $auth_status, time() + (86400 * 30), "/", ".jsirianni.duckdns.org");
       ?>
       <a href="login.php">Login </a>
     </div>
