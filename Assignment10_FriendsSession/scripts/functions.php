@@ -44,6 +44,31 @@ function readTable() {
 
 
 //
+// Function returns an array containing all DB entries
+//
+function readTable() {
+  // Connect to the database, build the query, execute
+  $sqlconn =  mysqli_connect("localhost", "root", "password", "cis371");
+  $sql = "SELECT * FROM accounts";
+  $result = mysqli_query($sqlconn,$sql);
+  $sqlconn->close();
+
+  // Display query response
+  echo "<p>Current Database Entries</p>";
+  echo "<table><tbody>";
+  echo "<tr><th>Username</th><th>Password</th><th>Admin</th><</tr>";
+  while ($row = mysqli_fetch_assoc($result)) {
+    echo "<tr>";
+    echo "<td>", $row['userName'], "</td>";
+    echo "<td>", $row['password'], "</td>";
+    echo "<td>", $row['sudo'], "</td>";
+    echo "</tr>";
+  }
+  echo "</tbody></table>";
+}
+
+
+//
 // function adds a row to the database
 //
 function addRow($fName, $lName, $pNum, $age) {
