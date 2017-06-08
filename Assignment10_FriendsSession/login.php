@@ -1,5 +1,5 @@
 <?php
-include 'scripts/functions.php';
+
 
 //$user = $_POST['uName'];
 //$pass = $_POST['pWord'];
