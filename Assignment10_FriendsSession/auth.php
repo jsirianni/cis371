@@ -22,11 +22,6 @@ include 'scripts/functions.php';
   </div>
   <div>
     <p>Thank you for your submission, it has been recorded in a database!</p>
-    <a>Username:     <?php echo $x;?>                 </a><br>
-    <a>First name:   <?php echo $_POST['fname'];?>    </a><br>
-    <a>Last name:    <?php echo $_POST['lname'];?>    </a><br>
-    <a>Phone number: <?php echo $_POST['pnumber'];?>  </a><br>
-    <a>Age:          <?php echo $_POST['age'];?>      </a><br>
   </div>
 </body>
 </html>
