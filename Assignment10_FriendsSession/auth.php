@@ -1,7 +1,5 @@
 <?php
 include 'scripts/functions.php';
-// Calls add row function. Returns a username
-$x = addRow($_POST['fname'], $_POST['lname'], $_POST['pnumber'], $_POST['age']);
 ?>
 
 <html>
