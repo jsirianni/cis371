@@ -93,6 +93,35 @@ function addRow($fName, $lName, $pNum, $age) {
 // Function returns true if an account exists
 //
 function accountLookup($username, $password) {
+
+  $sqlconn = mysqli_connect("localhost", "root", "password", "cis371");
+  $sql = "SELECT password FROM accounts WHERE username='$username' LIMIT 1";
+
+  $result = mysqli_query($sqlconn,$sql);
+  $sqlconn->close();
+
+  $row = mysqli_fetch_assoc($result);
+  $actualPassword = $row['password'];
+
+  // Check if passed password is the actual password
+  if (strlen($password) < 1) {
+    return false;
+  }
+  elseif (strcmp($password, $actualPassword) !== 0) {
+    // Bad password
+    return false;
+  }
+  else {
+    // Correct password
+    return true;
+  }
+}
+
+
+//
+// Function returns true if an account exists
+//
+function accountLookup($username, $password) {
   $sqlconn = mysqli_connect("localhost", "root", "password", "cis371");
   $sql = "SELECT password FROM accounts WHERE username='$username' LIMIT 1";
   $result = mysqli_query($sqlconn,$sql);
@@ -135,6 +164,7 @@ function isAdmin($username) {
     return 0;
   }
 }
+
 
 
 

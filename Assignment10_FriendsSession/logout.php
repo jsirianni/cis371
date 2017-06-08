@@ -18,6 +18,7 @@ include 'scripts/functions.php';
       $auth_cookie = "auth";
       $$auth_status = "no";
       setcookie($auth_cookie, $auth_status, time() + (86400 * 30), "/", ".jsirianni.duckdns.org");
+      $_POST = array();
       ?>
       <a href="login.php">Login </a>
     </div>
