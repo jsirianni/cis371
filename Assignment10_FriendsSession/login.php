@@ -23,12 +23,6 @@ $pass = $_POST['pWord'];
           echo '<input type="submit">';
           echo '</form>';
         } else {
-          if (isAdmin($user) == 1) {
-            $admin = 1;
-          }
-          else {
-            $admin = 0;
-          }
           header("Location: home.php");
         }
       ?>
