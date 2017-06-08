@@ -16,7 +16,7 @@ include 'scripts/functions.php';
       // Clear session values and cookie
       $_POST = array();
       $auth_cookie = "auth";
-      $$auth_status = "no";
+      $$auth_status = "";
       setcookie($auth_cookie, $auth_status, time() + (86400 * 30), "/", ".jsirianni.duckdns.org");
       $_POST = array();
       ?>
