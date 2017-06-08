@@ -1,10 +1,9 @@
 
 <?php
-  if ($_COOKIE['auth'] != "yes"){
+  if ( $_COOKIE['auth'] != "yes") {
     // Redirect user
     //header("Location: home.php");
     echo "<p>Not auth</p>";
-    echo "$_COOKIE['auth']";
   }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
