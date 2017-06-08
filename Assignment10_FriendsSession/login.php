@@ -24,7 +24,7 @@ $pass = $_POST['pWord'];
           echo '</form>';
         } else {
           // Else authenticated, redirect to home
-          $validLogin = 0;
+          $validLogin = 1;
           header("Location: home.php");
         }
       ?>
