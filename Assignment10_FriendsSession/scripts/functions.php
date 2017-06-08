@@ -81,11 +81,9 @@ function accountLookup($username, $password) {
   // Check if passed password is the actual password
   if (strcmp($password, $actualPassword) !== 0) {
     // Bad password
-    echo "bad password";
     return false;
   } else {
     // Correct password
-    echo "good password";
     return true;
   }
 }
