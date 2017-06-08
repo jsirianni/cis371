@@ -15,6 +15,7 @@
   <body>
     <div>
       <?php
+        include 'scripts/functions.php';
         echo '<form action="index.php" method="post">';
           echo 'Username: <input type="text" name="uName"><br>';
           echo 'Password: <input type="text" name="pWord"><br>';
