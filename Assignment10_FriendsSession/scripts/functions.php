@@ -46,7 +46,7 @@ function readTable() {
 //
 // Function returns an array containing all DB entries
 //
-function readTable() {
+function readAccounts() {
   // Connect to the database, build the query, execute
   $sqlconn =  mysqli_connect("localhost", "root", "password", "cis371");
   $sql = "SELECT * FROM accounts";
