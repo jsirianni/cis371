@@ -56,7 +56,7 @@ function readAccounts() {
   // Display query response
   echo "<p>Current Database Entries</p>";
   echo "<table><tbody>";
-  echo "<tr><th>Username</th><th>Password</th><th>Admin</th><</tr>";
+  echo "<tr><th>Username</th><th>Password</th><th>Admin</th></tr>";
   while ($row = mysqli_fetch_assoc($result)) {
     echo "<tr>";
     echo "<td>", $row['userName'], "</td>";
