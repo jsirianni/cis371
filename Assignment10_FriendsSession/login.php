@@ -2,8 +2,8 @@
 include 'scripts/functions.php';
 
 // Assign user and password if posted
-$user = $_POST['uName'];
-$pass = $_POST['pWord'];
+$user = $_GET['uName'];
+$pass = $_GET['pWord'];
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -17,7 +17,7 @@ $pass = $_POST['pWord'];
     <div>
       <?php
         if (accountLookup($user, $pass) == false) {
-          echo '<form action="login.php" method="post">';
+          echo '<form action="login.php" method="get">';
           echo 'Username: <input type="text" name="uName"><br>';
           echo 'Password: <input type="text" name="pWord"><br>';
           echo '<input type="submit">';
