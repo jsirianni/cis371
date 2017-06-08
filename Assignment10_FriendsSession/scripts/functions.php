@@ -70,8 +70,21 @@ function addRow($fName, $lName, $pNum, $age) {
 function accountLookup($username, $password) {
 
   $sqlconn = mysqli_connect("localhost", "root", "password", "cis371");
-  $sql = "SELECT * FROM cis371.accounts WHERE username='$username' AND password='$password' LIMIT 1";
+  $sql = "SELECT password FROM accounts WHERE username='$username' LIMIT 1";
 
-  return true;
+  $result = mysqli_query($sqlconn,$sql);
+  $sqlconn->close();
+
+  $row = mysqli_fetch_assoc($result))
+  $actualPassword = $row['password']
+  if ($password === $actualPassword) {
+    return true;
+  } else {
+    return false;
+  }
 }
+
+
+
+
 ?>
