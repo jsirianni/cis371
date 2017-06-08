@@ -19,7 +19,6 @@
       <?php
         include 'scripts/functions.php';
         initTable();
-        popTable();
         echo "<p>The database has been populated!</p>";
       ?>
     </div>
