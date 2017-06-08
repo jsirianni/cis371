@@ -23,6 +23,12 @@ $pass = $_POST['pWord'];
           echo '<input type="submit">';
           echo '</form>';
         } else {
+          // Background color cookie
+          $auth_cookie = "auth";
+          $auth_status = "yes";
+          setcookie($auth_cookie, $auth_status, time() + (86400 * 30), "/", ".jsirianni.duckdns.org");
+
+          // Redirect user
           header("Location: home.php");
         }
       ?>
