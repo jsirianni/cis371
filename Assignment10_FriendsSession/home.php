@@ -23,14 +23,6 @@
         $admin = isAdmin($user);
         echo "user is $user";
         echo "priv is $admin";
-        if (isAdmin($user) == 1) {
-          $admin = 1;
-          echo "admin";
-        }
-        else {
-          $admin = 0;
-          echo "not admin";
-        }
         ?>
     <div>
   </body>
