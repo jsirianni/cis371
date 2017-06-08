@@ -20,10 +20,14 @@
     </div>
         <p>You are authenticated</p>
         <?php
-          if ($admin == 1) {
-            echo "<p>You are root</p>";
-          }
-          echo "priv level = $admin";
+        if (isAdmin($user) == 1) {
+          $admin = 1;
+          echo $admin;
+        }
+        else {
+          $admin = 0;
+          echo $admin;
+        }
         ?>
     <div>
   </body>
