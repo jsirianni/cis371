@@ -81,7 +81,7 @@ function accountLookup($username, $password) {
   if (strcmp($password, $actualPassword) !== 0) {
     return true;
   } else {
-    return true;
+    return false;
   }
 }
 
