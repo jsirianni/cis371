@@ -81,11 +81,12 @@ function accountLookup($username, $password) {
   // Check if passed password is the actual password
   if (strlen($password) < 1) {
     return false;
-
-  }elseif (strcmp($password, $actualPassword) !== 0) {
+  }
+  elseif (strcmp($password, $actualPassword) !== 0) {
     // Bad password
     return false;
-  } else {
+  }
+  else {
     // Correct password
     return true;
   }
