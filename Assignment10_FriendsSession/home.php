@@ -23,6 +23,7 @@
           if ($admin == 1) {
             echo "<p>You are root</p>";
           }
+          echo "priv level = " . $admin";
         ?>
     <div>
   </body>
