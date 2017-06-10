@@ -33,7 +33,7 @@ $pass = $_POST['pWord'];
           $admin_status = (string)$x;
           setcookie($admin_cookie, $admin_status, time() + (86400 * 30), "/", ".jsirianni.duckdns.org");
 
-          $username_cookie = "admin";
+          $username_cookie = "username";
           $user_status = $user;
           setcookie($username_cookie, $user_status, time() + (86400 * 30), "/", ".jsirianni.duckdns.org");
 
