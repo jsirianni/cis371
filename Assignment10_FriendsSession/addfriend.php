@@ -19,13 +19,13 @@
       <br>
       <?php
       if ($_COOKIE['admin'] == 1) {
-        echo "<form action="addfriendconfirm.php" method="post">
-          First Name: <input type="text" name="fname"><br>
-          Last Name: <input type="text" name="lname"><br>
-          Phone Number: <input type="text" name="pnumber"><br>
-          Age: <input type="text" name="age"><br>
-          <input type="submit">
-        </form>";
+        echo "<form action="addfriendconfirm.php" method="post">";
+        echo "First Name: <input type="text" name="fname"><br>";
+        echo "Last Name: <input type="text" name="lname"><br>";
+        echo "Phone Number: <input type="text" name="pnumber"><br>";
+        echo "Age: <input type="text" name="age"><br>";
+        echo "<input type="submit">";
+        echo "</form>";
       }
       else {
         echo "<p>You do not have permission to perform this task</p>";
