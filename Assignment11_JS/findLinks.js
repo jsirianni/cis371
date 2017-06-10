@@ -1,10 +1,14 @@
 /**
  * Created by kurmasz on 5/18/15.
+ * Modified by Sirianni 06/2017
  */
 
 function findLinks() {
-    var answer;// = [];
-    // TODO:  Add code here
+    var answer = [];
+    var links = document.getElementsByTagName("a");
+    for (var i=0; i<links.length; i++) {
+      answer.push(links[i].href);
+    }
     return answer;
 }
 
