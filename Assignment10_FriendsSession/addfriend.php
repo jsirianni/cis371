@@ -11,6 +11,7 @@
           <a href="home.php">Home</a>
           <a href="addfriend.php">Add a friend</a>
           <a href="showfriends.php">Show all friends</a>
+          <a href="accounts.php">Show Accounts</a>
           <a href="logout.php">Logout </a>
         <nav>
     </div>
