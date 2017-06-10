@@ -30,7 +30,7 @@
             echo "<p>You are an administrator</p>";
           }
           else {
-            echo "<p>You are an administrator</p>";
+            echo "<p>You are a user</p>";
           }
         ?>
     <div>
