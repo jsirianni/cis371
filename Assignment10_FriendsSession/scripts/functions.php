@@ -21,6 +21,7 @@ function initTable() {
 function readTable() {
   if ($sudo != 1) {
     echo "<p>You are not authorized</p>";
+    return;
   }
   // Connect to the database, build the query, execute
   $sqlconn =  mysqli_connect("localhost", "root", "password", "cis371");
