@@ -19,6 +19,9 @@ function initTable() {
 // Function returns an array containing all DB entries
 //
 function readTable() {
+  if ($sudo != 1) {
+    echo "<p>You are not authorized</p>";
+  }
   // Connect to the database, build the query, execute
   $sqlconn =  mysqli_connect("localhost", "root", "password", "cis371");
   $sql = "SELECT * FROM myfriends";
@@ -93,13 +96,10 @@ function addRow($fName, $lName, $pNum, $age) {
 // Function returns true if an account exists
 //
 function accountLookup($username, $password) {
-
   $sqlconn = mysqli_connect("localhost", "root", "password", "cis371");
   $sql = "SELECT password FROM accounts WHERE username='$username' LIMIT 1";
-
   $result = mysqli_query($sqlconn,$sql);
   $sqlconn->close();
-
   $row = mysqli_fetch_assoc($result);
   $actualPassword = $row['password'];
 
@@ -114,6 +114,27 @@ function accountLookup($username, $password) {
   else {
     // Correct password
     return true;
+  }
+}
+
+
+//
+// Check sudo
+//
+function checkSudo($username) {
+  $sqlconn = mysqli_connect("localhost", "root", "password", "cis371");
+  $sql = "SELECT sudo FROM accounts WHERE username='$username' LIMIT 1";
+  $result = mysqli_query($sqlconn,$sql);
+  $sqlconn->close();
+  $row = mysqli_fetch_assoc($result);
+  $x = $row['sudo'];
+
+  // Check if username is an admin
+  if ($x == 1) {
+    return 1;
+  }
+  else {
+    return 0;
   }
 }
 

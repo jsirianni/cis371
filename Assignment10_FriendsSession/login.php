@@ -28,6 +28,11 @@ $pass = $_POST['pWord'];
           $auth_status = "yes";
           setcookie($auth_cookie, $auth_status, time() + (86400 * 30), "/", ".jsirianni.duckdns.org");
 
+          $x = isAdmin($user);
+          $admin_cookie = "admin";
+          $admin_status = (string)$x;
+          setcookie($admin_cookie, $admin_status, time() + (86400 * 30), "/", ".jsirianni.duckdns.org");
+
           // Redirect user
           header("Location: home.php");
         }
