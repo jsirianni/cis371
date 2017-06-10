@@ -26,11 +26,12 @@
     </div>
         <p>You are authenticated</p>
         <?php
+          echo "<a>Your username is $_COOKIE['username']</a><br>"
           if ($_COOKIE['admin'] == 1) {
-            echo "<p>You are an administrator</p>";
+            echo "<a>You are an administrator</a><br>";
           }
           else {
-            echo "<p>You are a user</p>";
+            echo "<a>You are a user</a><br>";
           }
         ?>
     <div>
