@@ -21,7 +21,14 @@ function initTable() {
 function readTable() {
   // Connect to the database, build the query, execute
   $sqlconn =  mysqli_connect("localhost", "root", "password", "cis371");
-  $sql = "SELECT * FROM myfriends";
+  if ($_COOKIE['admin'] == 1) {
+    $sql = "SELECT * FROM myfriends";
+  }
+  else {
+    $currentUser = $_COOKIE['username'];
+    $sql = "SELECT * FROM myfriends WHERE username='$currentUser' LIMIT 1";
+  }
+
   $result = mysqli_query($sqlconn,$sql);
   $sqlconn->close();
 
@@ -93,13 +100,10 @@ function addRow($fName, $lName, $pNum, $age) {
 // Function returns true if an account exists
 //
 function accountLookup($username, $password) {
-
   $sqlconn = mysqli_connect("localhost", "root", "password", "cis371");
   $sql = "SELECT password FROM accounts WHERE username='$username' LIMIT 1";
-
   $result = mysqli_query($sqlconn,$sql);
   $sqlconn->close();
-
   $row = mysqli_fetch_assoc($result);
   $actualPassword = $row['password'];
 
@@ -119,27 +123,22 @@ function accountLookup($username, $password) {
 
 
 //
-// Function returns true if user is admin
+// Check sudo
 //
-function isAdmin($username) {
+function checkSudo($username) {
   $sqlconn = mysqli_connect("localhost", "root", "password", "cis371");
   $sql = "SELECT sudo FROM accounts WHERE username='$username' LIMIT 1";
   $result = mysqli_query($sqlconn,$sql);
   $sqlconn->close();
-
   $row = mysqli_fetch_assoc($result);
-  $priv = $row['sudo'];
+  $x = $row['sudo'];
 
-  if ($priv == 1) {
+  // Check if username is an admin
+  if ($x == 1) {
     return 1;
   }
   else {
     return 0;
   }
 }
-
-
-
-
-
 ?>
