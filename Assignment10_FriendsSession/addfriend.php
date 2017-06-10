@@ -16,19 +16,21 @@
         <nav>
     </div>
     <div class="container">
+      <br>
       <?php
-      if ($_COOKIE['admin'] != 1) {
+      if ($_COOKIE['admin'] == 1) {
+        echo "<form action="addfriendconfirm.php" method="post">
+          First Name: <input type="text" name="fname"><br>
+          Last Name: <input type="text" name="lname"><br>
+          Phone Number: <input type="text" name="pnumber"><br>
+          Age: <input type="text" name="age"><br>
+          <input type="submit">
+        </form>";
+      }
+      else {
         echo "<p>You do not have permission to perform this task</p>";
       }
-       ?>
-      <br>
-      <form action="addfriendconfirm.php" method="post">
-        First Name: <input type="text" name="fname"><br>
-        Last Name: <input type="text" name="lname"><br>
-        Phone Number: <input type="text" name="pnumber"><br>
-        Age: <input type="text" name="age"><br>
-        <input type="submit">
-      </form>
+      ?>
     </div>
   </body>
 </html>
