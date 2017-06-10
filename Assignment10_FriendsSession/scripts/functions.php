@@ -27,7 +27,7 @@ function readTable() {
     $sql = "SELECT * FROM myfriends";
   }
   else {
-    $currentUser = $_COOKIE['username']
+    $currentUser = $_COOKIE['username'];
     $sql = "SELECT * FROM myfriends WHERE username='$currentUser' LIMIT 1";
   }
 
