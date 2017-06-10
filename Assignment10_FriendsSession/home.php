@@ -26,7 +26,8 @@
     </div>
         <p>You are authenticated</p>
         <?php
-          echo "<a>Your username is $_COOKIE['username']</a><br>";
+          $currentUser = $_COOKIE['username']
+          echo "<a>Your username is $currentUser</a><br>";
           if ($_COOKIE['admin'] == 1) {
             echo "<a>You are an administrator</a><br>";
           }
