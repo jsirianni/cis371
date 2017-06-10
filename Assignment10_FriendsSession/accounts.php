@@ -17,8 +17,13 @@
     </div>
     <div>
       <?php
-        include 'scripts/functions.php';
-        readAccounts();
+        if ($_COOKIE['admin '] == 1) {
+          include 'scripts/functions.php';
+          readAccounts();
+        }
+        else {
+          echo "<p>You do not have permission to perform this task</p>";
+        }
       ?>
     </div>
   </body>
