@@ -26,6 +26,9 @@ function readTable() {
   if ($sudo == 1) {
     $sql = "SELECT * FROM myfriends";
   }
+  else {
+    $sql = "SELECT * FROM myfriends WHERE username='$username' LIMIT 1";
+  }
 
   $result = mysqli_query($sqlconn,$sql);
   $sqlconn->close();
