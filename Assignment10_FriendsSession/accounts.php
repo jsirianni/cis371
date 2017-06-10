@@ -17,7 +17,7 @@
     </div>
     <div>
       <?php
-        if ($_COOKIE['admin '] == 1) {
+        if ($_COOKIE['admin'] == 1) {
           include 'scripts/functions.php';
           readAccounts();
         }
