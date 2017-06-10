@@ -19,10 +19,8 @@ function initTable() {
 // Function returns an array containing all DB entries
 //
 function readTable() {
-
   // Connect to the database, build the query, execute
   $sqlconn =  mysqli_connect("localhost", "root", "password", "cis371");
-
   if ($_COOKIE['admin'] == 1) {
     $sql = "SELECT * FROM myfriends";
   }
@@ -143,5 +141,4 @@ function checkSudo($username) {
     return 0;
   }
 }
-
 ?>

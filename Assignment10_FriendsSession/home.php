@@ -1,4 +1,3 @@
-
 <?php
   if ($_COOKIE['auth'] != "yes") {
     // Redirect user
