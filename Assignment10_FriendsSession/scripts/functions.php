@@ -23,7 +23,7 @@ function readTable() {
   // Connect to the database, build the query, execute
   $sqlconn =  mysqli_connect("localhost", "root", "password", "cis371");
 
-  if ($sudo == 1) {
+  if ($_COOKIE['admin'] == 1) {
     $sql = "SELECT * FROM myfriends";
   }
   else {
