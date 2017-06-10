@@ -1,10 +1,11 @@
 
 <?php
-  if ( $_COOKIE['auth'] != "yes") {
+  if ($_COOKIE['auth'] != "yes") {
     // Redirect user
     header("Location: home.php");
   }
 ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
   <link rel="stylesheet" href="styles/default.css" type="text/css"/>
@@ -24,6 +25,14 @@
     </div>
     </div>
         <p>You are authenticated</p>
+        <?php
+          if ($_COOKIE['admin'] == 1) {
+            echo "<p>You are an administrator</p>";
+          }
+          else {
+            echo "<p>You are an administrator</p>";
+          }
+        ?>
     <div>
   </body>
 </html>
