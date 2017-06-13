@@ -12,10 +12,12 @@
     </div>
     <div class="nav">
         <nav>
-          <a href="/">Home</a>
-          <a href="quick-stats.php">Quick Stats</a>
-          <a href="custom-query.php">Custom Query</a>
-          <a href="manual-report.php">Manual Report</a>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="quick-stats.php">Quick Stats</a></li>
+            <li><a href="custom-query.php">Custom Query</a></li>
+            <li><a href="manual-report.php">Manual Report</a></li>
+          </ul>
         </nav>
     </div>
     <div class="content">
