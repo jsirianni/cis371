@@ -6,6 +6,7 @@
     width: 90%;
     height: 90%;
     padding: 10px;
+    min-width: 650px;
 }
 .nav {
     width: 12%;
