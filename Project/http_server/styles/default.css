@@ -3,6 +3,7 @@
 /* Style the header */
 h1 {
   text-align: center;
+  min-width: 700px;
 }
 
 /* Align nav and content divs */
