@@ -18,9 +18,8 @@
         </nav>
     </div>
     <div class='result'>
-      <p>Displaying most recent reports, feel free to override</p>
       <form action="quick-stats.php">
-        Records to dislay: <input type="text" name="numrecords"><br>
+        Override records to dislay: <input type="text" name="numrecords"><br>
         <input type="submit" value="Submit">
       </form>
       <table>
