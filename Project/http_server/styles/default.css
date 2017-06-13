@@ -33,7 +33,7 @@ ul {
 /* Output table styling */
 table {
   background-color: #E6E6E6;
-  padding-top: 10px;
+  margin-top: 10px;
 }
 th {
   min-width: 110px;
