@@ -6,6 +6,9 @@ h1 {
 }
 
 /* Align nav and content divs */
+section {
+  min-width: 700px;
+}
 .nav {
     width: 15%;
     height: 80%;
