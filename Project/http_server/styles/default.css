@@ -1,7 +1,7 @@
-table {
-  background-color: #E6E6E6;
-}
 
+
+
+/* Align nav and content divs */
 .container {
     width: 90%;
     height: 90%;
@@ -15,4 +15,10 @@ table {
 .content {
     margin-left: 15%;
     height: 80%;
+    min-width: 500px;
+}
+
+/* Set table output background color */
+table {
+  background-color: #E6E6E6;
 }
