@@ -6,10 +6,11 @@
     <title>Quick Stats</title>
 </head>
 <body>
+  <section class="container">
     <div id=header>
         <h2>Quick Stats</h2>
     </div>
-    <div>
+    <div class="nav">
         <nav>
           <a href="/">Home</a>
           <a href="quick-stats.php">Quick Stats</a>
@@ -17,7 +18,7 @@
           <a href="manual-report.php">Manual Report</a>
         </nav>
     </div>
-    <div class='result'>
+    <div class="content">
       <form action="quick-stats.php">
         Override records to dislay: <input type="text" name="numrecords"><br>
         <input type="submit" value="Submit">
@@ -31,5 +32,6 @@
         </tbody>
       </table>
     </div>
+  </section>
 </body>
 </html>
