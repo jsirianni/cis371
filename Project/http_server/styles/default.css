@@ -21,6 +21,7 @@ h1 {
 .content {
     padding-left: 15%;
     height: 80%;
+    float: right;
 }
 
 /* Nav Styling */
