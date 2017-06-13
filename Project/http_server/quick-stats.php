@@ -17,7 +17,7 @@
           <a href="manual-report.php">Manual Report</a>
         </nav>
     </div>
-    <div class="body">
+    <div>
       <h4>Quick Stats</h4>
       <p>Displaying most recent reports, feel free to override</p>
       <form action="quick-stats.php">
