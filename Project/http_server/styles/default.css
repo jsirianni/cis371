@@ -3,18 +3,17 @@ table {
 }
 
 .container {
-    width: 80%;
-    height: 200px;
-    background: aqua;
+    width: 90%;
+    height: 90%;
     margin: auto;
     padding: 10px;
 }
 .nav {
-    width: 15%;
-    height: 200px;
+    width: 20%;
+    height: 80%;
     float: left;
 }
 .content {
-    margin-left: 15%;
-    height: 200px;
+    margin-left: 60%;
+    height: 80%;
 }
