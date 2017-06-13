@@ -9,8 +9,8 @@
     <div id=header>
         <h1>Custom Query</h1>
     </div>
-    <div>
-      <nav class="nav">
+    <div class="nav">
+      <nav>
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="quick-stats.php">Quick Stats</a></li>
