@@ -6,10 +6,10 @@
     <title>Custom Query Editor</title>
 </head>
 <body>
+  <section>
     <div id=header>
         <h1>Custom Query</h1>
     </div>
-    <section>
     <div class="nav">
       <nav>
         <ul>

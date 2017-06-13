@@ -6,11 +6,10 @@
     <title>Quick Stats</title>
 </head>
 <body>
-
+    <section>
     <div id=header>
         <h1>Quick Stats</h1>
     </div>
-    <section>
     <div class="nav">
         <nav>
           <ul>

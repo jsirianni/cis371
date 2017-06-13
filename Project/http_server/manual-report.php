@@ -6,10 +6,10 @@
     <title>Manual Report</title>
 </head>
 <body>
+  <section>
     <div id=header>
         <h1>Manual Report</h1>
     </div>
-    <section>
     <div>
       <nav class="nav">
         <ul>
