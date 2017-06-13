@@ -6,7 +6,7 @@
     <title>Quick Stats</title>
 </head>
 <body>
-  <section class="container">
+
     <div id=header>
         <h1>Quick Stats</h1>
     </div>
@@ -34,6 +34,5 @@
         </tbody>
       </table>
     </div>
-  </section>
 </body>
 </html>
