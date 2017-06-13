@@ -25,7 +25,7 @@ h1 {
 }
 
 /* Nav Styling */
-ul {
+ul .navlist {
     list-style-type: none;
     margin: 0;
     padding: 0;
