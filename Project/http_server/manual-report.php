@@ -10,7 +10,7 @@
         <h1>Manual Report</h1>
     </div>
     <div>
-      <nav>
+      <nav class="nav">
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="quick-stats.php">Quick Stats</a></li>
@@ -19,7 +19,7 @@
         </ul>
       </nav>
     </div>
-    <div>
+    <div class="content">
       <p>Submit a manual report</p>
       <form action="manual-report.php">
         Hostname: <input type="text" name="hostname"><br>

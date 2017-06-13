@@ -10,7 +10,7 @@
         <h1>Custom Query</h1>
     </div>
     <div>
-      <nav>
+      <nav class="nav">
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="quick-stats.php">Quick Stats</a></li>
@@ -19,7 +19,7 @@
         </ul>
       </nav>
     </div>
-    <div>
+    <div class="content">
       <p> Example queries</p>
       <ul>
         <li>SELECT * FROM report.reports</li>
