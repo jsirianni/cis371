@@ -9,8 +9,8 @@ h1 {
 .container {
     width: 90%;
     height: 90%;
-    padding: 10px;
-    min-width: 650px;
+    padding: 20px;
+    min-width: 600px;
 }
 .nav {
     width: 15%;
