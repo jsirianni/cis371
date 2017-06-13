@@ -9,6 +9,7 @@
     <div id=header>
         <h1>Manual Report</h1>
     </div>
+    <section>
     <div>
       <nav class="nav">
         <ul>
@@ -45,5 +46,6 @@
         </tbody>
       </table>
     </div>
+    </section>
 </body>
 </html>

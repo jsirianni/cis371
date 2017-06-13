@@ -9,6 +9,7 @@
     <div id=header>
         <h1>Custom Query</h1>
     </div>
+    <section>
     <div class="nav">
       <nav>
         <ul>
@@ -43,5 +44,6 @@
         </tbody>
       </table>
     </div>
+    </section>
 </body>
 </html>
