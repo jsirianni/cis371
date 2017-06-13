@@ -22,3 +22,7 @@
 table {
   background-color: #E6E6E6;
 }
+
+th {
+  min-width: 100px;
+}
