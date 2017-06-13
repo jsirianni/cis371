@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id=header>
-        <h2>Report Server</h2>
+        <h2>Quick Stats</h2>
     </div>
     <div>
         <nav>
@@ -18,7 +18,6 @@
         </nav>
     </div>
     <div class='result'>
-      <h4>Quick Stats</h4>
       <p>Displaying most recent reports, feel free to override</p>
       <form action="quick-stats.php">
         Records to dislay: <input type="text" name="numrecords"><br>

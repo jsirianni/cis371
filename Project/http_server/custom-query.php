@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id=header>
-        <h2>Report Server</h2>
+        <h2>Custom Query</h2>
     </div>
     <div>
         <nav>
@@ -18,7 +18,6 @@
         </nav>
     </div>
     <div>
-      <h4>Custom Query</h4>
       <p> Example queries</p>
       <ul>
         <li>SELECT * FROM report.reports</li>

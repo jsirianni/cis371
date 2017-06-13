@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id=header>
-        <h2>Report Server</h2>
+        <h2>Manual Report</h2>
     </div>
     <div>
         <nav>
@@ -18,7 +18,6 @@
         </nav>
     </div>
     <div>
-      <h4>Manual Report Submission</h4>
       <p>Submit a manual report</p>
       <form action="manual-report.php">
         Hostname: <input type="text" name="hostname"><br>
