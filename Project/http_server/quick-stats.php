@@ -8,7 +8,7 @@
 <body>
   <section class="container">
     <div id=header>
-        <h2>Quick Stats</h2>
+        <h1>Quick Stats</h1>
     </div>
     <div class="nav">
         <nav>

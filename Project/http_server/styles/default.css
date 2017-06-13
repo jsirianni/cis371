@@ -1,5 +1,9 @@
 
 
+/* Style the header */
+h1 {
+  text-align: center;
+}
 
 /* Align nav and content divs */
 .container {
@@ -18,11 +22,10 @@
     height: 80%;
 }
 
-/* Set table output background color */
+/* Output table styling */
 table {
   background-color: #E6E6E6;
 }
-
 th {
   min-width: 110px;
   text-align: left;

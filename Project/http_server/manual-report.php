@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id=header>
-        <h2>Manual Report</h2>
+        <h1>Manual Report</h1>
     </div>
     <div>
         <nav>

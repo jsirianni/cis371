@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id=header>
-        <h2>Custom Query</h2>
+        <h1>Custom Query</h1>
     </div>
     <div>
         <nav>
