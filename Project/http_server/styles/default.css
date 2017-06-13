@@ -5,8 +5,7 @@ table {
 .container {
     width: 90%;
     height: 90%;
-    margin: auto;
-    padding: 10px;
+    padding: 1px;
 }
 .nav {
     width: 10%;
@@ -14,6 +13,6 @@ table {
     float: left;
 }
 .content {
-    margin-left: 70%;
+    margin-left: 10%;
     height: 80%;
 }
