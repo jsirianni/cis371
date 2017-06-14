@@ -29,20 +29,16 @@
         <li>SELECT * FROM report.reports WHERE (status='bad') ORDER BY id DESC</li>
       </ul>
       <form action="custom-query.php">
-        Custom Query: <input type="text" name="custom-query"> ';' automatically appended
+        Custom Query: <input type="text" name="custom-query">
         <input type="submit" value="Submit">
       </form>
-      <table>
-        <tbody>
-          <?php
-            include 'scripts/query.php';
-            // Do not execute unless sql submitted
-            if ($_GET["custom-query"] != null) {
-              customQuery($_GET["custom-query"]);
-            }
-          ?>
-        </tbody>
-      </table>
+      <?php
+      include 'scripts/query.php';
+      // Do not execute unless sql submitted
+      if ($_GET["custom-query"] != null) {
+        customQuery($_GET["custom-query"]);
+      }
+      ?>
     </div>
     </section>
 </body>

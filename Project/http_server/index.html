@@ -20,7 +20,9 @@
         </ul>
       </nav>
     </div>
-    <div class="content">
+    </section>
+    <div class="about">
+
         <p>
             Welcome to the Report Server. Reports are being gathered in real time
             by a service listening on TCP port 8090. The service is written in GO
@@ -29,6 +31,7 @@
         </p>
         </p> Each report contains the following </p>
         <ul>
+            <li>Report Id: Identification number, incremented by one for each report</li>
             <li>Hostname: The server hostname of the report's origin</li>
             <li>Status: The status of the sending server</li>
             <li>Timestamp: Unix timestamp converted to a human readable format</li>

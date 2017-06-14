@@ -20,31 +20,26 @@
         </ul>
       </nav>
     </div>
+    </section>
     <div class="content">
-      <p>Submit a manual report</p>
-      <form action="manual-report.php">
-        Hostname: <input type="text" name="hostname"><br>
-        Status: <input type="text" name="status"><br>
-        <input type="submit" value="Submit">
-      </form>
-      <table>
-        <tbody>
-          <?php
-            include 'scripts/query.php';
-
-            // Validate hostname
-            if ($_GET["hostname"] != null && $_GET["status"] != null) {
-              // Assign SQL friendly varchars
-              $currentHostname = "'" . $_GET["hostname"] . "'";
-              $currentStatus = "'" . $_GET["status"] . "'";
-              $currentTime = time();
-
-              // Call manual-report()
-              manualReport($currentHostname,$currentStatus,$currentTime);
-            }
-          ?>
-        </tbody>
-      </table>
+        <p>Submit a manual report</p>
+        <form class="report" action="manual-report.php">
+          Hostname: <input type="text" name="hostname"><br>
+          Status: <input type="text" name="status"><br>
+          <input type="submit" value="Submit">
+        </form>
+        <?php
+          include 'scripts/query.php';
+          // Validate hostname
+          if ($_GET["hostname"] != null && $_GET["status"] != null) {
+            // Assign SQL friendly varchars
+            $currentHostname = "'" . $_GET["hostname"] . "'";
+            $currentStatus = "'" . $_GET["status"] . "'";
+            $currentTime = time();
+            // Call manual-report()
+            manualReport($currentHostname,$currentStatus,$currentTime);
+          }
+        ?>
     </div>
     </section>
 </body>

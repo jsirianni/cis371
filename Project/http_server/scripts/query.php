@@ -53,6 +53,7 @@ function customQuery($customSQL) {
   $sqlconn->close();
 
   // Display result
+  echo "<table><tbody>";
   echo "<tr><th>Report ID</th><th>Hostname</th><th>Status</th><th>Timestamp</th></tr>";
   while ($row = mysqli_fetch_assoc($result)) {
     echo "<tr>";
@@ -62,6 +63,7 @@ function customQuery($customSQL) {
     echo "<td>", date('m.d.Y H:i', $row['timestamp'])," </td>";
     echo "</tr>";
   }
+  echo "</tbody></table>";
 }
 
 
