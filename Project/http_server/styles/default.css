@@ -32,7 +32,7 @@ h1 {
 
 /* Style .content items */
 .content form, .content table {
-  align-items: center;
+  margin: auto;
 }
 
 /* Home page specific styling */
