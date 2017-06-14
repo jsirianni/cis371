@@ -18,6 +18,7 @@ section {
     width: 150px;
     height: 80%;
     float: left;
+    margin-right: 10px;
 }
 .content {
     width: 600px;
