@@ -20,7 +20,7 @@
           </ul>
         </nav>
     </div>
-    </section>
+
     <div class="content">
       <form action="quick-stats.php">
          Records to display: <input type="text" name="numrecords">
@@ -36,6 +36,6 @@
         </tbody>
       </table>
     </div>
-
+  </section>
 </body>
 </html>
