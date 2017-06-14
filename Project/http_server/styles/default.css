@@ -4,7 +4,7 @@
 h1 {
   text-align: center;
   max-width: 800px;
-  background-color: #87CEFA;
+  background-color: #B0C4DE;
 
 }
 
@@ -34,7 +34,7 @@ nav ul {
 
 /* Output table styling */
 table {
-  background-color: #87CEFA;
+  background-color: #B0C4DE;
   margin-top: 10px;
 }
 th {
