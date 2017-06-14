@@ -14,7 +14,9 @@ section {
 h1 {
   width: 200px;
   float: left;
-  margin: auto;
+  margin-right: 10px;
+  margin-left: auto;
+  margin-bottom: 50px;
   text-align: left;
 }
 .nav {
