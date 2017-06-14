@@ -28,6 +28,7 @@ h1 {
 .content {
   clear: both;
   width: 50%
+  margin: 0 auto;
   align-items: center;
 }
 
