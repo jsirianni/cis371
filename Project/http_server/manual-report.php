@@ -6,19 +6,21 @@
     <title>Manual Report</title>
 </head>
 <body>
+  <section>
     <div id=header>
-        <h2>Report Server</h2>
+        <h1>Manual Report</h1>
     </div>
     <div>
-        <nav>
-          <a href="/">Home</a>
-          <a href="quick-stats.php">Quick Stats</a>
-          <a href="custom-query.php">Custom Query</a>
-          <a href="manual-report.php">Manual Report</a>
-        </nav>
+      <nav class="nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="quick-stats.php">Quick Stats</a></li>
+          <li><a href="custom-query.php">Custom Query</a></li>
+          <li><a href="manual-report.php">Manual Report</a></li>
+        </ul>
+      </nav>
     </div>
-    <div>
-      <h4>Manual Report Submission</h4>
+    <div class="content">
       <p>Submit a manual report</p>
       <form action="manual-report.php">
         Hostname: <input type="text" name="hostname"><br>
@@ -44,5 +46,6 @@
         </tbody>
       </table>
     </div>
+    </section>
 </body>
 </html>

@@ -6,19 +6,21 @@
     <title>Custom Query Editor</title>
 </head>
 <body>
+  <section>
     <div id=header>
-        <h2>Report Server</h2>
+        <h1>Custom Query</h1>
     </div>
-    <div>
-        <nav>
-            <a href="/">Home</a>
-            <a href="quick-stats.php">Quick Stats</a>
-            <a href="custom-query.php">Custom Query</a>
-            <a href="manual-report.php">Manual Report</a>
-        </nav>
+    <div class="nav">
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="quick-stats.php">Quick Stats</a></li>
+          <li><a href="custom-query.php">Custom Query</a></li>
+          <li><a href="manual-report.php">Manual Report</a></li>
+        </ul>
+      </nav>
     </div>
-    <div>
-      <h4>Custom Query</h4>
+    <div class="content">
       <p> Example queries</p>
       <ul>
         <li>SELECT * FROM report.reports</li>
@@ -27,7 +29,7 @@
         <li>SELECT * FROM report.reports WHERE (status='bad') ORDER BY id DESC</li>
       </ul>
       <form action="custom-query.php">
-        Custom Query: <input type="text" name="custom-query"> ';' automatically appended<br>
+        Custom Query: <input type="text" name="custom-query"> ';' automatically appended
         <input type="submit" value="Submit">
       </form>
       <table>
@@ -42,5 +44,6 @@
         </tbody>
       </table>
     </div>
+    </section>
 </body>
 </html>
