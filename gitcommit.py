@@ -3,4 +3,4 @@ import time
 
 while True:
 	os.system('git add . && git commit -m "dev" && git push')
-	time.sleep(20)
+	time.sleep(5)
