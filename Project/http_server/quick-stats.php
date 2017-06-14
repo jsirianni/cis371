@@ -23,7 +23,7 @@
     </section>
     <div class="content">
       <form action="quick-stats.php">
-         Records to dislay: <input type="text" name="numrecords">
+         Records to display: <input type="text" name="numrecords">
         <input type="submit" value="Submit">
       </form>
       <br>
