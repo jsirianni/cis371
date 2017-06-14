@@ -20,7 +20,6 @@
         </ul>
       </nav>
     </div>
-    </section>
     <div class="content">
       <p> Example queries</p>
       <ul>
@@ -45,5 +44,6 @@
         </tbody>
       </table>
     </div>
+    </section>
 </body>
 </html>
