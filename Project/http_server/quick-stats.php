@@ -13,7 +13,7 @@
     <div class="nav">
         <nav>
           <ul>
-            <<?php
+            <?php
               printNav();
              ?>
           </ul>
