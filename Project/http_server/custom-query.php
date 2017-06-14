@@ -39,6 +39,8 @@
       // Do not execute unless sql submitted
       if ($_GET["custom-query"] != null) {
         customQuery($_GET["custom-query"]);
+        $x = checkSql($_GET["custom-query"]);
+        echo $x;
       }
       ?>
     </div>
