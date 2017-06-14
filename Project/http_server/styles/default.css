@@ -62,7 +62,7 @@ th {
 
 
 /* Set font type */
-h1, div {
+h1, div, ul {
   font-family: Sans-serif;
   color: #E9E9E9;
 }
