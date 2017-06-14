@@ -36,6 +36,9 @@ h1 {
   clear: both;
   font-size: 20px;
 }
+.report p {
+  font-size: 25px;
+}
 input {
   width: 60%;
 }
