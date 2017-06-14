@@ -6,7 +6,7 @@ function validateForm() {
         return false;
     }
     else if (y != "ok" || y != "bad") {
-      alert("The status must be either 'ok' or 'bad'")
+      alert("The status must be either ok or bad")
       return false;
     }
     else {
