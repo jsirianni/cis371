@@ -5,9 +5,9 @@ function validateForm() {
         alert("Hostname and status are required");
         return false;
     }
-    if (y == "ok") {
-      alert("The report has been submitted with status ok")
-      return true;
+    else if (y != "ok") {
+      alert("test")
+      return false;
     }
     else {
       alert("The report has been submitted")
