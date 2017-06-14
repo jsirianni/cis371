@@ -40,7 +40,7 @@
       if ($_GET["custom-query"] != null) {
         $x = checkSql($_GET["custom-query"]);
         echo $x;
-        if ($X == 1) {
+        if ($x == 1) {
           customQuery($_GET["custom-query"]);
         }
       }
