@@ -42,10 +42,11 @@ function validateCustomQuery() {
 function validateQuickStats() {
     // Pull values from form submission
     var x = document.forms["form"]["numrecords"].value;
-    // Check if data present
-    if (x == "" || x < 1) {
-        alert("You must enter a number greater than 0.");
-        return false;
+    
+    // Validate input is a number and greater than 1
+    if (isNaN(x) || x == "" || x < 1) {
+    alert("You must input a numberical value greater than 0.");
+    return false;
     }
     // Submit query
     else {
