@@ -15,8 +15,9 @@ h1 {
   width: 200px;
   float: left;
   margin-right: 10px;
-  text-align: left;
+  margin-left: auto;
   margin-bottom: 50px;
+  text-align: left;
 }
 .nav {
   margin-top: 1em;
