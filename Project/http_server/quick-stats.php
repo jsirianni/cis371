@@ -23,7 +23,7 @@
         </nav>
     </div>
     <div class="content">
-      <form action="quick-stats.php" onsubmit="return validateForm()">
+      <form name="form"action="quick-stats.php" onsubmit="return validateQuickStats()">
          Records to display: <input type="text" name="numrecords">
         <input type="submit" value="Submit">
       </form>
