@@ -61,7 +61,7 @@ th {
 
 /* Style footer */
 footer {
-  
+  position: fixed;
 }
 
 
