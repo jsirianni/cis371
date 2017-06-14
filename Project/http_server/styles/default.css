@@ -31,6 +31,10 @@ h1 {
   max-width: 850px;
 }
 
+/* Manual report specific styling */
+.report {
+  clear: both;
+}
 
 /* Home page specific styling */
 .about {
@@ -92,4 +96,3 @@ table th {
     border-radius: 6px;
     border-width: 1px;
 }
-
