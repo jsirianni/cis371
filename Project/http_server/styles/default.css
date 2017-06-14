@@ -47,7 +47,7 @@ nav ul {
 nav ul li {
   float: left;
 }
-nav ul li a {
+li a {
     display: block;
     color: #000;
     padding: 8px 16px;
