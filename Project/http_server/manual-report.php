@@ -20,12 +20,15 @@
         </ul>
       </nav>
     </div>
-    </section>
-    <div class="content">
-        <p>Submit a manual report</p>
+    <div class="report">
+        <p>
+          Use this page to submit a manual report. Provide a hostname and a status.
+          A status other than "ok" is considered to be "bad" and will be caught by any
+          filters that look for servers in a bad state.
+        </p>
         <form class="report" action="manual-report.php">
-          Hostname: <input type="text" name="hostname"><br>
-          Status: <input type="text" name="status"><br>
+          Hostname: <br><input type="text" name="hostname"><br>
+          Status: <br><input type="text" name="status"><br>
           <input type="submit" value="Submit">
         </form>
         <?php
