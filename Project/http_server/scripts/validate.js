@@ -5,13 +5,13 @@ function validateForm() {
         alert("Hostname and status are required");
         return false;
     }
-    else if (y != "ok" || y != "bad") {
-      alert("The status must be either ok or bad")
-      return false;
+    else if (y == "ok" || y == "bad") {
+      return true;
+      alert("The report has been submitted")
     }
     else {
-      alert("The report has been submitted")
-      return true;
+      alert("The status must be either 'ok' or 'bad'")
+      return false;
     }
 
 }
