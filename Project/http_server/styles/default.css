@@ -28,6 +28,7 @@ h1 {
 .content {
   clear: both;
   max-width: 900px;
+  margin: auto;
 }
 
 /* Home page specific styling */
