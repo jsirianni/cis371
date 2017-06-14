@@ -35,6 +35,9 @@ h1 {
 .report {
   clear: both;
 }
+input {
+  width: 80%;
+}
 
 /* Home page specific styling */
 .about {
