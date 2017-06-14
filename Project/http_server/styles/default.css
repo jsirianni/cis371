@@ -25,7 +25,8 @@ h1 {
 }
 .nav {
   width: 400px;
-
+  float: left;
+  margin-right: 10px;
 }
 /*.nav {
     width: 150px;
