@@ -62,6 +62,7 @@ th {
 /* Style footer */
 footer {
   position: fixed;
+  clear: both;
 }
 
 
