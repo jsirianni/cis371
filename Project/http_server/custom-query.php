@@ -32,13 +32,13 @@
         Custom Query: <input type="text" name="custom-query">
         <input type="submit" value="Submit">
       </form>
-          <?php
-            include 'scripts/query.php';
-            // Do not execute unless sql submitted
-            if ($_GET["custom-query"] != null) {
-              customQuery($_GET["custom-query"]);
-            }
-          ?>
+      <?php
+      include 'scripts/query.php';
+      // Do not execute unless sql submitted
+      if ($_GET["custom-query"] != null) {
+        customQuery($_GET["custom-query"]);
+      }
+      ?>
         </tbody>
       </table>
     </div>
