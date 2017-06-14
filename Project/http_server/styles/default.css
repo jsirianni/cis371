@@ -84,7 +84,6 @@ table th {
 
 /*alignt manual report form */
 form .report {
-display: inline-block;
-text-align: center;
-}
+  display: inline-block;
+  text-align: center;
 }
