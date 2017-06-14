@@ -40,7 +40,10 @@ h1 {
 }*/
 
 
+.content {
+  clear: both;
 }
+
 
 
 /* Nav Styling */
