@@ -20,7 +20,6 @@
         </ul>
       </nav>
     </div>
-    </section>
     <div class="report">
         <p>
           Use this page to submit a manual report. Provide a hostname and a status.
