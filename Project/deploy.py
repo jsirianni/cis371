@@ -1,5 +1,5 @@
 import os
-from time
+import time
 
 while true:
     os.system('git pull')
