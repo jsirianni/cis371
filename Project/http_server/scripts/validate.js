@@ -6,8 +6,8 @@ function validateForm() {
         return false;
     }
     else if (y == "ok" || y == "bad") {
-      return true;
       alert("The report has been submitted")
+      return true;
     }
     else {
       alert("The status must be either 'ok' or 'bad'")
