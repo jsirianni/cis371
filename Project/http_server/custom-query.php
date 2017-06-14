@@ -44,7 +44,7 @@
           customQuery($_GET["custom-query"]);
         }
         else {
-          echo "<p>Error, invalid SQL<p>" 
+          echo "<p>Error, invalid SQL<p>";
         }
       }
       ?>
