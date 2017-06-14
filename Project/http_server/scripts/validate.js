@@ -1,7 +1,7 @@
 function validateForm() {
-    var x = document.forms["myForm"]["fname"].value;
+    var x = document.forms["myForm"]["hostname"].value;
     if (x == "") {
-        alert("Name must be filled out");
+        alert("Hostname must be filled out");
         return false;
     }
-} 
+}
