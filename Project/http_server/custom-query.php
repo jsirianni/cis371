@@ -39,8 +39,6 @@
         customQuery($_GET["custom-query"]);
       }
       ?>
-        </tbody>
-      </table>
     </div>
     </section>
 </body>
