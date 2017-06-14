@@ -38,6 +38,7 @@ function validateCustomQuery() {
       alert("You must use a SELECT statement");
       return false;
     }
+    
     else {
       return true;
     }
