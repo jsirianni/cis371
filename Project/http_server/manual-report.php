@@ -29,9 +29,6 @@
           Status: <input type="text" name="status"><br>
           <input type="submit" value="Submit">
         </form>
-
-      <table>
-        <tbody>
           <?php
             include 'scripts/query.php';
 
@@ -46,8 +43,6 @@
               manualReport($currentHostname,$currentStatus,$currentTime);
             }
           ?>
-        </tbody>
-      </table>
     </div>
 </body>
 </html>
