@@ -21,7 +21,7 @@
       </nav>
     </div>
     </section>
-    <div class="content">
+    <div class="report">
         <p>Submit a manual report</p>
         <form class="report" action="manual-report.php">
           Hostname: <input type="text" name="hostname"><br>
