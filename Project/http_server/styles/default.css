@@ -81,3 +81,10 @@ h1, div, nav ul a {
 table th {
   color: #3c3c42;
 }
+
+/*alignt manual report form */
+form .report {
+display: inline-block;
+text-align: center;
+}
+}
