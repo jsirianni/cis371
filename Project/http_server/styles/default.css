@@ -49,7 +49,12 @@ h1 {
   padding-left: 20px;
   padding-right: 20px;
 }
-
+.logical img {
+  max-width: 60%;
+  padding: 20px;
+  display: block;
+  margin: 0 auto;
+}
 
 /* Nav Styling */
 nav ul {

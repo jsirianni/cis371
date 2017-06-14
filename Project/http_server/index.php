@@ -13,23 +13,24 @@
     <div class="nav">
       <nav>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="quick-stats.php">Quick Stats</a></li>
-          <li><a href="custom-query.php">Custom Query</a></li>
-          <li><a href="manual-report.php">Manual Report</a></li>
+            <?php
+              include 'scripts/query.php';
+              printNav();
+             ?>
         </ul>
       </nav>
     </div>
     </section>
     <div class="about">
-
         <p>
-            Welcome to the Report Server. Reports are being gathered in real time
-            by a service listening on TCP port 8090. The service is written in GO
-            Language and is capable of handling over over 60,000 requests in under
-            five seconds when running on fast hardware.
+          Welcome to the Report Server. Reports are being gathered in real time
+          by a service listening on TCP port 8090. The service is written in GO
+          Language and is capable of handling over over 60,000 requests in under
+          five seconds when running on fast hardware.
         </p>
-        </p> Each report contains the following </p>
+        </p>
+          Each report contains the following
+        </p>
         <ul>
             <li>Report Id: Identification number, incremented by one for each report</li>
             <li>Hostname: The server hostname of the report's origin</li>
@@ -45,6 +46,9 @@
         <p>
             Use the <a href="manual-report.php">Manual Report</a> page to submit a report manually through the web interface.
         </p>
+        <div class="logical">
+          <img src="images/logical.png">
+        <div>
     </div>
     </section>
 </body>
