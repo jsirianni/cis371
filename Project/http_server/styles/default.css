@@ -89,4 +89,5 @@ table th {
 .about, table {
     border: solid;
     border-radius: 8px;
+    border-width: 2px;
 }
