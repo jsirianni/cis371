@@ -28,7 +28,7 @@
           Status: <input type="text" name="status"><br>
           <input type="submit" value="Submit">
         </form>
-      </div
+      </div>
       <table>
         <tbody>
           <?php
