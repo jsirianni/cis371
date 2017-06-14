@@ -63,6 +63,8 @@ function customQuery($customSQL) {
     echo "<td>", date('m.d.Y H:i', $row['timestamp'])," </td>";
     echo "</tr>";
   }
+  echo "        </tbody>
+        </table>"
 }
 
 
