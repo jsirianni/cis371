@@ -83,7 +83,7 @@ table th {
 }
 
 /*alignt manual report form */
-form .report {
+form {
   display: inline-block;
   text-align: center;
 }
