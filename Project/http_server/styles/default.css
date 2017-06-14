@@ -51,6 +51,7 @@ h1 {
 }
 .logical img {
   max-width: 50%;
+  float: right;
 }
 
 /* Nav Styling */
