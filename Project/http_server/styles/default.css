@@ -88,6 +88,6 @@ table th {
 /* border styles */
 .about, table {
     border: solid;
-    border-radius: 8px;
+    border-radius: 6px;
     border-width: 1px;
 }
