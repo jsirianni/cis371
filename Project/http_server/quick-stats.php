@@ -14,6 +14,7 @@
         <nav>
           <ul>
             <?php
+              include 'scripts/query.php';
               printNav();
              ?>
           </ul>
