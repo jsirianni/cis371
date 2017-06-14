@@ -20,8 +20,9 @@
         </ul>
       </nav>
     </div>
+    </section>
+    
     <div class="content">
-
         <p>Submit a manual report</p>
         <form class="report" action="manual-report.php">
           Hostname: <input type="text" name="hostname"><br>
@@ -48,6 +49,6 @@
         </tbody>
       </table>
     </div>
-    </section>
+
 </body>
 </html>
