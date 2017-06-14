@@ -22,7 +22,7 @@
     </div>
     <div class="content">
       <p>Submit a manual report</p>
-      <form action="manual-report.php">
+      <form class="report" action="manual-report.php">
         Hostname: <input type="text" name="hostname"><br>
         Status: <input type="text" name="status"><br>
         <input type="submit" value="Submit">
