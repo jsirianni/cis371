@@ -82,4 +82,15 @@ function manualReport($hostname, $status, $timestamp) {
   $result = mysqli_query($sqlconn,$sql);
   $sqlconn->close();
 }
+
+
+//
+// Function prints the nav list
+//
+function printNav() {
+  echo '<li><a href="/">Home</a></li>';
+  echo '<li><a href="quick-stats.php">Quick Stats</a></li>';
+  echo '<li><a href="custom-query.php">Custom Query</a></li>';
+  echo '<li><a href="manual-report.php">Manual Report</a></li>';
+}
 ?>
