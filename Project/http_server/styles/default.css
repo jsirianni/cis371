@@ -37,7 +37,6 @@ h1 {
   clear: both;
   max-width: 750px;
   padding-left: 20px;
-
 }
 
 
@@ -83,4 +82,10 @@ h1, div, nav ul a {
 }
 table th {
   color: #3c3c42;
+}
+
+
+/* border styles */
+.about, table {
+    border: solid;
 }
