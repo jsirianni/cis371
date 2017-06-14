@@ -7,6 +7,7 @@ function validateForm() {
     }
     if (y == "ok") {
       alert("The report has been submitted with status ok")
+      return true;
     }
     else {
       alert("The report has been submitted")
