@@ -1,6 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
     <script src="scripts/validate.js"></script>
     <meta charset="UTF-8">
@@ -30,7 +29,7 @@
           filters that look for servers in a bad state.
         </p>
 
-        <form class="report" action="manual-report.php" onsubmit="return validateForm()">
+        <form class="report" action="manual-report.php" >
           Hostname: <br><input type="text" name="hostname"><br>
           Status: <br><input type="text" name="status"><br>
           <input type="submit" value="Submit">
