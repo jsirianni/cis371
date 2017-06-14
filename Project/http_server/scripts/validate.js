@@ -5,8 +5,8 @@ function validateForm() {
         alert("Hostname and status are required");
         return false;
     }
-    else if (y != "ok") {
-      alert("test")
+    else if (y != "ok" || y != "bad") {
+      alert("The status must be either 'ok' or 'bad'")
       return false;
     }
     else {
