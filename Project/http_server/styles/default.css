@@ -27,7 +27,7 @@ h1 {
 }
 .content {
   clear: both;
-  margin: auto;
+  width: 50%
   align-items: center;
 }
 
