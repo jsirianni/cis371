@@ -32,8 +32,6 @@
         Custom Query: <input type="text" name="custom-query">
         <input type="submit" value="Submit">
       </form>
-      <table>
-        <tbody>
           <?php
             include 'scripts/query.php';
             // Do not execute unless sql submitted
