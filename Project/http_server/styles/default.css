@@ -24,7 +24,7 @@ section {
 }
 .content {
     width: 600px;
-    margin: 1em;
+    border: 1em;
     padding-left: 12%;
     margin-left: 50px;
 
