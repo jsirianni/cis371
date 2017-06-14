@@ -46,7 +46,9 @@
         <p>
             Use the <a href="manual-report.php">Manual Report</a> page to submit a report manually through the web interface.
         </p>
-        <img src="images/logical.png">
+        <div class="logical">
+          <img src="images/logical.png">
+        <div>
     </div>
     </section>
 </body>
