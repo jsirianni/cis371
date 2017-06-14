@@ -42,6 +42,7 @@ h1 {
 
 .content {
   clear: both;
+  max-width: 700px;
 }
 
 
