@@ -20,7 +20,6 @@
         </ul>
       </nav>
     </div>
-    </section>
     <div class="content">
       <p>Submit a manual report</p>
       <form action="manual-report.php">
