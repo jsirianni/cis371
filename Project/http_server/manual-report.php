@@ -29,7 +29,7 @@
           filters that look for servers in a bad state.
         </p>
 
-        <form name="form" class="report" action="manual-report.php" onsubmit="return validateForm()">
+        <form name="form" class="report" action="manual-report.php" onsubmit="return validateManualReport()">
           Hostname: <br><input type="text" name="hostname"><br>
           Status: <br><input type="text" name="status"><br>
           <input type="submit" value="Submit">

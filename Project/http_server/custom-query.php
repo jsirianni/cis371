@@ -30,7 +30,7 @@
         <li>SELECT * FROM report.reports WHERE (hostname='ws1') ORDER BY id DESC LIMIT 10</li>
         <li>SELECT * FROM report.reports WHERE (status='bad') ORDER BY id DESC</li>
       </ul>
-      <form action="custom-query.php" onsubmit="return validateForm()">
+      <form name="form" action="custom-query.php" onsubmit="return validateCustomQuery()">
         Custom Query: <input type="text" name="custom-query">
         <input type="submit" value="Submit">
       </form>
