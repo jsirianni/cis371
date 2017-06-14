@@ -27,8 +27,7 @@ h1 {
 }
 .content {
   clear: both;
-  min-width: 600px;
-  max-width: 1500px;
+  max-width: 900px;
   margin: auto;
 }
 
