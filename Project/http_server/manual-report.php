@@ -21,7 +21,7 @@
       </nav>
     </div>
     </section>
-    
+
     <div class="content">
         <p>Submit a manual report</p>
         <form class="report" action="manual-report.php">
@@ -49,6 +49,5 @@
         </tbody>
       </table>
     </div>
-
 </body>
 </html>
