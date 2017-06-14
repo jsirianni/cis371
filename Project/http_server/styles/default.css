@@ -58,3 +58,6 @@ th {
 }
 
 /* Set font type */
+h1, div {
+  font-family: Monospace;
+}
