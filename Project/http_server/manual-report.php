@@ -21,7 +21,6 @@
       </nav>
     </div>
     </section>
-
     <div class="content">
         <p>Submit a manual report</p>
         <form class="report" action="manual-report.php">
@@ -31,18 +30,17 @@
         </form>
         <?php
           include 'scripts/query.php';
-
           // Validate hostname
           if ($_GET["hostname"] != null && $_GET["status"] != null) {
             // Assign SQL friendly varchars
             $currentHostname = "'" . $_GET["hostname"] . "'";
             $currentStatus = "'" . $_GET["status"] . "'";
             $currentTime = time();
-
             // Call manual-report()
             manualReport($currentHostname,$currentStatus,$currentTime);
           }
         ?>
     </div>
+    </section>
 </body>
 </html>
