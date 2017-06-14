@@ -18,6 +18,7 @@ section {
     float: left;
 }
 .content {
+    padding-left: 10%;
     height: 80%;
 }
 
