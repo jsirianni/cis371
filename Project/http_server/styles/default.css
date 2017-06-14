@@ -28,6 +28,7 @@ h1 {
 .content {
   clear: both;
   margin-left: 20px;
+  max-width: 850px;
   border: solid;
 }
 
