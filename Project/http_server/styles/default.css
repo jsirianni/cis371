@@ -34,7 +34,7 @@ h1 {
 /* Home page specific styling */
 .about {
   clear: both;
-  max-width: 900px;
+  max-width: 1200px;
 }
 
 
@@ -80,18 +80,4 @@ h1, div, nav ul a {
 }
 table th {
   color: #3c3c42;
-}
-
-/*alignt manual report form */
-div.form
-{
-    display: block;
-    text-align: center;
-}
-form
-{
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
 }
