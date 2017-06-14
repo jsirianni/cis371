@@ -20,6 +20,7 @@
           </ul>
         </nav>
     </div>
+    </section>
     <div class="content">
       <form action="quick-stats.php">
         Override records to dislay: <input type="text" name="numrecords">
@@ -35,6 +36,6 @@
         </tbody>
       </table>
     </div>
-  </section>
+
 </body>
 </html>
