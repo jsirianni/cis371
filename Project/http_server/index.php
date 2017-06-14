@@ -13,10 +13,10 @@
     <div class="nav">
       <nav>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="quick-stats.php">Quick Stats</a></li>
-          <li><a href="custom-query.php">Custom Query</a></li>
-          <li><a href="manual-report.php">Manual Report</a></li>
+            <?php
+              include 'scripts/query.php';
+              printNav();
+             ?>
         </ul>
       </nav>
     </div>
