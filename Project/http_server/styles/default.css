@@ -34,6 +34,7 @@ h1 {
 /* Manual report specific styling */
 .report {
   clear: both;
+  font-size: 20px;
 }
 input {
   width: 60%;
