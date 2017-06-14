@@ -30,6 +30,11 @@ h1 {
   width: 50%;
 }
 
+/* Style .content items */
+.content form, .content table {
+  
+}
+
 /* Home page specific styling */
 .about {
   clear: both;
