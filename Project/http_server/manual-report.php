@@ -28,7 +28,6 @@
           A status other than "ok" is considered to be "bad" and will be caught by any
           filters that look for servers in a bad state.
         </p>
-
         <form name="form" class="report" action="manual-report.php" onsubmit="return validateManualReport()">
           Hostname: <br><input type="text" name="hostname"><br>
           Status: <br><input type="text" name="status"><br>
