@@ -32,6 +32,9 @@ h1 {
 }
 
 /* Home page specific styling */
+.about {
+  clear: both;
+}
 
 
 /* Nav Styling */
