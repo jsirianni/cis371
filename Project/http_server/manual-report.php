@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="styles/default.css" type="text/css"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Manual Report</title>
+     <meta charset="UTF-8">
 </head>
 <body>
   <section>
