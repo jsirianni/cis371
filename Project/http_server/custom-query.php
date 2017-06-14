@@ -43,6 +43,9 @@
           echo "<p>Successful Query</p>";
           customQuery($_GET["custom-query"]);
         }
+        else {
+          echo "<p>Error, invalid SQL<p>" 
+        }
       }
       ?>
     </div>
