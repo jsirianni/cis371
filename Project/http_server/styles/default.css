@@ -18,7 +18,17 @@ section {
   margin: 0 auto;
   height: 80%;
 }
+h1 {
+  width: 150px;
+  float: left;
+  margin-right: 10px;
+}
 .nav {
+  width: 150px;
+  float: left;
+  margin-right: 10px;
+}
+/*.nav {
     width: 150px;
     float: left;
     margin-right: 10px;
@@ -27,6 +37,9 @@ section {
     width: 600px;
     padding-left: 12%;
     margin-left: 50px;
+}*/
+
+
 }
 
 
