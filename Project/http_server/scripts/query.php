@@ -3,6 +3,7 @@
 // Set global values
 //
 function setGlobal() {
+  date_default_timezone_set("Asia/Bangkok");
   $GLOBALS['dbhost'] = 'localhost';
   $GLOBALS['dbname'] = 'report';
   $GLOBALS['ddbuser'] = 'reportuser';
