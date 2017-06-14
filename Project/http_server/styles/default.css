@@ -35,7 +35,6 @@ h1 {
 .report {
   clear: both;
   font-size: 20px;
-  padding-left: 20px;
   max-width: 850px;
 }
 .report input {
