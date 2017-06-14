@@ -59,14 +59,6 @@ th {
 }
 
 
-/* Style footer */
-footer {
-  position: fixed;
-  clear: both;
-  text-align: center;
-}
-
-
 /* Set font type */
 h1, div {
   font-family: Sans-serif;
