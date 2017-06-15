@@ -30,15 +30,17 @@ function check($sql) {
 }
 
 // Begin script
-if($_SERVER['REQUEST_METHOD']=="GET") {
-  $function = $_GET['call'];
-  if(function_exists($function)) {
-    call_user_func($function("SELECT * FROM report.rebports"));
-  }
-  else {
-    echo 'Function Not Exists!!';
-  }
-}
+//if($_SERVER['REQUEST_METHOD']=="GET") {
+//  $function = $_GET['call'];
+//  if(function_exists($function)) {
+//    call_user_func($function;
+//  }
+//  else {
+//    echo 'Function Not Exists!!';
+//  }
+//}
 
+$query = $_GET['call'];
+check($call);
 
  ?>
