@@ -39,13 +39,7 @@
       include 'scripts/query.php';
       // Do not execute unless sql submitted
       if ($_GET["custom-query"] != null) {
-        $x = checkSql($_GET["custom-query"]);
-        if ($x == 1) {
-          echo "<p>Successful Query</p>";
           customQuery($_GET["custom-query"]);
-        }
-        else {
-          echo "<p>Error, invalid SQL statement.<p>";
         }
       }
       ?>
