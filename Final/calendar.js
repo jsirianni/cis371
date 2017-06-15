@@ -10,8 +10,7 @@ var update = function (date) {
     var daysInCurrentMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
 
     // *** Remember to use getElementsByTagName when possible.  It avoids a lot of the hassle of looking through each child. ***
-    var calContent = document.getElementsByIdName("calendarTable");
-    var dayCells = calContent.getElementsByTagName("td");
+    var dayCells = calContent.getElementsById("dayCell");
     var day = 1;
     for (var i=0; i<dayCells.length; i++) {
       dayCells[i].innerHTML = "day";
