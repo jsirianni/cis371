@@ -39,20 +39,14 @@ function validateCustomQuery() {
       return false;
     }
     else {
-      $.ajax({
-        type: "POST",
-        url: "teamalerts.duckdns.org/scripts/query.php",
-        data: "sql=" + $(x),
-        success: function(checkSql){
-          if (retval == true) {
-            alert("Invalid SQL Statement")
-            return false;
-          }
-          else {
-            return true;
-          }
-        }
-      });
+      jQuery.ajax({
+          type: "GET",
+          url: "teamalerts.duckdns.org/scripts/checkSql.php",
+          data: "sql=" + x,
+          success: function(response){
+              alert("Ajax worked")
+              return true;
+          });
     }
 }
 
