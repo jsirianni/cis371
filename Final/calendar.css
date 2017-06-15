@@ -2,3 +2,8 @@
 #calendarTable {
     border: 1px solid black;
 }
+
+/* Border each day */
+td .dayCell {
+  border: 1px solid black;
+}

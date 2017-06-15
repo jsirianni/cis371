@@ -9,9 +9,12 @@ var update = function (date) {
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var daysInCurrentMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
 
-    // *** Remember to use getElementsByTagName when possible.  It avoids a lot of the hassle of looking through each child. ***
+    // Get all elements inside Calander Table, then get all data cells
     var calTable = document.getElementById("calendarTable");
     var dayCells = calTable.getElementsByTagName("td");
+
+    // Iterate through each cell and assign a day
+    // Stop when all days in month are filled
     var day = 1;
     for (var i=0; i<dayCells.length; i++) {
       if (day <= daysInCurrentMonth) {
