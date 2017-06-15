@@ -4,10 +4,6 @@ body {
   background-color: #222930;
 }
 
-/* Default input box length */
-input {
-  width: 40%;
-}
 
 /* Align nav and content divs */
 section {
