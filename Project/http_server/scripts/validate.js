@@ -39,20 +39,18 @@ function validateCustomQuery() {
       return false;
     }
     else {
-      return x();
+      jQuery.ajax({
+          type: "GET",
+          url: "teamalerts.duckdns.org/scripts/checkSql.php",
+          data: "sql=" + $(x),
+          success: function(response){
+              alert("Ajax worked")
+              return true;
+            }
+          });
     }
 }
-function x() {
-  jQuery.ajax({
-      type: "GET",
-      url: "teamalerts.duckdns.org/scripts/checkSql.php",
-      data: "sql=" + $(x),
-      success: function(response){
-          alert("Ajax worked")
-          return true;
-        }
-      });
-}
+
 
 
 //
