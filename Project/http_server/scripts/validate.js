@@ -10,7 +10,13 @@ function validateCustomQuery() {
         alert(response)
       }
     });
-    return true;
+    if (response == "true") {
+      return true;
+    }
+    else {
+      alert("Bad SQL Statement.")
+      return false;
+    }
 }
 
 
