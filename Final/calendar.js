@@ -11,7 +11,7 @@ var update = function (date) {
 
     // *** Remember to use getElementsByTagName when possible.  It avoids a lot of the hassle of looking through each child. ***
     var calContent = document.getElementsByIdName("calendarTable");
-    var dayCells = calContent.getElementsByTagName("td")[0];
+    var dayCells = calContent.getElementsByTagName("td");
     var day = 1;
     for (var i=0; i<dayCells.length; i++) {
       dayCells[i].innerHTML = "day";
