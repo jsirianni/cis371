@@ -1,4 +1,3 @@
-//
 // Validate manual report page
 // Requires a Hostname
 // Resuires status to be either 'ok' or 'bad'
@@ -45,7 +44,6 @@ function validateCustomQuery() {
 }
 
 
-//
 // Validate quick stats page
 // Requires an integer value greater than 0
 //
