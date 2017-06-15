@@ -31,8 +31,8 @@ function validateCustomQuery() {
     x = x.toLowerCase();
 
     //if (x == "") {
-        alert("Error, query is blank.");
-        return false;
+    //    alert("Error, query is blank.");
+    //    return false;
     //}
     //else if (x.includes("select") == false) {
     //  alert("You must use a SELECT statement");
