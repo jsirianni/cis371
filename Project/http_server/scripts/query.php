@@ -16,7 +16,7 @@ function setGlobal() {
 //
 function checkSql() {
   setGlobal();
-  $sql = $_POST['sql'];
+  $sql = $_GET['sql'];
   $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
   if (!mysqli_query($sqlconn,$sql)) {
     $sqlconn->close();
