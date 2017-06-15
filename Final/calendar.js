@@ -14,7 +14,7 @@ var update = function (date) {
     var dayCells = calTable.getElementsByTagName("td");
     var day = 1;
     for (var i=0; i<dayCells.length; i++) {
-      dayCells[i].innerHTML = "day";
+      dayCells[i].innerHTML = day;
       day += 1;
     }
 
