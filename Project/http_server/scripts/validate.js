@@ -7,7 +7,7 @@ function validateCustomQuery() {
     url: "scripts/checksql.php",
     data: "call=check",
     success: function(response){
-        alert("Ajax works")
+        alert(response)
       }
     });
 }
