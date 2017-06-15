@@ -29,7 +29,7 @@ function check($sql) {
 // Begin script
 setGlobal();
 
-$result = check("SELECT * X");
+$result = check("SELECT * report.reportse");
 $result = ($result) ? 'true' : 'false';
 echo "The result is $result";
 
