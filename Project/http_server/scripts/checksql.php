@@ -11,19 +11,24 @@ function setGlobal() {
   $GLOBALS['dbuserpass'] = 'password';
 }
 
-function check() {
-  echo "<p>Checking SQL</p>";
+//
+// Return true or false
+//
+function check($sql) {
+  $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
+  if (!mysqli_query($sqlconn,$sql)) {
+    $sqlconn->close();
+    return false;
+  }
+  else {
+    $sqlconn->close();
+    return true;
+  }
 }
 
 // Begin script
 setGlobal();
 
-if ($_SERVER['REQUEST_METHOD']=="POST") {
-  echo "<p>Working</p>";
-}
-else {
-  echo "<p>Not Working</p>";
-}
 
 
  ?>
