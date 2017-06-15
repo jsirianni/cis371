@@ -11,7 +11,7 @@ function setGlobal() {
   $GLOBALS['dbuserpass'] = 'password';
 }
 
-function check(sql) {
+function check() {
   echo "<p>Checking SQL</p>";
 }
 
