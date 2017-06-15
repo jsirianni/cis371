@@ -44,8 +44,13 @@ function validateCustomQuery() {
           url: "teamalerts.duckdns.org/scripts/checkSql.php",
           data: "sql=" + $(x),
           success: function(checkSql){
-              alert("Ajax worked")
+            if (checkSql == true) {
               return true;
+            }
+            else{
+              alert("Invalid SQL Statement")
+              return false;
+            }
             }
           });
     }
