@@ -46,7 +46,7 @@ function x() {
   jQuery.ajax({
       type: "GET",
       url: "teamalerts.duckdns.org/scripts/checkSql.php",
-      data: "sql=" + x,
+      data: "sql=" + $(x),
       success: function(response){
           alert("Ajax worked")
           return true;
