@@ -44,11 +44,11 @@ function validateCustomQuery() {
         url: "your_ajax_function.php",
         data: "username=" + $('#id_of_username_input'),
         success: function(retval){
-          if (retval == true)
+          if (retval == true) {
             alert("Invalid SQL Statement")
             return false;
+          }
           else {
-            alert("Valid SQL Statement")
             return true;
           }
         }
