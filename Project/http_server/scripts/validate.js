@@ -4,7 +4,7 @@
 function validateCustomQuery() {
   jQuery.ajax({
     type: "GET",
-    url: "scripts/checksql.php",
+    url: "teamalerts.duckdns.org/scripts/checksql.php",
     data: "call=check",
     success: function(response){
         alert(response)
