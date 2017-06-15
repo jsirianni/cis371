@@ -29,7 +29,7 @@ function check($sql) {
 // Begin script
 setGlobal();
 
-$result = check("SELECT * X")
-echo "$result"
+$result = check("SELECT * X");
+echo "$result";
 
  ?>
