@@ -32,7 +32,7 @@
         <li>SELECT * FROM report.reports WHERE (status='bad') ORDER BY id DESC</li>
       </ul>
       <form name="form" action="custom-query.php" onsubmit="return">
-        Custom Query: <input class="textbox" type="text" name="custom-query">
+        Custom Query: <input type="text" name="custom-query">
         <input type="submit" value="Submit">
       </form>
       <?php
