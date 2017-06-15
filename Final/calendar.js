@@ -73,8 +73,8 @@ window.onload = function () {
   })
   document.getElementById("formsubmit").addEventListener('click', function (e) {
     // Pull data from form
-    var formYear =  document.getElementById("form_year").innerHTML;
-    var formMonth = document.getElementById("form_month").innerHTML;
+    var formYear =  document.getElementById("form_year").value;
+    var formMonth = document.getElementById("form_month").value;
     var newDate = new Date(formYear, formMonth);
     update(newDate);
     alert(formYear)
