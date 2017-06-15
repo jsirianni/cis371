@@ -37,7 +37,7 @@ var update = function (date) {
     document.getElementById("rightArrow").addEventListener('click', function (e) {
       alert("Right Arrow click")
     })
-    document.getElementById("rightArrow").addEventListener('click', function (e) {
+    document.getElementById("leftArrow").addEventListener('click', function (e) {
       alert("Left Arrow click")
     })
 }
