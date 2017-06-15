@@ -30,30 +30,30 @@ function validateCustomQuery() {
     var x = document.forms["form"]["custom-query"].value;
     x = x.toLowerCase();
 
-    if (x == "") {
+    //if (x == "") {
         alert("Error, query is blank.");
         return false;
-    }
-    else if (x.includes("select") == false) {
-      alert("You must use a SELECT statement");
-      return false;
-    }
-    else {
-      jQuery.ajax({
-          type: "GET",
-          url: "teamalerts.duckdns.org/scripts/checksql.php",
-          data: "sql=" + x,
-          success: function(checksql){
-            if (checkSql == true) {
-              return false;
-            }
-            else {
-              alert("Invalid SQL Statement")
-              return false;
-            }
-            }
-          });
-    }
+    //}
+    //else if (x.includes("select") == false) {
+    //  alert("You must use a SELECT statement");
+    //  return false;
+    //}
+    //else {
+    jQuery.ajax({
+        type: "GET",
+        url: "teamalerts.duckdns.org/scripts/checksql.php",
+        data: "sql=" + x,
+        success: function(checksql){
+          if (checkSql == true) {
+            return false;
+          }
+          else {
+            alert("Invalid SQL Statement")
+            return false;
+          }
+          }
+        });
+    //}
 }
 
 
