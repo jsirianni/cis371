@@ -71,4 +71,7 @@ window.onload = function () {
     var newDate = new Date(prevYear, prevMonth);
     update(newDate);
   })
+  document.getElementById("formsubmit").addEventListener('click', function (e) {
+    alert(submitted);
+  })
 }
