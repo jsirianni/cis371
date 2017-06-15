@@ -76,9 +76,8 @@ window.onload = function () {
     // Pull data from form
     var formYear =  document.getElementById("form_year").innerHTML;
     var formMonth = document.getElementById("form_month").innerHTML;
-    //var newDate = new Date(formYear, formMonth);
+    var newDate = new Date(formYear, formMonth);
+    update(newDate);
 
-    alert("Year is " + formYear);
-    alert("Month is " + formMonth);
   })
 }
