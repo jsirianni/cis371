@@ -48,6 +48,7 @@ function validateCustomQuery() {
             alert("Invalid SQL Statement")
             return false;
           else {
+            alert("Valid SQL Statement")
             return true;
           }
         }
