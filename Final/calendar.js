@@ -10,7 +10,10 @@ var update = function (date) {
     var daysInCurrentMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
 
     // *** Remember to use getElementsByTagName when possible.  It avoids a lot of the hassle of looking through each child. ***
-
+    var dayCells = document.getElementsByTagName("td")
+    for (day in dayCells) {
+      day = "day";
+    }
 
     // Calculate the previous and next month
     // (You may use this for adding links to the left arrow)
@@ -21,6 +24,6 @@ var update = function (date) {
         nextMonth = 0;
         nextYear++;
     }
-    
-    
+
+
 }
