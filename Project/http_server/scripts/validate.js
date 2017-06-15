@@ -45,6 +45,7 @@ function validateCustomQuery() {
         data: "sql=" + x,
         success: function(checksql){
           if (checkSql == true) {
+            alert("Valid SQL")
             return false;
           }
           else {
