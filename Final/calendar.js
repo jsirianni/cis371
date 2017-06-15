@@ -28,14 +28,20 @@ var update = function (date) {
       day += 1;
     }
 
-    // Calculate the previous and next month
-    // (You may use this for adding links to the left arrow)
+    // Calculate next month
     var nextMonth = date.getMonth()  + 1;
     var nextYear = date.getFullYear();
     if (nextMonth >= 12) {
         // Remember:  Months are numbered beginning with 0.
         nextMonth = 0;
         nextYear++;
+    }
+    // Calculate previous month
+    var prevMonth = date.getMonth() - 1;
+    var prevYear = date.getFullYear();
+    if (prevMonth <= 0) {
+      prevMonth = 0;
+      prevYear = prevYear - 1;
     }
 
     // Click handlers
@@ -45,5 +51,7 @@ var update = function (date) {
     })
     document.getElementById("leftArrow").addEventListener('click', function (e) {
       alert("Left Arrow click");
+      var newDate = new Date(prevYear, prevMonth);
+      update(newDate);
     })
 }
