@@ -2,7 +2,6 @@
 // Custom Query Validation
 //
 function validateCustomQuery() {
-  alert("Validate")
   jQuery.ajax({
     type: "GET",
     url: "scripts/checksql.php",
