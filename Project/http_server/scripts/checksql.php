@@ -27,7 +27,7 @@ function check($sql) {
 }
 
 setGlobal();
-$x = check("SELECT * FROM report.reports");
+$x = check("SELECT * FROM repfort.reports");
 echo "$x";
 
  ?>
