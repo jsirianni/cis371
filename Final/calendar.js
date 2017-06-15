@@ -13,9 +13,8 @@ var update = function (date) {
     var dayCells = document.getElementsByTagName("td")
     var day = 1;
     for (var i=0; i<dayCells.length; i++) {
-      dayCells[i].appendChild("day");
-
-      var += 1;
+      dayCells[i].innerHTML = "day";
+      day += 1;
     }
 
     // Calculate the previous and next month
