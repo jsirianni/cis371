@@ -39,7 +39,7 @@ var update = function (date) {
     // Calculate previous month
     var prevMonth = date.getMonth() - 1;
     var prevYear = date.getFullYear();
-    if (prevMonth <= 0) {
+    if (prevMonth <= 1) {
       prevMonth = 12;
       prevYear = prevYear - 1;
     }
