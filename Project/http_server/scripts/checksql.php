@@ -14,7 +14,7 @@ function setGlobal() {
 //
 // Return true or false
 //
-function check() {
+function check($sql) {
   setGlobal();
   $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
   if (!mysqli_query($sqlconn,$sql)) {
@@ -33,7 +33,7 @@ function check() {
 if($_SERVER['REQUEST_METHOD']=="GET") {
   $function = $_GET['call'];
   if(function_exists($function)) {
-    call_user_func($function);
+    call_user_func($function("SELECT * FROM report.reports"));
   }
   else {
     echo 'Function Not Exists!!';
