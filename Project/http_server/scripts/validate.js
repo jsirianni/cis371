@@ -41,7 +41,7 @@ function validateCustomQuery() {
     //else {
     jQuery.ajax({
         type: "post",
-        url: "teamalerts.duckdns.org/scripts/checksql.php",
+        url: "checksql.php",
         data: "sql=" + x,
         success: function(checksql){
           if (checkSql == true) {
