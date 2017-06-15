@@ -43,7 +43,7 @@ function validateCustomQuery() {
           type: "GET",
           url: "teamalerts.duckdns.org/scripts/checkSql.php",
           data: "sql=" + $(x),
-          success: function(response){
+          success: function(checkSql){
               alert("Ajax worked")
               return true;
             }
