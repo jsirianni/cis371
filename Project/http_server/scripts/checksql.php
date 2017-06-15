@@ -30,7 +30,6 @@ function check($sql) {
 setGlobal();
 $x = "SELECT * FROM report.reports";
 $result = check("SELECT * report.reportse");
-$result = ($result) ? 'true' : 'false';
 echo "The result is $result";
 
  ?>
