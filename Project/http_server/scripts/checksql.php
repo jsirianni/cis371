@@ -30,6 +30,6 @@ function check($sql) {
 setGlobal();
 
 $result = check("SELECT * X");
-echo "$result";
+echo "The result is $result";
 
  ?>
