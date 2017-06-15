@@ -108,3 +108,8 @@ table th {
     border-radius: 6px;
     border-width: 1px;
 }
+
+/* Custom Query input box size */
+input .textbox {
+  width: 50%;
+}
