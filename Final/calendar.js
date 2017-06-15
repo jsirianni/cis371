@@ -39,8 +39,9 @@ var update = function (date) {
     // Calculate previous month
     var prevMonth = date.getMonth() - 1;
     var prevYear = date.getFullYear();
-    if (prevMonth <= 1) {
-      prevMonth = 12;
+    if (prevMonth == 0) {
+      // Set month to december and decrease year by one
+      prevMonth = 11;
       prevYear = prevYear - 1;
     }
 
