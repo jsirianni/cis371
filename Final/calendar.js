@@ -8,11 +8,12 @@
 var update = function (date) {
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var daysInCurrentMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
-    var monthWord = months[date.getMonth()] + " " + date.getFullYear();
+
 
     // Set the header
     var header = document.getElementById("header");
-    header.innerHTML = monthWord;
+    var monthWord = months[date.getMonth()] + " " + date.getFullYear();
+    header.innerHTML = months[date.getMonth()] + " " + date.getFullYear();
 
     // Get all elements inside Calander Table, then get all data cells
     var calTable = document.getElementById("calendarTable");
