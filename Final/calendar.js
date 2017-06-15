@@ -14,7 +14,7 @@ var update = function (date) {
     var dayCells = calTable.getElementsByTagName("td");
     var day = 1;
     for (var i=0; i<dayCells.length; i++) {
-      if (day =< daysInCurrentMonth) {
+      if (day <= daysInCurrentMonth) {
         dayCells[i].innerHTML = day;
       }
       day += 1;
