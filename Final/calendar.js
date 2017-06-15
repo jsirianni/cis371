@@ -45,13 +45,17 @@ var update = function (date) {
       prevYear = prevYear - 1;
     }
 
-    // Click handlers
-    document.getElementById("rightArrow").addEventListener('click', function (e) {
-      var newDate = new Date(nextYear, nextMonth);
-      update(newDate);
-    })
-    document.getElementById("leftArrow").addEventListener('click', function (e) {
-      var newDate = new Date(prevYear, prevMonth);
-      update(newDate);
-    })
+
+}
+
+window.onload = function () {
+  // Click handlers
+  document.getElementById("rightArrow").addEventListener('click', function (e) {
+    var newDate = new Date(nextYear, nextMonth);
+    update(newDate);
+  })
+  document.getElementById("leftArrow").addEventListener('click', function (e) {
+    var newDate = new Date(prevYear, prevMonth);
+    update(newDate);
+  })
 }
