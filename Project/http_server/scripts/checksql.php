@@ -17,15 +17,15 @@ function setGlobal() {
 function check() {
   setGlobal();
   return true;
-  $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
-  if (!mysqli_query($sqlconn,$sql)) {
-    $sqlconn->close();
-    return false;
-  }
-  else {
-    $sqlconn->close();
-    return true;
-  }
+  //$sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
+  //if (!mysqli_query($sqlconn,$sql)) {
+  //  $sqlconn->close();
+  //  return false;
+  //}
+  //else {
+  //  $sqlconn->close();
+  //  return true;
+  //}
 }
 
 // Begin script
