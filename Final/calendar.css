@@ -4,6 +4,6 @@
 }
 
 /* Border each day */
-td .dayCell {
+.week td {
   border: 1px solid black;
 }
