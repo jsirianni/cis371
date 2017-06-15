@@ -6,20 +6,24 @@
  * @param date a JavaScript Date object set to a day in the month to be displayed.
  */
 
+
 // Global Vars
 var nextMonth;
 var nextYear;
 var prevMonth;
 var prevYear;
 
+
 var update = function (date) {
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var daysInCurrentMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
 
 
+
     // Set the header month and year
     var header = document.getElementById("header");
     header.innerHTML = months[date.getMonth()] + " " + date.getFullYear();
+
 
     // Get all elements inside Calander Table, then get all data cells
     var calTable = document.getElementById("calendarTable");
@@ -35,14 +39,17 @@ var update = function (date) {
       day += 1;
     }
 
+
     // Calculate next month
     nextMonth = date.getMonth()  + 1;
     nextYear = date.getFullYear();
+
     if (nextMonth >= 12) {
         // Remember:  Months are numbered beginning with 0.
         nextMonth = 0;
         nextYear++;
     }
+
     // Calculate previous month
     prevMonth = date.getMonth() - 1;
     prevYear = date.getFullYear();
@@ -65,4 +72,5 @@ window.onload = function () {
     var newDate = new Date(prevYear, prevMonth);
     update(newDate);
   })
+
 }
