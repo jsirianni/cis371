@@ -50,6 +50,7 @@ function x() {
       success: function(response){
           alert("Ajax worked")
           return true;
+        }
       });
 }
 
