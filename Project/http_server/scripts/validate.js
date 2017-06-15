@@ -1,4 +1,24 @@
 //
+// Custom Query Validation
+//
+function validateCustomQuery() {
+jQuery.ajax({
+    type: "GET",
+    url: "scripts/checksql.php",
+    data: "call=check",
+    success: function(response){
+        alert("Ajax works")
+    });
+}
+
+
+
+
+
+
+
+
+//
 // Validate manual report page
 // Requires a Hostname
 // Resuires status to be either 'ok' or 'bad'

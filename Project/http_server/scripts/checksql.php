@@ -15,19 +15,20 @@ function setGlobal() {
 // Return true or false
 //
 function check($sql) {
+  setGlobal();
   $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
   if (!mysqli_query($sqlconn,$sql)) {
     $sqlconn->close();
-    return "0";
+    return false;
   }
   else {
     $sqlconn->close();
-    return "1";
+    return true;
   }
 }
 
-setGlobal();
-$x = check("SELECT * FROM repfort.reports");
-echo "$x";
+// Begin script
+
+
 
  ?>
