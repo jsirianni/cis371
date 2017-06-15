@@ -11,7 +11,7 @@ var update = function (date) {
 
     // Set the header
     var header = document.getElementById("header");
-    header.innerHTML = date.getDate;
+    header.innerHTML = date.getMonth();
 
     // Get all elements inside Calander Table, then get all data cells
     var calTable = document.getElementById("calendarTable");
