@@ -33,7 +33,7 @@ function check($sql) {
 if($_SERVER['REQUEST_METHOD']=="GET") {
   $function = $_GET['call'];
   if(function_exists($function)) {
-    call_user_func($function("SELECT * FROM report.reports"));
+    call_user_func($function("SELECT * FROM report.rebports"));
   }
   else {
     echo 'Function Not Exists!!';
