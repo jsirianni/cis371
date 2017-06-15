@@ -33,5 +33,8 @@ var update = function (date) {
         nextYear++;
     }
 
-
+    // Click handlers
+    document.getElementById("rightArrow").addEventListener('click', function (e) {
+      update(date);
+    })
 }
