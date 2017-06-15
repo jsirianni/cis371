@@ -12,7 +12,7 @@ function setGlobal() {
 }
 
 function check(sql) {
-
+  return;
 }
 
 // Begin script
@@ -24,8 +24,6 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
 else {
   echo "<p>Not Working</p>";
 }
-
-
 
 
  ?>
