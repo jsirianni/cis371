@@ -61,6 +61,11 @@ var update = function (date) {
 }
 
 
+
+
+
+
+
 // Load click handler functions
 window.onload = function () {
   document.getElementById("rightArrow").addEventListener('click', function (e) {
