@@ -72,6 +72,6 @@ window.onload = function () {
     update(newDate);
   })
   document.getElementById("formsubmit").addEventListener('click', function (e) {
-    alert(submitted);
+    alert("submitted");
   })
 }
