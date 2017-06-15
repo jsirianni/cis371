@@ -6,4 +6,5 @@
 /* Border each day */
 .week td {
   border: 1px solid black;
+  text-align: center;
 }
