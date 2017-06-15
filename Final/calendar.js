@@ -36,5 +36,6 @@ var update = function (date) {
     // Click handlers
     document.getElementById("rightArrow").addEventListener('click', function (e) {
       update(date);
+      alert("Right Arrow click")
     })
 }
