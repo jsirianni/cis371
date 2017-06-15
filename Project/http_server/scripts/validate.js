@@ -42,7 +42,7 @@ function validateCustomQuery() {
       $.ajax({
         type: "POST",
         url: "teamalerts.duckdns.org/scripts/query.php",
-        data: "username=" + $('#id_of_username_input'),
+        data: "sql=" + $(x),
         success: function(checkSql){
           if (retval == true) {
             alert("Invalid SQL Statement")
