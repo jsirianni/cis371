@@ -13,7 +13,7 @@ function checkSql() {
   }
   else {
     $sqlconn->close();
-    return true;
+    return false;
   }
 }
 ?>
