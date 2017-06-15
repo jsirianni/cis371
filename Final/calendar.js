@@ -48,7 +48,7 @@ var update = function (date) {
 
 }
 
-window.onload = function () {
+window.onload = function (date) {
   // Click handlers
   document.getElementById("rightArrow").addEventListener('click', function (e) {
     var newDate = new Date(nextYear, nextMonth);
