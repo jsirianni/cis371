@@ -52,7 +52,7 @@ function validateCustomQuery() {
             return true;
           }
         }
-      }};
+      )};
     }
 }
 
