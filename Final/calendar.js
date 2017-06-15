@@ -10,9 +10,8 @@ var update = function (date) {
     var daysInCurrentMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
 
 
-    // Set the header
+    // Set the header month and year
     var header = document.getElementById("header");
-    var monthWord = months[date.getMonth()] + " " + date.getFullYear();
     header.innerHTML = months[date.getMonth()] + " " + date.getFullYear();
 
     // Get all elements inside Calander Table, then get all data cells
