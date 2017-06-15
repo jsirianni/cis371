@@ -12,7 +12,7 @@ var update = function (date) {
     // *** Remember to use getElementsByTagName when possible.  It avoids a lot of the hassle of looking through each child. ***
     var dayCells = document.getElementsByTagName("td")
     var day = 1;
-    for (var i=0; i<elements.length; i++) {
+    for (var i=0; i<dayCells.length; i++) {
       dayCells[i].appendChild("day");
 
       var += 1;
