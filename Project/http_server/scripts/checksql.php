@@ -18,11 +18,11 @@ function check($sql) {
   $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
   if (!mysqli_query($sqlconn,$sql)) {
     $sqlconn->close();
-    return false;
+    return False;
   }
   else {
     $sqlconn->close();
-    return true;
+    return True;
   }
 }
 
