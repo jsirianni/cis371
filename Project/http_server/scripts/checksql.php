@@ -5,7 +5,7 @@ include 'query.php';
 //
 function checkSql() {
   setGlobal();
-  $sql = $_GET['sql'];
+  $sql = $_POST['sql'];
   $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
   if (!mysqli_query($sqlconn,$sql)) {
     $sqlconn->close();

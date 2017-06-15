@@ -40,7 +40,7 @@ function validateCustomQuery() {
     //}
     //else {
     jQuery.ajax({
-        type: "GET",
+        type: "post",
         url: "teamalerts.duckdns.org/scripts/checksql.php",
         data: "sql=" + x,
         success: function(checksql){
