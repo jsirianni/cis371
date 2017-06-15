@@ -8,6 +8,7 @@ jQuery.ajax({
     data: "call=check",
     success: function(response){
         alert("Ajax works")
+      }
     });
 }
 
