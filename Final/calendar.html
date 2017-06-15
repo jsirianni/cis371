@@ -9,10 +9,11 @@
 <body>
 
 
-<h1 id="header">&nbsp;</h1>
+
 
 
 <table>
+    <tr><h1 id="header">&nbsp;</h1></tr>
     <tr>
         <td><img id="leftArrow" src="LArrow.png"/></td>
 
@@ -87,7 +88,7 @@
         <td><img id="rightArrow" src="RArrow.png"/></td>
 </table>
 
-<form id="the_form">
+<form id="the_form" onsubmit="return false">
     <table>
         <tr>
             <td>Month:</td>
@@ -97,7 +98,7 @@
             <td>Year:</td>
             <td><input id="form_year" type="text"/></td>
         </tr>
-        <tr><td></td><td><input type="submit" value="Submit"/></td></tr>
+        <tr><td></td><td><input id="formsubmit" type="submit" value="Submit"/></td></tr>
     </table>
 </form>
 

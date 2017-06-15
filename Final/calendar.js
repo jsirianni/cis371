@@ -58,12 +58,16 @@ var update = function (date) {
       prevMonth = 11;
       prevYear = prevYear - 1;
     }
-
-
 }
 
+
+
+
+
+
+
+// Load click handler functions
 window.onload = function () {
-  // Click handlers
   document.getElementById("rightArrow").addEventListener('click', function (e) {
     var newDate = new Date(nextYear, nextMonth);
     update(newDate);
@@ -72,5 +76,11 @@ window.onload = function () {
     var newDate = new Date(prevYear, prevMonth);
     update(newDate);
   })
-
+  document.getElementById("formsubmit").addEventListener('click', function (e) {
+    // Pull data from form
+    var formYear =  document.getElementById("form_year").value;
+    var formMonth = document.getElementById("form_month").value;
+    var newDate = new Date(formYear, (formMonth - 1));
+    update(newDate);
+  })
 }
