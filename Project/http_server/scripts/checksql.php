@@ -16,7 +16,7 @@ function setGlobal() {
 //
 function check() {
   //setGlobal();
-  echo "true";
+  echo "false";
   return "true";
   //$sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
   //if (!mysqli_query($sqlconn,$sql)) {
