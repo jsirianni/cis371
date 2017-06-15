@@ -10,6 +10,7 @@ function validateCustomQuery() {
         alert(response)
       }
     });
+    return false;
 }
 
 
