@@ -12,7 +12,7 @@ function setGlobal() {
 }
 
 function check(sql) {
-  return;
+  echo "<p>Checking SQL</p>";
 }
 
 // Begin script
