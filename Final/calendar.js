@@ -35,8 +35,8 @@ var update = function (date) {
 
     // Click handlers
     document.getElementById("rightArrow").addEventListener('click', function (e) {
+      var newDate = new Date(nextYear, nextMonth);
       alert("Right Arrow click");
-      var newDate = new Data(nextYear, nextMonth);
     })
     document.getElementById("leftArrow").addEventListener('click', function (e) {
       alert("Left Arrow click");
