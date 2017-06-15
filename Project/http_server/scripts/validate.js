@@ -41,9 +41,9 @@ function validateCustomQuery() {
     else {
       $.ajax({
         type: "POST",
-        url: "your_ajax_function.php",
+        url: "teamalerts.duckdns.org/scripts/query.php",
         data: "username=" + $('#id_of_username_input'),
-        success: function(retval){
+        success: function(checkSql){
           if (retval == true) {
             alert("Invalid SQL Statement")
             return false;
@@ -52,7 +52,7 @@ function validateCustomQuery() {
             return true;
           }
         }
-      )};
+      });
     }
 }
 
