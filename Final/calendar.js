@@ -50,7 +50,6 @@ var update = function (date) {
       update(newDate);
     })
     document.getElementById("leftArrow").addEventListener('click', function (e) {
-      alert("Left Arrow click");
       var newDate = new Date(prevYear, prevMonth);
       update(newDate);
     })
