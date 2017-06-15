@@ -40,7 +40,7 @@ var update = function (date) {
     var prevMonth = date.getMonth() - 1;
     var prevYear = date.getFullYear();
     if (prevMonth <= 0) {
-      prevMonth = 0;
+      prevMonth = 12;
       prevYear = prevYear - 1;
     }
 
