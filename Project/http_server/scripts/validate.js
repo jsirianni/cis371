@@ -5,7 +5,7 @@ function validateCustomQuery() {
   jQuery.ajax({
     type: "GET",
     url: "scripts/checksql.php",
-    data: "call=SELECT+*+FROM+report.reports",
+    data: "call=check",
     success: function(response){
         alert(response)
       }

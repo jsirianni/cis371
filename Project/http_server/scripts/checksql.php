@@ -41,6 +41,6 @@ function check($sql) {
 //}
 
 $query = $_GET['call'];
-check($call);
+check("SELECT * FROM report.reports");
 
  ?>
