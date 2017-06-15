@@ -18,18 +18,16 @@ function check($sql) {
   $sqlconn =  mysqli_connect($GLOBALS['dbhost'], $GLOBALS['ddbuser'], $GLOBALS['dbuserpass'], $GLOBALS['dbname']);
   if (!mysqli_query($sqlconn,$sql)) {
     $sqlconn->close();
-    return False;
+    return "0";
   }
   else {
     $sqlconn->close();
-    return True;
+    return "1";
   }
 }
 
-// Begin script
 setGlobal();
-$x = "SELECT * FROM report.reports";
-$result = check("SELECT * report.reportse");
-echo "The result is $result";
+$x = check("SELECT * FROM report.reports");
+echo "$x";
 
  ?>
