@@ -38,9 +38,20 @@ function validateCustomQuery() {
       alert("You must use a SELECT statement");
       return false;
     }
-    
-    else {
-      return true;
+    else if {
+      $.ajax({
+        type: "POST",
+        url: "your_ajax_function.php",
+        data: "username=" + $('#id_of_username_input'),
+        success: function(retval){
+          if (retval == true)
+            alert("Invalid SQL Statement")
+            return false;
+          else {
+            return true;
+          }
+        }
+      }};
     }
 }
 
